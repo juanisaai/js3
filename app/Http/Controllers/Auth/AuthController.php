@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Http\Request;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -10,6 +11,11 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
+
+    //Para autenticar con nombre de usuario
+
+    protected $username = 'username';
+
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
@@ -50,6 +56,7 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
+            'username' => 'required|max:20|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
@@ -65,8 +72,24 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'username' =>$data['username'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    /**
+     * Get the needed authorization credentials from the request.
+     *                   PARA DESACTIVAR INICIO DE SESIÓN PARA USUARIOS NO ACTIVOS
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */
+    protected function getCredentials(Request $request)
+    {
+        return [
+          'username' => $request->get('username'),
+          'password' => $request->get('password'),
+          'active'   => true
+        ];
     }
 }
