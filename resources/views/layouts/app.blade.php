@@ -37,23 +37,26 @@
                     Sistemas e informática
                 </a>
             </div>
+            @if(Auth::guest())
 
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Inicio</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrar <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Áreas</a></li>
-                            <li><a href="#">Empleados</a></li>
-                            <li><a href="#">Equipos</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li class="dropdown-header">Superusuario</li>
-                            <li><a href="#">Colaboradores</a></li>
-                        </ul>
-                    </li>
-                </ul>
+            @else
+                <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ url('/home') }}">Inicio</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrar <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Áreas</a></li>
+                                <li><a href="#">Empleados</a></li>
+                                <li><a href="#">Equipos</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Superusuario</li>
+
+                            </ul>
+                        </li>
+                    </ul>
+            @endif
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
@@ -61,6 +64,7 @@
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Iniciar sesión</a></li>
                         <li><a href="{{ url('/register') }}">Nuevo colaborador</a></li>
+
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -71,6 +75,7 @@
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Cerrar sesión</a></li>
                             </ul>
                         </li>
+
                     @endif
                 </ul>
             </div>
