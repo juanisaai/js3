@@ -24,3 +24,7 @@ Route::group(['middleware' => ['web']], function(){
 
 
 });
+
+Route::get('areas', function() {
+   return view('areas/viewAreas');
+});

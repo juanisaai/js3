@@ -47,7 +47,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrar <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Áreas</a></li>
+                                <li><a href="{{ url('/areas') }}">Áreas</a></li>
                                 <li><a href="#">Empleados</a></li>
                                 <li><a href="#">Equipos</a></li>
                                 <li role="separator" class="divider"></li>
