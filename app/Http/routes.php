@@ -25,6 +25,8 @@ Route::group(['middleware' => ['web']], function(){
 
 });
 
-Route::get('areas', function() {
-   return view('areas/viewAreas');
-});
+Route::get('/areas', 'AreaController@seeAreas');
+
+
+Route::get('areas/createArea', 'AreaController@create');
+Route::post('areas', 'AreaController@store');
