@@ -19,6 +19,7 @@
                 <div class="panel-body">
 
                     @include('partials/errors')
+                    @include('partials/succeed')
 
                     {!! Form::open(array('url' => 'areas', 'method' => 'POST', 'class' => 'form')) !!}
 

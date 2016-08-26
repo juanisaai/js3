@@ -6,17 +6,20 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">Areas
-                        <a href="{{ url('areas/createArea') }}">Create new area <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                        <a href="{{ url('areas/create') }}">Create
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
                     </div>
                     <div class="panel-body">
 
+                        @include('partials/errors')
+                        @include('partials/succeed')
 
-                        <table class="table">
+                        <table class="table table-hover table-striped table-responsive">
                             <tr>
                                 <th>Name area</th>
-                                <th>Unit area</th>
-                                <th>Extension area</th>
-                                <th>Directorate area</th>
+                                <th>Unit</th>
+                                <th>Extension</th>
+                                <th>Directorate</th>
                                 <th>Actions</th>
                             </tr>
 
@@ -26,7 +29,15 @@
                                     <td>{{ $area->UnitArea }}</td>
                                     <td>{{ $area->ExtensionArea }}</td>
                                     <td>{{ $area->DirectorateArea }}</td>
-                                    <td>Edit | Delete</td>
+                                    <td>
+                                        <a href="{{ route('deleteArea', ['id' => $area->id]) }}">
+                                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                        </a> |
+                                        <a href="{{ route('editArea', ['id' => $area->id]) }}">
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                        </a>
+                                    </td>
+
                                 </tr>
                             @endforeach
 

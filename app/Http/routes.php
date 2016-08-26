@@ -25,8 +25,31 @@ Route::group(['middleware' => ['web']], function(){
 
 });
 
-Route::get('/areas', 'AreaController@seeAreas');
+//-----------------------------------open CRUD Areas-------------------------------
 
-
-Route::get('areas/createArea', 'AreaController@create');
+//------------------------C
+Route::get('areas/create', [
+    'as'   => 'create',
+    'uses' => 'AreaController@create']);
 Route::post('areas', 'AreaController@store');
+
+//------------------------R
+Route::get('/areas', [
+    'as'   => 'read',
+    'uses' => 'AreaController@seeAreas']);
+
+//------------------------U
+Route::get('/areas/update/{id}', [
+    'as'   => 'editArea',
+    'uses' => 'AreaController@editArea']);
+
+Route::post('areas/update/{id}', [
+    'as'   => 'updateArea',
+    'uses' => 'AreaController@updateArea']);
+
+//------------------------D
+Route::get('areas/delete/{id}', [
+    'as' => 'deleteArea',
+    'uses' => 'AreaController@deleteArea']);
+
+//-----------------------------------close CRUD Areas-------------------------------
