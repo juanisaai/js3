@@ -53,3 +53,28 @@ Route::get('areas/delete/{id}', [
     'uses' => 'AreaController@deleteArea']);
 
 //-----------------------------------close CRUD Areas-------------------------------
+
+//------------------------C
+Route::get('employees/create', [
+    'as'   => 'create',
+    'uses' => 'EmployeeController@create']);
+Route::post('employees', 'EmployeeController@store');
+
+//------------------------R
+Route::get('/employees', [
+    'as'   => 'read',
+    'uses' => 'EmployeeController@seeEmployees']);
+
+//------------------------U
+Route::get('employees/update/{id}', [
+    'as'   => 'editEmployee',
+    'uses' => 'EmployeeController@editEmployee']);
+
+Route::post('employees/update/{id}', [
+    'as'   => 'updateEmployee',
+    'uses' => 'EmployeeController@updateEmployee']);
+
+//------------------------D
+Route::get('employees/delete/{id}', [
+    'as' => 'deleteEmployee',
+    'uses' => 'EmployeeController@deleteEmployee']);

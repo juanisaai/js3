@@ -16,36 +16,41 @@
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Update area</div>
+                    <div class="panel-heading">Update employee</div>
 
                     <div class="panel-body">
 
                         @include('partials/errors')
                         @include('partials/succeed')
 
-                        {!! Form::model(array($area, [
+                        {!! Form::model(array($employee, [
                             'method' => 'PATCH',
-                            'route'  => ['updateArea', $area->id]
+                            'route'  => ['updateEmployee', $employee->id]
                         ])) !!}
 
                         <div class="form-group">
-                            {!! Form::label('namearea', 'Name Area') !!}
-                            {!! Form::text('NameArea', $area->NameArea, ['class' => 'form-control', 'placeholder' => 'Write name area']) !!}
+                            {!! Form::label('ProfileEmployee', 'Profile Employee') !!}
+                            {!! Form::text('ProfileEmployee', $employee->ProfileEmployee, ['class' => 'form-control', 'placeholder' => 'Write name area']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('unitarea', 'Unit') !!}
-                            {!! Form::text('UnitArea', $area->UnitArea, ['class' => 'form-control', 'placeholder' => 'Write unit']) !!}
+                            {!! Form::label('FirstName', 'First Name') !!}
+                            {!! Form::text('FirstName', $employee->FirstName, ['class' => 'form-control', 'placeholder' => 'Write unit']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('extensionarea', 'Name Extension') !!}
-                            {!! Form::text('ExtensionArea', $area->ExtensionArea, ['class' => 'form-control', 'placeholder' => 'Write name extension']) !!}
+                            {!! Form::label('SecondName', 'Last Name') !!}
+                            {!! Form::text('SecondName', $employee->SecondName, ['class' => 'form-control', 'placeholder' => 'Write name extension']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('directoratearea', 'Name Directorate') !!}
-                            {!! Form::text('DirectorateArea', $area->DirectorateArea, ['class' => 'form-control', 'placeholder' => 'Write name Directorate']) !!}
+                            {!! Form::label('RoleEmployee', 'Role Employee') !!}
+                            {!! Form::text('RoleEmployee', $employee->RoleEmployee, ['class' => 'form-control', 'placeholder' => 'Write name Directorate']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('area_id', 'Select area') !!}
+                            {{ Form::select('area_id', $areas) }}
                         </div>
 
                         <div class="form-group">
