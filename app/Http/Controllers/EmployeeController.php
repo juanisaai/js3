@@ -31,7 +31,7 @@ class EmployeeController extends Controller
         $data = request()->all();
         Employee::create($data);
         Session::flash('flash_message', 'Employee successfully added!');
-        return redirect()->to('/employees');
+        return redirect()->route('readEmployee');
 
 
     }
@@ -69,7 +69,7 @@ class EmployeeController extends Controller
         $data = request()->all();
         $employee->fill($data)->save();
         Session::flash('flash_message', 'Employee successfully update!');
-        return redirect()->to('/employees');
+        return redirect()->route('readEmployee');
 
     }
 
@@ -80,7 +80,7 @@ class EmployeeController extends Controller
         $employee = Employee::find($id);
         $employee->delete();
         Session::flash('flash_message', 'Employee successfully deleted!');
-        return redirect()->to('/employees');
+        return redirect()->route('readEmployee');
     }
 
 }

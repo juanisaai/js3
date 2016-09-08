@@ -33,7 +33,7 @@ class AreaController extends Controller
         $data = request()->all();
         Area::create($data);
         Session::flash('flash_message', 'Area successfully added!');
-        return redirect()->to('/areas');
+        return redirect()->route('readArea');
 
     }
 
@@ -67,7 +67,7 @@ class AreaController extends Controller
         $data = request()->all();
         $area->fill($data)->save();
         Session::flash('flash_message', 'Area successfully update!');
-        return redirect()->to('/areas');
+        return redirect()->route('readArea');
 
     }
 
@@ -77,7 +77,7 @@ class AreaController extends Controller
         $area = Area::find($id);
         $area->delete();
         Session::flash('flash_message', 'Area successfully deleted!');
-        return redirect()->to('/areas');
+        return redirect()->route('readArea');
 
 
     }

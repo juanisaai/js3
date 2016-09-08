@@ -47,9 +47,10 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Management<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{ url('/areas') }}">Areas</a></li>
-                                <li><a href="{{ url('/employees') }}">Employees</a></li>
-                                <li><a href="#">Equipments</a></li>
+                                <li><a href="{{ route('readArea') }}">Areas</a></li>
+                                <li><a href="{{ route('readEmployee') }}">Employees</a></li>
+                                <li><a href="{{ route('readSupplier') }}">Suppliers</a></li>
+                                <li><a href="#">Devices</a></li>
                                 <!--
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Superusuario</li>

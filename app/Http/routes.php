@@ -28,53 +28,86 @@ Route::group(['middleware' => ['web']], function(){
 //-----------------------------------open CRUD Areas-------------------------------
 
 //------------------------C
-Route::get('areas/create', [
-    'as'   => 'create',
+Route::get('/management/areas/create', [
+    'as'   => 'createArea',
     'uses' => 'AreaController@create']);
 Route::post('areas', 'AreaController@store');
 
 //------------------------R
-Route::get('/areas', [
-    'as'   => 'read',
+Route::get('/management/areas', [
+    'as'   => 'readArea',
     'uses' => 'AreaController@seeAreas']);
 
 //------------------------U
-Route::get('/areas/update/{id}', [
+Route::get('/management/areas/update/{id}', [
     'as'   => 'editArea',
     'uses' => 'AreaController@editArea']);
 
-Route::post('areas/update/{id}', [
+Route::post('/management/areas/update/{id}', [
     'as'   => 'updateArea',
     'uses' => 'AreaController@updateArea']);
 
 //------------------------D
-Route::get('areas/delete/{id}', [
+Route::get('/management/areas/delete/{id}', [
     'as' => 'deleteArea',
     'uses' => 'AreaController@deleteArea']);
 
 //-----------------------------------close CRUD Areas-------------------------------
 
+//-----------------------------------open CRUD Employees-------------------------------
+
 //------------------------C
-Route::get('employees/create', [
-    'as'   => 'create',
+Route::get('/management/employees/create', [
+    'as'   => 'createEmployee',
     'uses' => 'EmployeeController@create']);
 Route::post('employees', 'EmployeeController@store');
 
 //------------------------R
-Route::get('/employees', [
-    'as'   => 'read',
+Route::get('/management/employees', [
+    'as'   => 'readEmployee',
     'uses' => 'EmployeeController@seeEmployees']);
 
 //------------------------U
-Route::get('employees/update/{id}', [
+Route::get('/management/employees/update/{id}', [
     'as'   => 'editEmployee',
     'uses' => 'EmployeeController@editEmployee']);
 
-Route::post('employees/update/{id}', [
+Route::post('/management/employees/update/{id}', [
     'as'   => 'updateEmployee',
     'uses' => 'EmployeeController@updateEmployee']);
 
 //------------------------D
-Route::get('employees/delete/{id}', [
+Route::get('/management/employees/delete/{id}', [
     'as' => 'deleteEmployee',
     'uses' => 'EmployeeController@deleteEmployee']);
+
+//-----------------------------------close CRUD Employees-------------------------------
+
+//-----------------------------------open CRUD Suppliers-------------------------------
+
+//------------------------C
+Route::get('/management/suppliers/create', [
+    'as'   => 'createSupplier',
+    'uses' => 'SupplierController@create']);
+Route::post('suppliers', 'SupplierController@store');
+
+//------------------------R
+Route::get('/management/suppliers', [
+    'as'   => 'readSupplier',
+    'uses' => 'SupplierController@seeSuppliers']);
+
+//------------------------U
+Route::get('/management/suppliers/update/{id}', [
+    'as'   => 'editSupplier',
+    'uses' => 'SupplierController@editSupplier']);
+
+Route::post('/management/suppliers/update/{id}', [
+    'as'   => 'updateSupplier',
+    'uses' => 'SupplierController@updateSupplier']);
+
+//------------------------D
+Route::get('/management/suppliers/delete/{id}', [
+    'as' => 'deleteSupplier',
+    'uses' => 'SupplierController@deleteSupplier']);
+
+//-----------------------------------close CRUD Suppliers-------------------------------

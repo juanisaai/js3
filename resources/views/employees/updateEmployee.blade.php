@@ -30,22 +30,22 @@
 
                         <div class="form-group">
                             {!! Form::label('ProfileEmployee', 'Profile Employee') !!}
-                            {!! Form::text('ProfileEmployee', $employee->ProfileEmployee, ['class' => 'form-control', 'placeholder' => 'Write name area']) !!}
+                            {!! Form::text('ProfileEmployee', $employee->ProfileEmployee, ['class' => 'form-control', 'placeholder' => 'Write profile employee']) !!}
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('FirstName', 'First Name') !!}
-                            {!! Form::text('FirstName', $employee->FirstName, ['class' => 'form-control', 'placeholder' => 'Write unit']) !!}
+                            {!! Form::text('FirstName', $employee->FirstName, ['class' => 'form-control', 'placeholder' => 'Write first name']) !!}
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('SecondName', 'Last Name') !!}
-                            {!! Form::text('SecondName', $employee->SecondName, ['class' => 'form-control', 'placeholder' => 'Write name extension']) !!}
+                            {!! Form::text('SecondName', $employee->SecondName, ['class' => 'form-control', 'placeholder' => 'Write last name']) !!}
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('RoleEmployee', 'Role Employee') !!}
-                            {!! Form::text('RoleEmployee', $employee->RoleEmployee, ['class' => 'form-control', 'placeholder' => 'Write name Directorate']) !!}
+                            {!! Form::text('RoleEmployee', $employee->RoleEmployee, ['class' => 'form-control', 'placeholder' => 'Write role employee']) !!}
                         </div>
 
                         <div class="form-group">
