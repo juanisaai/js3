@@ -28,7 +28,6 @@ class CreateDataDevicesTable extends Migration
             $table->foreign('supplier_id')
                 ->references('id')
                 ->on('suppliers')
-                ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
     }

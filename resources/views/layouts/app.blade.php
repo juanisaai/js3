@@ -50,7 +50,7 @@
                                 <li><a href="{{ route('readArea') }}">Areas</a></li>
                                 <li><a href="{{ route('readEmployee') }}">Employees</a></li>
                                 <li><a href="{{ route('readSupplier') }}">Suppliers</a></li>
-                                <li><a href="#">Devices</a></li>
+                                <li><a href="{{ route('readDevice') }}">Devices</a></li>
                                 <!--
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Superusuario</li>

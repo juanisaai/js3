@@ -9,4 +9,9 @@ class Supplier extends Model
     protected $fillable = [
       'NameSupplier',
     ];
+
+    public function DataDevices()
+    {
+        return $this->hasMany(DataDevice::class);
+    }
 }

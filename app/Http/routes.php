@@ -111,3 +111,32 @@ Route::get('/management/suppliers/delete/{id}', [
     'uses' => 'SupplierController@deleteSupplier']);
 
 //-----------------------------------close CRUD Suppliers-------------------------------
+
+//-----------------------------------open CRUD Devices-------------------------------
+
+//------------------------C
+Route::get('/management/devices/create', [
+    'as'   => 'createDevice',
+    'uses' => 'DeviceController@create']);
+Route::post('devices', 'DeviceController@store');
+
+//------------------------R
+Route::get('/management/devices', [
+    'as'   => 'readDevice',
+    'uses' => 'DeviceController@seeDevices']);
+
+//------------------------U
+Route::get('/management/devices/update/{id}', [
+    'as'   => 'editDevice',
+    'uses' => 'DeviceController@editDevice']);
+
+Route::post('/management/devices/update/{id}', [
+    'as'   => 'updateDevice',
+    'uses' => 'DeviceController@updateDevice']);
+
+//------------------------D
+Route::get('/management/devices/delete/{id}', [
+    'as' => 'deleteDevice',
+    'uses' => 'DeviceController@deleteDevice']);
+
+//-----------------------------------close CRUD Devices-------------------------------
