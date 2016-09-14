@@ -29,13 +29,23 @@
                     </div>
 
                     <div class="form-group">
+                        {!! Form::label('BrandDevice', 'Brand Device') !!}
+                        {!! Form::text('BrandDevice', null, ['class' => 'form-control', 'placeholder' => 'Write brand device']) !!}
+                    </div>
+
+                    <div class="form-group">
                         {!! Form::label('ModelDevice', 'Model Device') !!}
                         {!! Form::text('ModelDevice', null, ['class' => 'form-control', 'placeholder' => 'Write model device']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('BrandDevice', 'Brand Device') !!}
-                        {!! Form::text('BrandDevice', null, ['class' => 'form-control', 'placeholder' => 'Write brand device']) !!}
+                        {!! Form::label('ColorDevice', 'Color Device') !!}
+                        {!! Form::text('ColorDevice', null, ['class' => 'form-control', 'placeholder' => 'Write color device']) !!}
+                    </div>
+
+                    <div class="form-group">
+                        {!! Form::label('NomenclatureDevice', 'Nomenclature Device') !!}
+                        {!! Form::text('NomenclatureDevice', null, ['class' => 'form-control', 'placeholder' => 'Write nomenclature device']) !!}
                     </div>
 
                     <div class="form-group">

@@ -57,6 +57,6 @@ class CreateAssignEquipmentsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('assigEquipments');
+        Schema::drop('assignEquipments');
     }
 }

@@ -17,6 +17,8 @@ class CreateDataDevicesTable extends Migration
             $table->string('TypeDevice', 50);
             $table->string('ModelDevice', 50);
             $table->string('BrandDevice', 50);
+            $table->string('ColorDevice', 25);
+            $table->string('NomenclatureDevice', 20);
             $table->string('SerialNumberDevice', 25);
             $table->string('InventoryNumberDevice', 25);
             $table->timestamps();

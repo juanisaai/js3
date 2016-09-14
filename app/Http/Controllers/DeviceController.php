@@ -21,8 +21,10 @@ class DeviceController extends Controller
 
         $this->validate(request(), [
             'TypeDevice' => 'required|max:50',
-            'ModelDevice' => 'max:50',
             'BrandDevice' => 'max:50',
+            'ModelDevice' => 'max:50',
+            'ColorDevice' => 'max:50',
+            'NomenclatureDevice' => 'max:50',
             'SerialNumberDevice' => 'max:25',
             'InventoryNumberDevice' => 'max:25',
             'supplier_id' => 'required'
@@ -56,8 +58,10 @@ class DeviceController extends Controller
 
         $this->validate(request(), [
             'TypeDevice' => 'required|max:50',
-            'ModelDevice' => 'max:50',
             'BrandDevice' => 'max:50',
+            'ModelDevice' => 'max:50',
+            'ColorDevice' => 'max:50',
+            'NomenclatureDevice' => 'max:50',
             'SerialNumberDevice' => 'max:25',
             'InventoryNumberDevice' => 'max:25',
             'supplier_id' => 'required'

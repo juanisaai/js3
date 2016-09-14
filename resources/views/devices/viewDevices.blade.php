@@ -29,11 +29,13 @@
 
                             <table class="table table-hover table-striped table-responsive">
                                 <tr>
-                                    <th>Type Device</th>
-                                    <th>Model Device</th>
-                                    <th>Brand Device</th>
-                                    <th>Serial Number Device</th>
-                                    <th>Inventory Number Device</th>
+                                    <th>Type</th>
+                                    <th>Brand</th>
+                                    <th>Model</th>
+                                    <th>Color</th>
+                                    <th>Nomenclature</th>
+                                    <th>Serial Number</th>
+                                    <th>Inventory Number</th>
                                     <th>Supplier</th>
                                     <th>Actions</th>
                                 </tr>
@@ -41,8 +43,10 @@
                             @foreach($devices as $device)
                                     <tr>
                                         <td>{{ $device->TypeDevice }}</td>
-                                        <td>{{ $device->ModelDevice }}</td>
                                         <td>{{ $device->BrandDevice }}</td>
+                                        <td>{{ $device->ModelDevice }}</td>
+                                        <td>{{ $device->ColorDevice }}</td>
+                                        <td>{{ $device->NomenclatureDevice }}</td>
                                         <td>{{ $device->SerialNumberDevice }}</td>
                                         <td>{{ $device->InventoryNumberDevice }}</td>
                                         <td>{{ $device->supplier->NameSupplier }}</td>

@@ -57,6 +57,6 @@ class CreateAssignDevicesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('assigDevices');
+        Schema::drop('assignDevices');
     }
 }
