@@ -140,3 +140,32 @@ Route::get('/management/devices/delete/{id}', [
     'uses' => 'DeviceController@deleteDevice']);
 
 //-----------------------------------close CRUD Devices-------------------------------
+
+//-----------------------------------open CRUD Equipments-------------------------------
+
+//------------------------C
+Route::get('/management/equipments/create', [
+    'as'   => 'createEquipment',
+    'uses' => 'EquipmentsController@create']);
+Route::post('equipments', 'EquipmentsController@store');
+
+//------------------------R
+Route::get('/management/equipments', [
+    'as'   => 'readEquipments',
+    'uses' => 'EquipmentsController@seeEquipments']);
+
+//------------------------U
+Route::get('/management/equipment/update/{id}', [
+    'as'   => 'editEquipment',
+    'uses' => 'EquipmentsController@editEquipment']);
+
+Route::post('/management/equipment/update/{id}', [
+    'as'   => 'updateEquipment',
+    'uses' => 'EquipmentsController@updateEquipment']);
+
+//------------------------D
+Route::get('/management/equipment/delete/{id}', [
+    'as' => 'deleteEquipment',
+    'uses' => 'EquipmentsController@deleteEquipment']);
+
+//-----------------------------------close CRUD Equipments-------------------------------

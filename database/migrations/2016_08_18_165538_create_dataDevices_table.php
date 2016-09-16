@@ -29,8 +29,7 @@ class CreateDataDevicesTable extends Migration
 
             $table->foreign('supplier_id')
                 ->references('id')
-                ->on('suppliers')
-                ->onUpdate('cascade');
+                ->on('suppliers');
         });
     }
 

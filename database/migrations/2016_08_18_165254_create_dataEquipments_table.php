@@ -14,7 +14,7 @@ class CreateDataEquipmentsTable extends Migration
     {
         Schema::create('dataEquipments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('TypeEquiment', 15);
+            $table->string('TypeEquipment', 15);
             $table->string('TypeAssemblyEquipment', 15);
             $table->string('BrandEquipment', 15)->nullable();
             $table->string('ModelEquipment', 25)->nullable();
@@ -48,9 +48,7 @@ class CreateDataEquipmentsTable extends Migration
 
             $table->foreign('supplier_id')
                 ->references('id')
-                ->on('suppliers')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->on('suppliers');
 
         });
     }
