@@ -24,6 +24,8 @@ class CreateAssetRetirementsTable extends Migration
 
             //relationship with dataSafeguards->id
 
+            //this relationship don't exist, verify relationship
+
             $table->integer('dataSafeguard_id')->unsigned();
 
             $table->foreign('dataSafeguard_id')
@@ -39,7 +41,6 @@ class CreateAssetRetirementsTable extends Migration
             $table->foreign('employee_id')
                 ->references('id')
                 ->on('employees')
-                ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
     }

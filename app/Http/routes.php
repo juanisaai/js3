@@ -83,35 +83,6 @@ Route::get('/management/employees/delete/{id}', [
 
 //-----------------------------------close CRUD Employees-------------------------------
 
-//-----------------------------------open CRUD Suppliers-------------------------------
-
-//------------------------C
-Route::get('/management/suppliers/create', [
-    'as'   => 'createSupplier',
-    'uses' => 'SupplierController@create']);
-Route::post('suppliers', 'SupplierController@store');
-
-//------------------------R
-Route::get('/management/suppliers', [
-    'as'   => 'readSupplier',
-    'uses' => 'SupplierController@seeSuppliers']);
-
-//------------------------U
-Route::get('/management/suppliers/update/{id}', [
-    'as'   => 'editSupplier',
-    'uses' => 'SupplierController@editSupplier']);
-
-Route::post('/management/suppliers/update/{id}', [
-    'as'   => 'updateSupplier',
-    'uses' => 'SupplierController@updateSupplier']);
-
-//------------------------D
-Route::get('/management/suppliers/delete/{id}', [
-    'as' => 'deleteSupplier',
-    'uses' => 'SupplierController@deleteSupplier']);
-
-//-----------------------------------close CRUD Suppliers-------------------------------
-
 //-----------------------------------open CRUD Devices-------------------------------
 
 //------------------------C

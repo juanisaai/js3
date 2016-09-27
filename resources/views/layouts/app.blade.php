@@ -49,7 +49,6 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('readArea') }}">Areas</a></li>
                                 <li><a href="{{ route('readEmployee') }}">Employees</a></li>
-                                <li><a href="{{ route('readSupplier') }}">Suppliers</a></li>
                                 <li><a href="{{ route('readDevice') }}">Devices</a></li>
                                 <li><a href="{{ route('readEquipments') }}">Equipments</a></li>
                                 <!--

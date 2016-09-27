@@ -35,11 +35,6 @@ class DataEquipment extends Model
         'SerialNumberHHD',
         'BrandDiscReader',
         'TypeDiscReader',
-        'supplier_id',
     ];
 
-    public function Supplier()
-    {
-        return $this->belongsTo(Supplier::class);
-    }
 }

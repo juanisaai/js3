@@ -36,7 +36,6 @@
                                     <th>Nomenclature</th>
                                     <th>Serial Number</th>
                                     <th>Inventory Number</th>
-                                    <th>Supplier</th>
                                     <th>Actions</th>
                                 </tr>
 
@@ -49,7 +48,6 @@
                                         <td>{{ $device->NomenclatureDevice }}</td>
                                         <td>{{ $device->SerialNumberDevice }}</td>
                                         <td>{{ $device->InventoryNumberDevice }}</td>
-                                        <td>{{ $device->supplier->NameSupplier }}</td>
                                         <td>
                                             <a href="{{ route('deleteDevice', ['id' => $device->id]) }}">
                                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>

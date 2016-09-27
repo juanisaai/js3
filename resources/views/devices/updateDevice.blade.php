@@ -64,11 +64,6 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('supplier_id', 'Select supplier') !!}
-                            {{ Form::select('supplier_id', $suppliers) }}
-                        </div>
-
-                        <div class="form-group">
                             {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
                         </div>
 

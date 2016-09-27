@@ -55,7 +55,6 @@
                                     <th>Serial number HHD</th>
                                     <th>Brand Disc Reader</th>
                                     <th>Type Disc Reader</th>
-                                    <th>Supplier</th>
                                     <th>Actions</th>
 
                             @foreach($equipments as $equipment)
@@ -86,7 +85,6 @@
                                         <td>{{ $equipment->SerialNumberHHD }}</td>
                                         <td>{{ $equipment->BrandDiscReader }}</td>
                                         <td>{{ $equipment->TypeDiscReader }}</td>
-                                        <td>{{ $equipment->supplier->NameSupplier }}</td>
                                         <td>
                                             <a href="{{ route('deleteEquipment', ['id' => $equipment->id]) }}">
                                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>

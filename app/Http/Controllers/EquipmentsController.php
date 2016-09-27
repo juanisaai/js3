@@ -13,8 +13,7 @@ class EquipmentsController extends Controller
 {
     //Create
     public function create(){
-        $suppliers = Supplier::lists('NameSupplier', 'id');
-        return view('equipments/createEquipment', compact('suppliers'));
+        return view('equipments/createEquipment');
     }
 
     public function store(){
@@ -46,7 +45,6 @@ class EquipmentsController extends Controller
             'SerialNumberHHD' => 'max:50',
             'BrandDiscReader' => 'max:50',
             'TypeDiscReader' => 'max:25',
-            'supplier_id' => 'required',
         ));
 
         $data = request()->all();
@@ -63,13 +61,19 @@ class EquipmentsController extends Controller
         return view('equipments/viewEquipments', compact('equipments'));
     }
 
+    //Example
+    public function seeName($id)
+    {
+        $equipment = DataEquipment::findOrFail($id);
+        return view('equipments/viewEquipments', compact('equipment'));
+    }
+
     //Update
 
     public function editEquipment($id)
     {
-        $suppliers = Supplier::lists('NameSupplier', 'id');
         $equipment = DataEquipment::findOrFail($id);
-        return view('equipments/updateEquipment')->withEquipment($equipment)->withSuppliers($suppliers);
+        return view('equipments/updateEquipment')->withEquipment($equipment);
     }
 
     public function updateEquipment($id)
@@ -103,7 +107,6 @@ class EquipmentsController extends Controller
             'SerialNumberHHD' => 'max:50',
             'BrandDiscReader' => 'max:50',
             'TypeDiscReader' => 'max:25',
-            'supplier_id' => 'required',
         ]);
 
         $data = request()->all();

@@ -16,7 +16,7 @@ class CreateEquipmentReceptionsTable extends Migration
             $table->increments('id');
             $table->integer('FolioNumberR')->unique()->index();
             $table->dateTime('DateReception');
-            $table->enum('TypeTrouble', ['Harware', 'Software']);
+            $table->enum('TypeTrouble', ['Hardware', 'Software']);
             $table->string('ReasonReception', 500);
             $table->string('ObservationReception', 500);
             $table->string('Receptionist', 60);

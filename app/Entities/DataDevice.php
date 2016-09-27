@@ -9,12 +9,7 @@ class DataDevice extends Model
     public $table = "dataDevices";
 
     protected $fillable = [
-        'TypeDevice', 'BrandDevice', 'ModelDevice', 'ColorDevice', 'NomenclatureDevice', 'SerialNumberDevice', 'InventoryNumberDevice', 'supplier_id',
+        'TypeDevice', 'BrandDevice', 'ModelDevice', 'ColorDevice', 'NomenclatureDevice', 'SerialNumberDevice', 'InventoryNumberDevice',
     ];
 
-
-    public function Supplier()
-    {
-        return $this->belongsTo(Supplier::class);
-    }
 }

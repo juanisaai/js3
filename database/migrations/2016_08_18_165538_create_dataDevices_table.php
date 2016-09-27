@@ -22,14 +22,6 @@ class CreateDataDevicesTable extends Migration
             $table->string('SerialNumberDevice', 25);
             $table->string('InventoryNumberDevice', 25);
             $table->timestamps();
-
-            //relationship with Suppliers->id
-
-            $table->integer('supplier_id')->unsigned();
-
-            $table->foreign('supplier_id')
-                ->references('id')
-                ->on('suppliers');
         });
     }
 

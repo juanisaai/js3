@@ -41,15 +41,6 @@ class CreateDataEquipmentsTable extends Migration
             $table->string('BrandDiscReader', 50);
             $table->string('TypeDiscReader', 25);
             $table->timestamps();
-
-            //relationship with Suppliers->id
-
-            $table->integer('supplier_id')->unsigned();
-
-            $table->foreign('supplier_id')
-                ->references('id')
-                ->on('suppliers');
-
         });
     }
 
