@@ -18,11 +18,11 @@ class CreateServiceRequestsTable extends Migration
             $table->date('DateServiceRequest');
             $table->time('HourServiceRequests');
             $table->mediumText('ReasonRequests');
-            $table->string('Recepcionist', 60);
+            $table->string('receptionist', 60);
             $table->string('TechnicianAssigned', 60);
             $table->timestamps();
 
-            //relationship with Areas->id
+            /*relationship with Areas->id
 
             $table->integer('area_id')->unsigned();
 
@@ -31,7 +31,7 @@ class CreateServiceRequestsTable extends Migration
                 ->on('areas')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-
+            */
             //relationship with Employee->id
 
             $table->integer('employee_id')->unsigned();

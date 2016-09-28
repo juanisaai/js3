@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAssetRetirementsTable extends Migration
+class CreateLowDevicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateAssetRetirementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('assetRetirements', function (Blueprint $table) {
+        Schema::create('lowDevices', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('FolioNumberD')->unique()->index();
             $table->longText('CausesLow');
@@ -24,22 +24,22 @@ class CreateAssetRetirementsTable extends Migration
 
             //relationship with dataSafeguards->id
 
-            $table->integer('dataSafeguard_id')->unsigned();
+            $table->integer('assignDevices_id')->unsigned()->nullable();
 
-            $table->foreign('dataSafeguard_id')
+            $table->foreign('assignDevices_id')
                 ->references('id')
-                ->on('dataSafeguards')
-                ->onDelete('cascade')
+                ->on('assignDevices')
+                ->onDelete('set null')
                 ->onUpdate('cascade');
 
             //relationship with Employee->id
 
-            $table->integer('employee_id')->unsigned();
+            $table->integer('employee_id')->unsigned()->nullable();
 
             $table->foreign('employee_id')
                 ->references('id')
                 ->on('employees')
-                ->onDelete('cascade')
+                ->onDelete('set null')
                 ->onUpdate('cascade');
         });
     }
@@ -51,6 +51,6 @@ class CreateAssetRetirementsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('assetRetirements');
+        Schema::drop('lowDevices');
     }
 }

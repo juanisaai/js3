@@ -16,7 +16,7 @@ class CreateAssignDevicesTable extends Migration
             $table->increments('id');
             $table->timestamps();
 
-            //relationship with Areas->id
+            /*relationship with Areas->id
 
             $table->integer('area_id')->unsigned();
 
@@ -25,25 +25,25 @@ class CreateAssignDevicesTable extends Migration
                 ->on('areas')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-
+             */
             //relationship with Employee->id
 
-            $table->integer('employee_id')->unsigned();
+            $table->integer('employee_id')->unsigned()->nullable();
 
             $table->foreign('employee_id')
                 ->references('id')
                 ->on('employees')
-                ->onDelete('cascade')
+                ->onDelete('set null')
                 ->onUpdate('cascade');
 
             //relationship with dataDevices->id
 
-            $table->integer('dataDevices_id')->unsigned();
+            $table->integer('dataDevices_id')->unsigned()->nullable();
 
             $table->foreign('dataDevices_id')
                 ->references('id')
                 ->on('dataDevices')
-                ->onDelete('cascade')
+                ->onDelete('set null')
                 ->onUpdate('cascade');
 
 

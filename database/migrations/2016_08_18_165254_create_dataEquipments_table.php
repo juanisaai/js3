@@ -14,15 +14,18 @@ class CreateDataEquipmentsTable extends Migration
     {
         Schema::create('dataEquipments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('TypeEquipment', 15);
-            $table->string('TypeAssemblyEquipment', 15);
+            $table->string('InventoryNumberEquipment', 25);
+            $table->string('NomenclatureEquipment', 20);
+            $table->longText('DescriptionEquipment');
             $table->string('BrandEquipment', 15)->nullable();
             $table->string('ModelEquipment', 25)->nullable();
-            $table->string('ColorEquipment', 15);
-            $table->string('InventoryNumberEquipment', 25);
             $table->string('SerialNumberEquipment', 15);
+            $table->string('ColorEquipment', 15);
+            $table->longText('DescriptionAdEquipment')->nullable();
+            //For view details
+            $table->string('TypeEquipment', 15);
+            $table->string('TypeAssemblyEquipment', 15);
             $table->string('OSEquipment', 40);
-            $table->string('NomenclatureEquipment', 20);
             $table->string('IPAddressEquipment', 25);
             $table->string('BrandMotherB', 50);
             $table->string('ModelMotherB', 50);
@@ -41,15 +44,6 @@ class CreateDataEquipmentsTable extends Migration
             $table->string('BrandDiscReader', 50);
             $table->string('TypeDiscReader', 25);
             $table->timestamps();
-
-            //relationship with Suppliers->id
-
-            $table->integer('supplier_id')->unsigned();
-
-            $table->foreign('supplier_id')
-                ->references('id')
-                ->on('suppliers');
-
         });
     }
 
