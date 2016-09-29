@@ -13,22 +13,24 @@ class EquipmentsController extends Controller
 {
     //Create
     public function create(){
-        $suppliers = Supplier::lists('NameSupplier', 'id');
-        return view('equipments/createEquipment', compact('suppliers'));
+        return view('equipments/createEquipment');
     }
 
     public function store(){
 
         $this->validate(request(), array(
-            'TypeEquipment' => 'required|max:15',
-            'TypeAssemblyEquipment' => 'max:15',
+            'InventoryNumberEquipment' => 'max:25',
+            'NomenclatureEquipment' => 'max:20',
+            'DescriptionEquipment' => 'max:1000',
             'BrandEquipment' => 'max:15',
             'ModelEquipment' => 'max:25',
-            'ColorEquipment' => 'max:15',
-            'InventoryNumberEquipment' => 'max:25',
             'SerialNumberEquipment' => 'max:15',
+            'ColorEquipment' => 'max:15',
+            'DescriptionAdEquipment' => 'max:1000',
+            //View Details
+            'TypeEquipment' => 'required|max:15',
+            'TypeAssemblyEquipment' => 'max:15',
             'OSEquipment' => 'max:40',
-            'NomenclatureEquipment' => 'max:20',
             'IPAddressEquipment' => 'max:25',
             'BrandMotherB' => 'max:50',
             'ModelMotherB' => 'max:50',
@@ -46,7 +48,6 @@ class EquipmentsController extends Controller
             'SerialNumberHHD' => 'max:50',
             'BrandDiscReader' => 'max:50',
             'TypeDiscReader' => 'max:25',
-            'supplier_id' => 'required',
         ));
 
         $data = request()->all();
@@ -63,13 +64,19 @@ class EquipmentsController extends Controller
         return view('equipments/viewEquipments', compact('equipments'));
     }
 
+    //Example
+    public function seeName($id)
+    {
+        $equipment = DataEquipment::findOrFail($id);
+        return view('equipments/viewEquipments', compact('equipment'));
+    }
+
     //Update
 
     public function editEquipment($id)
     {
-        $suppliers = Supplier::lists('NameSupplier', 'id');
         $equipment = DataEquipment::findOrFail($id);
-        return view('equipments/updateEquipment')->withEquipment($equipment)->withSuppliers($suppliers);
+        return view('equipments/updateEquipment')->withEquipment($equipment);
     }
 
     public function updateEquipment($id)
@@ -77,15 +84,18 @@ class EquipmentsController extends Controller
         $equipment = DataEquipment::findOrFail($id);
 
         $this->validate(request(), [
-            'TypeEquipment' => 'required|max:15',
-            'TypeAssemblyEquipment' => 'max:15',
+            'InventoryNumberEquipment' => 'max:25',
+            'NomenclatureEquipment' => 'max:20',
+            'DescriptionEquipment' => 'max:1000',
             'BrandEquipment' => 'max:15',
             'ModelEquipment' => 'max:25',
-            'ColorEquipment' => 'max:15',
-            'InventoryNumberEquipment' => 'max:25',
             'SerialNumberEquipment' => 'max:15',
+            'ColorEquipment' => 'max:15',
+            'DescriptionAdEquipment' => 'max:1000',
+            //View Details
+            'TypeEquipment' => 'required|max:15',
+            'TypeAssemblyEquipment' => 'max:15',
             'OSEquipment' => 'max:40',
-            'NomenclatureEquipment' => 'max:20',
             'IPAddressEquipment' => 'max:25',
             'BrandMotherB' => 'max:50',
             'ModelMotherB' => 'max:50',
@@ -103,7 +113,6 @@ class EquipmentsController extends Controller
             'SerialNumberHHD' => 'max:50',
             'BrandDiscReader' => 'max:50',
             'TypeDiscReader' => 'max:25',
-            'supplier_id' => 'required',
         ]);
 
         $data = request()->all();
