@@ -9,15 +9,18 @@ class DataEquipment extends Model
     protected $table = "dataEquipments";
 
     protected $fillable = [
-        'TypeEquipment',
-        'TypeAssemblyEquipment',
+        'InventoryNumberEquipment',
+        'NomenclatureEquipment',
+        'DescriptionEquipment',
         'BrandEquipment',
         'ModelEquipment',
-        'ColorEquipment',
-        'InventoryNumberEquipment',
         'SerialNumberEquipment',
+        'ColorEquipment',
+        'DescriptionAdEquipment',
+        //View details
+        'TypeEquipment',
+        'TypeAssemblyEquipment',
         'OSEquipment',
-        'NomenclatureEquipment',
         'IPAddressEquipment',
         'BrandMotherB',
         'ModelMotherB',
@@ -35,11 +38,6 @@ class DataEquipment extends Model
         'SerialNumberHHD',
         'BrandDiscReader',
         'TypeDiscReader',
-        'supplier_id',
     ];
 
-    public function Supplier()
-    {
-        return $this->belongsTo(Supplier::class);
-    }
 }

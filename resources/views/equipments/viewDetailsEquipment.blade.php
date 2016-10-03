@@ -22,7 +22,7 @@
                             <a href="{{ route('createEquipment') }}">Create
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
                         </div>
-                        <div class="panel-body table-responsive table-hover table-striped">
+                        <div class="panel-body table-responsive">
 
                             @include('partials/errors')
                             @include('partials/succeed')
@@ -37,9 +37,6 @@
                                     <th>Serial number</th>
                                     <th>Color</th>
                                     <th>Description add</th>
-                                    <th>Actions</th>
-
-                                    <!--
                                     <th>Type</th>
                                     <th>Type assembly</th>
                                     <th>Brand PC</th>
@@ -67,9 +64,6 @@
                                     <th>Brand Disc Reader</th>
                                     <th>Type Disc Reader</th>
 
-                                    -->
-
-                            @foreach($equipments as $equipment)
                                     <tr>
                                         <td>{{ $equipment->InventoryNumberEquipment }}</td>
                                         <td>{{ $equipment->NomenclatureEquipment }}</td>
@@ -80,7 +74,7 @@
                                         <td>{{ $equipment->ColorEquipment }}</td>
                                         <td>{{ $equipment->DescriptionAdEquipment }}</td>
 
-                                        <!--
+
                                         <td>{{ $equipment->TypeEquipment }}</td>
                                         <td>{{ $equipment->TypeAssemblyEquipment }}</td>
                                         <td>{{ $equipment->BrandEquipment }}</td>
@@ -107,22 +101,11 @@
                                         <td>{{ $equipment->SerialNumberHHD }}</td>
                                         <td>{{ $equipment->BrandDiscReader }}</td>
                                         <td>{{ $equipment->TypeDiscReader }}</td>
-                                        -->
-                                        <td>
-                                            <a href="{{ route('deleteEquipment', ['id' => $equipment->id]) }}">
-                                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                            </a> |
-                                            <a href="{{ route('editEquipment', ['id' => $equipment->id]) }}">
-                                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                            </a>
-                                            <a href="{{ route('readDetailsEquipment', ['equipment' => $equipment->id]) }}">
-                                                Details
-                                            </a>
-                                        </td>
+
                                     </tr>
-                                @endforeach
                             </table>
-                            {!! $equipments->render( ) !!}
+
+
                         </div>
     @endif
                     </div>

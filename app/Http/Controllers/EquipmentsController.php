@@ -64,11 +64,11 @@ class EquipmentsController extends Controller
         return view('equipments/viewEquipments', compact('equipments'));
     }
 
-    //Example
-    public function seeName($id)
-    {
-        $equipment = DataEquipment::findOrFail($id);
-        return view('equipments/viewEquipments', compact('equipment'));
+    public function show($equipment){
+
+        $equipment = DataEquipment::findOrFail($equipment);
+
+        return view('equipments/viewDetailsEquipment', compact('equipment'));
     }
 
     //Update

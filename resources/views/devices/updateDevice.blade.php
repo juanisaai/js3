@@ -29,23 +29,8 @@
                         ])) !!}
 
                         <div class="form-group">
-                            {!! Form::label('TypeDevice', 'Type Device') !!}
-                            {!! Form::text('TypeDevice', $devices->TypeDevice, ['class' => 'form-control', 'placeholder' => 'Write type device']) !!}
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('BrandDevice', 'Brand Device') !!}
-                            {!! Form::text('BrandDevice', $devices->BrandDevice, ['class' => 'form-control', 'placeholder' => 'Write brand device']) !!}
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('ModelDevice', 'Model Device') !!}
-                            {!! Form::text('ModelDevice', $devices->ModelDevice, ['class' => 'form-control', 'placeholder' => 'Write model device']) !!}
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('ColorDevice', 'Color Device') !!}
-                            {!! Form::text('ColorDevice', $devices->ColorDevice, ['class' => 'form-control', 'placeholder' => 'Write color device']) !!}
+                            {!! Form::label('InventoryNumberDevice', 'Inventory Number Device') !!}
+                            {!! Form::text('InventoryNumberDevice', $devices->InventoryNumberDevice, ['class' => 'form-control', 'placeholder' => 'Write inventory number']) !!}
                         </div>
 
                         <div class="form-group">
@@ -54,18 +39,33 @@
                         </div>
 
                         <div class="form-group">
+                            {!! Form::label('DescriptionDevice', 'Description Device') !!}
+                            {!! Form::text('DescriptionDevice', $devices->DescriptionDevice, ['class' => 'form-control', 'placeholder' => 'Write description device']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('BrandDevice', 'Brand Device') !!}
+                            {!! Form::text('BrandDevice', $devices->, ['class' => 'form-control', 'placeholder' => 'Write brand device']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('ModelDevice', 'Model Device') !!}
+                            {!! Form::text('ModelDevice', $devices->ModelDevice, ['class' => 'form-control', 'placeholder' => 'Write model device']) !!}
+                        </div>
+
+                        <div class="form-group">
                             {!! Form::label('SerialNumberDevice', 'Serial Number Device') !!}
                             {!! Form::text('SerialNumberDevice', $devices->SerialNumberDevice, ['class' => 'form-control', 'placeholder' => 'Write serial number']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('InventoryNumberDevice', 'Inventory Number Device') !!}
-                            {!! Form::text('InventoryNumberDevice', $devices->InventoryNumberDevice, ['class' => 'form-control', 'placeholder' => 'Write inventory number']) !!}
+                            {!! Form::label('ColorDevice', 'Color Device') !!}
+                            {!! Form::text('ColorDevice', $devices->ColorDevice, ['class' => 'form-control', 'placeholder' => 'Write color device']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('supplier_id', 'Select supplier') !!}
-                            {{ Form::select('supplier_id', $suppliers) }}
+                            {!! Form::label('DescriptionAdDevice', 'Description Add') !!}
+                            {!! Form::text('DescriptionAdDevice', $devices->DescriptionAdDevice, ['class' => 'form-control', 'placeholder' => 'Write description add device']) !!}
                         </div>
 
                         <div class="form-group">

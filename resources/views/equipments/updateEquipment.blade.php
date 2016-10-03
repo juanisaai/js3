@@ -29,13 +29,18 @@
                         ])) !!}
 
                         <div class="form-group">
-                            {!! Form::label('TypeEquipment', 'Type Equipment') !!}
-                            {!! Form::text('TypeEquipment', $equipment->TypeEquipment, ['class' => 'form-control', 'placeholder' => 'Write type equipment']) !!}
+                            {!! Form::label('InventoryNumberEquipment', 'Inventory Number Equipment') !!}
+                            {!! Form::text('InventoryNumberEquipment', $equipment->InventoryNumberEquipment, ['class' => 'form-control', 'placeholder' => 'Write inventory number']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('TypeAssemblyEquipment', 'TypeAssembly Equipment') !!}
-                            {!! Form::text('TypeAssemblyEquipment', $equipment->TypeAssemblyEquipment, ['class' => 'form-control', 'placeholder' => 'Write type assembly']) !!}
+                            {!! Form::label('NomenclatureEquipment', 'Nomenclature Equipment') !!}
+                            {!! Form::text('NomenclatureEquipment', $equipment->NomenclatureEquipment, ['class' => 'form-control', 'placeholder' => 'Write nomenclature']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('DescriptionEquipment', 'Description') !!}
+                            {!! Form::text('DescriptionEquipment', $equipment->DescriptionEquipment, ['class' => 'form-control', 'placeholder' => 'Write description']) !!}
                         </div>
 
                         <div class="form-group">
@@ -49,28 +54,33 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('ColorEquipment', 'Color Equipment') !!}
-                            {!! Form::text('ColorEquipment', $equipment->ColorEquipment, ['class' => 'form-control', 'placeholder' => 'Write color equipment']) !!}
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('InventoryNumberEquipment', 'Inventory Number Equipment') !!}
-                            {!! Form::text('InventoryNumberEquipment', $equipment->InventoryNumberEquipment, ['class' => 'form-control', 'placeholder' => 'Write inventory number']) !!}
-                        </div>
-
-                        <div class="form-group">
                             {!! Form::label('SerialNumberEquipment', 'Serial Number Equipment') !!}
                             {!! Form::text('SerialNumberEquipment', $equipment->SerialNumberEquipment, ['class' => 'form-control', 'placeholder' => 'Write serial number']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('OSEquipment', 'OS Equipment') !!}
-                            {!! Form::text('OSEquipment', $equipment->OSEquipment, ['class' => 'form-control', 'placeholder' => 'Write OS equipment']) !!}
+                            {!! Form::label('ColorEquipment', 'Color Equipment') !!}
+                            {!! Form::text('ColorEquipment', $equipment->ColorEquipment, ['class' => 'form-control', 'placeholder' => 'Write color equipment']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('NomenclatureEquipment', 'Nomenclature Equipment') !!}
-                            {!! Form::text('NomenclatureEquipment', $equipment->NomenclatureEquipment, ['class' => 'form-control', 'placeholder' => 'Write nomenclature']) !!}
+                            {!! Form::label('DescriptionAdEquipment', 'Description add') !!}
+                            {!! Form::text('DescriptionAdEquipment', $equipment->DescriptionAdEquipment, ['class' => 'form-control', 'placeholder' => 'Write description add']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('TypeEquipment', 'Type Equipment') !!}
+                            {!! Form::text('TypeEquipment', $equipment->TypeEquipment, ['class' => 'form-control', 'placeholder' => 'Write type equipment']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('TypeAssemblyEquipment', 'TypeAssembly Equipment') !!}
+                            {!! Form::text('TypeAssemblyEquipment', $equipment->TypeAssemblyEquipment, ['class' => 'form-control', 'placeholder' => 'Write type assembly']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('OSEquipment', 'OS Equipment') !!}
+                            {!! Form::text('OSEquipment', $equipment->OSEquipment, ['class' => 'form-control', 'placeholder' => 'Write OS equipment']) !!}
                         </div>
 
                         <div class="form-group">
@@ -156,11 +166,6 @@
                         <div class="form-group">
                             {!! Form::label('TypeDiscReader', 'Type Disc Reader') !!}
                             {!! Form::text('TypeDiscReader', $equipment->TypeDiscReader, ['class' => 'form-control', 'placeholder' => 'Write type disc reader']) !!}
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('supplier_id', 'Select supplier') !!}
-                            {{ Form::select('supplier_id', $suppliers) }}
                         </div>
 
                         <div class="form-group">

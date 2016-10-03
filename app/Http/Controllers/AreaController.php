@@ -6,14 +6,17 @@ use App\Entities\Area;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Session;
 
 class AreaController extends Controller
 {
 
-    /*
-     * CRUD Areas
-     * */
+    //Create
+    /**
+     * @var \Illuminate\Routing\Route
+     */
+    private $route;
 
     //Create
     public function create(){
@@ -52,12 +55,17 @@ class AreaController extends Controller
         return view('areas/updateArea')->withArea($area);
     }
 
+    public function __construct(Route $route)
+    {
+        $this-> route = $route;
+    }
+
     public function updateArea($id)
     {
         $area = Area::findOrFail($id);
 
         $this->validate(request(), [
-            'NameArea' => 'required|max:50',
+            'NameArea' => 'required|max:50|unique:areas,NameArea,' . $this->route->getParameter('id'),
             'UnitArea' => 'max:50',
             'ExtensionArea' => 'max:50',
             'DirectorateArea' => 'max:150'

@@ -43,15 +43,30 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ route('readUser') }}">Users</a></li>
+
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Management<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('readArea') }}">Areas</a></li>
                                 <li><a href="{{ route('readEmployee') }}">Employees</a></li>
-                                <li><a href="{{ route('readSupplier') }}">Suppliers</a></li>
                                 <li><a href="{{ route('readDevice') }}">Devices</a></li>
                                 <li><a href="{{ route('readEquipments') }}">Equipments</a></li>
+                                <!--
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Superusuario</li>
+                                -->
+
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transactions<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Assign device</a></li>
+                                <li><a href="#">Assign equipment</a></li>
+                                <li><a href="#">Other</a></li>
+                                <li><a href="#">Other</a></li>
                                 <!--
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Superusuario</li>

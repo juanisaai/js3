@@ -16,10 +16,11 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name', 45);
             $table->string('username', 15)->unique();
-            $table->string('email', 25)->unique();
+            $table->string('email')->unique();
             $table->string('password', 60);
-            $table->rememberToken();
             $table->boolean('active')->default(true);
+            $table->enum('type', ['Admin', 'User']);
+            $table->rememberToken();
             $table->timestamps();
         });
     }

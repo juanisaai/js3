@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'email', 'password',
+        'name', 'username', 'email', 'password', 'active', 'type',
     ];
 
     /**
@@ -23,4 +23,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function setPasswordAttribute($value)
+    {
+        if(! empty($value))
+        {
+            $this->attributes['password'] = bcrypt('$value');
+        }
+    }
+
 }

@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Panel general</div>
+                <div class="panel-heading">General panel</div>
 
                 <div class="panel-body">
-                    Plataforma web en construcción
+                    Web platform coming soon
                 </div>
             </div>
         </div>

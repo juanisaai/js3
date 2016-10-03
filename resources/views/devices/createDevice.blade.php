@@ -24,8 +24,18 @@
                     {!! Form::open(array('url' => 'devices', 'method' => 'POST', 'class' => 'form')) !!}
 
                     <div class="form-group">
-                        {!! Form::label('TypeDevice', 'Type Device') !!}
-                        {!! Form::text('TypeDevice', null, ['class' => 'form-control', 'placeholder' => 'Write type device']) !!}
+                        {!! Form::label('InventoryNumberDevice', 'Inventory Number Device') !!}
+                        {!! Form::text('InventoryNumberDevice', null, ['class' => 'form-control', 'placeholder' => 'Write inventory number']) !!}
+                    </div>
+
+                    <div class="form-group">
+                        {!! Form::label('NomenclatureDevice', 'Nomenclature Device') !!}
+                        {!! Form::text('NomenclatureDevice', null, ['class' => 'form-control', 'placeholder' => 'Write nomenclature device']) !!}
+                    </div>
+
+                    <div class="form-group">
+                        {!! Form::label('DescriptionDevice', 'Description Device') !!}
+                        {!! Form::text('DescriptionDevice', null, ['class' => 'form-control', 'placeholder' => 'Write description device']) !!}
                     </div>
 
                     <div class="form-group">
@@ -39,28 +49,18 @@
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('ColorDevice', 'Color Device') !!}
-                        {!! Form::text('ColorDevice', null, ['class' => 'form-control', 'placeholder' => 'Write color device']) !!}
-                    </div>
-
-                    <div class="form-group">
-                        {!! Form::label('NomenclatureDevice', 'Nomenclature Device') !!}
-                        {!! Form::text('NomenclatureDevice', null, ['class' => 'form-control', 'placeholder' => 'Write nomenclature device']) !!}
-                    </div>
-
-                    <div class="form-group">
                         {!! Form::label('SerialNumberDevice', 'Serial Number Device') !!}
                         {!! Form::text('SerialNumberDevice', null, ['class' => 'form-control', 'placeholder' => 'Write serial number']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('InventoryNumberDevice', 'Inventory Number Device') !!}
-                        {!! Form::text('InventoryNumberDevice', null, ['class' => 'form-control', 'placeholder' => 'Write inventory number']) !!}
+                        {!! Form::label('ColorDevice', 'Color Device') !!}
+                        {!! Form::text('ColorDevice', null, ['class' => 'form-control', 'placeholder' => 'Write color device']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('supplier_id', 'Select supplier') !!}
-                        {{ Form::select('supplier_id', $suppliers) }}
+                        {!! Form::label('DescriptionAdDevice', 'Description Add') !!}
+                        {!! Form::text('DescriptionAdDevice', null, ['class' => 'form-control', 'placeholder' => 'Write description add device']) !!}
                     </div>
 
                     <div class="form-group">

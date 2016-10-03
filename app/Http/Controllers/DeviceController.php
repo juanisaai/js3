@@ -13,21 +13,20 @@ class DeviceController extends Controller
 {
     //Create
     public function create(){
-        $suppliers = Supplier::lists('NameSupplier', 'id');
-        return view('devices/createDevice', compact('suppliers'));
+        return view('devices/createDevice');
     }
 
     public function store(){
 
         $this->validate(request(), [
-            'TypeDevice' => 'required|max:50',
+            'InventoryNumberDevice' => 'max:25',
+            'NomenclatureDevice' => 'max:50',
+            'DescriptionDevice' => 'max:1000',
             'BrandDevice' => 'max:50',
             'ModelDevice' => 'max:50',
-            'ColorDevice' => 'max:50',
-            'NomenclatureDevice' => 'max:50',
             'SerialNumberDevice' => 'max:25',
-            'InventoryNumberDevice' => 'max:25',
-            'supplier_id' => 'required'
+            'ColorDevice' => 'max:50',
+            'DescriptionAdDevice' => 'max:50',
         ]);
 
         $data = request()->all();
@@ -47,9 +46,8 @@ class DeviceController extends Controller
 
     public function editDevice($id)
     {
-        $suppliers = Supplier::lists('NameSupplier', 'id');
         $devices = DataDevice::findOrFail($id);
-        return view('devices/updateDevice')->withDevices($devices)->withSuppliers($suppliers);
+        return view('devices/updateDevice')->withDevices($devices);
     }
 
     public function updateDevice($id)
@@ -57,15 +55,14 @@ class DeviceController extends Controller
         $devices = DataDevice::findOrFail($id);
 
         $this->validate(request(), [
-            'TypeDevice' => 'required|max:50',
+            'InventoryNumberDevice' => 'max:25',
+            'NomenclatureDevice' => 'max:50',
+            'DescriptionDevice' => 'max:1000',
             'BrandDevice' => 'max:50',
             'ModelDevice' => 'max:50',
-            'ColorDevice' => 'max:50',
-            'NomenclatureDevice' => 'max:50',
             'SerialNumberDevice' => 'max:25',
-            'InventoryNumberDevice' => 'max:25',
-            'supplier_id' => 'required'
-
+            'ColorDevice' => 'max:50',
+            'DescriptionAdDevice' => 'max:50',
         ]);
 
         $data = request()->all();
