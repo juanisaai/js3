@@ -11,11 +11,49 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(\App\Entities\DataEquipment::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->safeEmail,
-        'password' => bcrypt(str_random(10)),
-        'remember_token' => str_random(10),
+        'InventoryNumberEquipment' => $faker->ean8,
+        'NomenclatureEquipment' => 'JS3-PC-'.$faker->randomDigit,
+        'DescriptionEquipment' => $faker->text(),
+        'BrandEquipment' => $faker->word,
+        'ModelEquipment' => $faker->isbn10,
+        'SerialNumberEquipment' => $faker->isbn13,
+        'ColorEquipment' => $faker->safeColorName,
+        'DescriptionAdEquipment' => $faker->paragraphs(1,true),
+        'TypeEquipment' => $faker->word,
+        'TypeAssemblyEquipment' => $faker->word,
+        'OSEquipment' => $faker->word,
+        'IPAddressEquipment' => $faker->ipv4,
+        'BrandMotherB' => $faker->company,
+        'ModelMotherB' => $faker->isbn10,
+        'SerialNumberMotherB' => $faker->isbn13,
+        'BrandCPU' => $faker->company,
+        'ModelCPU' => $faker->isbn10,
+        'FrequencyCPU' => $faker->isbn13,
+        'BrandRam' => $faker->company,
+        'TypeRam' => $faker->word,
+        'CapabilityRam' => $faker->randomDigit,
+        'TypeHHD' => $faker->word,
+        'BrandHHD' => $faker->company,
+        'ModelHHD' => $faker->isbn10,
+        'CapabilityHHD' => $faker->randomDigit,
+        'SerialNumberHHD' => $faker->isbn13,
+        'BrandDiscReader' => $faker->company,
+        'TypeDiscReader' => $faker->word,
     ];
 });
+
+$factory->define(\App\Entities\DataDevice::class, function (Faker\Generator $faker) {
+    return [
+        'InventoryNumberDevice' => $faker->ean8,
+        'NomenclatureDevice' => 'JS3-DEV-'.$faker->randomDigit,
+        'DescriptionDevice' => $faker->paragraphs(1,true),
+        'BrandDevice' => $faker->company,
+        'ModelDevice' => $faker->isbn10,
+        'SerialNumberDevice' => $faker->isbn13,
+        'ColorDevice' => $faker->safeColorName,
+        'DescriptionAdDevice' => $faker->paragraphs(1,true),
+    ];
+});
+

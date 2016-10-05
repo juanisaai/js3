@@ -22,12 +22,12 @@
                             <a href="{{ route('createDevice') }}">Create
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
                         </div>
-                        <div class="panel-body">
+                        <div class="panel-body table-hover table-striped table-responsive">
 
                             @include('partials/errors')
                             @include('partials/succeed')
 
-                            <table class="table table-hover table-striped table-responsive">
+                            <table class="table">
                                 <tr>
                                     <th>Inventory Number</th>
                                     <th>Nomenclature</th>
@@ -44,7 +44,7 @@
                                     <tr>
                                         <td>{{ $device->InventoryNumberDevice }}</td>
                                         <td>{{ $device->NomenclatureDevice }}</td>
-                                        <td>{{ $device->DescriptionDevice }}</td>                                        <td>{{ $device->BrandDevice }}</td>
+                                        <td>{{ $device->DescriptionDevice }}</td>
                                         <td>{{ $device->BrandDevice }}</td>
                                         <td>{{ $device->ModelDevice }}</td>
                                         <td>{{ $device->SerialNumberDevice }}</td>
