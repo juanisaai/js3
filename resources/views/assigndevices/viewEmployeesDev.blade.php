@@ -18,47 +18,48 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-default">
-                        <div class="panel-heading">Employees
-                            <a href="{{ route('createEmployee') }}">Create
-                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
-                        </div>
-                        <div class="panel-body">
+                        <div class="panel-heading">Assign devices</div>
+                        <div class="panel-body table-hover table-striped table-responsive">
 
                             @include('partials/errors')
                             @include('partials/succeed')
 
-                            <table class="table table-hover table-striped table-responsive">
+                            <table class="table">
                                 <tr>
-                                    <th>Profile Employee</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Role Employee</th>
-                                    <th>Area</th>
+                                    <th>ID</th>
+                                    <th>Employee</th>
+                                    <th>Department</th>
+                                    <th>Assign device</th>
                                     <th>Actions</th>
                                 </tr>
+
                                 @foreach($employees as $employee)
                                     <tr>
-                                        <td>{{ $employee->ProfileEmployee }}</td>
-                                        <td>{{ $employee->FirstName }}</td>
-                                        <td>{{ $employee->SecondName }}</td>
-                                        <td>{{ $employee->RoleEmployee }}</td>
-                                        <td>{{ $employee->area->NameArea }}</td>
+                                        <td>{{ $employee->id }}</td>
+                                        <td>{{ $employee->ProfileEmployee }} {{ $employee->FirstName }} {{ $employee->SecondName }}</td>
+                                        <td>{{ $employee->Area->NameArea }}</td>
                                         <td>
-                                            <a href="{{ route('deleteEmployee', ['id' => $employee->id]) }}">
+                                            <a href="{{ route('seeDetailsAssignDev', ['id' => $employee->id]) }}">View details
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="#">
                                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                                             </a> |
-                                            <a href="{{ route('editEmployee', ['id' => $employee->id]) }}">
+                                            <a href="#">
                                                 <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                                             </a>
                                         </td>
                                     </tr>
                                 @endforeach
                             </table>
-                            {!! $employees->render( ) !!}
                         </div>
-    @endif
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
 @endsection
+
+
+

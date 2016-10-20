@@ -28,23 +28,11 @@ class CreateEquipmentReceptionsTable extends Migration
 
             //relationship with assignDevices->id
 
-            $table->integer('assignDevices_id')->unsigned();
 
-            $table->foreign('assignDevices_id')
-                ->references('id')
-                ->on('assignDevices')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
 
             //relationship with assignEquipments->id
 
-            $table->integer('assignEquipments_id')->unsigned();
 
-            $table->foreign('assignEquipments_id')
-                ->references('id')
-                ->on('assignEquipments')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
 
         });
     }

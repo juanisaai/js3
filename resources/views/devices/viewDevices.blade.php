@@ -20,7 +20,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">Devices
                             <a href="{{ route('createDevice') }}">Create
-                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            </a>
                         </div>
                         <div class="panel-body table-hover table-striped table-responsive">
 

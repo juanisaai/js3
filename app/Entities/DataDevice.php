@@ -6,7 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class DataDevice extends Model
 {
-    public $table = "dataDevices";
+    protected $table = "dataDevices";
+
+    // -----------------------------------Relationship
+    public function Employees()
+    {
+        return $this->belongsToMany(Employee::class);
+    }
+
+    // -----------------------------------Relationship
 
     protected $fillable = [
         'InventoryNumberDevice',
