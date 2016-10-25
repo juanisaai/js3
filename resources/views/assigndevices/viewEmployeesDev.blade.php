@@ -6,9 +6,9 @@
 
         <div class="container">
             <div class="jumbotron">
-                <h1>Oops!</h1>
-                <p>Please log in</p>
-                <p><a class="btn btn-primary btn-lg" href="{{ url('/login') }}" role="button">Log in</a></p>
+                <h1>¡Oops! Tu sesión ha expirado</h1>
+                <p>Por favor entra al sistema</p>
+                <p><a class="btn btn-primary btn-lg" href="{{ url('/login') }}" role="button">Entrar</a></p>
             </div>
         </div>
 
@@ -18,7 +18,9 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-default">
-                        <div class="panel-heading">Assign devices</div>
+                        <div class="panel-heading">Resumen de dispositivos asignados
+                        <p class="navbar-text navbar-right"><a href="{{ route('newAssign') }}" class="navbar-link">Crear <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></p>
+                        </div>
                         <div class="panel-body table-hover table-striped table-responsive">
 
                             @include('partials/errors')
@@ -26,20 +28,27 @@
 
                             <table class="table">
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Employee</th>
-                                    <th>Department</th>
-                                    <th>Assign device</th>
-                                    <th>Actions</th>
+                                    <th>Empleado</th>
+                                    <th>Departamento</th>
+                                    <th>Dispositivos</th>
+                                    <th></th>
+                                    <th>Acciones</th>
                                 </tr>
 
                                 @foreach($employees as $employee)
                                     <tr>
-                                        <td>{{ $employee->id }}</td>
                                         <td>{{ $employee->ProfileEmployee }} {{ $employee->FirstName }} {{ $employee->SecondName }}</td>
                                         <td>{{ $employee->Area->NameArea }}</td>
                                         <td>
-                                            <a href="{{ route('seeDetailsAssignDev', ['id' => $employee->id]) }}">View details
+                                            <ul>
+                                                @foreach($employee->devices as $device)
+                                                    <li>{{ $device->InventoryNumberDevice }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </td>
+
+                                        <td>
+                                            <a href="{{ route('seeDetailsAssignDev', ['id' => $employee->id]) }}">Ver detalles
                                             </a>
                                         </td>
                                         <td>

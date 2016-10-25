@@ -177,15 +177,15 @@ Route::get('/management/equipment/delete/{id}', [
 
 //-----------------------------------Open CRUD AssignDevices-------------------------------
 
-Route::get('/transactions/assign-devices/new-assign/employee/{idEmployee}', [
+Route::get('/transactions/assign-devices/new-assign/employees/', [
     'as'   => 'newAssign',
-    'uses' => 'AssignDeviceController@saveAssign']);
+    'uses' => 'AssignDeviceController@newAssign']);
 
 //This route is for see all employees
 //I should see only employees with device assigned
 Route::get('/transactions/assign-devices/list-employees', [
     'as'   => 'seeEmployeesDev',
-    'uses' => 'AssignDeviceController@seeAllEmployees']);
+    'uses' => 'AssignDeviceController@seeAssigns']);
 
 //This route is for see all details of device assigned to employee
 Route::get('/transactions/assign-devices/list-employees/{id}/details', [

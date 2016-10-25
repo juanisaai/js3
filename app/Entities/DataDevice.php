@@ -8,10 +8,19 @@ class DataDevice extends Model
 {
     protected $table = "dataDevices";
 
-    // -----------------------------------Relationship
-    public function Employees()
+    //--------------------Relationship with employees
+
+    public function employee()
     {
-        return $this->belongsToMany(Employee::class);
+        return $this->belongsTo(Employee::class);
+    }
+
+    //-----------------------------------------------
+
+    // -----------------------------------Relationship
+    public function DataDevice()
+    {
+        return $this->belongsTo(DataDevice::class);
     }
 
     // -----------------------------------Relationship

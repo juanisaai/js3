@@ -12,6 +12,20 @@ class Employee extends Model
         'ProfileEmployee', 'FirstName', 'SecondName', 'RoleEmployee', 'area_id',
     ];
 
+    //-------------------Relationship with DataDevice
+
+    public function devices()
+    {
+        return $this->hasMany(DataDevice::class);
+    }
+
+    public function getNumDevicesAttribute()
+    {
+        return count($this->devices);
+    }
+
+    //-----------------------------------------------
+
     // -----------------------------------Relationship
 
     public function Area()
@@ -23,9 +37,9 @@ class Employee extends Model
      * This relationships below is for assign devices
      * */
 
-    public function DataDevices()
+    public function AssignDevice()
     {
-        return $this->belongsToMany(DataDevice::class);
+        return $this->hasMany(AssignDevice::class);
     }
 
     // -----------------------------------Relationship

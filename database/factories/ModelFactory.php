@@ -41,6 +41,8 @@ $factory->define(\App\Entities\DataEquipment::class, function (Faker\Generator $
         'SerialNumberHHD' => $faker->isbn13,
         'BrandDiscReader' => $faker->company,
         'TypeDiscReader' => $faker->word,
+        'active' => true,
+        'employee_id' => rand(1,4),
     ];
 });
 
@@ -54,6 +56,9 @@ $factory->define(\App\Entities\DataDevice::class, function (Faker\Generator $fak
         'SerialNumberDevice' => $faker->isbn13,
         'ColorDevice' => $faker->safeColorName,
         'DescriptionAdDevice' => $faker->paragraphs(1,true),
+        'active' => true,
+        'employee_id' => rand(1,4),
+
     ];
 });
 

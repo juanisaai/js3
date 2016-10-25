@@ -6,9 +6,9 @@
 
         <div class="container">
             <div class="jumbotron">
-                <h1>Oops!</h1>
-                <p>Please log in</p>
-                <p><a class="btn btn-primary btn-lg" href="{{ url('/login') }}" role="button">Log in</a></p>
+                <h1>¡Oops! Tu sesión ha expirado</h1>
+                <p>Por favor entra al sistema</p>
+                <p><a class="btn btn-primary btn-lg" href="{{ url('/login') }}" role="button">Entrar</a></p>
             </div>
         </div>
     @else
@@ -16,7 +16,7 @@
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Update employee</div>
+                    <div class="panel-heading">Actualizar datos del empleado </div>
 
                     <div class="panel-body">
 
@@ -29,27 +29,27 @@
                         ])) !!}
 
                         <div class="form-group">
-                            {!! Form::label('ProfileEmployee', 'Profile Employee') !!}
-                            {!! Form::text('ProfileEmployee', $employee->ProfileEmployee, ['class' => 'form-control', 'placeholder' => 'Write profile employee']) !!}
+                            {!! Form::label('ProfileEmployee', 'Perfil del empleado') !!}
+                            {!! Form::text('ProfileEmployee', $employee->ProfileEmployee, ['class' => 'form-control', 'placeholder' => 'Lic. Doc. Enfra. C.']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('FirstName', 'First Name') !!}
-                            {!! Form::text('FirstName', $employee->FirstName, ['class' => 'form-control', 'placeholder' => 'Write first name']) !!}
+                            {!! Form::label('FirstName', 'Nombres') !!}
+                            {!! Form::text('FirstName', $employee->FirstName, ['class' => 'form-control', 'placeholder' => 'Escribe lo(s) nombre(s)']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('SecondName', 'Last Name') !!}
-                            {!! Form::text('SecondName', $employee->SecondName, ['class' => 'form-control', 'placeholder' => 'Write last name']) !!}
+                            {!! Form::label('SecondName', 'Apellidos') !!}
+                            {!! Form::text('SecondName', $employee->SecondName, ['class' => 'form-control', 'placeholder' => 'Escribe los apellidos']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('RoleEmployee', 'Role Employee') !!}
-                            {!! Form::text('RoleEmployee', $employee->RoleEmployee, ['class' => 'form-control', 'placeholder' => 'Write role employee']) !!}
+                            {!! Form::label('RoleEmployee', 'Función del empleado') !!}
+                            {!! Form::text('RoleEmployee', $employee->RoleEmployee, ['class' => 'form-control', 'placeholder' => 'Jefe']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('area_id', 'Select area') !!}
+                            {!! Form::label('area_id', 'Selecciona el área') !!}
                             {{ Form::select('area_id', $areas) }}
                         </div>
 

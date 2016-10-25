@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>System Departament</title>
+    <title>Departamento de sistemas</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
@@ -34,7 +34,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    System Departament
+                    Departamento de sistemas
                 </a>
             </div>
             @if(Auth::guest())
@@ -43,16 +43,16 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ url('/') }}">Home</a></li>
-                        <li><a href="{{ route('readUser') }}">Users</a></li>
+                        <li><a href="{{ url('/') }}">Inicio</a></li>
+                        <li><a href="{{ route('readUser') }}">Usuarios</a></li>
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Management<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administración<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{ route('readArea') }}">Areas</a></li>
-                                <li><a href="{{ route('readEmployee') }}">Employees</a></li>
-                                <li><a href="{{ route('readDevice') }}">Devices</a></li>
-                                <li><a href="{{ route('readEquipments') }}">Equipments</a></li>
+                                <li><a href="{{ route('readArea') }}">Áreas</a></li>
+                                <li><a href="{{ route('readEmployee') }}">Empleados</a></li>
+                                <li><a href="{{ route('readDevice') }}">Dispositivos</a></li>
+                                <li><a href="{{ route('readEquipments') }}">Equipos</a></li>
                                 <!--
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Superusuario</li>
@@ -61,10 +61,10 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transactions<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transacciones<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{ route('seeEmployeesDev') }}">Assign device</a></li>
-                                <li><a href="#">Assign equipment</a></li>
+                                <li><a href="{{ route('seeEmployeesDev') }}">Asignar dispositivos</a></li>
+                                <li><a href="#">Asignar equipos</a></li>
                                 <li><a href="#">Other</a></li>
                                 <li><a href="#">Other</a></li>
                                 <!--
@@ -81,8 +81,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Log in</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <li><a href="{{ url('/login') }}">Entrar</a></li>
+                        <li><a href="{{ url('/register') }}">Registrarse</a></li>
 
                     @else
                         <li class="dropdown">
@@ -91,7 +91,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Log out</a></li>
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Cerrar sesión</a></li>
                             </ul>
                         </li>
 

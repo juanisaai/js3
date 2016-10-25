@@ -14,34 +14,16 @@ use Symfony\Component\HttpFoundation\Session\Session;
 class AssignDeviceController extends Controller
 {
 
-    public function saveAssign($idEmployee)
+    public function newAssign()
     {
-        $assigns = Employee::find($idEmployee);
-        $dataDevice = DataDevice::find(3);
+        $employees = Employee::has('devices', '=', 0)->get();
+        return View('assigndevices/newAssignDevice', compact('employees'));
 
-        //This function is for save new records
-        $assigns->dataDevices()->attach($dataDevice);
-        return redirect()->route('seeDetailsAssignDev', $idEmployee);
-
-        //This function is for delete records
-        //$assigns->dataDevices()->detach($dataDevice);
-
-        // $assigns->dataDevices()->save($dataDevice);
-
-
-        /** $dataDevice = new DataDevice(
-            [
-                'InventoryNumberDevice' => 'Function!',
-                'NomenclatureDevice' => 'Function!'
-
-            ]);
-        $assigns->dataDevices()->save($dataDevice);
-        */
     }
 
-    public function seeAllEmployees()
+    public function seeAssigns()
     {
-        $employees = Employee::all();
+        $employees = Employee::has('devices')->get();
         return View('assigndevices/viewEmployeesDev', compact('employees'));
 
     }

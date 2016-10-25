@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDataDevicesTable extends Migration
+class CreateAssignDevicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,23 +12,24 @@ class CreateDataDevicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('dataDevices', function (Blueprint $table) {
+        Schema::create('assign_devices', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('InventoryNumberDevice', 25);
-            $table->string('NomenclatureDevice', 20);
-            $table->longText('DescriptionDevice');
-            $table->string('BrandDevice', 50);
-            $table->string('ModelDevice', 50);
-            $table->string('SerialNumberDevice', 25);
-            $table->string('ColorDevice', 25);
-            $table->longText('DescriptionAdDevice');
-            $table->boolean('active')->default(true);
 
             $table->integer('employee_id')->unsigned()->nullable();
 
             $table->foreign('employee_id')
                 ->references('id')
                 ->on('employees')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            //relationship with dataDevices->id
+
+            $table->integer('data_device_id')->unsigned()->nullable();
+
+            $table->foreign('data_device_id')
+                ->references('id')
+                ->on('dataDevices')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
@@ -43,6 +44,6 @@ class CreateDataDevicesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('dataDevices');
+        Schema::drop('assign_devices');
     }
 }

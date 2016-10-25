@@ -43,6 +43,17 @@ class CreateDataEquipmentsTable extends Migration
             $table->string('SerialNumberHHD', 50);
             $table->string('BrandDiscReader', 50);
             $table->string('TypeDiscReader', 25);
+            $table->boolean('active')->default(true);
+
+            $table->integer('employee_id')->unsigned()->nullable();
+
+            $table->foreign('employee_id')
+                ->references('id')
+                ->on('employees')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+
             $table->timestamps();
         });
     }

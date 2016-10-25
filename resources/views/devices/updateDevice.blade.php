@@ -45,7 +45,7 @@
 
                         <div class="form-group">
                             {!! Form::label('BrandDevice', 'Brand Device') !!}
-                            {!! Form::text('BrandDevice', $devices->, ['class' => 'form-control', 'placeholder' => 'Write brand device']) !!}
+                            {!! Form::text('BrandDevice', $devices->BrandDevice, ['class' => 'form-control', 'placeholder' => 'Write brand device']) !!}
                         </div>
 
                         <div class="form-group">
