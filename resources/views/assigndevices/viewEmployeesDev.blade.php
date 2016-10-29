@@ -52,11 +52,8 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="#">
+                                            <a href="{{ route('deleteAssignDev', ['idDev' => $device->id]) }}">
                                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                            </a> |
-                                            <a href="#">
-                                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                                             </a>
                                         </td>
                                     </tr>

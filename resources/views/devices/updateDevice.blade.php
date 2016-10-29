@@ -69,6 +69,11 @@
                         </div>
 
                         <div class="form-group">
+                            {!! Form::label('active', 'Dispositivo activo') !!}
+                            {!! Form::select('active',[ '1' => 'Sí', '0' => 'No'], $devices->active) !!}
+                        </div>
+
+                        <div class="form-group">
                             {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
                         </div>
 

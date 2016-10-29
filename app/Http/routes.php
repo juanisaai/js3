@@ -177,20 +177,40 @@ Route::get('/management/equipment/delete/{id}', [
 
 //-----------------------------------Open CRUD AssignDevices-------------------------------
 
-Route::get('/transactions/assign-devices/new-assign/employees/', [
+
+// CREATE
+Route::get('/transactions/assign-devices/new-assign/employeess/{idDev}', [
+    'as' => 'createAssignDev',
+    'uses' => 'AssignDeviceController@createAssignDev']);
+
+Route::get('/transactions/assign-devices/new-assign/employees/{idDev}', [
+    'as' => 'storeAssignDev',
+    'uses' => 'AssignDeviceController@storeAssignDev']);
+
+// READ employees without devices
+Route::get('/transactions/assign-devices/new-assign/devices-without-employees/', [
     'as'   => 'newAssign',
     'uses' => 'AssignDeviceController@newAssign']);
 
-//This route is for see all employees
-//I should see only employees with device assigned
+// READ employees with devices
 Route::get('/transactions/assign-devices/list-employees', [
     'as'   => 'seeEmployeesDev',
     'uses' => 'AssignDeviceController@seeAssigns']);
 
-//This route is for see all details of device assigned to employee
+// READ details of devices
 Route::get('/transactions/assign-devices/list-employees/{id}/details', [
     'as'   => 'seeDetailsAssignDev',
     'uses' => 'AssignDeviceController@seeDetailsAssign']);
 
+// DELETE association between employee and device
+Route::get('/transactions/assign-devices/delete-assign/employees/{idDev}', [
+    'as' => 'deleteAssignDev',
+    'uses' => 'AssignDeviceController@deleteAssignDev']);
+
 
 //-----------------------------------Close CRUD AssignDevices-------------------------------
+
+
+Route::get('/test', [
+    'as' => 'test',
+    'uses' => 'AssignDeviceController@testAssignDev']);

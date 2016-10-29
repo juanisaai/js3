@@ -16,7 +16,7 @@
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Dispositivos disponibles</div>
+                    <div class="panel-heading">Empleados sin asignar</div>
 
                     <div class="panel-body">
 
@@ -25,27 +25,27 @@
 
                         <table class="table">
                             <tr>
-                                <th>Nomenclatura</th>
-                                <th>Dispositivo</th>
-                                <th>Marca</th>
-                                <th>Modelo</th>
-                                <th>Asignar</th>
+                                <th>Empleado</th>
+                                <th>Departamento</th>
+                                <th>Acción</th>
                             </tr>
 
-                            @foreach($devices as $device)
+                            @foreach($employees as $employee)
                                 <tr>
-                                    <td>{{ $device->NomenclatureDevice }}</td>
-                                    <td>{{ $device->DescriptionDevice }}</td>
-                                    <td>{{ $device->BrandDevice }}</td>
-                                    <td>{{ $device->ModelDevice }}</td>
+                                    <td>{{ $employee->ProfileEmployee }} {{ $employee->FirstName }} {{ $employee->SecondName }}</td>
+                                    <td>{{ $employee->Area->NameArea }}</td>
                                     <td>
 
-                                        <a href="{{ route('createAssignDev', ['idDev' => $device->id]) }}">Asignar <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                                        <a href="{{ route('storeAssignDev', ['idDev' => $employee->id]) }}">
+                                            Asignar
+                                        </a>
 
                                     </td>
+
                                 </tr>
                             @endforeach
                         </table>
+
                     </div>
     @endif
                 </div>

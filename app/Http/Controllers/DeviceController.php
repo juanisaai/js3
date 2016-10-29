@@ -27,6 +27,8 @@ class DeviceController extends Controller
             'SerialNumberDevice' => 'max:25',
             'ColorDevice' => 'max:50',
             'DescriptionAdDevice' => 'max:50',
+            'active' => 'required',
+
         ]);
 
         $data = request()->all();
@@ -63,6 +65,8 @@ class DeviceController extends Controller
             'SerialNumberDevice' => 'max:25',
             'ColorDevice' => 'max:50',
             'DescriptionAdDevice' => 'max:50',
+            'active' => 'required',
+
         ]);
 
         $data = request()->all();

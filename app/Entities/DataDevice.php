@@ -34,6 +34,9 @@ class DataDevice extends Model
         'SerialNumberDevice',
         'ColorDevice',
         'DescriptionAdDevice',
+        'active',
+        'employee_id'
+
     ];
 
 }

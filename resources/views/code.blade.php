@@ -182,3 +182,35 @@
 @endforeach
 
 //
+
+<table class="table">
+    <tr>
+        <th>Empleado</th>
+        <th>Departamento</th>
+        <th>Acción</th>
+    </tr>
+
+    @foreach($employees as $employee)
+        <tr>
+            <td>{{ $employee->ProfileEmployee }} {{ $employee->FirstName }} {{ $employee->SecondName }}</td>
+            <td>{{ $employee->Area->NameArea }}</td>
+            <td>
+                <a href="{{ route('createAssignDev', ['id' => $employee->id]) }}"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    Asignar
+                </a>
+            </td>
+
+        </tr>
+    @endforeach
+</table>
+
+//
+
+/*$this->validate(request(), [
+'employee_id' => 'required|unique:dataDevices',
+]);
+
+$data = request()->all();
+
+$devices->fill($data)->save();
+*/
