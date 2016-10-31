@@ -177,13 +177,12 @@ Route::get('/management/equipment/delete/{id}', [
 
 //-----------------------------------Open CRUD AssignDevices-------------------------------
 
-
 // CREATE
-Route::get('/transactions/assign-devices/new-assign/employeess/{idDev}', [
+Route::get('/transactions/assign-devices/new-assign/employees/{idDev}', [
     'as' => 'createAssignDev',
     'uses' => 'AssignDeviceController@createAssignDev']);
 
-Route::get('/transactions/assign-devices/new-assign/employees/{idDev}', [
+Route::get('/transactions/assign-devices/new-assign/employees/{idDev}/{idEmp}', [
     'as' => 'storeAssignDev',
     'uses' => 'AssignDeviceController@storeAssignDev']);
 
@@ -191,6 +190,11 @@ Route::get('/transactions/assign-devices/new-assign/employees/{idDev}', [
 Route::get('/transactions/assign-devices/new-assign/devices-without-employees/', [
     'as'   => 'newAssign',
     'uses' => 'AssignDeviceController@newAssign']);
+
+// Pass data in storeAssignDev since Details
+Route::get('/transactions/assign-devices/new-assign/devices-without-employees/{idEmp}', [
+    'as'   => 'newAssignDet',
+    'uses' => 'AssignDeviceController@newAssignDet']);
 
 // READ employees with devices
 Route::get('/transactions/assign-devices/list-employees', [
@@ -206,7 +210,6 @@ Route::get('/transactions/assign-devices/list-employees/{id}/details', [
 Route::get('/transactions/assign-devices/delete-assign/employees/{idDev}', [
     'as' => 'deleteAssignDev',
     'uses' => 'AssignDeviceController@deleteAssignDev']);
-
 
 //-----------------------------------Close CRUD AssignDevices-------------------------------
 

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Entities\AssignDevice;
 use App\Entities\DataDevice;
 use App\Entities\Employee;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Input;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\VarDumper\Cloner\Data;
 
@@ -24,6 +24,14 @@ class AssignDeviceController extends Controller
 
     }
 
+    public function newAssignDet($idEmp)
+    {
+        $employee = Employee::find($idEmp);
+        $devices = DataDevice::where('employee_id', '=', null)->get();
+        return View('assigndevices/newAssignDeviceDet', compact('devices', 'employee'));
+
+    }
+
     // Create new assign
 
     public function createAssignDev($idDev)
@@ -34,16 +42,17 @@ class AssignDeviceController extends Controller
     }
 
     // Store assign
-    public function storeAssignDev($idDev)
+    public function storeAssignDev($idDev, $idEmp)
     {
-        $employee = Employee::find($idDev);
+        $employee = Employee::find($idEmp);
 
-        $device = new DataDevice(['employee_id' => $idDev]);
+        $device = DataDevice::find($idDev);
+        $device->employee_id = $idDev;
 
         $employee->devices()->save($device);
 
-
         return redirect()->route('seeEmployeesDev');
+
     }
 
     // View employees with devices assigned
@@ -68,15 +77,9 @@ class AssignDeviceController extends Controller
     public function deleteAssignDev($idDev)
     {
         $devices = DataDevice::find($idDev);
-        $devices->employee()->delete();
-        return redirect()->route('seeEmployeesDev');
+        $devices->employee()->dissociate();
+        $devices->save();
+        return redirect()->back();
     }
-
-
-
-
-
-
-
 
 }

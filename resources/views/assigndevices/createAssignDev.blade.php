@@ -36,7 +36,7 @@
                                     <td>{{ $employee->Area->NameArea }}</td>
                                     <td>
 
-                                        <a href="{{ route('storeAssignDev', ['idDev' => $employee->id]) }}">
+                                        <a href="{{ route('storeAssignDev', ['idEmp' => $employee->id, 'idDev' => $device->id]) }}">
                                             Asignar
                                         </a>
 

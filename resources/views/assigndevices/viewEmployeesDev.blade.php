@@ -31,7 +31,6 @@
                                     <th>Empleado</th>
                                     <th>Departamento</th>
                                     <th>Dispositivos</th>
-                                    <th></th>
                                     <th>Acciones</th>
                                 </tr>
 
@@ -46,15 +45,8 @@
                                                 @endforeach
                                             </ul>
                                         </td>
-
                                         <td>
-                                            <a href="{{ route('seeDetailsAssignDev', ['id' => $employee->id]) }}">Ver detalles
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="{{ route('deleteAssignDev', ['idDev' => $device->id]) }}">
-                                                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                            </a>
+                                                <a href="{{ route('seeDetailsAssignDev', ['id' => $employee->id]) }}">Ver detalles</a>
                                         </td>
                                     </tr>
                                 @endforeach

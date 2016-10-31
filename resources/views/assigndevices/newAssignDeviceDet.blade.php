@@ -39,7 +39,7 @@
                                     <td>{{ $device->BrandDevice }}</td>
                                     <td>{{ $device->ModelDevice }}</td>
                                     <td>
-                                        <a href="{{ route('createAssignDev', ['idDev' => $device->id]) }}">Asignar <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                                        <a href="{{ route('storeAssignDev', ['idDev' => $device->id, 'idEmp' => $employee->id]) }}">Asignar <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
                                     </td>
                                 </tr>
                             @endforeach
