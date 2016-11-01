@@ -64,7 +64,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transacciones<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('seeEmployeesDev') }}">Asignar dispositivos</a></li>
-                                <li><a href="#">Asignar equipos</a></li>
+                                <li><a href="{{ route('seeEmployeesEq') }}">Asignar equipos</a></li>
                                 <li><a href="#">Other</a></li>
                                 <li><a href="#">Other</a></li>
                                 <!--

@@ -26,20 +26,25 @@ class Employee extends Model
 
     //-----------------------------------------------
 
-    // -----------------------------------Relationship
+    //-------------------Relationship with DataEquipment
+
+    public function equipments()
+    {
+        return $this->hasMany(DataEquipment::class);
+    }
+
+    public function getNumEquipmentsAttribute()
+    {
+        return count($this->equipments);
+    }
+
+    //-----------------------------------------------
+
+    // -----------------------------------Relationship with Areas
 
     public function Area()
     {
         return $this->belongsTo(Area::class);
-    }
-
-    /*
-     * This relationships below is for assign devices
-     * */
-
-    public function AssignDevice()
-    {
-        return $this->hasMany(AssignDevice::class);
     }
 
     // -----------------------------------Relationship

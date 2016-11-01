@@ -40,4 +40,13 @@ class DataEquipment extends Model
         'TypeDiscReader',
     ];
 
+    //--------------------Relationship with employees
+
+    public function employee()
+    {
+        return $this->belongsTo(Employee::class);
+    }
+
+    //------------------------------------------------
+
 }

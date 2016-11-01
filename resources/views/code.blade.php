@@ -214,3 +214,4 @@ $data = request()->all();
 
 $devices->fill($data)->save();
 */
+

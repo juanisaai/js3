@@ -17,13 +17,6 @@ class DataDevice extends Model
 
     //-----------------------------------------------
 
-    // -----------------------------------Relationship
-    public function DataDevice()
-    {
-        return $this->belongsTo(DataDevice::class);
-    }
-
-    // -----------------------------------Relationship
 
     protected $fillable = [
         'InventoryNumberDevice',

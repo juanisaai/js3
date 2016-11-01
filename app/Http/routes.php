@@ -213,7 +213,38 @@ Route::get('/transactions/assign-devices/delete-assign/employees/{idDev}', [
 
 //-----------------------------------Close CRUD AssignDevices-------------------------------
 
+//-----------------------------------Open CRUD AssignEquipment-------------------------------
 
-Route::get('/test', [
-    'as' => 'test',
-    'uses' => 'AssignDeviceController@testAssignDev']);
+// READ employees with equipments
+Route::get('/transactions/assign-equipments/list-employees', [
+    'as'   => 'seeEmployeesEq',
+    'uses' => 'AssignEquipmentController@seeAssigns']);
+
+// READ details of equipments
+Route::get('/transactions/assign-equipments/list-employees/{id}/details', [
+    'as'   => 'seeDetailsAssignEq',
+    'uses' => 'AssignEquipmentController@seeDetailsAssignEq']);
+
+// READ employees without equipments
+Route::get('/transactions/assign-equipments/new-assign/equipments-without-employees/', [
+    'as'   => 'newAssignEq',
+    'uses' => 'AssignEquipmentController@newAssignEq']);
+
+// CREATE
+Route::get('/transactions/assign-equipments/new-assign/employees/{idEq}', [
+    'as' => 'createAssignEq',
+    'uses' => 'AssignEquipmentController@createAssignEq']);
+
+Route::get('/transactions/assign-equipments/new-assign/employees/{idEq}/{idEmp}', [
+    'as' => 'storeAssignEq',
+    'uses' => 'AssignEquipmentController@storeAssignEq']);
+
+// DELETE association between employee and equipment
+Route::get('/transactions/assign-equipments/delete-assign/employees/{idEq}', [
+    'as' => 'deleteAssignEq',
+    'uses' => 'AssignEquipmentController@deleteAssignEq']);
+
+// Pass data in storeAssignDev since Details
+Route::get('/transactions/assign-equipments/new-assign/equipments-without-employees/{idEmp}', [
+    'as'   => 'newAssignDetEq',
+    'uses' => 'AssignEquipmentController@newAssignDetEq']);
