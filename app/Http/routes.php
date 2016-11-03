@@ -248,3 +248,32 @@ Route::get('/transactions/assign-equipments/delete-assign/employees/{idEq}', [
 Route::get('/transactions/assign-equipments/new-assign/equipments-without-employees/{idEmp}', [
     'as'   => 'newAssignDetEq',
     'uses' => 'AssignEquipmentController@newAssignDetEq']);
+//-----------------------------------CLOSE CRUD AssignEquipment-------------------------------
+
+//-----------------------------------Open CRUD ServiceRequest-------------------------------
+
+// Read
+Route::get('/services/all-services-request', [
+    'as'   => 'seeAllRequests',
+    'uses' => 'ServiceRequestController@read']);
+
+// Create
+Route::get('/services/create-new-service-request', [
+    'as'   => 'createSerquest',
+    'uses' => 'ServiceRequestController@create']);
+Route::post('createSerquest', 'ServiceRequestController@store');
+
+// Delete
+Route::get('/services/delete-service-request/{id}', [
+    'as'   => 'deleteSerquest',
+    'uses' => 'ServiceRequestController@deleteSerquest']);
+
+// Update
+//------------------------U
+Route::get('/services/update-service-request/{id}', [
+    'as'   => 'editSerquest',
+    'uses' => 'ServiceRequestController@edit']);
+
+Route::post('/services/update-service-request/{id}', [
+    'as'   => 'updateSerquest',
+    'uses' => 'ServiceRequestController@update']);

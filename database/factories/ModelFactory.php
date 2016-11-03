@@ -62,3 +62,14 @@ $factory->define(\App\Entities\DataDevice::class, function (Faker\Generator $fak
     ];
 });
 
+$factory->define(\App\Entities\ServiceRequest::class, function (Faker\Generator $faker) {
+    return [
+
+        'ReasonRequests' => $faker->realText($maxNbChars = 40, $indexSize = 4),
+        'receptionist' => $faker->name,
+        'TechnicianAssigned' => 'ISC. Harvey J. León Uc',
+        'employee_id' => rand(1,3),
+
+    ];
+});
+

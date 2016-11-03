@@ -15,6 +15,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
+<!--Start of Zendesk Chat Script-->
+    <script type="text/javascript">
+        window.$zopim||(function(d,s){var z=$zopim=function(c){
+            z._.push(c)},$=z.s=
+                d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+        _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+            $.src='//v2.zopim.com/?4KoaWp6Z8KRqT3MSxhl6RbtIq529IYyR';z.t=+new Date;$.
+                    type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+    </script>
+    <!--End of Zendesk Chat Script-->
+
     {!! Html::style('css/bootstrap.min.css') !!}
 
 
@@ -47,7 +58,7 @@
                         <li><a href="{{ route('readUser') }}">Usuarios</a></li>
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administración<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Agregar<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('readArea') }}">Áreas</a></li>
                                 <li><a href="{{ route('readEmployee') }}">Empleados</a></li>
@@ -61,12 +72,11 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Transacciones<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administración<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('seeEmployeesDev') }}">Asignar dispositivos</a></li>
                                 <li><a href="{{ route('seeEmployeesEq') }}">Asignar equipos</a></li>
-                                <li><a href="#">Other</a></li>
-                                <li><a href="#">Other</a></li>
+                                <li><a href="#">Baja de activo</a></li>
                                 <!--
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Superusuario</li>
@@ -74,6 +84,20 @@
 
                             </ul>
                         </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servicios<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ route('seeAllRequests') }}">Hojas de servicios</a></li>
+                                <li><a href="#">Recepción</a></li>
+                                <!--
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Superusuario</li>
+                                -->
+
+                            </ul>
+                        </li>
+
                     </ul>
             @endif
 

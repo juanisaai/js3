@@ -14,9 +14,6 @@ class CreateServiceRequestsTable extends Migration
     {
         Schema::create('serviceRequests', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('FolioNumberS')->unique()->index();
-            $table->date('DateServiceRequest');
-            $table->time('HourServiceRequests');
             $table->mediumText('ReasonRequests');
             $table->string('receptionist', 60);
             $table->string('TechnicianAssigned', 60);

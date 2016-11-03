@@ -12,6 +12,18 @@ class Employee extends Model
         'ProfileEmployee', 'FirstName', 'SecondName', 'RoleEmployee', 'area_id',
     ];
 
+
+    public function getFullNameAttribute()
+    {
+        return "$this->ProfileEmployee $this->FirstName $this->SecondName";
+    }
+
+    // Relationship with ServiceRequest
+    public function servrequests()
+    {
+        return $this->hasMany(ServiceRequest::class);
+    }
+
     //-------------------Relationship with DataDevice
 
     public function devices()
