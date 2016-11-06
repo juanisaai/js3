@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Entities\EquipmentReception;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -12,7 +13,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'email', 'password', 'active', 'type',
+        'name', 'username', 'email', 'contact', 'password', 'active', 'type',
     ];
 
     /**
@@ -30,6 +31,11 @@ class User extends Authenticatable
         {
             $this->attributes['password'] = bcrypt('$value');
         }
+    }
+
+    public function receptions()
+    {
+        return $this->hasMany(EquipmentReception::class);
     }
 
 }

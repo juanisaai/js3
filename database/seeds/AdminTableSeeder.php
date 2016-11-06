@@ -15,6 +15,7 @@ class AdminTableSeeder extends Seeder
             'name' => 'Juan Isai Chuc Tuz',
             'username' => 'juanisai',
             'email' => 'juanisaai@hotmail.com',
+            'contact' => '9876543210',
             'type' => 'Admin',
             'password' => bcrypt('secret'),
             'active' => '1'

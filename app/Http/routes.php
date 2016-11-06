@@ -277,3 +277,38 @@ Route::get('/services/update-service-request/{id}', [
 Route::post('/services/update-service-request/{id}', [
     'as'   => 'updateSerquest',
     'uses' => 'ServiceRequestController@update']);
+
+//-----------------------------------CLOSE CRUD ServiceRequest-------------------------------
+
+//-----------------------------------Open CRUD EquipmentReception-------------------------------
+
+// Read
+Route::get('/services/all-equipment-receptions', [
+    'as'   => 'seeReceptions',
+    'uses' => 'EquipmentReceptionController@read']);
+
+// Read details per reception
+Route::get('/services/all-equipment-receptions/{idRec}/{idEmp}/details/', [
+    'as'   => 'seeDetails',
+    'uses' => 'EquipmentReceptionController@readDetails']);
+
+// Create
+Route::get('/services/create-equipment-receptions', [
+    'as'   => 'createRec',
+    'uses' => 'EquipmentReceptionController@create']);
+Route::post('storeRec', 'EquipmentReceptionController@store');
+
+// Update
+Route::get('/services/update-equipment-receptions/{idRec}', [
+    'as'   => 'editRec',
+    'uses' => 'EquipmentReceptionController@edit']);
+
+Route::post('/services/update-equipment-receptions/{idRec}', [
+    'as'   => 'updateRec',
+    'uses' => 'EquipmentReceptionController@update']);
+
+// Delete
+// Update
+Route::get('/services/delete-equipment-receptions/{idRec}', [
+    'as'   => 'deleteRec',
+    'uses' => 'EquipmentReceptionController@destroy']);

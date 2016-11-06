@@ -40,6 +40,11 @@ class DataEquipment extends Model
         'TypeDiscReader',
     ];
 
+    public function getNameEquipmentAttribute()
+    {
+        return ucfirst($this->InventoryNumberEquipment) . ' | ' . ucfirst($this->NomenclatureEquipment) . ' | ' . ucfirst($this->DescriptionEquipment);
+    }
+
     //--------------------Relationship with employees
 
     public function employee()
@@ -47,6 +52,19 @@ class DataEquipment extends Model
         return $this->belongsTo(Employee::class);
     }
 
+    public function getFullNameAttribute()
+    {
+        return ucfirst($this->employee->ProfileEmployee) . ' ' . ucfirst($this->employee->FirstName) . ' ' . ucfirst($this->employee->SecondName);
+    }
+
     //------------------------------------------------
+
+    //--------------------Relationship with EquipmentReception
+
+    public function equipmentReceptions()
+    {
+        return $this->hasMany(EquipmentReception::class);
+    }
+
 
 }

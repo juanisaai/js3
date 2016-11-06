@@ -8,16 +8,6 @@ class DataDevice extends Model
 {
     protected $table = "dataDevices";
 
-    //--------------------Relationship with employees
-
-    public function employee()
-    {
-        return $this->belongsTo(Employee::class);
-    }
-
-    //-----------------------------------------------
-
-
     protected $fillable = [
         'InventoryNumberDevice',
         'NomenclatureDevice',
@@ -29,7 +19,19 @@ class DataDevice extends Model
         'DescriptionAdDevice',
         'active',
         'employee_id'
-
     ];
 
+    //--------------------Relationship with employees
+    public function employee()
+    {
+        return $this->belongsTo(Employee::class);
+    }
+    //-----------------------------------------------
+
+    //--------------------Relationship with employees
+    public function equipmentReceptions()
+    {
+        return $this->hasMany(EquipmentReception::class);
+    }
+    //-----------------------------------------------
 }

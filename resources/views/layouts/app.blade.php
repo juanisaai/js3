@@ -89,7 +89,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servicios<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('seeAllRequests') }}">Hojas de servicios</a></li>
-                                <li><a href="#">Recepción</a></li>
+                                <li><a href="{{ route('seeReceptions') }}">Recepción</a></li>
                                 <!--
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Superusuario</li>

@@ -29,8 +29,9 @@ class UsersController extends Controller
             'name' => 'required',
             'username' => 'required|unique:users|max:255',
             'email' => 'required|unique:users|max:255',
+            'contact' => 'unique:users|max:10',
             'active' => 'required',
-            'type' => 'required|in:User,Admin',
+            'type' => 'required|in:Technician,Collaborate,Admin',
             'password' => 'required',
         ]);
 
@@ -70,8 +71,9 @@ class UsersController extends Controller
             'name' => 'required|max:45',
             'username' => 'required|max:15',
             'email' => 'required|unique:users,email,' . $this->route->getParameter('id'),
+            'contact' => 'unique:users|max:10'. $this->route->getParameter('id'),
             'active' => 'required',
-            'type' => 'required|in:User,Admin',
+            'type' => 'required|in:Technician,Collaborate,Admin',
             'password' => 'max:60',
 
         ]);

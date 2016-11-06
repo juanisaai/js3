@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(DataEquipmentTableSeeder::class);
         $this->call(DataDeviceTableSeeder::class);
         $this->call(ServiceRequestTableSeeder::class);
+        $this->call(EquipmentReceptionTableSeeder::class);
     }
 }

@@ -19,12 +19,12 @@ class ServiceRequestController extends Controller
     //CREATE
     public function create()
     {
-        $folios      = ServiceRequest::all();
+        /*$folios      = ServiceRequest::all();
         $folioActual  = $folios->last();
-        $folioView = $folioActual->id + 1;
+        $folioView = $folioActual->id + 1;*/
 
         $employee = Employee::get()->lists('full_name', 'id');
-        return view('serviceRequest/createSerquest', compact('employee', 'folioView'));
+        return view('serviceRequest/createSerquest', compact('employee'));
     }
 
     public function store()

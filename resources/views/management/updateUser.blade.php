@@ -16,7 +16,7 @@
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Update employee {{$user->name}}</div>
+                    <div class="panel-heading">Actualizar datos del usuario {{$user->name}}</div>
 
                     <div class="panel-body">
 
@@ -29,37 +29,42 @@
                         ])) !!}
 
                         <div class="form-group">
-                            {!! Form::label('name', 'Name') !!}
-                            {!! Form::text('name', $user->name, ['class' => 'form-control', 'placeholder' => 'Write name user']) !!}
+                            {!! Form::label('name', 'Nombres') !!}
+                            {!! Form::text('name', $user->name, ['class' => 'form-control', 'placeholder' => 'Escribe el nombre del usuario']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('username', 'Username') !!}
-                            {!! Form::text('username', $user->username, ['class' => 'form-control', 'placeholder' => 'Write username']) !!}
+                            {!! Form::label('username', 'Nombre de usuario') !!}
+                            {!! Form::text('username', $user->username, ['class' => 'form-control', 'placeholder' => 'Escribe un nombre de usuario']) !!}
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('email', 'Email') !!}
-                            {!! Form::text('email', $user->email, ['class' => 'form-control', 'placeholder' => 'Write email']) !!}
+                            {!! Form::text('email', $user->email, ['class' => 'form-control', 'placeholder' => 'Escribe un email']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('password', 'Password') !!}
-                            {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Write password']) !!}
+                            {!! Form::label('contact', 'Contacto') !!}
+                            {!! Form::text('contact', $user->contact, ['class' => 'form-control', 'placeholder' => 'Escribe un contacto']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('active', 'Select status') !!}
-                            {!! Form::select('active',[ '1' => 'Active', '0' => 'Disabled'], '1' ) !!}
+                            {!! Form::label('password', 'Contraseña') !!}
+                            {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Escribe tu nueva password']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('type', 'Select type') !!}
-                            {!! Form::select('type',[ 'Admin' => 'Manager', 'User' => 'User'], 'User' ) !!}
+                            {!! Form::label('active', 'Selecciona el estado del usuario') !!}
+                            {!! Form::select('active',[ '1' => 'Activo', '0' => 'Desactivado'], '1' ) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
+                            {!! Form::label('type', 'Selecciona el tipo de usuario') !!}
+                            {!! Form::select('type',[ 'Technician' => 'Técnico', 'Collaborate' => 'Colaborador', 'Admin' => 'Administrador'], 'Collaborate' ) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::submit('Actualizar', ['class' => 'btn btn-primary']) !!}
                         </div>
 
 

@@ -18,8 +18,8 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-default">
-                        <div class="panel-heading">Users
-                            <a href="{{ route('createUser') }}">Create
+                        <div class="panel-heading">Usuario
+                            <a href="{{ route('createUser') }}">Crear
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
                         </div>
                         <div class="panel-body">
@@ -29,12 +29,13 @@
 
                             <table class="table table-hover table-striped table-responsive">
                                 <tr>
-                                    <th>name</th>
-                                    <th>username</th>
+                                    <th>Nombre</th>
+                                    <th>Nombre de usuario</th>
                                     <th>email</th>
-                                    <th>Status</th>
-                                    <th>Type</th>
-                                    <th>Actions</th>
+                                    <th>Contacto</th>
+                                    <th>Estado del usuario</th>
+                                    <th>Tipo de usuario</th>
+                                    <th>Acciones</th>
                                 </tr>
 
                             @foreach($users as $user)
@@ -42,8 +43,21 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->username }}</td>
                                         <td>{{ $user->email }}</td>
-                                        <td>{{ $user->active }}</td>
-                                        <td>{{ $user->type }}</td>
+                                        <td>{{ $user->contact }}</td>
+                                        <td>
+                                            @if( ($user->active) === 1)
+                                                Activo
+                                            @elseif(($user->active) === 0)
+                                                Desactivado
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if( ($user->type) === 'Technician')
+                                                Técnico
+                                            @elseif(($user->type) === 'Collaborate')
+                                                Colaborador
+                                            @endif
+                                        </td>
                                         <td>
                                             <a href="{{ route('deleteUser', ['id' => $user->id]) }}">
                                                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>

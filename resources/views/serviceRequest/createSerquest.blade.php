@@ -21,7 +21,6 @@
                     @include('partials/errors')
                     @include('partials/succeed')
 
-                    <p><strong>Folio </strong>{{ $folioView }}</p>
 
                     {!! Form::open(array('url' => 'createSerquest', 'method' => 'POST', 'class' => 'form')) !!}
 
