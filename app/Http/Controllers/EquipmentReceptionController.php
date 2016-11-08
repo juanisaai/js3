@@ -6,10 +6,6 @@ use App\Entities\DataEquipment;
 use App\Entities\Employee;
 use App\Entities\EquipmentReception;
 use App\User;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use Symfony\Component\HttpFoundation\Session\Session;
 
 class EquipmentReceptionController extends Controller
 {
@@ -77,6 +73,9 @@ class EquipmentReceptionController extends Controller
             'Receptionist' => 'required',
             'Petitioner' => 'required',
             'Receive' => 'required|max:60',
+            'StatusEquipment' => 'in:Ready,GenerateDictum',
+            'NumberDictum' => 'unique:equipmentReceptions',
+
             'equipment_id' => 'required',
             'user_id' => 'required',
 

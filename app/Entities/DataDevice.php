@@ -34,4 +34,12 @@ class DataDevice extends Model
         return $this->hasMany(EquipmentReception::class);
     }
     //-----------------------------------------------
+
+    //--------------------Relationship with LowInventoryDev
+
+    public function lowDevices()
+    {
+        return $this->hasMany(LowInventoryDev::class);
+    }
+
 }

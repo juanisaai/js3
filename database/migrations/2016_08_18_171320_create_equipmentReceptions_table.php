@@ -24,15 +24,6 @@ class CreateEquipmentReceptionsTable extends Migration
             $table->integer('NumberDictum')->nullable();
             $table->timestamps();
 
-            //relationship with dataDevices->id
-            $table->integer('device_id')->unsigned()->nullable();
-
-            $table->foreign('device_id')
-                ->references('id')
-                ->on('dataDevices')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
             //relationship with dataEquipment->id
             $table->integer('equipment_id')->unsigned()->nullable();
 

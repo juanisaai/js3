@@ -76,7 +76,8 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('seeEmployeesDev') }}">Asignar dispositivos</a></li>
                                 <li><a href="{{ route('seeEmployeesEq') }}">Asignar equipos</a></li>
-                                <li><a href="#">Baja de activo</a></li>
+                                <li><a href="{{ route('seeLowEq') }}">Baja de equipos</a></li>
+                                <li><a href="{{ route('seeLowDev') }}">Baja de dispositivos</a></li>
                                 <!--
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Superusuario</li>
@@ -89,7 +90,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servicios<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('seeAllRequests') }}">Hojas de servicios</a></li>
-                                <li><a href="{{ route('seeReceptions') }}">Recepción</a></li>
+                                <li><a href="{{ route('seeReceptions') }}">Recepción de equipos</a></li>
                                 <!--
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Superusuario</li>

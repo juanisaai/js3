@@ -66,5 +66,15 @@ class DataEquipment extends Model
         return $this->hasMany(EquipmentReception::class);
     }
 
+    //-------------------------------------------------
+
+    //--------------------Relationship with LowInventoryEq
+
+    public function lowEquipments()
+    {
+        return $this->hasMany(LowInventoryEq::class);
+    }
+
+
 
 }

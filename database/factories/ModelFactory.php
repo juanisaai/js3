@@ -84,9 +84,34 @@ $factory->define(\App\Entities\EquipmentReception::class, function (Faker\Genera
         'Receive' => 'Alguien',
         'StatusEquipment' => 'Ready',
         'NumberDictum' => $faker->ean8,
-        'device_id' => rand(1,4),
         'equipment_id' => rand(1,4),
         'user_id' => rand(2,3),
+
+    ];
+});
+
+
+$factory->define(\App\Entities\LowInventoryEq::class, function (Faker\Generator $faker) {
+    return [
+
+        'CauseLow' => $faker->realText($maxNbChars = 60, $indexSize = 5),
+        'TechnicianDictum' => true,
+        'Picture' => true,
+        'UpInventory' => true,
+        'equipment_id' => rand(1,6),
+
+    ];
+});
+
+
+$factory->define(\App\Entities\LowInventoryDev::class, function (Faker\Generator $faker) {
+    return [
+
+        'CauseLow' => $faker->realText($maxNbChars = 60, $indexSize = 5),
+        'TechnicianDictum' => true,
+        'Picture' => true,
+        'UpInventory' => true,
+        'device_id' => rand(1,6),
 
     ];
 });

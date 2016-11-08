@@ -308,7 +308,20 @@ Route::post('/services/update-equipment-receptions/{idRec}', [
     'uses' => 'EquipmentReceptionController@update']);
 
 // Delete
-// Update
 Route::get('/services/delete-equipment-receptions/{idRec}', [
     'as'   => 'deleteRec',
     'uses' => 'EquipmentReceptionController@destroy']);
+
+//-----------------------------------CLOSE CRUD EquipmentReception-------------------------------
+
+//-----------------------------------OPEN CRUD LowInventoryEq-------------------------------
+
+// Read Low Equipments
+Route::get('/management/low-equipment/see-all', [
+    'as'   => 'seeLowEq',
+    'uses' => 'LowEquipmentController@readEq']);
+
+// Read Low Devices
+Route::get('/management/low-devices/see-all', [
+    'as'   => 'seeLowDev',
+    'uses' => 'LowDeviceController@readDev']);

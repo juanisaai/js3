@@ -4,7 +4,7 @@ namespace App\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class LowInventory extends Model
+class DeviceReception extends Model
 {
-    
+    //
 }

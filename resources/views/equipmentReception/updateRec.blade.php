@@ -29,6 +29,16 @@
                         ])) !!}
 
                         <div class="form-group">
+                            {!! Form::label('StatusEquipment', 'Seleccione el estado') !!}
+                            {{Form::select('StatusEquipment', ['Ready' => 'Listo', 'GenerateDictum' => 'Se generó dictamen'], $reception->StatusEquipment, ['placeholder' => 'Selecciona el estado del equipo'])}}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('NumberDictum', 'Número del dictamen') !!}
+                            {!! Form::text('NumberDictum', $reception->NumberDictum, ['class' => 'form-control', 'placeholder' => 'Escribe el número del dictamen']) !!}
+                        </div>
+
+                        <div class="form-group">
                             {!! Form::label('equipment_id', 'Seleccionar equipo') !!}
                             {{ Form::select('equipment_id', $equipments, $reception->equipment_id) }}
                         </div>

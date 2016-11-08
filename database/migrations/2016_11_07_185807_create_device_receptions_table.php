@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLowInventoriesTable extends Migration
+class CreateDeviceReceptionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateLowInventoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('low_inventories', function (Blueprint $table) {
+        Schema::create('device_receptions', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
         });
@@ -25,6 +25,6 @@ class CreateLowInventoriesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('low_inventories');
+        Schema::drop('device_receptions');
     }
 }
