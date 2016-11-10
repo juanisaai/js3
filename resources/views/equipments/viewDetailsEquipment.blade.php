@@ -4,25 +4,17 @@
 
     @if (Auth::guest())
 
-        <div class="container">
-            <div class="jumbotron">
-                <h1>Oops!</h1>
-                <p>Please log in</p>
-                <p><a class="btn btn-primary btn-lg" href="{{ url('/login') }}" role="button">Log in</a></p>
-            </div>
-        </div>
+        @include('partials/login')
 
     @else
 
         <div class="container">
             <div class="row">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-12">
                     <div class="panel panel-default">
-                        <div class="panel-heading">Data equipment
-                            <a href="{{ route('createEquipment') }}">Create
-                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
-                        </div>
-                        <div class="panel-body table-responsive">
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Detalles de equipo: <strong>{{ $equipment->InventoryNumberEquipment }}</strong></h1>
+                            <div class="panel-body table-responsive table-hover table-striped">
 
                             @include('partials/errors')
                             @include('partials/succeed')
@@ -101,15 +93,15 @@
                                         <td>{{ $equipment->SerialNumberHHD }}</td>
                                         <td>{{ $equipment->BrandDiscReader }}</td>
                                         <td>{{ $equipment->TypeDiscReader }}</td>
-
                                     </tr>
                             </table>
-
-
                         </div>
     @endif
                     </div>
                 </div>
+                    <div class="form-group pull-left">
+                        <a class="btn btn-success btn-close" href="{{ route('readEquipments') }}">Regresar</a>
+                    </div>
             </div>
         </div>
 @endsection

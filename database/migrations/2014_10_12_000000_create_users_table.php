@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->string('name', 45);
             $table->string('username', 15)->unique();
             $table->string('email')->unique();
-            $table->integer('contact')->unique();
+            $table->string('contact', 10)->unique();
             $table->string('password', 60);
             $table->boolean('active')->default(true);
             $table->enum('type', ['Technician', 'Collaborate', 'Admin']);

@@ -4,19 +4,17 @@
 
     @if (Auth::guest())
 
-        <div class="container">
-            <div class="jumbotron">
-                <h1>Oops!</h1>
-                <p>Please log in</p>
-                <p><a class="btn btn-primary btn-lg" href="{{ url('/login') }}" role="button">Log in</a></p>
-            </div>
-        </div>
+        @include('partials/login')
+
+
     @else
 
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Update area</div>
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Actualizar datos de área: <strong>{{$area->NameArea}}</strong></h1>
+                    </div>
 
                     <div class="panel-body">
 
@@ -29,36 +27,35 @@
                         ])) !!}
 
                         <div class="form-group">
-                            {!! Form::label('namearea', 'Name Area') !!}
-                            {!! Form::text('NameArea', $area->NameArea, ['class' => 'form-control', 'placeholder' => 'Write name area']) !!}
+                            {!! Form::label('namearea', 'Nombre de área') !!}
+                            {!! Form::text('NameArea', $area->NameArea, ['class' => 'form-control', 'placeholder' => 'Escribe el nombre de área']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('unitarea', 'Unit') !!}
-                            {!! Form::text('UnitArea', $area->UnitArea, ['class' => 'form-control', 'placeholder' => 'Write unit']) !!}
+                            {!! Form::label('unitarea', 'Unidad') !!}
+                            {!! Form::text('UnitArea', $area->UnitArea, ['class' => 'form-control', 'placeholder' => 'Escribe la unidad']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('extensionarea', 'Name Extension') !!}
-                            {!! Form::text('ExtensionArea', $area->ExtensionArea, ['class' => 'form-control', 'placeholder' => 'Write name extension']) !!}
+                            {!! Form::label('extensionarea', 'Nombre de extensión') !!}
+                            {!! Form::text('ExtensionArea', $area->ExtensionArea, ['class' => 'form-control', 'placeholder' => 'Escribe la extensión']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('directoratearea', 'Name Directorate') !!}
-                            {!! Form::text('DirectorateArea', $area->DirectorateArea, ['class' => 'form-control', 'placeholder' => 'Write name Directorate']) !!}
+                            {!! Form::label('directoratearea', 'Dirección') !!}
+                            {!! Form::text('DirectorateArea', $area->DirectorateArea, ['class' => 'form-control', 'placeholder' => 'Escribe la dirección']) !!}
                         </div>
+
 
                         <div class="form-group">
-                            {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
+                            {!! Form::submit('Actualizar', ['class' => 'btn btn-primary']) !!}
+                            <div class="form-group pull-right">
+                                <a class="btn btn-danger btn-close" href="{{ route('readArea') }}">Cancelar</a>
+                            </div>
                         </div>
-
-
                         {{ Form::close() }}
-
                     </div>
-
     @endif
-
                 </div>
             </div>
         </div>

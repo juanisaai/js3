@@ -40,8 +40,14 @@ class DeviceController extends Controller
     //Read
     public function seeDevices()
     {
-        $devices = DataDevice::paginate(4);
+        $devices = DataDevice::paginate(10);
         return view('devices/viewDevices', compact('devices'));
+    }
+
+    public function seeDetail($id)
+    {
+        $device = DataDevice::findOrFail($id);
+        return view('devices/viewDetailsDevice', compact('device'));
     }
 
     //Update

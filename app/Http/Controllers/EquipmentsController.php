@@ -60,7 +60,7 @@ class EquipmentsController extends Controller
     //Read
     public function seeEquipments()
     {
-        $equipments = DataEquipment::paginate(4);
+        $equipments = DataEquipment::paginate(10);
         return view('equipments/viewEquipments', compact('equipments'));
     }
 

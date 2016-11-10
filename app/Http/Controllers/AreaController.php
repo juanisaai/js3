@@ -43,7 +43,7 @@ class AreaController extends Controller
     //Read
     public function seeAreas()
     {
-        $areas = Area::paginate(4);
+        $areas = Area::paginate(10);
         return view('areas/viewAreas', compact('areas'));
     }
 

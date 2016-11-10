@@ -4,13 +4,8 @@
 
     @if (Auth::guest())
 
-        <div class="container">
-            <div class="jumbotron">
-                <h1>Oops!</h1>
-                <p>Please log in</p>
-                <p><a class="btn btn-primary btn-lg" href="{{ url('/login') }}" role="button">Log in</a></p>
-            </div>
-        </div>
+        @include('partials/login')
+
     @else
 
         <div class="container">

@@ -13,315 +13,359 @@
 
 Route::group(['middleware' => ['web']], function(){
 
+    Route::get('/', [
+        'as' => 'welcome',
+        'uses' => 'HomeController@welcome'
+    ]);
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    // Authentication Routes...
+    Route::get('login',[
+        'as'   => 'login',
+        'uses' => 'Auth\AuthController@showLoginForm'
+    ]);
+    Route::post('login', 'Auth\AuthController@login');
 
-    Route::auth();
+    Route::get('logout',[
+        'as'   => 'logout',
+        'uses' => 'Auth\AuthController@logout'
+    ]);
 
-    Route::get('/home', 'HomeController@index');
+    // Registration Routes...
+    Route::get('register',[
+        'as'  =>  'register',
+        'uses'  =>  'Auth\AuthController@showRegistrationForm'
+    ]);
+    Route::post('register', 'Auth\AuthController@register');
+
+    // Password Reset Routes...
+    Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
+    Route::post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
+    Route::post('password/reset', 'Auth\PasswordController@reset');
+
+    Route::get('/homesystem', [
+        'as' => 'home',
+        'uses' => 'HomeController@index'
+    ]);
 
 
 });
 
-//-----------------------------------open CRUD Users-------------------------------
+Route::group(['middleware' => 'role:Admin'], function (){
+    //-----------------------------------open CRUD Users-------------------------------
 
-//Create
-Route::get('/management/users/create', [
-    'as'   => 'createUser',
-    'uses' => 'Admin\UsersController@create']);
-Route::post('users', 'Admin\UsersController@store');
+// Create
+    Route::get('/administracion/usuarios/crear', [
+        'as'   => 'createUser',
+        'uses' => 'Admin\UsersController@create']);
+    Route::post('users', 'Admin\UsersController@store');
 
-//Read
-Route::get('/management/users', [
-    'as'   => 'readUser',
-    'uses' => 'Admin\UsersController@seeUsers']);
+// Read
+    Route::get('/administracion/lista-de-usuarios', [
+        'as'   => 'readUser',
+        'uses' => 'Admin\UsersController@seeUsers']);
 
-//------------------------U
-Route::get('/management/users/{id}/update', [
-    'as'   => 'editUser',
-    'uses' => 'Admin\UsersController@editUser']);
+// Update
+    Route::get('/administracion/usuario/{id}/actualizar-datos', [
+        'as'   => 'editUser',
+        'uses' => 'Admin\UsersController@editUser']);
 
-Route::post('/management/users/{id}/update', [
-    'as'   => 'updateUser',
-    'uses' => 'Admin\UsersController@updateUser']);
+    Route::post('/administracion/usuario/{id}/actualizar-datos', [
+        'as'   => 'updateUser',
+        'uses' => 'Admin\UsersController@updateUser']);
 
-//------------------------D
-Route::get('/management/users/delete/{id}', [
-    'as' => 'deleteUser',
-    'uses' => 'Admin\UsersController@deleteUser']);
+// Delete
+    Route::get('/administracion/lista-de-usuarios/{id}/eliminar', [
+        'as' => 'deleteUser',
+        'uses' => 'Admin\UsersController@deleteUser']);
 
 //-----------------------------------Close CRUD Users-------------------------------
 
-//-----------------------------------open CRUD Areas-------------------------------
+});
 
-//------------------------C
-Route::get('/management/areas/create', [
-    'as'   => 'createArea',
-    'uses' => 'AreaController@create']);
-Route::post('areas', 'AreaController@store');
+Route::group(['middleware' => 'role:Technician, Collaborate'], function (){
 
-//------------------------R
-Route::get('/management/areas', [
-    'as'   => 'readArea',
-    'uses' => 'AreaController@seeAreas']);
+    //-----------------------------------open CRUD Areas-------------------------------
 
-//------------------------U
-Route::get('/management/areas/update/{id}', [
-    'as'   => 'editArea',
-    'uses' => 'AreaController@editArea']);
+// Create
+    Route::get('/administracion-de-areas/crear', [
+        'as'   => 'createArea',
+        'uses' => 'AreaController@create']);
+    Route::post('areas', 'AreaController@store');
 
-Route::post('/management/areas/update/{id}', [
-    'as'   => 'updateArea',
-    'uses' => 'AreaController@updateArea']);
+// Read
+    Route::get('/administracion-de-areas/lista-de-areas', [
+        'as'   => 'readArea',
+        'uses' => 'AreaController@seeAreas']);
 
-//------------------------D
-Route::get('/management/areas/delete/{id}', [
-    'as' => 'deleteArea',
-    'uses' => 'AreaController@deleteArea']);
+// Update
+    Route::get('/administracion-de-areas/{id}/actualizar-datos', [
+        'as'   => 'editArea',
+        'uses' => 'AreaController@editArea']);
+
+    Route::post('/administracion-de-areas/{id}/actualizar-datos', [
+        'as'   => 'updateArea',
+        'uses' => 'AreaController@updateArea']);
+
+// Delete
+    Route::get('/administracion-de-areas/{id}/eliminar', [
+        'as' => 'deleteArea',
+        'uses' => 'AreaController@deleteArea']);
 
 //-----------------------------------close CRUD Areas-------------------------------
 
 //-----------------------------------open CRUD Employees-------------------------------
 
-//------------------------C
-Route::get('/management/employees/create', [
-    'as'   => 'createEmployee',
-    'uses' => 'EmployeeController@create']);
-Route::post('employees', 'EmployeeController@store');
+// Create
+    Route::get('/administracion-de-empleados/crear', [
+        'as'   => 'createEmployee',
+        'uses' => 'EmployeeController@create']);
+    Route::post('employees', 'EmployeeController@store');
 
-//------------------------R
-Route::get('/management/employees', [
-    'as'   => 'readEmployee',
-    'uses' => 'EmployeeController@seeEmployees']);
+// Read
+    Route::get('/administracion-de-empleados/lista-de-empleados', [
+        'as'   => 'readEmployee',
+        'uses' => 'EmployeeController@seeEmployees']);
 
-//------------------------U
-Route::get('/management/employees/update/{id}', [
-    'as'   => 'editEmployee',
-    'uses' => 'EmployeeController@editEmployee']);
+// Update
+    Route::get('/administracion-de-empleados/{id}/actualizar-datos', [
+        'as'   => 'editEmployee',
+        'uses' => 'EmployeeController@editEmployee']);
 
-Route::post('/management/employees/update/{id}', [
-    'as'   => 'updateEmployee',
-    'uses' => 'EmployeeController@updateEmployee']);
+    Route::post('/administracion-de-empleados/{id}/actualizar-datos', [
+        'as'   => 'updateEmployee',
+        'uses' => 'EmployeeController@updateEmployee']);
 
-//------------------------D
-Route::get('/management/employees/delete/{id}', [
-    'as' => 'deleteEmployee',
-    'uses' => 'EmployeeController@deleteEmployee']);
+// Delete
+    Route::get('/administracion-de-empleados/{id}/eliminar', [
+        'as' => 'deleteEmployee',
+        'uses' => 'EmployeeController@deleteEmployee']);
 
 //-----------------------------------close CRUD Employees-------------------------------
 
 //-----------------------------------open CRUD Devices-------------------------------
 
-//------------------------C
-Route::get('/management/devices/create', [
-    'as'   => 'createDevice',
-    'uses' => 'DeviceController@create']);
-Route::post('devices', 'DeviceController@store');
+// Create
+    Route::get('/administracion-de-dispositivos/crear', [
+        'as'   => 'createDevice',
+        'uses' => 'DeviceController@create']);
+    Route::post('devices', 'DeviceController@store');
 
-//------------------------R
-Route::get('/management/devices', [
-    'as'   => 'readDevice',
-    'uses' => 'DeviceController@seeDevices']);
+// Read
+    Route::get('/administracion-de-dispositivos/lista-de-dispositivos', [
+        'as'   => 'readDevice',
+        'uses' => 'DeviceController@seeDevices']);
 
-//------------------------U
-Route::get('/management/devices/update/{id}', [
-    'as'   => 'editDevice',
-    'uses' => 'DeviceController@editDevice']);
+// Read details per device
+    Route::get('/administracion-de-dispositivos/lista-de-dispositivos/{id}/detalles', [
+        'as'   => 'readDetDevice',
+        'uses' => 'DeviceController@seeDetail']);
 
-Route::post('/management/devices/update/{id}', [
-    'as'   => 'updateDevice',
-    'uses' => 'DeviceController@updateDevice']);
+// Update
+    Route::get('/administracion-de-dispositivos/{id}/actualizar-datos', [
+        'as'   => 'editDevice',
+        'uses' => 'DeviceController@editDevice']);
 
-//------------------------D
-Route::get('/management/devices/delete/{id}', [
-    'as' => 'deleteDevice',
-    'uses' => 'DeviceController@deleteDevice']);
+    Route::post('/administracion-de-dispositivos/{id}/actualizar-datos', [
+        'as'   => 'updateDevice',
+        'uses' => 'DeviceController@updateDevice']);
+
+// Delete
+    Route::get('/administracion-de-dispositivos/{id}/eliminar', [
+        'as' => 'deleteDevice',
+        'uses' => 'DeviceController@deleteDevice']);
 
 //-----------------------------------close CRUD Devices-------------------------------
 
 //-----------------------------------open CRUD Equipments-------------------------------
 
-//------------------------C
-Route::get('/management/equipments/create', [
-    'as'   => 'createEquipment',
-    'uses' => 'EquipmentsController@create']);
-Route::post('equipments', 'EquipmentsController@store');
+// Create
+    Route::get('/administracion-de-equipos/crear', [
+        'as'   => 'createEquipment',
+        'uses' => 'EquipmentsController@create']);
+    Route::post('equipments', 'EquipmentsController@store');
 
-//------------------------R
-Route::get('/management/equipments', [
-    'as'   => 'readEquipments',
-    'uses' => 'EquipmentsController@seeEquipments']);
+// Read
+    Route::get('/administracion-de-equipos/lista-de-equipos', [
+        'as'   => 'readEquipments',
+        'uses' => 'EquipmentsController@seeEquipments']);
 
-//------------------------R-Details
-Route::get('/management/details/{equipment}', [
-    'as'   => 'readDetailsEquipment',
-    'uses' => 'EquipmentsController@show']);
+// Read Details
+    Route::get('/administracion-de-equipos/detalles-equipo/{equipment}', [
+        'as'   => 'readDetailsEquipment',
+        'uses' => 'EquipmentsController@show']);
 
-//------------------------U
-Route::get('/management/equipment/update/{id}', [
-    'as'   => 'editEquipment',
-    'uses' => 'EquipmentsController@editEquipment']);
+// Update
+    Route::get('/administracion-de-equipos/{id}/actualizar-datos', [
+        'as'   => 'editEquipment',
+        'uses' => 'EquipmentsController@editEquipment']);
 
-Route::post('/management/equipment/update/{id}', [
-    'as'   => 'updateEquipment',
-    'uses' => 'EquipmentsController@updateEquipment']);
+    Route::post('/administracion-de-equipos/{id}/actualizar-datos', [
+        'as'   => 'updateEquipment',
+        'uses' => 'EquipmentsController@updateEquipment']);
 
-//------------------------D
-Route::get('/management/equipment/delete/{id}', [
-    'as' => 'deleteEquipment',
-    'uses' => 'EquipmentsController@deleteEquipment']);
+// Delete
+    Route::get('/administracion-de-equipos/{id}/eliminar', [
+        'as' => 'deleteEquipment',
+        'uses' => 'EquipmentsController@deleteEquipment']);
 
 //-----------------------------------close CRUD Equipments-------------------------------
 
+//-----------------------------------OPEN CRUD LowInventory-------------------------------
+
+// Read Low Equipments
+    Route::get('/administracion-de-equipos/baja-de-equipos/', [
+        'as'   => 'seeLowEq',
+        'uses' => 'LowEquipmentController@readEq']);
+
+// Read Low Devices
+    Route::get('/administracion-de-dispositivos/baja-de-dispositivos', [
+        'as'   => 'seeLowDev',
+        'uses' => 'LowDeviceController@readDev']);
+
+
+//-----------------------------------CLOSE CRUD LowInventory-------------------------------
+
 //-----------------------------------Open CRUD AssignDevices-------------------------------
 
-// CREATE
-Route::get('/transactions/assign-devices/new-assign/employees/{idDev}', [
-    'as' => 'createAssignDev',
-    'uses' => 'AssignDeviceController@createAssignDev']);
+// Create
+    Route::get('/asignaciones/dispostivos/nueva-asignacion/disp/{idDev}', [
+        'as' => 'createAssignDev',
+        'uses' => 'AssignDeviceController@createAssignDev']);
 
-Route::get('/transactions/assign-devices/new-assign/employees/{idDev}/{idEmp}', [
-    'as' => 'storeAssignDev',
-    'uses' => 'AssignDeviceController@storeAssignDev']);
+    Route::get('/asignaciones/dispositivos/nueva-asignacion/disp/{idDev}/emp/{idEmp}', [
+        'as' => 'storeAssignDev',
+        'uses' => 'AssignDeviceController@storeAssignDev']);
 
-// READ employees without devices
-Route::get('/transactions/assign-devices/new-assign/devices-without-employees/', [
-    'as'   => 'newAssign',
-    'uses' => 'AssignDeviceController@newAssign']);
+// Read employees without devices
+    Route::get('/asignaciones/dispositivos/nueva-asignacion/dispositivos-disponibles/', [
+        'as'   => 'newAssign',
+        'uses' => 'AssignDeviceController@newAssign']);
 
 // Pass data in storeAssignDev since Details
-Route::get('/transactions/assign-devices/new-assign/devices-without-employees/{idEmp}', [
-    'as'   => 'newAssignDet',
-    'uses' => 'AssignDeviceController@newAssignDet']);
+    Route::get('/asignaciones/dispositivos/nueva-asignacion/dispositivos-disponibles/{idEmp}', [
+        'as'   => 'newAssignDet',
+        'uses' => 'AssignDeviceController@newAssignDet']);
 
-// READ employees with devices
-Route::get('/transactions/assign-devices/list-employees', [
-    'as'   => 'seeEmployeesDev',
-    'uses' => 'AssignDeviceController@seeAssigns']);
+// Read employees with devices
+    Route::get('/asignaciones/dispositivos/lista-de-asignaciones', [
+        'as'   => 'seeEmployeesDev',
+        'uses' => 'AssignDeviceController@seeAssigns']);
 
-// READ details of devices
-Route::get('/transactions/assign-devices/list-employees/{id}/details', [
-    'as'   => 'seeDetailsAssignDev',
-    'uses' => 'AssignDeviceController@seeDetailsAssign']);
+// Read details of devices
+    Route::get('/asignaciones/dispostivos/lista-de-asignaciones/{id}/detalles', [
+        'as'   => 'seeDetailsAssignDev',
+        'uses' => 'AssignDeviceController@seeDetailsAssign']);
 
-// DELETE association between employee and device
-Route::get('/transactions/assign-devices/delete-assign/employees/{idDev}', [
-    'as' => 'deleteAssignDev',
-    'uses' => 'AssignDeviceController@deleteAssignDev']);
+// Delete association between employee and device
+    Route::get('/asignaciones/dispostivos/eliminar-asignacion/disp/{idDev}', [
+        'as' => 'deleteAssignDev',
+        'uses' => 'AssignDeviceController@deleteAssignDev']);
 
 //-----------------------------------Close CRUD AssignDevices-------------------------------
 
 //-----------------------------------Open CRUD AssignEquipment-------------------------------
 
-// READ employees with equipments
-Route::get('/transactions/assign-equipments/list-employees', [
-    'as'   => 'seeEmployeesEq',
-    'uses' => 'AssignEquipmentController@seeAssigns']);
+// Read employees with equipments
+    Route::get('/asignaciones/equipos/lista-de-asignaciones', [
+        'as'   => 'seeEmployeesEq',
+        'uses' => 'AssignEquipmentController@seeAssigns']);
 
-// READ details of equipments
-Route::get('/transactions/assign-equipments/list-employees/{id}/details', [
-    'as'   => 'seeDetailsAssignEq',
-    'uses' => 'AssignEquipmentController@seeDetailsAssignEq']);
+// Read details of equipments
+    Route::get('/asignaciones/equipos/lista-de-asignaciones/{id}/detalles', [
+        'as'   => 'seeDetailsAssignEq',
+        'uses' => 'AssignEquipmentController@seeDetailsAssignEq']);
 
-// READ employees without equipments
-Route::get('/transactions/assign-equipments/new-assign/equipments-without-employees/', [
-    'as'   => 'newAssignEq',
-    'uses' => 'AssignEquipmentController@newAssignEq']);
+// Read employees without equipments
+    Route::get('/asignaciones/equipos/nueva-asignacion/equipos-disponibles/', [
+        'as'   => 'newAssignEq',
+        'uses' => 'AssignEquipmentController@newAssignEq']);
 
-// CREATE
-Route::get('/transactions/assign-equipments/new-assign/employees/{idEq}', [
-    'as' => 'createAssignEq',
-    'uses' => 'AssignEquipmentController@createAssignEq']);
+// Create
+    Route::get('/asignaciones/equipos/nueva-asignacion/eq/{idEq}', [
+        'as' => 'createAssignEq',
+        'uses' => 'AssignEquipmentController@createAssignEq']);
 
-Route::get('/transactions/assign-equipments/new-assign/employees/{idEq}/{idEmp}', [
-    'as' => 'storeAssignEq',
-    'uses' => 'AssignEquipmentController@storeAssignEq']);
+    Route::get('/asignaciones/equipos/nueva-asignacion/eq/{idEq}/emp/{idEmp}', [
+        'as' => 'storeAssignEq',
+        'uses' => 'AssignEquipmentController@storeAssignEq']);
 
-// DELETE association between employee and equipment
-Route::get('/transactions/assign-equipments/delete-assign/employees/{idEq}', [
-    'as' => 'deleteAssignEq',
-    'uses' => 'AssignEquipmentController@deleteAssignEq']);
+// Delete association between employee and equipment
+    Route::get('/asignaciones/equipos/eliminar-asignacion/eq/{idEq}', [
+        'as' => 'deleteAssignEq',
+        'uses' => 'AssignEquipmentController@deleteAssignEq']);
 
 // Pass data in storeAssignDev since Details
-Route::get('/transactions/assign-equipments/new-assign/equipments-without-employees/{idEmp}', [
-    'as'   => 'newAssignDetEq',
-    'uses' => 'AssignEquipmentController@newAssignDetEq']);
+    Route::get('/asignaciones/equipos/nueva-asignacion/equipos-disponibles/{idEmp}', [
+        'as'   => 'newAssignDetEq',
+        'uses' => 'AssignEquipmentController@newAssignDetEq']);
+
 //-----------------------------------CLOSE CRUD AssignEquipment-------------------------------
 
 //-----------------------------------Open CRUD ServiceRequest-------------------------------
 
 // Read
-Route::get('/services/all-services-request', [
-    'as'   => 'seeAllRequests',
-    'uses' => 'ServiceRequestController@read']);
+    Route::get('/solicitudes/servicios/lista-hojas-de-servicio', [
+        'as'   => 'seeAllRequests',
+        'uses' => 'ServiceRequestController@read']);
 
 // Create
-Route::get('/services/create-new-service-request', [
-    'as'   => 'createSerquest',
-    'uses' => 'ServiceRequestController@create']);
-Route::post('createSerquest', 'ServiceRequestController@store');
-
-// Delete
-Route::get('/services/delete-service-request/{id}', [
-    'as'   => 'deleteSerquest',
-    'uses' => 'ServiceRequestController@deleteSerquest']);
+    Route::get('/solicitudes/servicios/crear', [
+        'as'   => 'createSerquest',
+        'uses' => 'ServiceRequestController@create']);
+    Route::post('createSerquest', 'ServiceRequestController@store');
 
 // Update
-//------------------------U
-Route::get('/services/update-service-request/{id}', [
-    'as'   => 'editSerquest',
-    'uses' => 'ServiceRequestController@edit']);
+    Route::get('/solicitudes/servicios/actualizar-datos-hoja/serv/{id}', [
+        'as'   => 'editSerquest',
+        'uses' => 'ServiceRequestController@edit']);
 
-Route::post('/services/update-service-request/{id}', [
-    'as'   => 'updateSerquest',
-    'uses' => 'ServiceRequestController@update']);
+    Route::post('/solicitudes/servicios/actualizar-datos-hoja/serv/{id}', [
+        'as'   => 'updateSerquest',
+        'uses' => 'ServiceRequestController@update']);
+
+// Delete
+    Route::get('/solicitudes/servicios/eliminar-hoja/serv/{id}', [
+        'as'   => 'deleteSerquest',
+        'uses' => 'ServiceRequestController@deleteSerquest']);
+
 
 //-----------------------------------CLOSE CRUD ServiceRequest-------------------------------
 
 //-----------------------------------Open CRUD EquipmentReception-------------------------------
 
 // Read
-Route::get('/services/all-equipment-receptions', [
-    'as'   => 'seeReceptions',
-    'uses' => 'EquipmentReceptionController@read']);
+    Route::get('/solicitudes/recepciones/lista-recepcion-de-equipos', [
+        'as'   => 'seeReceptions',
+        'uses' => 'EquipmentReceptionController@read']);
 
 // Read details per reception
-Route::get('/services/all-equipment-receptions/{idRec}/{idEmp}/details/', [
-    'as'   => 'seeDetails',
-    'uses' => 'EquipmentReceptionController@readDetails']);
+    Route::get('/solicitudes/recepciones/lista-recepcion-de-equipos/rec/{idRec}/emp/{idEmp}/detalles/', [
+        'as'   => 'seeDetails',
+        'uses' => 'EquipmentReceptionController@readDetails']);
 
 // Create
-Route::get('/services/create-equipment-receptions', [
-    'as'   => 'createRec',
-    'uses' => 'EquipmentReceptionController@create']);
-Route::post('storeRec', 'EquipmentReceptionController@store');
+    Route::get('/solicitudes/recepciones/crear', [
+        'as'   => 'createRec',
+        'uses' => 'EquipmentReceptionController@create']);
+    Route::post('storeRec', 'EquipmentReceptionController@store');
 
 // Update
-Route::get('/services/update-equipment-receptions/{idRec}', [
-    'as'   => 'editRec',
-    'uses' => 'EquipmentReceptionController@edit']);
+    Route::get('/solicitudes/recepciones/actualizar-datos-recepcion/rec/{idRec}', [
+        'as'   => 'editRec',
+        'uses' => 'EquipmentReceptionController@edit']);
 
-Route::post('/services/update-equipment-receptions/{idRec}', [
-    'as'   => 'updateRec',
-    'uses' => 'EquipmentReceptionController@update']);
+    Route::post('/solicitudes/recepciones/actualizar-datos-recepcion/rec/{idRec}', [
+        'as'   => 'updateRec',
+        'uses' => 'EquipmentReceptionController@update']);
 
 // Delete
-Route::get('/services/delete-equipment-receptions/{idRec}', [
-    'as'   => 'deleteRec',
-    'uses' => 'EquipmentReceptionController@destroy']);
+    Route::get('/solicitudes/recepciones/eliminar-recepcion/rec/{idRec}', [
+        'as'   => 'deleteRec',
+        'uses' => 'EquipmentReceptionController@destroy']);
 
 //-----------------------------------CLOSE CRUD EquipmentReception-------------------------------
 
-//-----------------------------------OPEN CRUD LowInventoryEq-------------------------------
 
-// Read Low Equipments
-Route::get('/management/low-equipment/see-all', [
-    'as'   => 'seeLowEq',
-    'uses' => 'LowEquipmentController@readEq']);
+});
 
-// Read Low Devices
-Route::get('/management/low-devices/see-all', [
-    'as'   => 'seeLowDev',
-    'uses' => 'LowDeviceController@readDev']);
+

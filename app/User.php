@@ -27,9 +27,17 @@ class User extends Authenticatable
 
     public function setPasswordAttribute($value)
     {
-        if(! empty($value))
+        if (! empty ($value))
         {
-            $this->attributes['password'] = bcrypt('$value');
+            $this->attributes['password'] = bcrypt($value);
+        }
+    }
+
+    public function setContactAttribute($value)
+    {
+        if (! empty ($value))
+        {
+            $this->attributes['contact'] = $value;
         }
     }
 

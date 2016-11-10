@@ -4,20 +4,16 @@
 
     @if (Auth::guest())
 
-        <div class="container">
-            <div class="jumbotron">
-                <h1>¡Oops! Tu sesión ha expirado</h1>
-                <p>Por favor entra al sistema</p>
-                <p><a class="btn btn-primary btn-lg" href="{{ url('/login') }}" role="button">Entrar</a></p>
-            </div>
-        </div>
+        @include('partials/login')
+
     @else
 
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Actualizar datos del empleado </div>
-
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Actualizar datos del empleado: <strong>{{ $employee->full_name }}</strong></h1>
+                    </div>
                     <div class="panel-body">
 
                         @include('partials/errors')
@@ -30,7 +26,7 @@
 
                         <div class="form-group">
                             {!! Form::label('ProfileEmployee', 'Perfil del empleado') !!}
-                            {!! Form::text('ProfileEmployee', $employee->ProfileEmployee, ['class' => 'form-control', 'placeholder' => 'Lic. Doc. Enfra. C.']) !!}
+                            {!! Form::text('ProfileEmployee', $employee->ProfileEmployee, ['class' => 'form-control', 'placeholder' => 'Por ejemplo: Dr. Dra. Ing. Lic.']) !!}
                         </div>
 
                         <div class="form-group">
@@ -44,22 +40,22 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('RoleEmployee', 'Función del empleado') !!}
-                            {!! Form::text('RoleEmployee', $employee->RoleEmployee, ['class' => 'form-control', 'placeholder' => 'Jefe']) !!}
+                            {!! Form::label('RoleEmployee', 'Rol del empleado') !!}
+                            {!! Form::text('RoleEmployee', $employee->RoleEmployee, ['class' => 'form-control', 'placeholder' => 'Por ejemplo: Jefe, Jefa, Encargado']) !!}
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('area_id', 'Selecciona el área') !!}
-                            {{ Form::select('area_id', $areas) }}
+                            {{ Form::select('area_id', $areas, $employee->area_id) }}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
+                            {!! Form::submit('Actualizar', ['class' => 'btn btn-primary']) !!}
+                            <div class="form-group pull-right">
+                                <a class="btn btn-danger btn-close" href="{{ route('readEmployee') }}">Cancelar</a>
+                            </div>
                         </div>
-
-
                         {{ Form::close() }}
-
                     </div>
 
     @endif

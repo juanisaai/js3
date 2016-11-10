@@ -29,7 +29,7 @@ class UsersController extends Controller
             'name' => 'required',
             'username' => 'required|unique:users|max:255',
             'email' => 'required|unique:users|max:255',
-            'contact' => 'unique:users|max:10',
+            'contact' => 'unique:users,contact|max:10',
             'active' => 'required',
             'type' => 'required|in:Technician,Collaborate,Admin',
             'password' => 'required',
@@ -44,7 +44,7 @@ class UsersController extends Controller
     //Read
     public function seeUsers()
     {
-        $users = DB::table('users')->where('username', '<>', 'juanisai')->get();
+        $users = DB::table('users')->paginate(10);
         return view('management/viewUsers', compact('users'));
     } //DB::table('users')->where('type', '<>', 'admin')->get();
 
@@ -71,7 +71,7 @@ class UsersController extends Controller
             'name' => 'required|max:45',
             'username' => 'required|max:15',
             'email' => 'required|unique:users,email,' . $this->route->getParameter('id'),
-            'contact' => 'unique:users|max:10'. $this->route->getParameter('id'),
+            'contact' => 'max:10|unique:users,contact,'. $this->route->getParameter('id'),
             'active' => 'required',
             'type' => 'required|in:Technician,Collaborate,Admin',
             'password' => 'max:60',

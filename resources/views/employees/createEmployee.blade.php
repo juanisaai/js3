@@ -3,18 +3,15 @@
 @section('content')
     @if (Auth::guest())
 
-        <div class="container">
-            <div class="jumbotron">
-                <h1>Oops!</h1>
-                <p>Please log in</p>
-                <p><a class="btn btn-primary btn-lg" href="{{ url('/login') }}" role="button">Log in</a></p>
-            </div>
-        </div>
+        @include('partials/login')
+
     @else
     <div class="container">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
-                <div class="panel-heading">Create a new employee</div>
+                <div class="panel-heading">
+                    <h1 class="panel-title">Crear nuevo empleado </h1>
+                </div>
 
                 <div class="panel-body">
 
@@ -24,23 +21,23 @@
                     {!! Form::open(array('url' => 'employees', 'method' => 'POST', 'class' => 'form')) !!}
 
                     <div class="form-group">
-                        {!! Form::label('ProfileEmployee', 'Profile Employee') !!}
-                        {!! Form::text('ProfileEmployee', null, ['class' => 'form-control', 'placeholder' => 'Write name profile employee']) !!}
+                        {!! Form::label('ProfileEmployee', 'Perfil del empleado') !!}
+                        {!! Form::text('ProfileEmployee', null, ['class' => 'form-control', 'placeholder' => 'Por ejemplo: Dr. Dra. Ing. Lic.']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('FirstName', 'First Name') !!}
-                        {!! Form::text('FirstName', null, ['class' => 'form-control', 'placeholder' => 'Write first name']) !!}
+                        {!! Form::label('FirstName', 'Nombres') !!}
+                        {!! Form::text('FirstName', null, ['class' => 'form-control', 'placeholder' => 'Escribe lo(s) nombre(s)']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('SecondName', 'Last Name') !!}
-                        {!! Form::text('SecondName', null, ['class' => 'form-control', 'placeholder' => 'Write second name']) !!}
+                        {!! Form::label('SecondName', 'Apellidos') !!}
+                        {!! Form::text('SecondName', null, ['class' => 'form-control', 'placeholder' => 'Escribe los apellidos']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('RoleEmployee', 'Role Employee') !!}
-                        {!! Form::text('RoleEmployee', null, ['class' => 'form-control', 'placeholder' => 'Write role employee']) !!}
+                        {!! Form::label('RoleEmployee', 'Rol del empleado') !!}
+                        {!! Form::text('RoleEmployee', null, ['class' => 'form-control', 'placeholder' => 'Por ejemplo: Jefe, Jefa, Encargado']) !!}
                     </div>
 
                     <div class="form-group">
@@ -49,7 +46,10 @@
                     </div>
 
                     <div class="form-group">
-                        {!! Form::submit('Create', ['class' => 'btn btn-primary']) !!}
+                        {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
+                        <div class="form-group pull-right">
+                            <a class="btn btn-danger btn-close" href="{{ route('readEmployee') }}">Cancelar</a>
+                        </div>
                     </div>
 
 

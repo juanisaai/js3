@@ -10,12 +10,10 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <p class="navbar-text navbar-right"><a href="{{ route('newAssignDet', ['idEmp' => $employee->id]) }}" class="navbar-link">Crear <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></p>
-                            <h3 class="panel-title">Empleado: {{ $employee->ProfileEmployee }} {{ $employee->FirstName }} {{ $employee->SecondName }}</h3>
-                            <h4 class="panel-title">Departamento: {{$employee->Area->NameArea}}</h4>
+                            <h1 class="panel-title">Detalle del dispositivo: <strong>{{ $device->InventoryNumberDevice }}</strong></h1>
                         </div>
                         <div class="panel-body table-hover table-striped table-responsive">
 
@@ -32,9 +30,10 @@
                                     <th>Número de serie</th>
                                     <th>Color</th>
                                     <th>Descripción adicional</th>
-                                    <td>Acción</td>
+                                    <th>
+                                        <a href="{{ route('editDevice', ['id' => $device->id]) }}"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
+                                    </th>
                                 </tr>
-                                @forelse($employee->devices as $device)
                                     <tr>
                                         <td>{{ $device->InventoryNumberDevice }}</td>
                                         <td>{{ $device->NomenclatureDevice }}</td>
@@ -44,27 +43,17 @@
                                         <td>{{ $device->SerialNumberDevice }}</td>
                                         <td>{{ $device->ColorDevice }}</td>
                                         <td>{{ $device->DescriptionAdDevice }}</td>
-                                        <td>
-
-                                            <a href="{{ route('deleteAssignDev', ['idDev' => $device->id]) }}">
-                                                Eliminar asignación
-                                            </a>
-
-                                        </td>
                                     </tr>
-                                @empty
-                                    <div class="jumbotron">
-                                        <p>There is no data</p>
-                                    </div>
-                                @endforelse
                             </table>
                         </div>
+    @endif
                     </div>
+
+                    <div class="form-group pull-left">
+                        <a class="btn btn-success btn-close" href="{{ route('readDevice') }}">Regresar</a>
+                    </div>
+
                 </div>
             </div>
         </div>
-    @endif
 @endsection
-
-
-

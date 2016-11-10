@@ -3,20 +3,15 @@
 @section('content')
     @if (Auth::guest())
 
-        <div class="container">
-            <div class="jumbotron">
-                <h1>¡Oops! Tu sesión ha expirado</h1>
-                <p>Por favor entra al sistema</p>
-                <p><a class="btn btn-primary btn-lg" href="{{ url('/login') }}" role="button">Entrar</a></p>
-            </div>
-        </div>
-
+        @include('partials/login')
 
     @else
     <div class="container">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
-                <div class="panel-heading">Crear nuevo dispositivo</div>
+                <div class="panel-heading">
+                    <h1 class="panel-title">Crear nuevo dispositivo</h1>
+                </div>
 
                 <div class="panel-body">
 
@@ -72,6 +67,9 @@
 
                     <div class="form-group">
                         {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
+                        <div class="form-group pull-right">
+                            <a class="btn btn-danger btn-close" href="{{ route('readDevice') }}">Cancelar</a>
+                        </div>
                     </div>
 
 

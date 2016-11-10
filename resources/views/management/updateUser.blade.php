@@ -4,20 +4,15 @@
 
     @if (Auth::guest())
 
-        <div class="container">
-            <div class="jumbotron">
-                <h1>Oops!</h1>
-                <p>Please log in</p>
-                <p><a class="btn btn-primary btn-lg" href="{{ url('/login') }}" role="button">Log in</a></p>
-            </div>
-        </div>
+        @include('partials/login')
+
     @else
 
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Actualizar datos del usuario {{$user->name}}</div>
-
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Actualizar datos del usuario: <strong>{{ $user->name }}</strong></h1>
                     <div class="panel-body">
 
                         @include('partials/errors')
@@ -60,20 +55,18 @@
 
                         <div class="form-group">
                             {!! Form::label('type', 'Selecciona el tipo de usuario') !!}
-                            {!! Form::select('type',[ 'Technician' => 'Técnico', 'Collaborate' => 'Colaborador', 'Admin' => 'Administrador'], 'Collaborate' ) !!}
+                            {!! Form::select('type',[ 'Technician' => 'Técnico', 'Collaborate' => 'Colaborador', 'Admin' => 'Administrador'], $user->type ) !!}
                         </div>
 
                         <div class="form-group">
                             {!! Form::submit('Actualizar', ['class' => 'btn btn-primary']) !!}
+                            <div class="form-group pull-right">
+                                <a class="btn btn-danger btn-close" href="{{ route('readUser') }}">Cancelar</a>
+                            </div>
                         </div>
-
-
                         {{ Form::close() }}
-
                     </div>
-
     @endif
-
                 </div>
             </div>
         </div>

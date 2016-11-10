@@ -39,7 +39,7 @@ class EmployeeController extends Controller
     //Read
     public function seeEmployees()
     {
-        $employees = Employee::paginate(4);
+        $employees = Employee::paginate(10);
         return view('employees/viewEmployees', compact('employees'));
     }
 

@@ -3,18 +3,15 @@
 @section('content')
     @if (Auth::guest())
 
-        <div class="container">
-            <div class="jumbotron">
-                <h1>Oops!</h1>
-                <p>Please log in</p>
-                <p><a class="btn btn-primary btn-lg" href="{{ url('/login') }}" role="button">Log in</a></p>
-            </div>
-        </div>
+        @include('partials/login')
+
     @else
     <div class="container">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
-                <div class="panel-heading">Create a new equipment</div>
+                <div class="panel-heading">
+                    <h1 class="panel-title">Crear nuevo equipo</h1>
+                </div>
 
                 <div class="panel-body">
 
@@ -24,147 +21,150 @@
                     {!! Form::open(array('url' => 'equipments', 'method' => 'POST', 'class' => 'form')) !!}
 
                     <div class="form-group">
-                        {!! Form::label('InventoryNumberEquipment', 'Inventory Number Equipment') !!}
-                        {!! Form::text('InventoryNumberEquipment', null, ['class' => 'form-control', 'placeholder' => 'Write inventory number']) !!}
+                        {!! Form::label('InventoryNumberEquipment', 'Número de inventario') !!}
+                        {!! Form::text('InventoryNumberEquipment', null, ['class' => 'form-control', 'placeholder' => 'Escribe el número de inventario']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('NomenclatureEquipment', 'Nomenclature Equipment') !!}
-                        {!! Form::text('NomenclatureEquipment', null, ['class' => 'form-control', 'placeholder' => 'Write nomenclature']) !!}
+                        {!! Form::label('NomenclatureEquipment', 'Nomenclatura') !!}
+                        {!! Form::text('NomenclatureEquipment', null, ['class' => 'form-control', 'placeholder' => 'Escribe la nomenclatura']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('DescriptionEquipment', 'Description') !!}
-                        {!! Form::text('DescriptionEquipment', null, ['class' => 'form-control', 'placeholder' => 'Write description']) !!}
+                        {!! Form::label('DescriptionEquipment', 'Descripción') !!}
+                        {!! Form::text('DescriptionEquipment', null, ['class' => 'form-control', 'placeholder' => 'Escribe la descripción del equipo']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('BrandEquipment', 'Brand Equipment') !!}
-                        {!! Form::text('BrandEquipment', null, ['class' => 'form-control', 'placeholder' => 'Write brand equipment']) !!}
+                        {!! Form::label('BrandEquipment', 'Marca') !!}
+                        {!! Form::text('BrandEquipment', null, ['class' => 'form-control', 'placeholder' => 'Escribe la marca del equipo']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('ModelEquipment', 'Model Equipment') !!}
-                        {!! Form::text('ModelEquipment', null, ['class' => 'form-control', 'placeholder' => 'Write model equipment']) !!}
+                        {!! Form::label('ModelEquipment', 'Modelo') !!}
+                        {!! Form::text('ModelEquipment', null, ['class' => 'form-control', 'placeholder' => 'Escribe el modelo del equipo']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('SerialNumberEquipment', 'Serial Number Equipment') !!}
-                        {!! Form::text('SerialNumberEquipment', null, ['class' => 'form-control', 'placeholder' => 'Write serial number']) !!}
+                        {!! Form::label('SerialNumberEquipment', 'Escribe el número de serie') !!}
+                        {!! Form::text('SerialNumberEquipment', null, ['class' => 'form-control', 'placeholder' => 'Escribre el número de serie del equipo']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('ColorEquipment', 'Color Equipment') !!}
-                        {!! Form::text('ColorEquipment', null, ['class' => 'form-control', 'placeholder' => 'Write color equipment']) !!}
+                        {!! Form::label('ColorEquipment', 'Color') !!}
+                        {!! Form::text('ColorEquipment', null, ['class' => 'form-control', 'placeholder' => 'Escribe el color del equipo']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('DescriptionAdEquipment', 'Description add') !!}
-                        {!! Form::text('DescriptionAdEquipment', null, ['class' => 'form-control', 'placeholder' => 'Write description add']) !!}
+                        {!! Form::label('DescriptionAdEquipment', 'Descripción adicional') !!}
+                        {!! Form::textarea('DescriptionAdEquipment', null, ['class' => 'form-control', 'placeholder' => 'Escribe una descripción adicional', 'rows' => 3, 'cols' => 40]) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('TypeEquipment', 'Type Equipment') !!}
-                        {!! Form::text('TypeEquipment', null, ['class' => 'form-control', 'placeholder' => 'Write type equipment']) !!}
+                        {!! Form::label('TypeEquipment', 'Tipo de equipo') !!}
+                        {!! Form::text('TypeEquipment', null, ['class' => 'form-control', 'placeholder' => 'Escribe el tipo de equipo']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('TypeAssemblyEquipment', 'TypeAssembly Equipment') !!}
-                        {!! Form::text('TypeAssemblyEquipment', null, ['class' => 'form-control', 'placeholder' => 'Write type assembly']) !!}
+                        {!! Form::label('TypeAssemblyEquipment', 'Tipo de ensamble') !!}
+                        {!! Form::text('TypeAssemblyEquipment', null, ['class' => 'form-control', 'placeholder' => 'Escribe el tipo de ensamble']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('OSEquipment', 'OS Equipment') !!}
-                        {!! Form::text('OSEquipment', null, ['class' => 'form-control', 'placeholder' => 'Write OS equipment']) !!}
+                        {!! Form::label('OSEquipment', 'Sistema operativo') !!}
+                        {!! Form::text('OSEquipment', null, ['class' => 'form-control', 'placeholder' => 'Escribe el sistema operativo']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('IPAddressEquipment', 'IP Address') !!}
-                        {!! Form::text('IPAddressEquipment', null, ['class' => 'form-control', 'placeholder' => 'Write IP address']) !!}
+                        {!! Form::label('IPAddressEquipment', 'Dirección IP') !!}
+                        {!! Form::text('IPAddressEquipment', null, ['class' => 'form-control', 'placeholder' => 'Escribe la dirección IP']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('BrandMotherB', 'Brand Motherboard') !!}
-                        {!! Form::text('BrandMotherB', null, ['class' => 'form-control', 'placeholder' => 'Write brand motherboard']) !!}
+                        {!! Form::label('BrandMotherB', 'Marca de tarjeta madre') !!}
+                        {!! Form::text('BrandMotherB', null, ['class' => 'form-control', 'placeholder' => 'Escribe la marca de la tarjeta madre']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('ModelMotherB', 'Model Motherboard') !!}
-                        {!! Form::text('ModelMotherB', null, ['class' => 'form-control', 'placeholder' => 'Write model motherboard']) !!}
+                        {!! Form::label('ModelMotherB', 'Modelo de tarjeta madre') !!}
+                        {!! Form::text('ModelMotherB', null, ['class' => 'form-control', 'placeholder' => 'Escribe el modelo de la tarjeta madre']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('SerialNumberMotherB', 'Serial Number Motherboard') !!}
-                        {!! Form::text('SerialNumberMotherB', null, ['class' => 'form-control', 'placeholder' => 'Write serial number motherboard']) !!}
+                        {!! Form::label('SerialNumberMotherB', 'Número de serie de tarjeta madre') !!}
+                        {!! Form::text('SerialNumberMotherB', null, ['class' => 'form-control', 'placeholder' => 'Escribe el número de serie de la tarjeta madre']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('BrandCPU', 'Brand CPU') !!}
-                        {!! Form::text('BrandCPU', null, ['class' => 'form-control', 'placeholder' => 'Write brand CPU']) !!}
+                        {!! Form::label('BrandCPU', 'Marca de CPU') !!}
+                        {!! Form::text('BrandCPU', null, ['class' => 'form-control', 'placeholder' => 'Escribe la marca del CPU']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('ModelCPU', 'Model CPU') !!}
-                        {!! Form::text('ModelCPU', null, ['class' => 'form-control', 'placeholder' => 'Write model CPU']) !!}
+                        {!! Form::label('ModelCPU', 'Modelo de CPU') !!}
+                        {!! Form::text('ModelCPU', null, ['class' => 'form-control', 'placeholder' => 'Escribe el modelo del CPU']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('FrequencyCPU', 'Frequency CPU') !!}
-                        {!! Form::text('FrequencyCPU', null, ['class' => 'form-control', 'placeholder' => 'Write frequency CPU']) !!}
+                        {!! Form::label('FrequencyCPU', 'Frecuencia de CPU') !!}
+                        {!! Form::text('FrequencyCPU', null, ['class' => 'form-control', 'placeholder' => 'Escribe la frecuencia del CPU']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('BrandRam', 'Brand RAM') !!}
-                        {!! Form::text('BrandRam', null, ['class' => 'form-control', 'placeholder' => 'Write brand RAM']) !!}
+                        {!! Form::label('BrandRam', 'Marca de RAM') !!}
+                        {!! Form::text('BrandRam', null, ['class' => 'form-control', 'placeholder' => 'Escribe la marca de RAM']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('TypeRam', 'Type RAM') !!}
-                        {!! Form::text('TypeRam', null, ['class' => 'form-control', 'placeholder' => 'Write type RAM']) !!}
+                        {!! Form::label('TypeRam', 'Tipo de RAM') !!}
+                        {!! Form::text('TypeRam', null, ['class' => 'form-control', 'placeholder' => 'Escribe el tipo de RAM']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('CapabilityRam', 'Capability RAM') !!}
-                        {!! Form::text('CapabilityRam', null, ['class' => 'form-control', 'placeholder' => 'Write capability RAM']) !!}
+                        {!! Form::label('CapabilityRam', 'Capacidad de RAM') !!}
+                        {!! Form::text('CapabilityRam', null, ['class' => 'form-control', 'placeholder' => 'Escribe la capacidad de RAM']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('TypeHHD', 'Type HHD') !!}
-                        {!! Form::text('TypeHHD', null, ['class' => 'form-control', 'placeholder' => 'Write type HDD']) !!}
+                        {!! Form::label('BrandHHD', 'Marca de HHD') !!}
+                        {!! Form::text('BrandHHD', null, ['class' => 'form-control', 'placeholder' => 'Escribe la marca de HDD']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('BrandHHD', 'Brand HHD') !!}
-                        {!! Form::text('BrandHHD', null, ['class' => 'form-control', 'placeholder' => 'Write brand HDD']) !!}
+                        {!! Form::label('ModelHHD', 'Modelo de HHD') !!}
+                        {!! Form::text('ModelHHD', null, ['class' => 'form-control', 'placeholder' => 'Escribe el modelo de HDD']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('ModelHHD', 'Model HHD') !!}
-                        {!! Form::text('ModelHHD', null, ['class' => 'form-control', 'placeholder' => 'Write model HDD']) !!}
+                        {!! Form::label('TypeHHD', 'Tipo de HHD') !!}
+                        {!! Form::text('TypeHHD', null, ['class' => 'form-control', 'placeholder' => 'Escribe el tipo de HDD']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('CapabilityHHD', 'Capability HHD') !!}
-                        {!! Form::text('CapabilityHHD', null, ['class' => 'form-control', 'placeholder' => 'Write capability HHD']) !!}
+                        {!! Form::label('CapabilityHHD', 'Capacidad de HHD') !!}
+                        {!! Form::text('CapabilityHHD', null, ['class' => 'form-control', 'placeholder' => 'Escribe la capacidad de HHD']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('SerialNumberHHD', 'Serial Number HHD') !!}
-                        {!! Form::text('SerialNumberHHD', null, ['class' => 'form-control', 'placeholder' => 'Write serial number HDD']) !!}
+                        {!! Form::label('SerialNumberHHD', 'Número de serie de HHD') !!}
+                        {!! Form::text('SerialNumberHHD', null, ['class' => 'form-control', 'placeholder' => 'Escribe el número de serie de HDD']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('BrandDiscReader', 'Brand Disc Reader') !!}
-                        {!! Form::text('BrandDiscReader', null, ['class' => 'form-control', 'placeholder' => 'Write brand disc reader']) !!}
+                        {!! Form::label('BrandDiscReader', 'Marca del lector de CD') !!}
+                        {!! Form::text('BrandDiscReader', null, ['class' => 'form-control', 'placeholder' => 'Escribe la marca del lector de CD']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('TypeDiscReader', 'Type Disc Reader') !!}
-                        {!! Form::text('TypeDiscReader', null, ['class' => 'form-control', 'placeholder' => 'Write type disc reader']) !!}
+                        {!! Form::label('TypeDiscReader', 'Tipo de lector') !!}
+                        {!! Form::text('TypeDiscReader', null, ['class' => 'form-control', 'placeholder' => 'Escribe el tipo de lector de CD']) !!}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::submit('Create', ['class' => 'btn btn-primary']) !!}
+                        {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
+                        <div class="form-group pull-right">
+                            <a class="btn btn-danger btn-close" href="{{ route('readEquipments') }}">Cancelar</a>
+                        </div>
                     </div>
 
 
