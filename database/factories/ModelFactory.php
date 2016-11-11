@@ -11,6 +11,18 @@
 |
 */
 
+$factory->define(\App\Entities\Employee::class, function (Faker\Generator $faker) {
+    return [
+
+        'ProfileEmployee' => $faker->title($gender = null|'male'|'female'),
+        'FirstName' => $faker->firstName($gender = null|'male'|'female'),
+        'SecondName' => $faker->lastName,
+        'RoleEmployee' => $faker->randomElement($array = array ('Jefe','Jefa','Ayudante')),
+        'area_id' => rand(1,6)
+
+    ];
+});
+
 $factory->define(\App\Entities\DataEquipment::class, function (Faker\Generator $faker) {
     return [
         'InventoryNumberEquipment' => $faker->ean8,
@@ -42,7 +54,7 @@ $factory->define(\App\Entities\DataEquipment::class, function (Faker\Generator $
         'BrandDiscReader' => $faker->company,
         'TypeDiscReader' => $faker->word,
         'active' => true,
-        'employee_id' => rand(1,4),
+        'employee_id' => rand(1,60),
     ];
 });
 
@@ -57,7 +69,7 @@ $factory->define(\App\Entities\DataDevice::class, function (Faker\Generator $fak
         'ColorDevice' => $faker->safeColorName,
         'DescriptionAdDevice' => $faker->realText($maxNbChars = 40, $indexSize = 4),
         'active' => true,
-        'employee_id' => rand(1,4),
+        'employee_id' => rand(1,60),
 
     ];
 });
@@ -68,7 +80,7 @@ $factory->define(\App\Entities\ServiceRequest::class, function (Faker\Generator 
         'ReasonRequests' => $faker->realText($maxNbChars = 40, $indexSize = 4),
         'receptionist' => $faker->name,
         'TechnicianAssigned' => 'ISC. Harvey J. León Uc',
-        'employee_id' => rand(1,3),
+        'employee_id' => rand(1,40),
 
     ];
 });
@@ -85,7 +97,7 @@ $factory->define(\App\Entities\EquipmentReception::class, function (Faker\Genera
         'StatusEquipment' => 'Ready',
         'NumberDictum' => $faker->ean8,
         'equipment_id' => rand(1,4),
-        'user_id' => rand(2,3),
+        'user_id' => rand(1,5),
 
     ];
 });

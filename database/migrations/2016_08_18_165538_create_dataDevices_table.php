@@ -14,14 +14,14 @@ class CreateDataDevicesTable extends Migration
     {
         Schema::create('dataDevices', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('InventoryNumberDevice', 25);
-            $table->string('NomenclatureDevice', 20);
+            $table->string('InventoryNumberDevice', 25)->nullable();
+            $table->string('NomenclatureDevice', 20)->nullable();
             $table->longText('DescriptionDevice');
-            $table->string('BrandDevice', 50);
-            $table->string('ModelDevice', 50);
-            $table->string('SerialNumberDevice', 25);
+            $table->string('BrandDevice', 50)->nullable();
+            $table->string('ModelDevice', 50)->nullable();
+            $table->string('SerialNumberDevice', 25)->nullable();
             $table->string('ColorDevice', 25);
-            $table->longText('DescriptionAdDevice');
+            $table->longText('DescriptionAdDevice')->nullable();
             $table->boolean('active')->default(true);
 
             $table->integer('employee_id')->unsigned()->nullable();
@@ -29,7 +29,7 @@ class CreateDataDevicesTable extends Migration
             $table->foreign('employee_id')
                 ->references('id')
                 ->on('employees')
-                ->onDelete('cascade')
+                ->onDelete('set null')
                 ->onUpdate('cascade');
 
             $table->timestamps();

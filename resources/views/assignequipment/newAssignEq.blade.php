@@ -9,9 +9,11 @@
     @else
 
         <div class="container">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Dispositivos disponibles</div>
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Equipos disponibles</h1>
+                    </div>
 
                     <div class="panel-body">
 
@@ -24,7 +26,7 @@
                                 <th>Dispositivo</th>
                                 <th>Marca</th>
                                 <th>Modelo</th>
-                                <th>Asignar</th>
+                                <th>Acción</th>
                             </tr>
 
                             @foreach($equipments as $equipment)
@@ -34,13 +36,17 @@
                                     <td>{{ $equipment->BrandEquipment }}</td>
                                     <td>{{ $equipment->ModelEquipment }}</td>
                                     <td>
-                                        <a href="{{ route('createAssignEq', ['idEq' => $equipment->id]) }}">Asignar <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                                        <a href="{{ route('createAssignEq', ['idEq' => $equipment->id]) }}"><button type="button" class="btn btn-primary btn-sm">Siguiente</button></a>
                                     </td>
                                 </tr>
                             @endforeach
                         </table>
+                        {!! $equipments->render( ) !!}
                     </div>
     @endif
+                </div>
+                <div class="form-group pull-left">
+                    <a class="btn btn-danger btn-close" href="{{ route('seeEmployeesEq') }}">Cancelar</a>
                 </div>
             </div>
         </div>

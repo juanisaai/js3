@@ -12,6 +12,6 @@ class LowInventoryDevTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(LowInventoryDev::class)->times(7)->create();
+        factory(LowInventoryDev::class)->times(15)->create();
     }
 }

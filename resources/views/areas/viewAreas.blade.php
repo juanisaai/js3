@@ -38,6 +38,8 @@
                                             <td>{{ $area->DirectorateArea }}</td>
                                             <td>
                                                 <a href="{{ route('editArea', ['id' => $area->id]) }}"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
+                                            </td>
+                                            <td>
                                                 <a href="{{ route('deleteArea', ['id' => $area->id]) }}"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
                                             </td>
                                         </tr>

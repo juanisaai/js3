@@ -67,7 +67,7 @@
 
                         <div class="form-group">
                             {!! Form::label('active', 'Dispositivo activo') !!}
-                            {!! Form::select('active',[ '1' => 'Sí', '0' => 'No'], $devices->active ) !!}
+                            {!! Form::select('active',[ '1' => 'Sí', '0' => 'No'], $devices->active, ['class' => 'selectpicker'] ) !!}
                         </div>
 
                         <div class="form-group">

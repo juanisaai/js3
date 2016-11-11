@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Harvey de Jesús León Uc',
             'username' => 'harveyuc',
             'email' => 'harveyuc@hotmail.com',
-            'contact' => '1',
+            'contact' => '9831245683',
             'type' => 'Technician',
             'password' => bcrypt('secret'),
             'active' => '1'
@@ -25,7 +25,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Sergio Alvarez',
             'username' => 'sergioalvarez',
             'email' => 'sergio@hotmail.com',
-            'contact' => '2',
+            'contact' => '9831243412',
             'type' => 'Technician',
             'password' => bcrypt('secret'),
             'active' => '1'
@@ -35,7 +35,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Bonna Collí',
             'username' => 'bonnacolli',
             'email' => 'bonnacolli@hotmail.com',
-            'contact' => '3',
+            'contact' => '9831245413',
             'type' => 'Collaborate',
             'password' => bcrypt('secret'),
             'active' => '1'
@@ -45,7 +45,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Marlene Castro',
             'username' => 'marlenecastro',
             'email' => 'marlenecastro@hotmail.com',
-            'contact' => '4',
+            'contact' => '9831248964',
             'type' => 'Collaborate',
             'password' => bcrypt('secret'),
             'active' => '1'

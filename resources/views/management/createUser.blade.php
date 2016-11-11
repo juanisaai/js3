@@ -47,12 +47,12 @@
 
                     <div class="form-group">
                         {!! Form::label('active', 'Estado del usuario') !!}
-                        {!! Form::select('active',[ '1' => 'Activo', '0' => 'Desactivado'], '1' ) !!}
+                        {!! Form::select('active',[ '1' => 'Activo', '0' => 'Desactivado'], '1', ['class' => 'selectpicker'] ) !!}
                     </div>
 
                     <div class="form-group">
                         {!! Form::label('type', 'Selecciona el tipo de usuario') !!}
-                        {!! Form::select('type',[ 'Technician' => 'Técnico', 'Collaborate' => 'Colaborador', 'Admin' => 'Administrador'], 'Collaborate' ) !!}
+                        {!! Form::select('type',[ 'Technician' => 'Técnico', 'Collaborate' => 'Colaborador', 'Admin' => 'Administrador'], 'Collaborate', ['class' => 'selectpicker'] ) !!}
                     </div>
 
                     <div class="form-group">

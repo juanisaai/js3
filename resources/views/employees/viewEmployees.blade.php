@@ -44,6 +44,8 @@
                                         </td>
                                         <td>
                                             <a href="{{ route('editEmployee', ['id' => $employee->id]) }}"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
+                                        </td>
+                                        <td>
                                             <a href="{{ route('deleteEmployee', ['id' => $employee->id]) }}"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
                                         </td>
                                     </tr>

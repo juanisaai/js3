@@ -38,6 +38,7 @@ class DataEquipment extends Model
         'SerialNumberHHD',
         'BrandDiscReader',
         'TypeDiscReader',
+        'active',
     ];
 
     public function getNameEquipmentAttribute()

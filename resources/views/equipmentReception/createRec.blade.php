@@ -9,7 +9,9 @@
     <div class="container">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
-                <div class="panel-heading">Crear nueva hoja de recepción</div>
+                <div class="panel-heading">
+                    <h1 class="panel-title">Crear nueva hoja de recepción</h1>
+                </div>
 
                 <div class="panel-body">
 
@@ -20,12 +22,12 @@
 
                     <div class="form-group">
                         {!! Form::label('equipment_id', 'Seleccionar equipo') !!}
-                        {{ Form::select('equipment_id', $equipments) }}
+                        {{ Form::select('equipment_id', $equipments, null, ['class' => 'selectpicker']) }}
                     </div>
 
                     <div class="form-group">
                         {!! Form::label('TypeTrouble', 'Tipo de problema') !!}
-                        {{Form::select('TypeTrouble', ['Hardware' => 'Hardware', 'Software' => 'Software'], null, ['placeholder' => 'Selecciona el tipo de problema'])}}
+                        {{Form::select('TypeTrouble', ['Hardware' => 'Hardware', 'Software' => 'Software'], null, ['class' => 'selectpicker'])}}
                     </div>
 
                     <div class="form-group">
@@ -40,34 +42,32 @@
 
                     <div class="form-group">
                         {!! Form::label('user_id', 'Seleccionar técnico') !!}
-                        {{ Form::select('user_id', $technicians) }}
+                        {{ Form::select('user_id', $technicians, null, ['class' => 'selectpicker']) }}
                     </div>
 
                     <div class="form-group">
                         {!! Form::label('Receptionist', 'Recepciona') !!}
-                        {{ Form::select('Receptionist', $receptionist) }}
+                        {{ Form::select('Receptionist', $receptionist, null, ['class' => 'selectpicker']) }}
                     </div>
 
                     <div class="form-group">
                         {!! Form::label('Petitioner', 'Nombre del solicitante') !!}
-                        {{ Form::select('Petitioner', $petitioner) }}
+                        {{ Form::select('Petitioner', $petitioner, null, ['class' => 'selectpicker']) }}
                     </div>
 
                     <div class="form-group">
                         {!! Form::label('Receive', 'Recibe') !!}
-                        {!! Form::text('Receive', null, ['class' => 'form-control', 'placeholder' => 'Escribe el nombre de quién recibe']) !!}
+                        {{ Form::select('Receive', $receptionist, null, ['class' => 'selectpicker']) }}
                     </div>
 
                     <div class="form-group">
                         {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
+                        <div class="form-group pull-right">
+                            <a class="btn btn-danger btn-close" href="{{ route('seeReceptions') }}">Cancelar</a>
+                        </div>
                     </div>
-
-
                     {{ Form::close() }}
-
                 </div>
-
-
     @endif
             </div>
         </div>

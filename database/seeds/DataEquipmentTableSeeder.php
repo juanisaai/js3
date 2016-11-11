@@ -12,6 +12,6 @@ class DataEquipmentTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(DataEquipment::class)->times(7)->create();
+        factory(DataEquipment::class)->times(60)->create();
     }
 }

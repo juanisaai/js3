@@ -12,7 +12,7 @@ class LowInventoryEqTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(LowInventoryEq::class)->times(7)->create();
+        factory(LowInventoryEq::class)->times(15)->create();
 
     }
 }

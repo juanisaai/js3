@@ -44,7 +44,11 @@
                                         <td>{{ $equipment->SerialNumberEquipment }}</td>
                                         <td>
                                             <a href="{{ route('editEquipment', ['id' => $equipment->id]) }}"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
+                                        </td>
+                                        <td>
                                             <a href="{{ route('deleteEquipment', ['id' => $equipment->id]) }}"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
+                                        </td>
+                                        <td>
                                             <a href="{{ route('readDetailsEquipment', ['equipment' => $equipment->id]) }}"><button type="button" class="btn btn-info btn-sm">Detalle</button></a>
                                         </td>
                                     </tr>

@@ -13,8 +13,7 @@
                 <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <p class="navbar-text navbar-right"><a href="{{ route('newAssignDetEq', ['idEmp' => $employee->id]) }}" class="navbar-link">Crear <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></p>
-                            <h3 class="panel-title">Empleado: {{ $employee->ProfileEmployee }} {{ $employee->FirstName }} {{ $employee->SecondName }}</h3>
+                            <h3 class="panel-title">Empleado: {{ $employee->full_name }}</h3>
                             <h4 class="panel-title">Departamento: {{$employee->Area->NameArea}}</h4>
                         </div>
                         <div class="panel-body table-hover table-striped table-responsive">
@@ -33,8 +32,11 @@
                                     <th>Color</th>
                                     <th>Descripción adicional</th>
                                     <td>Acción</td>
+                                    <th>
+                                        <a href="{{ route('newAssignDetEq', ['idEmp' => $employee->id]) }}"><button type="button" class="btn btn-success pull-right">Crear</button></a>
+                                    </th>
                                 </tr>
-                                @forelse($employee->equipments as $equipment)
+                                @foreach($employee->equipments as $equipment)
                                     <tr>
                                         <td>{{ $equipment->InventoryNumberEquipment }}</td>
                                         <td>{{ $equipment->NomenclatureEquipment }}</td>
@@ -45,20 +47,15 @@
                                         <td>{{ $equipment->ColorEquipment }}</td>
                                         <td>{{ $equipment->DescriptionAdEquipment }}</td>
                                         <td>
-
-                                            <a href="{{ route('deleteAssignEq', ['idEq' => $equipment->id]) }}">
-                                                Eliminar asignación
-                                            </a>
-
+                                            <a href="{{ route('deleteAssignEq', ['idEq' => $equipment->id]) }}"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
                                         </td>
                                     </tr>
-                                @empty
-                                    <div class="jumbotron">
-                                        <p>There is no data</p>
-                                    </div>
-                                @endforelse
+                                @endforeach
                             </table>
                         </div>
+                    </div>
+                    <div class="form-group pull-left">
+                        <a class="btn btn-success btn-close" href="{{ route('seeEmployeesEq') }}">Regresar</a>
                     </div>
                 </div>
             </div>

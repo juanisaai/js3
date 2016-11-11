@@ -11,7 +11,9 @@
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Actualizar hoja de recepción </div>
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Actualizar hoja de recepción</h1>
+                    </div>
 
                     <div class="panel-body">
 
@@ -24,8 +26,8 @@
                         ])) !!}
 
                         <div class="form-group">
-                            {!! Form::label('StatusEquipment', 'Seleccione el estado') !!}
-                            {{Form::select('StatusEquipment', ['Ready' => 'Listo', 'GenerateDictum' => 'Se generó dictamen'], $reception->StatusEquipment, ['placeholder' => 'Selecciona el estado del equipo'])}}
+                            {!! Form::label('StatusEquipment', 'Seleccione el estado del equipo') !!}
+                            {{Form::select('StatusEquipment', ['Ready' => 'Listo', 'GenerateDictum' => 'Se generó dictamen'], $reception->StatusEquipment, ['class' => 'selectpicker'])}}
                         </div>
 
                         <div class="form-group">
@@ -35,12 +37,12 @@
 
                         <div class="form-group">
                             {!! Form::label('equipment_id', 'Seleccionar equipo') !!}
-                            {{ Form::select('equipment_id', $equipments, $reception->equipment_id) }}
+                            {{ Form::select('equipment_id', $equipments, $reception->equipment_id, ['class' => 'selectpicker']) }}
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('TypeTrouble', 'Tipo de problema') !!}
-                            {{Form::select('TypeTrouble', ['Hardware' => 'Hardware', 'Software' => 'Software'], $reception->TypeTrouble, ['placeholder' => 'Selecciona el tipo de problema'])}}
+                            {{Form::select('TypeTrouble', ['Hardware' => 'Hardware', 'Software' => 'Software'], $reception->TypeTrouble, ['class' => 'selectpicker'])}}
                         </div>
 
                         <div class="form-group">
@@ -55,26 +57,29 @@
 
                         <div class="form-group">
                             {!! Form::label('user_id', 'Seleccionar técnico') !!}
-                            {{ Form::select('user_id', $technicians, $reception->user_id) }}
+                            {{ Form::select('user_id', $technicians, $reception->user_id, ['class' => 'selectpicker']) }}
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('Receptionist', 'Recepciona') !!}
-                            {{ Form::select('Receptionist', $receptionist, $reception->Receptionist) }}
+                            {{ Form::select('Receptionist', $receptionist, $reception->Receptionist, ['class' => 'selectpicker']) }}
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('Petitioner', 'Nombre del solicitante') !!}
-                            {{ Form::select('Petitioner', $petitioner, $reception->Petitioner) }}
+                            {{ Form::select('Petitioner', $petitioner, $reception->Petitioner, ['class' => 'selectpicker']) }}
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('Receive', 'Recibe') !!}
-                            {!! Form::text('Receive', $reception->Receive, ['class' => 'form-control', 'placeholder' => 'Escribe el nombre de quién recibe']) !!}
+                            {{ Form::select('Receive', $receptionist, $reception->Receive, ['class' => 'selectpicker']) }}
                         </div>
 
                         <div class="form-group">
                             {!! Form::submit('Actualizar', ['class' => 'btn btn-primary']) !!}
+                            <div class="form-group pull-right">
+                                <a class="btn btn-danger btn-close" href="{{ route('seeReceptions') }}">Cancelar</a>
+                            </div>
                         </div>
 
                         {{ Form::close() }}

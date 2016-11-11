@@ -9,11 +9,13 @@
     @else
 
         <div class="container">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Dispositivos disponibles</div>
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Dispositivos disponibles</h1>
+                    </div>
 
-                    <div class="panel-body">
+                    <div class="panel-body table-responsive table-hover table-striped">
 
                         @include('partials/errors')
                         @include('partials/succeed')
@@ -34,13 +36,17 @@
                                     <td>{{ $device->BrandDevice }}</td>
                                     <td>{{ $device->ModelDevice }}</td>
                                     <td>
-                                        <a href="{{ route('storeAssignDev', ['idDev' => $device->id, 'idEmp' => $employee->id]) }}">Asignar <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+                                        <a href="{{ route('storeAssignDev', ['idDev' => $device->id, 'idEmp' => $employee->id]) }}"><button type="button" class="btn btn-primary btn-sm">Asignar</button></a>
                                     </td>
                                 </tr>
                             @endforeach
                         </table>
+                        {{ $devices->render () }}
                     </div>
     @endif
+                </div>
+                <div class="form-group pull-left">
+                    <a class="btn btn-danger btn-close" href="{{ route('seeEmployeesDev') }}">Cancelar</a>
                 </div>
             </div>
         </div>

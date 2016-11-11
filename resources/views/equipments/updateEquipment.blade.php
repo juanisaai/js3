@@ -51,8 +51,8 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('SerialNumberEquipment', 'Escribe el número de serie') !!}
-                            {!! Form::text('SerialNumberEquipment', $equipment->SerialNumberEquipment, ['class' => 'form-control', 'placeholder' => 'Escribre el número de serie del equipo']) !!}
+                            {!! Form::label('SerialNumberEquipment', 'Número de serie') !!}
+                            {!! Form::text('SerialNumberEquipment', $equipment->SerialNumberEquipment, ['class' => 'form-control', 'placeholder' => 'Escribe el número de serie del equipo']) !!}
                         </div>
 
                         <div class="form-group">
@@ -163,6 +163,11 @@
                         <div class="form-group">
                             {!! Form::label('TypeDiscReader', 'Tipo de lector') !!}
                             {!! Form::text('TypeDiscReader', $equipment->TypeDiscReader, ['class' => 'form-control', 'placeholder' => 'Escribe el tipo de lector de CD']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('active', 'Equipo activo') !!}
+                            {!! Form::select('active',[ '1' => 'Sí', '0' => 'No'], $equipment->active, ['class' => 'selectpicker'] ) !!}
                         </div>
 
                         <div class="form-group">

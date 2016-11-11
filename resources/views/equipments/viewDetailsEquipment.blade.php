@@ -14,6 +14,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h1 class="panel-title">Detalles de equipo: <strong>{{ $equipment->InventoryNumberEquipment }}</strong></h1>
+                        </div>
                             <div class="panel-body table-responsive table-hover table-striped">
 
                             @include('partials/errors')
@@ -21,42 +22,39 @@
 
                             <table class="table">
                                 <tr>
-                                    <th>Inventory number</th>
-                                    <th>Nomenclature</th>
-                                    <th>Description</th>
-                                    <th>Brand</th>
-                                    <th>Model</th>
-                                    <th>Serial number</th>
-                                    <th>Color</th>
-                                    <th>Description add</th>
-                                    <th>Type</th>
-                                    <th>Type assembly</th>
-                                    <th>Brand PC</th>
-                                    <th>Model PC</th>
-                                    <th>Color PC</th>
-                                    <th>Inventory Number PC</th>
-                                    <th>Serial Number PC</th>
-                                    <th>OS PC</th>
-                                    <th>Nomenclature PC</th>
-                                    <th>IP Address</th>
-                                    <th>Brand MB</th>
-                                    <th>Model MB</th>
-                                    <th>Serial number MB</th>
-                                    <th>Brand CPU</th>
-                                    <th>Model CPU</th>
-                                    <th>Frequency CPU</th>
-                                    <th>Brand RAM</th>
-                                    <th>Type RAM</th>
-                                    <th>Capability RAM</th>
-                                    <th>Type HHD</th>
-                                    <th>Brand HHD</th>
-                                    <th>Model HHD</th>
-                                    <th>Capability HHD</th>
-                                    <th>Serial number HHD</th>
-                                    <th>Brand Disc Reader</th>
-                                    <th>Type Disc Reader</th>
 
-                                    <tr>
+                                    <th>Número de inventario</th>
+                                    <th>Nomenclatura</th>
+                                    <th>Descripción</th>
+                                    <th>Marca</th>
+                                    <th>Modelo</th>
+                                    <th>Número de serie</th>
+                                    <th>Color</th>
+                                    <th>Descripción adicional</th>
+                                    <th>Tipo de equipo</th>
+                                    <th>Tipo de ensamble</th>
+                                    <th>Sistema operativo</th>
+                                    <th>Dirección IP</th>
+                                    <th>Marca de tarjeta madre</th>
+                                    <th>Modelo de tarjeta madre</th>
+                                    <th>Número de serie de tarjeta madre</th>
+                                    <th>Marca de CPU</th>
+                                    <th>Modelo de CPU</th>
+                                    <th>Frecuencia de CPU</th>
+                                    <th>Marca de RAM</th>
+                                    <th>Tipo de RAM</th>
+                                    <th>Capacidad de RAM</th>
+                                    <th>Marca de HHD</th>
+                                    <th>Modelo de HHD</th>
+                                    <th>Tipo de HHD</th>
+                                    <th>Capacidad de HHD</th>
+                                    <th>Número de serie de HHD</th>
+                                    <th>Marca del lector de CD</th>
+                                    <th>Tipo de lector</th>
+                                    <th>Equipo activo</th>
+                                </tr>
+
+                                <tr>
                                         <td>{{ $equipment->InventoryNumberEquipment }}</td>
                                         <td>{{ $equipment->NomenclatureEquipment }}</td>
                                         <td>{{ $equipment->DescriptionEquipment }}</td>
@@ -65,7 +63,6 @@
                                         <td>{{ $equipment->SerialNumberEquipment }}</td>
                                         <td>{{ $equipment->ColorEquipment }}</td>
                                         <td>{{ $equipment->DescriptionAdEquipment }}</td>
-
 
                                         <td>{{ $equipment->TypeEquipment }}</td>
                                         <td>{{ $equipment->TypeAssemblyEquipment }}</td>
@@ -93,15 +90,22 @@
                                         <td>{{ $equipment->SerialNumberHHD }}</td>
                                         <td>{{ $equipment->BrandDiscReader }}</td>
                                         <td>{{ $equipment->TypeDiscReader }}</td>
-                                    </tr>
+                                        <td>
+                                            @if( ($equipment->active) === 1)
+                                                Activo
+                                            @elseif(($equipment->active) === 0)
+                                                Desactivado
+                                            @endif
+                                        </td>
+                                </tr>
                             </table>
                         </div>
     @endif
                     </div>
-                </div>
                     <div class="form-group pull-left">
                         <a class="btn btn-success btn-close" href="{{ route('readEquipments') }}">Regresar</a>
                     </div>
+                </div>
             </div>
         </div>
 @endsection

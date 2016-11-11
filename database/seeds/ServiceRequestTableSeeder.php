@@ -12,6 +12,6 @@ class ServiceRequestTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(ServiceRequest::class)->times(7)->create();
+        factory(ServiceRequest::class)->times(20)->create();
     }
 }

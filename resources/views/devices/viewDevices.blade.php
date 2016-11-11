@@ -44,7 +44,11 @@
                                         <td>{{ $device->SerialNumberDevice }}</td>
                                         <td>
                                             <a href="{{ route('editDevice', ['id' => $device->id]) }}"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
+                                        </td>
+                                        <td>
                                             <a href="{{ route('deleteDevice', ['id' => $device->id]) }}"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
+                                        </td>
+                                        <td>
                                             <a href="{{ route('readDetDevice', ['id' => $device->id]) }}"><button type="button" class="btn btn-info btn-sm">Detalle</button></a>
                                         </td>
                                     </tr>

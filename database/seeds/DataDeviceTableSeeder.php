@@ -12,6 +12,6 @@ class DataDeviceTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(DataDevice::class)->times(7)->create();
+        factory(DataDevice::class)->times(60)->create();
     }
 }

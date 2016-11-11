@@ -9,7 +9,9 @@
     <div class="container">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
-                <div class="panel-heading">Crear nueva hoja de servicio</div>
+                <div class="panel-heading">
+                    <h1 class="panel-title">Crear nueva hoja de servicio</h1>
+                </div>
 
                 <div class="panel-body">
 
@@ -26,21 +28,24 @@
 
                     <div class="form-group">
                         {!! Form::label('receptionist', 'Recibe') !!}
-                        {!! Form::text('receptionist', null, ['class' => 'form-control', 'placeholder' => 'Escribe el nombre de quíen recepciona']) !!}
+                        {{ Form::select('receptionist', $receptionist, null, ['class' => 'selectpicker']) }}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('TechnicianAssigned', 'Técnico asignado') !!}
-                        {!! Form::text('TechnicianAssigned', 'ISC. Harvey J. León Uc', ['class' => 'form-control', 'placeholder' => 'Escribe el nombre del técnico asignado']) !!}
+                        {!! Form::label('TechnicianAssigned', 'Seleccionar técnico') !!}
+                        {{ Form::select('TechnicianAssigned', $technicians, null, ['class' => 'selectpicker']) }}
                     </div>
 
                     <div class="form-group">
                         {!! Form::label('employee_id', 'Empleado solicitante') !!}
-                        {{ Form::select('employee_id', $employee) }}
+                        {{ Form::select('employee_id', $employee, null, ['class' => 'selectpicker']) }}
                     </div>
 
                     <div class="form-group">
-                        {!! Form::submit('Create', ['class' => 'btn btn-primary']) !!}
+                        {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
+                        <div class="form-group pull-right">
+                            <a class="btn btn-danger btn-close" href="{{ route('seeReceptions') }}">Cancelar</a>
+                        </div>
                     </div>
 
 

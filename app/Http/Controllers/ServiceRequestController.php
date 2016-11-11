@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Entities\Employee;
 use App\Entities\ServiceRequest;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -22,9 +23,10 @@ class ServiceRequestController extends Controller
         /*$folios      = ServiceRequest::all();
         $folioActual  = $folios->last();
         $folioView = $folioActual->id + 1;*/
-
+        $receptionist = user::get()->lists('name', 'name');
+        $technicians = user::where('type', '=', 'Technician')->get()->lists('name', 'name');
         $employee = Employee::get()->lists('full_name', 'id');
-        return view('serviceRequest/createSerquest', compact('employee'));
+        return view('serviceRequest/createSerquest', compact('employee', 'technicians', 'receptionist'));
     }
 
     public function store()
@@ -44,9 +46,11 @@ class ServiceRequestController extends Controller
     // edit update
     public function edit($id)
     {
+        $receptionist = user::get()->lists('name', 'name');
+        $technicians = user::where('type', '=', 'Technician')->get()->lists('name', 'name');
         $employee = Employee::get()->lists('full_name', 'id');
         $serquest = ServiceRequest::findOrFail($id);
-        return view('serviceRequest/updateSerquest', compact('employee', 'serquest'));
+        return view('serviceRequest/updateSerquest', compact('employee', 'serquest', 'technicians', 'receptionist'));
     }
 
     // store update

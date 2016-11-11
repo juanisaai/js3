@@ -10,7 +10,7 @@ class AssignEquipmentController extends Controller
     // View employees with equipments assigned
     public function seeAssigns()
     {
-        $employees = Employee::has('equipments')->get();
+        $employees = Employee::has('equipments')->paginate(10);
         return View('assignequipment/viewEmployeesEq', compact('employees'));
     }
 
@@ -25,7 +25,7 @@ class AssignEquipmentController extends Controller
     public function newAssignEq()
     {
         //here stay all equipments without employee
-        $equipments = DataEquipment::where('employee_id', '=', null)->get();
+        $equipments = DataEquipment::where('employee_id', '=', null)->paginate(6);
         return View('assignequipment/newAssignEq', compact('equipments'));
     }
 
@@ -33,7 +33,7 @@ class AssignEquipmentController extends Controller
     public function createAssignEq($idEq)
     {
         $equipment = DataEquipment::find($idEq);
-        $employees = Employee::has('equipments', '=', 0)->get();
+        $employees = Employee::has('equipments', '=', 0)->paginate(6);
         return View('assignequipment/createAssignEq', compact('employees', 'equipment'));
     }
 
@@ -46,14 +46,15 @@ class AssignEquipmentController extends Controller
         $equipment->employee_id = $idEq;
         $employee->equipments()->save($equipment);
 
-        return redirect()->route('seeEmployeesEq');
+        return redirect()->route('seeDetailsAssignEq', ['id' => $idEmp]);
     }
+
 
     // Create new assign in View newAssignEq
     public function newAssignDetEq($idEmp)
     {
         $employee = Employee::find($idEmp);
-        $equipments = DataEquipment::where('employee_id', '=', null)->get();
+        $equipments = DataEquipment::where('employee_id', '=', null)->paginate(6);
         return View('assignequipment/newAssignDetEq', compact('equipments', 'employee'));
     }
 

@@ -11,7 +11,9 @@
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Actualizar datos del empleado </div>
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Actualizar datos de solicitud de servicio</h1>
+                    </div>
 
                     <div class="panel-body">
 
@@ -32,21 +34,24 @@
 
                         <div class="form-group">
                             {!! Form::label('receptionist', 'Recibe') !!}
-                            {!! Form::text('receptionist', $serquest->receptionist, ['class' => 'form-control', 'placeholder' => 'Escribe el nombre de quíen recepciona']) !!}
+                            {{ Form::select('receptionist', $receptionist, $serquest->receptionist, ['class' => 'selectpicker']) }}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('TechnicianAssigned', 'Técnico asignado') !!}
-                            {!! Form::text('TechnicianAssigned', $serquest->TechnicianAssigned, ['class' => 'form-control', 'placeholder' => 'Escribe el nombre del técnico asignado']) !!}
+                            {!! Form::label('TechnicianAssigned', 'Seleccionar técnico') !!}
+                            {{ Form::select('TechnicianAssigned', $technicians, $serquest->TechnicianAssigned, ['class' => 'selectpicker']) }}
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('employee_id', 'Empleado solicitante') !!}
-                            {{ Form::select('employee_id', $employee) }}
+                            {{ Form::select('employee_id', $employee, $serquest->employee_id, ['class' => 'selectpicker']) }}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::submit('Update', ['class' => 'btn btn-primary']) !!}
+                            {!! Form::submit('Actualizar', ['class' => 'btn btn-primary']) !!}
+                            <div class="form-group pull-right">
+                                <a class="btn btn-danger btn-close" href="{{ route('seeAllRequests') }}">Cancelar</a>
+                            </div>
                         </div>
 
 

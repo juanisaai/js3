@@ -12,8 +12,8 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="panel panel-default">
-                        <div class="panel-heading">Resumen de dispositivos asignados
-                        <p class="navbar-text navbar-right"><a href="{{ route('newAssign') }}" class="navbar-link">Crear <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></p>
+                        <div class="panel-heading">
+                            <h1 class="panel-title">Resumen de dispositivos asignados</h1>
                         </div>
                         <div class="panel-body table-hover table-striped table-responsive">
 
@@ -26,6 +26,9 @@
                                     <th>Departamento</th>
                                     <th>Dispositivos</th>
                                     <th>Acciones</th>
+                                    <th>
+                                        <a href="{{ route('newAssign') }}"><button type="button" class="btn btn-success pull-right">Crear</button></a>
+                                    </th>
                                 </tr>
 
                                 @foreach($employees as $employee)
@@ -40,11 +43,12 @@
                                             </ul>
                                         </td>
                                         <td>
-                                                <a href="{{ route('seeDetailsAssignDev', ['id' => $employee->id]) }}">Ver detalles</a>
+                                            <a href="{{ route('seeDetailsAssignDev', ['id' => $employee->id]) }}"><button type="button" class="btn btn-info btn-sm">Detalle</button></a>
                                         </td>
                                     </tr>
                                 @endforeach
                             </table>
+                            {!! $employees->render( ) !!}
                         </div>
                         @endif
                     </div>

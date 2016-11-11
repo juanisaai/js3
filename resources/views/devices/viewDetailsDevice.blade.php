@@ -30,6 +30,7 @@
                                     <th>Número de serie</th>
                                     <th>Color</th>
                                     <th>Descripción adicional</th>
+                                    <th>Activo</th>
                                     <th>
                                         <a href="{{ route('editDevice', ['id' => $device->id]) }}"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
                                     </th>
@@ -43,6 +44,13 @@
                                         <td>{{ $device->SerialNumberDevice }}</td>
                                         <td>{{ $device->ColorDevice }}</td>
                                         <td>{{ $device->DescriptionAdDevice }}</td>
+                                        <td>
+                                            @if( ($device->active) === 1)
+                                                Activo
+                                            @elseif(($device->active) === 0)
+                                                Desactivado
+                                            @endif
+                                        </td>
                                     </tr>
                             </table>
                         </div>

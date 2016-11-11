@@ -14,12 +14,12 @@ class CreateDataEquipmentsTable extends Migration
     {
         Schema::create('dataEquipments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('InventoryNumberEquipment', 25);
-            $table->string('NomenclatureEquipment', 20);
+            $table->string('InventoryNumberEquipment', 25)->nullable();
+            $table->string('NomenclatureEquipment', 20)->nullable();
             $table->longText('DescriptionEquipment');
             $table->string('BrandEquipment', 15)->nullable();
             $table->string('ModelEquipment', 25)->nullable();
-            $table->string('SerialNumberEquipment', 15);
+            $table->string('SerialNumberEquipment', 15)->nullable();
             $table->string('ColorEquipment', 15);
             $table->longText('DescriptionAdEquipment')->nullable();
             //For view details
@@ -41,8 +41,8 @@ class CreateDataEquipmentsTable extends Migration
             $table->string('ModelHHD', 50);
             $table->string('CapabilityHHD', 25);
             $table->string('SerialNumberHHD', 50);
-            $table->string('BrandDiscReader', 50);
-            $table->string('TypeDiscReader', 25);
+            $table->string('BrandDiscReader', 50)->nullable();
+            $table->string('TypeDiscReader', 25)->nullable();
             $table->boolean('active')->default(true);
 
             $table->integer('employee_id')->unsigned()->nullable();
@@ -50,7 +50,7 @@ class CreateDataEquipmentsTable extends Migration
             $table->foreign('employee_id')
                 ->references('id')
                 ->on('employees')
-                ->onDelete('cascade')
+                ->onDelete('set null')
                 ->onUpdate('cascade');
 
 

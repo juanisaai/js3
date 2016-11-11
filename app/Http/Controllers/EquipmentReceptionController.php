@@ -6,9 +6,17 @@ use App\Entities\DataEquipment;
 use App\Entities\Employee;
 use App\Entities\EquipmentReception;
 use App\User;
+use Illuminate\Routing\Route;
 
 class EquipmentReceptionController extends Controller
 {
+
+    //Create
+    /**
+     * @var \Illuminate\Routing\Route
+     */
+    private $route;
+
     // Read receptions
     public function read()
     {
@@ -62,6 +70,11 @@ class EquipmentReceptionController extends Controller
         return view('equipmentReception/updateRec', compact('reception', 'equipments', 'technicians', 'receptionist', 'petitioner'));
     }
 
+    public function __construct(Route $route)
+    {
+        $this->route = $route;
+    }
+
     public function update($idRec)
     {
         $reception = EquipmentReception::findOrFail($idRec);
@@ -74,7 +87,7 @@ class EquipmentReceptionController extends Controller
             'Petitioner' => 'required',
             'Receive' => 'required|max:60',
             'StatusEquipment' => 'in:Ready,GenerateDictum',
-            'NumberDictum' => 'unique:equipmentReceptions',
+            'NumberDictum' => 'unique:equipmentReceptions,NumberDictum,' . $this->route->getParameter('idRec'),
 
             'equipment_id' => 'required',
             'user_id' => 'required',
