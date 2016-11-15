@@ -26,9 +26,16 @@
                         ])) !!}
 
                         <div class="form-group">
+                            {!! Form::label('NumberDoc', 'Número de oficio') !!}
+                            {!! Form::text('NumberDoc', $reception->NumberDoc, ['class' => 'form-control', 'placeholder' => 'Escribe el número de oficio']) !!}
+                        </div>
+
+                        <div class="form-group">
                             {!! Form::label('StatusEquipment', 'Seleccione el estado del equipo') !!}
                             {{Form::select('StatusEquipment', ['Ready' => 'Listo', 'GenerateDictum' => 'Se generó dictamen'], $reception->StatusEquipment, ['class' => 'selectpicker'])}}
                         </div>
+
+                        <h4>Si ha seleccionado generar dictamen, considere escribir el número de la misma</h4>
 
                         <div class="form-group">
                             {!! Form::label('NumberDictum', 'Número del dictamen') !!}
@@ -53,6 +60,11 @@
                         <div class="form-group">
                             {!! Form::label('ObservationReception', 'Observaciones') !!}
                             {!! Form::textarea('ObservationReception', $reception->ObservationReception, ['class' => 'form-control', 'placeholder' => 'Escribe las observaciones', 'rows' => 3, 'cols' => 40]) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('AccessoryAdd', 'Accesorios adicionales') !!}
+                            {!! Form::textarea('AccessoryAdd', $reception->AccessoryAdd, ['class' => 'form-control', 'placeholder' => 'Escribe los accesorios adicionales', 'rows' => 3, 'cols' => 40]) !!}
                         </div>
 
                         <div class="form-group">

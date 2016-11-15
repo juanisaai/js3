@@ -16,19 +16,9 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
 
-<!--Start of Zendesk Chat Script-->
-    <script type="text/javascript">
-        window.$zopim||(function(d,s){var z=$zopim=function(c){
-            z._.push(c)},$=z.s=
-                d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-        _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
-            $.src='//v2.zopim.com/?4KoaWp6Z8KRqT3MSxhl6RbtIq529IYyR';z.t=+new Date;$.
-                    type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
-    </script>
-    <!--End of Zendesk Chat Script-->
-
     {!! Html::style('css/bootstrap.min.css') !!}
-
+    {!! Html::style('css/bootstrap-select.min.css') !!}
+    {!! Html::style('css/table.css') !!}
 
 </head>
 <body id="app-layout">
@@ -56,7 +46,18 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li><a href="{{ url('/') }}">Inicio</a></li>
-                        <li><a href="{{ route('readUser') }}">Usuarios</a></li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuarios<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ route('readUser') }}">Usuarios</a></li>
+
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Superusuario</li>
+                                <li><a href="{{ route('readAdmin') }}">Administrador</a></li>
+
+                            </ul>
+                        </li>
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Agregar<span class="caret"></span></a>
@@ -77,9 +78,10 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('seeEmployeesDev') }}">Asignar dispositivos</a></li>
                                 <li><a href="{{ route('seeEmployeesEq') }}">Asignar equipos</a></li>
-                                <li><a href="{{ route('seeLowEq') }}">Baja de equipos</a></li>
+
+                            <!--<li><a href="{{ route('seeLowEq') }}">Baja de equipos</a></li>
                                 <li><a href="{{ route('seeLowDev') }}">Baja de dispositivos</a></li>
-                                <!--
+
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Superusuario</li>
                                 -->

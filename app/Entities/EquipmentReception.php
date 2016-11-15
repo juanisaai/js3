@@ -4,6 +4,7 @@ namespace App\Entities;
 
 use App\User;
 use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Date\Date;
 
 class EquipmentReception extends Model
 {
@@ -13,15 +14,22 @@ class EquipmentReception extends Model
         'TypeTrouble',
         'ReasonReception',
         'ObservationReception',
+        'AccessoryAdd',
         'Receptionist',
         'Petitioner',
         'Receive',
         'StatusEquipment',
         'NumberDictum',
+        'NumberDoc',
         'equipment_id',
         'device_id',
         'user_id',
 ];
+
+    public function getCreatedAtAttribute($date)
+    {
+        return new Date($date);
+    }
 
     // Relationship with DataEquipment
     public function equipment()

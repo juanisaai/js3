@@ -6,6 +6,7 @@ use App\Entities\DataEquipment;
 use App\Entities\Employee;
 use App\Entities\EquipmentReception;
 use App\User;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Routing\Route;
 
 class EquipmentReceptionController extends Controller
@@ -32,6 +33,18 @@ class EquipmentReceptionController extends Controller
         return view('equipmentReception/viewDetailsRec', compact('reception', 'employee'));
     }
 
+    // Print reception
+    public function printReception($idRec, $idEmp)
+    {
+        $employee = Employee::find($idEmp);
+        $reception = EquipmentReception::find($idRec);
+
+        $pdf = PDF::loadView('equipmentReception/printDetailsRec', ['reception' => $reception, 'employee' => $employee]);
+        return $pdf->download('hoja_recepcion_'.$idEmp.'_'.$idRec.'.pdf');
+        //return $pdf->download('hoja_recepcion.pdf');
+
+    }
+
     // Create new reception
     public function create()
     {
@@ -48,8 +61,10 @@ class EquipmentReceptionController extends Controller
             'TypeTrouble' => 'required|in:Hardware,Software',
             'ReasonReception' => 'required|max:500',
             'ObservationReception' => 'max:500',
+            'AccessoryAdd' => 'max:500',
             'Receptionist' => 'required',
             'Petitioner' => 'required',
+            'NumberDoc' => 'required|unique:equipmentReceptions,NumberDoc',
             'Receive' => 'required|max:60',
             'equipment_id' => 'required',
             'user_id' => 'required',
@@ -83,12 +98,13 @@ class EquipmentReceptionController extends Controller
             'TypeTrouble' => 'required|in:Hardware,Software',
             'ReasonReception' => 'required|max:500',
             'ObservationReception' => 'max:500',
+            'AccessoryAdd' => 'max:500',
             'Receptionist' => 'required',
             'Petitioner' => 'required',
+            'NumberDoc' => 'required|unique:equipmentReceptions,NumberDoc,' . $this->route->getParameter('idRec'),
             'Receive' => 'required|max:60',
             'StatusEquipment' => 'in:Ready,GenerateDictum',
             'NumberDictum' => 'unique:equipmentReceptions,NumberDictum,' . $this->route->getParameter('idRec'),
-
             'equipment_id' => 'required',
             'user_id' => 'required',
 

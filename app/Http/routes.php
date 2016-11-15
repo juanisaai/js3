@@ -61,10 +61,21 @@ Route::group(['middleware' => 'auth'], function (){
             'uses' => 'Admin\UsersController@create']);
         Route::post('users', 'Admin\UsersController@store');
 
-    // Read
+    // Create Admin
+        Route::get('/administracion/administrador/crear', [
+            'as'   => 'createAdmin',
+            'uses' => 'Admin\UsersController@createAd']);
+        Route::post('admin', 'Admin\UsersController@storeAd');
+
+    // Read User
         Route::get('/administracion/lista-de-usuarios', [
             'as'   => 'readUser',
             'uses' => 'Admin\UsersController@seeUsers']);
+
+    // Read Admin
+        Route::get('/administracion/administrador/config', [
+            'as'   => 'readAdmin',
+            'uses' => 'Admin\UsersController@seeAdmin']);
 
     // Update
         Route::get('/administracion/usuario/{id}/actualizar-datos', [
@@ -75,10 +86,24 @@ Route::group(['middleware' => 'auth'], function (){
             'as'   => 'updateUser',
             'uses' => 'Admin\UsersController@updateUser']);
 
+
+    // Update Admin
+        Route::get('/administracion/administrador/{id}/actualizar-datos', [
+            'as'   => 'editAdmin',
+            'uses' => 'Admin\UsersController@editAdmin']);
+
+        Route::post('/administracion/administrador/{id}/actualizar-datos', [
+            'as'   => 'updateAdmin',
+            'uses' => 'Admin\UsersController@updateAdmin']);
+
     // Delete
         Route::get('/administracion/lista-de-usuarios/{id}/eliminar', [
             'as' => 'deleteUser',
             'uses' => 'Admin\UsersController@deleteUser']);
+    // Delete Admin
+        Route::get('/administracion/administrador/{id}/eliminar', [
+            'as' => 'deleteAdmin',
+            'uses' => 'Admin\UsersController@deleteAdmin']);
 
     //-----------------------------------Close CRUD Users-------------------------------
 
@@ -344,6 +369,11 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('/solicitudes/recepciones/lista-recepcion-de-equipos/rec/{idRec}/emp/{idEmp}/detalles/', [
             'as'   => 'seeDetails',
             'uses' => 'EquipmentReceptionController@readDetails']);
+
+    // Read details per reception
+        Route::get('/solicitudes/recepciones/lista-recepcion-de-equipos/rec/{idRec}/emp/{idEmp}/detalles/imprimir', [
+            'as'   => 'printReception',
+            'uses' => 'EquipmentReceptionController@printReception']);
 
     // Create
         Route::get('/solicitudes/recepciones/crear', [

@@ -10,7 +10,7 @@
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1 class="panel-title">Crear nuevo usuario</h1>
+                    <h1 class="panel-title">Crear nuevo administrador</h1>
                 </div>
 
                 <div class="panel-body">
@@ -18,7 +18,7 @@
                     @include('partials/errors')
                     @include('partials/succeed')
 
-                    {!! Form::open(array('url' => 'users', 'method' => 'POST', 'class' => 'form')) !!}
+                    {!! Form::open(array('url' => 'admin', 'method' => 'POST', 'class' => 'form')) !!}
 
                     <div class="form-group">
                         {!! Form::label('name', 'Nombres') !!}
@@ -52,13 +52,13 @@
 
                     <div class="form-group">
                         {!! Form::label('type', 'Selecciona el tipo de usuario') !!}
-                        {!! Form::select('type',[ 'Technician' => 'Técnico', 'Collaborate' => 'Colaborador', 'Admin' => 'Administrador'], 'Collaborate', ['class' => 'selectpicker'] ) !!}
+                        {!! Form::select('type',[ 'Technician' => 'Técnico', 'Collaborate' => 'Colaborador', 'Admin' => 'Administrador'], 'Admin', ['class' => 'selectpicker'] ) !!}
                     </div>
 
                     <div class="form-group">
                         {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
                         <div class="form-group pull-right">
-                            <a class="btn btn-danger btn-close" href="{{ route('readUser') }}">Cancelar</a>
+                            <a class="btn btn-danger btn-close" href="{{ route('readAdmin') }}">Cancelar</a>
                         </div>
                     </div>
                     {{ Form::close() }}

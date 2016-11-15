@@ -3,6 +3,7 @@
 namespace App\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Date\Date;
 
 class LowInventoryEq extends Model
 {
@@ -15,6 +16,11 @@ class LowInventoryEq extends Model
         'UpInventory',
         'equipment_id',
     ];
+
+    public function getCreatedAtAttribute($date)
+    {
+        return new Date($date);
+    }
 
     //--------------------Relationship with dataEquipment
 

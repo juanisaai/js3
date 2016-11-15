@@ -12,7 +12,7 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1 class="panel-title">Actualizar datos del usuario: <strong>{{ $user->name }}</strong></h1>
+                        <h1 class="panel-title">Actualizar datos del administrador: <strong>{{ $user->name }}</strong></h1>
                     </div>
                         <div class="panel-body">
 
@@ -21,7 +21,7 @@
 
                         {!! Form::model(array($user, [
                             'method' => 'PATCH',
-                            'route'  => ['updateUser', $user->id]
+                            'route'  => ['updateAdmin', $user->id]
                         ])) !!}
 
                         <div class="form-group">
@@ -62,7 +62,7 @@
                         <div class="form-group">
                             {!! Form::submit('Actualizar', ['class' => 'btn btn-primary']) !!}
                             <div class="form-group pull-right">
-                                <a class="btn btn-danger btn-close" href="{{ route('readUser') }}">Cancelar</a>
+                                <a class="btn btn-danger btn-close" href="{{ route('readAdmin') }}">Cancelar</a>
                             </div>
                         </div>
                         {{ Form::close() }}

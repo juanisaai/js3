@@ -91,11 +91,13 @@ $factory->define(\App\Entities\EquipmentReception::class, function (Faker\Genera
         'TypeTrouble' => 'Hardware',
         'ReasonReception' => $faker->realText($maxNbChars = 40, $indexSize = 4),
         'ObservationReception' => $faker->realText($maxNbChars = 20, $indexSize = 2),
+        'AccessoryAdd' => $faker->realText($maxNbChars = 40, $indexSize = 4),
         'Receptionist' => 'ISC. Harvey J. León Uc',
         'Petitioner' => 'Alguien',
         'Receive' => 'Alguien',
         'StatusEquipment' => 'Ready',
         'NumberDictum' => $faker->ean8,
+        'NumberDoc' => $faker->ean13,
         'equipment_id' => rand(1,4),
         'user_id' => rand(1,5),
 

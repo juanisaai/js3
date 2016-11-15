@@ -1,0 +1,12 @@
+table td {
+    border-top: none !important;
+}
+
+.treception {
+    border-style: solid;
+    border-width: 2px;
+}
+
+.treceptiondate {
+    border-style: none;
+}

@@ -5,6 +5,11 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
+.table-borderless td,
+.table-borderless th {
+    border: 0;
+}
+
 footer {
     position: absolute;
     bottom: 0;

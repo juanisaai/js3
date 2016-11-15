@@ -37,7 +37,7 @@
                                 @foreach($receptions as $reception)
                                     <tr>
                                         <td>{{ $reception->id }}</td>
-                                        <td>{{ date('d F Y', strtotime($reception->created_at)) }}</td>
+                                        <td>{{ $reception->created_at->toFormattedDateString() }}</td>
                                         <td>{{ $reception->TypeTrouble }}</td>
                                         <td>{{ $reception->ReasonReception }}</td>
                                         <td>{{ $reception->equipment->full_name }}</td>
@@ -51,7 +51,6 @@
                                         <td>
                                             <a href="{{ route('seeDetails', ['idRec' => $reception->id, 'idEmp' => $reception->equipment->employee_id]) }}"><button type="button" class="btn btn-info btn-sm">Detalle</button></a>
                                         </td>
-
                                     </tr>
                                 @endforeach
                             </table>

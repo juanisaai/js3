@@ -41,6 +41,22 @@ class User extends Authenticatable
         }
     }
 
+    public function getIsAdminAttribute()
+    {
+        $this->type = 'Admin';
+    }
+
+    public function getIsCollaborateAttribute()
+    {
+        $this->type = 'Collaborate';
+    }
+
+    public function getIsTechnicianAttribute()
+    {
+        $this->type = 'Technician';
+    }
+
+
     public function receptions()
     {
         return $this->hasMany(EquipmentReception::class);

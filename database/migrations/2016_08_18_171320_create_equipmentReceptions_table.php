@@ -17,11 +17,13 @@ class CreateEquipmentReceptionsTable extends Migration
             $table->enum('TypeTrouble', ['Hardware', 'Software']);
             $table->string('ReasonReception', 500);
             $table->string('ObservationReception', 500);
+            $table->string('AccessoryAdd', 500)->nullable();
             $table->string('Receptionist', 60);
             $table->string('Petitioner', 60);
             $table->string('Receive', 60);
             $table->enum('StatusEquipment', ['Ready', 'GenerateDictum'])->nullable();
             $table->integer('NumberDictum')->nullable();
+            $table->string('NumberDoc');
             $table->timestamps();
 
             //relationship with dataEquipment->id

@@ -13,7 +13,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h1 class="panel-title">Lista de usuarios</h1>
+                            <h1 class="panel-title">Configuración de administrador</h1>
                         </div>
                         <div class="panel-body table-hover table-striped table-responsive">
 
@@ -30,43 +30,44 @@
                                     <th>Tipo de usuario</th>
                                     <th>Acciones</th>
                                     <th>
-                                        <a href="{{ route('createUser') }}"><button type="button" class="btn btn-success pull-right">Crear</button></a>
+                                        <a href="{{ route('createAdmin') }}"><button type="button" class="btn btn-success pull-right">Crear</button></a>
                                     </th>
                                 </tr>
 
-                            @foreach($users as $user)
+                            @foreach($admins as $admin)
                                     <tr>
-                                        <td>{{ $user->name }}</td>
-                                        <td>{{ $user->username }}</td>
-                                        <td>{{ $user->email }}</td>
-                                        <td>{{ $user->contact }}</td>
+                                        <td>{{ $admin->name }}</td>
+                                        <td>{{ $admin->username }}</td>
+                                        <td>{{ $admin->email }}</td>
+                                        <td>{{ $admin->contact }}</td>
                                         <td>
-                                            @if( ($user->active) === 1)
+                                            @if( ($admin->active) === 1)
                                                 Activo
-                                            @elseif(($user->active) === 0)
+                                            @elseif(($admin->active) === 0)
                                                 Desactivado
                                             @endif
                                         </td>
                                         <td>
-                                            @if( ($user->type) === 'Technician')
+                                            @if( ($admin->type) === 'Technician')
                                                 Técnico
-                                            @elseif(($user->type) === 'Collaborate')
+                                            @elseif(($admin->type) === 'Collaborate')
                                                 Colaborador
                                             @else
                                                 Administrador
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{ route('editUser', ['id' => $user->id]) }}"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
-                                            <a href="{{ route('deleteUser', ['id' => $user->id]) }}"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
+                                            <a href="{{ route('editAdmin', ['id' => $admin->id]) }}"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
+                                            <a href="{{ route('deleteAdmin', ['id' => $admin->id]) }}"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
                                         </td>
                                     </tr>
                                 @endforeach
                             </table>
-                            {{ $users->render() }}
+                            {{ $admins->render() }}
                         </div>
     @endif
                     </div>
+
                 </div>
             </div>
         </div>
