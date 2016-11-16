@@ -15,17 +15,21 @@ class CreateDataEquipmentsTable extends Migration
         Schema::create('dataEquipments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('InventoryNumberEquipment', 25)->nullable();
-            $table->string('NomenclatureEquipment', 20)->nullable();
+            $table->string('NomenclatureEquipment', 30)->nullable();
             $table->longText('DescriptionEquipment');
             $table->string('BrandEquipment', 15)->nullable();
             $table->string('ModelEquipment', 25)->nullable();
-            $table->string('SerialNumberEquipment', 15)->nullable();
+            $table->string('SerialNumberEquipment', 25)->nullable();
             $table->string('ColorEquipment', 15);
             $table->longText('DescriptionAdEquipment')->nullable();
             //For view details
             $table->string('TypeEquipment', 15);
             $table->string('TypeAssemblyEquipment', 15);
-            $table->string('OSEquipment', 40);
+            $table->string('EquipmentSO', 40);
+            $table->string('ArchitectureOS', 15);
+            $table->string('DistributionOS', 40);
+            $table->string('SerialNumberOS', 25)->nullable();
+            $table->string('InventoryNumberOS', 30)->nullable();
             $table->string('IPAddressEquipment', 25);
             $table->string('BrandMotherB', 50);
             $table->string('ModelMotherB', 50);

@@ -50,7 +50,7 @@
                                             <a href="{{ route('deleteAssignEq', ['idEq' => $equipment->id]) }}"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
                                         </td>
                                         <td>
-                                            <a href="{{ route('seeDictumEq', ['id' => $equipment->id, 'idEmp' => $employee->id]) }}"><button type="button" class="btn btn-info btn-sm">Dictamen</button></a>
+                                            <a href="{{ route('seeInvEq', ['id' => $equipment->id, 'idEmp' => $employee->id]) }}"><button type="button" class="btn btn-info btn-sm">Reporte</button></a>
                                         </td>
                                     </tr>
                                 @endforeach

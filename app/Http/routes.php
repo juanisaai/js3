@@ -301,12 +301,18 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('/asignaciones/equipos/lista-de-asignaciones/{id}/detalles', [
             'as'   => 'seeDetailsAssignEq',
             'uses' => 'AssignEquipmentController@seeDetailsAssignEq']);
-    // Read details of equipments
-        Route::get('/asignaciones/equipos/lista-de-asignaciones/asig/{id}/emp/{idEmp}/detalles/dictamen', [
-            'as'   => 'seeDictumEq',
-            'uses' => 'AssignEquipmentController@seeDictumEq']);
 
-    // Read employees without equipments
+    // Read details of equipments for inventory
+        Route::get('/asignaciones/equipos/lista-de-asignaciones/asig/{id}/emp/{idEmp}/detalles/rep-inv', [
+            'as'   => 'seeInvEq',
+            'uses' => 'AssignEquipmentController@seeInvEq']);
+
+    // print details of equipments for inventory
+        Route::get('/asignaciones/equipos/lista-de-asignaciones/asig/{id}/emp/{idEmp}/detalles/rep-inv/imprimir', [
+            'as'   => 'printInvEq',
+            'uses' => 'AssignEquipmentController@printInvEq']);
+
+        // Read employees without equipments
         Route::get('/asignaciones/equipos/nueva-asignacion/equipos-disponibles/', [
             'as'   => 'newAssignEq',
             'uses' => 'AssignEquipmentController@newAssignEq']);

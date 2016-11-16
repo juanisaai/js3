@@ -34,6 +34,10 @@
                                     <th>Tipo de equipo</th>
                                     <th>Tipo de ensamble</th>
                                     <th>Sistema operativo</th>
+                                    <th>Arquitectura de S.O.</th>
+                                    <th>Distribución de S.O.</th>
+                                    <th>No. Serie de S.O.</th>
+                                    <th>No Inventario de S.O.</th>
                                     <th>Dirección IP</th>
                                     <th>Marca de tarjeta madre</th>
                                     <th>Modelo de tarjeta madre</th>
@@ -71,7 +75,11 @@
                                         <td>{{ $equipment->ColorEquipment }}</td>
                                         <td>{{ $equipment->InventoryNumberEquipment }}</td>
                                         <td>{{ $equipment->SerialNumberEquipment }}</td>
-                                        <td>{{ $equipment->OSEquipment }}</td>
+                                        <td>{{ $equipment->EquipmentSO }}</td>
+                                        <td>{{ $equipment->ArchitectureOS }}</td>
+                                        <td>{{ $equipment->DistributionOS }}</td>
+                                        <td>{{ $equipment->SerialNumberOS }}</td>
+                                        <td>{{ $equipment->InventoryNumberOS }}</td>
                                         <td>{{ $equipment->NomenclatureEquipment }}</td>
                                         <td>{{ $equipment->IPAddressEquipment }}</td>
                                         <td>{{ $equipment->BrandMotherB }}</td>

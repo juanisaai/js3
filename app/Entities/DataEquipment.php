@@ -20,7 +20,11 @@ class DataEquipment extends Model
         //View details
         'TypeEquipment',
         'TypeAssemblyEquipment',
-        'OSEquipment',
+        'EquipmentSO',
+        'ArchitectureOS',
+        'DistributionOS',
+        'SerialNumberOS',
+        'InventoryNumberOS',
         'IPAddressEquipment',
         'BrandMotherB',
         'ModelMotherB',

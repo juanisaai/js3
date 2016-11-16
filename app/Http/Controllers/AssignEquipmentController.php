@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Entities\DataEquipment;
 use App\Entities\Employee;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class AssignEquipmentController extends Controller
 {
@@ -22,11 +23,24 @@ class AssignEquipmentController extends Controller
     }
 
     // View details of equipment assigned
-    public function seeDictumEq($id, $idEmp)
+    public function seeInvEq($id, $idEmp)
     {
         $employee = Employee::find($idEmp);
         $equipment = DataEquipment::find($id);
-        return View('assignequipment/viewDictumEq', compact('equipment', 'employee'));
+        return View('assignequipment/viewInvEq', compact('equipment', 'employee'));
+    }
+
+    // View details of equipment assigned
+    public function printInvEq($id, $idEmp)
+    {
+        $employee = Employee::find($idEmp);
+        $equipment = DataEquipment::find($id);
+
+        $pdf = PDF::loadView('assignequipment/printInvEq', ['employee' => $employee, 'equipment' => $equipment]);
+        return $pdf->download('reporte_inventario'.$idEmp.'_'.$id.'.pdf');
+
+
+        return View('assignequipment/printInvEq', compact('equipment', 'employee'));
     }
 
     // View employees without equipments assigned

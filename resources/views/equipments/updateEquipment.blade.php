@@ -76,8 +76,28 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('OSEquipment', 'Sistema operativo') !!}
-                            {!! Form::text('OSEquipment', $equipment->OSEquipment, ['class' => 'form-control', 'placeholder' => 'Escribe el sistema operativo']) !!}
+                            {!! Form::label('EquipmentOS', 'Sistema operativo') !!}
+                            {!! Form::text('EquipmentOS', $equipment->EquipmentOS, ['class' => 'form-control', 'placeholder' => 'Escribe el sistema operativo']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('ArchitectureOS', 'Arquitectura de sistema operativo') !!}
+                            {!! Form::text('ArchitectureOS', $equipment->ArchitectureOS, ['class' => 'form-control', 'placeholder' => 'Escribe la arquitectura del sistema operativo']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('DistributionOS', 'Distribución de sistema operativo') !!}
+                            {!! Form::text('DistributionOS', $equipment->DistributionOS, ['class' => 'form-control', 'placeholder' => 'Escribe la distribución del sistema operativo']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('SerialNumberOS', 'Número de serie de sistema operativo') !!}
+                            {!! Form::text('SerialNumberOS', $equipment->SerialNumberOS, ['class' => 'form-control', 'placeholder' => 'Escribe el número de serie del sistema operativo']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('InventoryNumberOS', 'Número de inventario de sistema operativo') !!}
+                            {!! Form::text('InventoryNumberOS', $equipment->InventoryNumberOS, ['class' => 'form-control', 'placeholder' => 'Escribe el número de inventario del sistema operativo']) !!}
                         </div>
 
                         <div class="form-group">
