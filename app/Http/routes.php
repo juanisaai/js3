@@ -301,6 +301,10 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('/asignaciones/equipos/lista-de-asignaciones/{id}/detalles', [
             'as'   => 'seeDetailsAssignEq',
             'uses' => 'AssignEquipmentController@seeDetailsAssignEq']);
+    // Read details of equipments
+        Route::get('/asignaciones/equipos/lista-de-asignaciones/asig/{id}/emp/{idEmp}/detalles/dictamen', [
+            'as'   => 'seeDictumEq',
+            'uses' => 'AssignEquipmentController@seeDictumEq']);
 
     // Read employees without equipments
         Route::get('/asignaciones/equipos/nueva-asignacion/equipos-disponibles/', [
@@ -335,7 +339,18 @@ Route::group(['middleware' => 'auth'], function (){
             'as'   => 'seeAllRequests',
             'uses' => 'ServiceRequestController@read']);
 
-    // Create
+    // Read details per request
+        Route::get('/solicitudes/servicios/lista-hojas-de-servicio/serv/{id}/emp/{idEmp}/detalles', [
+            'as'   => 'seeDetailsSerq',
+            'uses' => 'ServiceRequestController@readDetails']);
+
+    // Read details per request
+        Route::get('/solicitudes/servicios/lista-hojas-de-servicio/serv/{id}/emp/{idEmp}/detalles/imprimir', [
+            'as'   => 'printDetailsSerq',
+            'uses' => 'ServiceRequestController@printDetails']);
+
+
+        // Create
         Route::get('/solicitudes/servicios/crear', [
             'as'   => 'createSerquest',
             'uses' => 'ServiceRequestController@create']);

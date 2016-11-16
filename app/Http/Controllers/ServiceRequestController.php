@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Entities\Employee;
 use App\Entities\ServiceRequest;
 use App\User;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,12 +18,27 @@ class ServiceRequestController extends Controller
         return view('serviceRequest/viewAllSerquests', compact('serquests'));
     }
 
+    // Read details per reception
+    public function readDetails($id, $idEmp)
+    {
+        $employee = Employee::find($idEmp);
+        $serquest = ServiceRequest::find($id);
+        return view('serviceRequest/viewDetailsSerquest', compact('serquest', 'employee'));
+    }
+
+    // Read details per reception
+    public function printDetails($id, $idEmp)
+    {
+        $employee = Employee::find($idEmp);
+        $serquest = ServiceRequest::find($id);
+
+        $pdf = PDF::loadView('serviceRequest/printDetailsSerquest', ['serquest' => $serquest, 'employee' => $employee]);
+        return $pdf->download('hoja_servicio_'.$idEmp.'_'.$id.'.pdf');
+    }
+
     //CREATE
     public function create()
     {
-        /*$folios      = ServiceRequest::all();
-        $folioActual  = $folios->last();
-        $folioView = $folioActual->id + 1;*/
         $receptionist = user::get()->lists('name', 'name');
         $technicians = user::where('type', '=', 'Technician')->get()->lists('name', 'name');
         $employee = Employee::get()->lists('full_name', 'id');
@@ -35,6 +51,7 @@ class ServiceRequestController extends Controller
             'ReasonRequests' => 'required',
             'receptionist' => 'required|max:60',
             'TechnicianAssigned' => 'required|max:60',
+            'DescriptionService' => 'max:500',
             'employee_id' => 'required',
         ]);
 
@@ -62,6 +79,7 @@ class ServiceRequestController extends Controller
             'ReasonRequests' => 'required',
             'receptionist' => 'required|max:60',
             'TechnicianAssigned' => 'required|max:60',
+            'DescriptionService' => 'max:500',
             'employee_id' => 'required',
 
         ]);

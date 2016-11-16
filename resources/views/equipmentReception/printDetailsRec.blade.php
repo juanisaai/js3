@@ -8,8 +8,8 @@
 
     @else
 
-            {{ Html::image('images/logoqroo.png', "Imagen no encontrada", array('id' => 'logoqroo', 'title' => 'Logo Quintana Roo', 'class' => 'qroolog')) }}
-            {{ Html::image('images/logosalud.png', "Imagen no encontrada", array('id' => 'logosalud', 'title' => 'Logo Salud', 'class' => 'safelog')) }}
+            {{ Html::image('images/logosalud.png', "Imagen no encontrada", array('id' => 'logoqroo', 'title' => 'Logo Quintana Roo', 'class' => 'qroolog')) }}
+            {{ Html::image('images/logoqroo.png', "Imagen no encontrada", array('id' => 'logosalud', 'title' => 'Logo Salud', 'class' => 'safelog')) }}
 
 <table class="font dimtable margintab">
     <tr>
@@ -23,15 +23,16 @@
 <table class="font dimtable margintab">
     <tr>
         <td><strong>Fecha de recepción:</strong>
-            <ins>{{ $reception->created_at->toFormattedDateString() }}</ins>
+            <ins class="upper">{{ $reception->created_at->toFormattedDateString() }}</ins>
         </td>
         <td><strong>Hora:</strong> {{ date('h:i:s A', strtotime($reception->created_at)) }}</td>
         <td><strong>Folio:</strong> {{ $reception->id }}</td>
     </tr>
 </table>
 
-<p class="font tittles"><strong>ÁREA QUE SOLICITA</strong></p>
+<p class="font tittles2"><strong>ÁREA QUE SOLICITA</strong></p>
 <table class="font dimtable bordertable margintab">
+
     <tr>
         <td><strong>UNIDAD:</strong> <ins class="dimtext">{{ $employee->area->UnitArea }}</ins></td>
         <td><strong>EXT:</strong> <ins class="dimtext">{{ $employee->area->ExtensionArea }}</ins></td>
@@ -47,7 +48,7 @@
     </tr>
 </table>
 
-<p class="font tittles"><strong>PROPIETARIO DEL EQUIPO</strong></p>
+<p class="font tittles2"><strong>PROPIETARIO DEL EQUIPO</strong></p>
 <table class="font dimtable bordertable margintab">
     <tr>
         <td class="dimtittle">{{ $reception->equipment->full_name }}</td>
@@ -93,7 +94,7 @@
 <table class="font dimtable margintxt">
     <tr>
         <td><strong>MOTIVO:</strong> </td>
-        <td><strong>ESTADO DEL EQUIPO</strong></td>
+        <td><strong>ESTADO DEL EQUIPO:</strong></td>
         @if((($reception->StatusEquipment) === 'GenerateDictum') & (! empty($reception->NumberDictum)))
             <td class="upper">
                 <strong>Número de dictamen</strong>

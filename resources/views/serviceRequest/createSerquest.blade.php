@@ -23,7 +23,12 @@
 
                     <div class="form-group">
                         {!! Form::label('ReasonRequests', 'Razón de solicitud') !!}
-                        {!! Form::textarea('ReasonRequests', null, ['class' => 'form-control', 'placeholder' => 'Escribe la razón de la solicitud']) !!}
+                        {!! Form::textarea('ReasonRequests', null, ['class' => 'form-control', 'placeholder' => 'Escribe la razón de la solicitud', 'rows' => 3, 'cols' => 40]) !!}
+                    </div>
+
+                    <div class="form-group">
+                        {!! Form::label('DescriptionService', 'Descripción del servicio') !!}
+                        {!! Form::textarea('DescriptionService', null, ['class' => 'form-control', 'placeholder' => 'Escribe una descripción del servicio', 'rows' => 3, 'cols' => 40]) !!}
                     </div>
 
                     <div class="form-group">

@@ -10,7 +10,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">Empleado: {{ $employee->full_name }}</h3>
@@ -31,7 +31,7 @@
                                     <th>Número de serie</th>
                                     <th>Color</th>
                                     <th>Descripción adicional</th>
-                                    <td>Acción</td>
+                                    <th>Acción</th>
                                     <th>
                                         <a href="{{ route('newAssignDetEq', ['idEmp' => $employee->id]) }}"><button type="button" class="btn btn-success pull-right">Crear</button></a>
                                     </th>
@@ -48,6 +48,9 @@
                                         <td>{{ $equipment->DescriptionAdEquipment }}</td>
                                         <td>
                                             <a href="{{ route('deleteAssignEq', ['idEq' => $equipment->id]) }}"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('seeDictumEq', ['id' => $equipment->id, 'idEmp' => $employee->id]) }}"><button type="button" class="btn btn-info btn-sm">Dictamen</button></a>
                                         </td>
                                     </tr>
                                 @endforeach

@@ -21,6 +21,14 @@ class AssignEquipmentController extends Controller
         return View('assignequipment/viewDetailsAssignEq')->with('employee', $employee);
     }
 
+    // View details of equipment assigned
+    public function seeDictumEq($id, $idEmp)
+    {
+        $employee = Employee::find($idEmp);
+        $equipment = DataEquipment::find($id);
+        return View('assignequipment/viewDictumEq', compact('equipment', 'employee'));
+    }
+
     // View employees without equipments assigned
     public function newAssignEq()
     {

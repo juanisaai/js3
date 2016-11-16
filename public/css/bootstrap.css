@@ -5,9 +5,26 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
-.table-borderless td,
-.table-borderless th {
-    border: 0;
+.imagessesa {
+  width: 250px;
+  height: 74px;
+}
+
+.imagesqroo {
+    width: 170px;
+    height: 74px;
+}
+
+.space {
+    width:76px
+}
+
+.space2 {
+    width:215px
+}
+
+.sign {
+    margin-top: 70px;
 }
 
 footer {

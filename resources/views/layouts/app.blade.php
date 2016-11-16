@@ -18,6 +18,7 @@
 
     {!! Html::style('css/bootstrap.min.css') !!}
     {!! Html::style('css/bootstrap-select.min.css') !!}
+    {!! Html::style('css/css.css') !!}
     {!! Html::style('css/table.css') !!}
 
 </head>

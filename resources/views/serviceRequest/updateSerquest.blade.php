@@ -33,6 +33,11 @@
                         </div>
 
                         <div class="form-group">
+                            {!! Form::label('DescriptionService', 'Descripción del servicio') !!}
+                            {!! Form::textarea('DescriptionService', $serquest->DescriptionService, ['class' => 'form-control', 'placeholder' => 'Escribe una descripción del servicio', 'rows' => 3, 'cols' => 40]) !!}
+                        </div>
+
+                        <div class="form-group">
                             {!! Form::label('receptionist', 'Recibe') !!}
                             {{ Form::select('receptionist', $receptionist, $serquest->receptionist, ['class' => 'selectpicker']) }}
                         </div>

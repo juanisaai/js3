@@ -48,7 +48,7 @@
                                             <a href="{{ route('deleteSerquest', ['id' => $serquest->id]) }}"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
                                         </td>
                                         <td>
-                                            <a href="#"><button type="button" class="btn btn-info btn-sm">Detalle</button></a>
+                                            <a href="{{ route('seeDetailsSerq', ['id' => $serquest->id, 'idEmp' => $serquest->employee->id]) }}"><button type="button" class="btn btn-info btn-sm">Detalle</button></a>
                                         </td>
                                     </tr>
                                 @endforeach

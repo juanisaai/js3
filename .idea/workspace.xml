@@ -2,41 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6510cb50-1fb2-4b54-86e5-3565f310035f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/css.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/table.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/equipmentReception/printDetailsRec.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/layouts/print.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/lowInventory/equipments/createLowEquipments.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/management/createAdmin.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/management/updateAdmin.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/management/viewAdmin.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/partials/nav/admin.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/partials/nav/user.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/images-oficial/logoqroo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/images-oficial/logosalud.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/assignequipment/viewDictumEq.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/serviceRequest/printDetailsSerquest.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/serviceRequest/viewDetailsSerquest.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/logoqroo.png" afterPath="$PROJECT_DIR$/public/images/logoqroo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/logosalud.png" afterPath="$PROJECT_DIR$/public/images/logosalud.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Entities/EquipmentReception.php" afterPath="$PROJECT_DIR$/app/Entities/EquipmentReception.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Entities/LowInventoryEq.php" afterPath="$PROJECT_DIR$/app/Entities/LowInventoryEq.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/EquipmentReceptionController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/EquipmentReceptionController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/LowEquipmentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/LowEquipmentController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Entities/ServiceRequest.php" afterPath="$PROJECT_DIR$/app/Entities/ServiceRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AssignEquipmentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AssignEquipmentController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ServiceRequestController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ServiceRequestController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/factories/ModelFactory.php" afterPath="$PROJECT_DIR$/database/factories/ModelFactory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_08_18_171320_create_equipmentReceptions_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_08_18_171320_create_equipmentReceptions_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_08_18_171521_create_serviceRequests_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_08_18_171521_create_serviceRequests_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/bootstrap.css" afterPath="$PROJECT_DIR$/public/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/css.css" afterPath="$PROJECT_DIR$/public/css/css.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/assignequipment/viewDetailsAssignEq.blade.php" afterPath="$PROJECT_DIR$/resources/views/assignequipment/viewDetailsAssignEq.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/assignequipment/viewEmployeesEq.blade.php" afterPath="$PROJECT_DIR$/resources/views/assignequipment/viewEmployeesEq.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/code.blade.php" afterPath="$PROJECT_DIR$/resources/views/code.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/equipmentReception/createRec.blade.php" afterPath="$PROJECT_DIR$/resources/views/equipmentReception/createRec.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/equipmentReception/updateRec.blade.php" afterPath="$PROJECT_DIR$/resources/views/equipmentReception/updateRec.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/equipmentReception/printDetailsRec.blade.php" afterPath="$PROJECT_DIR$/resources/views/equipmentReception/printDetailsRec.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/equipmentReception/viewDetailsRec.blade.php" afterPath="$PROJECT_DIR$/resources/views/equipmentReception/viewDetailsRec.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/equipmentReception/viewReceptions.blade.php" afterPath="$PROJECT_DIR$/resources/views/equipmentReception/viewReceptions.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/lowInventory/equipments/seeLowEquipments.blade.php" afterPath="$PROJECT_DIR$/resources/views/lowInventory/equipments/seeLowEquipments.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/management/createUser.blade.php" afterPath="$PROJECT_DIR$/resources/views/management/createUser.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/management/updateUser.blade.php" afterPath="$PROJECT_DIR$/resources/views/management/updateUser.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/management/viewUsers.blade.php" afterPath="$PROJECT_DIR$/resources/views/management/viewUsers.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/serviceRequest/createSerquest.blade.php" afterPath="$PROJECT_DIR$/resources/views/serviceRequest/createSerquest.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/serviceRequest/updateSerquest.blade.php" afterPath="$PROJECT_DIR$/resources/views/serviceRequest/updateSerquest.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/serviceRequest/viewAllSerquests.blade.php" afterPath="$PROJECT_DIR$/resources/views/serviceRequest/viewAllSerquests.blade.php" />
     </list>
     <ignored path="js3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,62 +47,82 @@
     <favorites_list name="js3" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="213">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="317">
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="246" column="23" selection-start-line="246" selection-start-column="23" selection-end-line="246" selection-end-column="23" />
+            <state relative-caret-position="283">
+              <caret line="304" column="68" selection-start-line="304" selection-start-column="68" selection-end-line="304" selection-end-column="68" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="printDetailsRec.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/equipmentReception/printDetailsRec.blade.php">
+      <file leaf-file-name="viewEmployeesEq.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/assignequipment/viewEmployeesEq.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="166" column="21" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="21" />
+            <state relative-caret-position="210">
+              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="46" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="print.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/print.blade.php">
+      <file leaf-file-name="viewDetailsAssignEq.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/assignequipment/viewDetailsAssignEq.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="468">
+              <caret line="52" column="126" selection-start-line="52" selection-start-column="126" selection-end-line="52" selection-end-column="126" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <file leaf-file-name="AssignEquipmentController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AssignEquipmentController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="520">
+              <caret line="28" column="82" selection-start-line="28" selection-start-column="82" selection-end-line="28" selection-end-column="82" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="code.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/code.blade.php">
+      <file leaf-file-name="viewDetailsSerquest.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/serviceRequest/viewDetailsSerquest.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="232" column="0" selection-start-line="232" selection-start-column="0" selection-end-line="394" selection-end-column="6" />
+            <state relative-caret-position="626">
+              <caret line="54" column="28" selection-start-line="35" selection-start-column="24" selection-end-line="54" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="css.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="css.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/css.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+            <state relative-caret-position="470">
+              <caret line="96" column="12" selection-start-line="96" selection-start-column="12" selection-end-line="96" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="viewDictumEq.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/assignequipment/viewDictumEq.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2016_08_18_165254_create_dataEquipments_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2016_08_18_165254_create_dataEquipments_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="520">
+              <caret line="28" column="46" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -132,24 +143,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/equipments/viewEquipments.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/assigndevices/viewEmployeesDev.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/partials/emptyTable.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/assigndevices/viewDetailsAssignDev.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/assignequipment/viewEmployeesEq.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/assignequipment/viewDetailsAssignEq.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/assignequipment/newAssignEq.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/assignequipment/createAssignEq.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AssignDeviceController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AssignEquipmentController.php" />
         <option value="$PROJECT_DIR$/resources/views/assigndevices/createAssignDev.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/assignequipment/newAssignDetEq.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/assigndevices/newAssignDeviceDet.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/assigndevices/newAssignDevice.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/serviceRequest/viewAllSerquests.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ServiceRequestController.php" />
-        <option value="$PROJECT_DIR$/resources/views/serviceRequest/updateSerquest.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/serviceRequest/createSerquest.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/management/viewUsers.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/management/createUser.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/management/createAdmin.blade.php" />
@@ -157,15 +155,11 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" />
         <option value="$PROJECT_DIR$/resources/views/management/updateAdmin.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/management/updateUser.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/database/migrations/2016_08_18_171320_create_equipmentReceptions_table.php" />
         <option value="$PROJECT_DIR$/resources/views/equipmentReception/createRec.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/equipmentReception/updateRec.blade.php" />
-        <option value="$PROJECT_DIR$/database/factories/ModelFactory.php" />
         <option value="$PROJECT_DIR$/app/Entities/EquipmentReception.php" />
         <option value="$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Carbon.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/resources/views/equipmentReception/viewDetailsRec.blade.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/public/css/table.css" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/EquipmentReceptionController.php" />
@@ -175,14 +169,31 @@
         <option value="$PROJECT_DIR$/resources/views/lowInventory/equipments/seeLowEquipments.blade.php" />
         <option value="$PROJECT_DIR$/app/Entities/LowInventoryEq.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/LowEquipmentController.php" />
-        <option value="$PROJECT_DIR$/resources/views/code.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/nav/admin.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/nav/user.blade.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
+        <option value="$PROJECT_DIR$/resources/views/code.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/equipmentReception/viewDetailsRec.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/equipmentReception/printDetailsRec.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/serviceRequest/viewAllSerquests.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_08_18_171521_create_serviceRequests_table.php" />
+        <option value="$PROJECT_DIR$/app/Entities/ServiceRequest.php" />
+        <option value="$PROJECT_DIR$/database/factories/ModelFactory.php" />
+        <option value="$PROJECT_DIR$/resources/views/serviceRequest/createSerquest.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/serviceRequest/updateSerquest.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ServiceRequestController.php" />
+        <option value="$PROJECT_DIR$/resources/views/serviceRequest/printDetailsSerquest.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/public/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/assignequipment/viewEmployeesEq.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/assignequipment/viewDetailsAssignEq.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AssignEquipmentController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/resources/views/serviceRequest/viewDetailsSerquest.blade.php" />
         <option value="$PROJECT_DIR$/public/css/css.css" />
+        <option value="$PROJECT_DIR$/resources/views/assignequipment/viewDictumEq.blade.php" />
       </list>
     </option>
   </component>
@@ -232,6 +243,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -286,7 +299,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
+              <option name="myItemId" value="serviceRequest" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -308,11 +321,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nav" />
+              <option name="myItemId" value="assignequipment" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -327,82 +336,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="equipmentReception" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -438,132 +371,32 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js3" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entities" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="authser&#9;null&#9;null&#10;code&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/code.blade.php&#10;domp&#9;FILE&#9;file:///Users/isai/Code/js3/vendor/barryvdh/laravel-dompdf/config/dompdf.php&#10;app&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/layouts/app.blade.php&#10;carbon&#9;FILE&#9;file:///Users/isai/Code/js3/vendor/nesbot/carbon/src/Carbon/Carbon.php&#10;Carbo&#9;FILE&#9;file:///Users/isai/Code/js3/vendor/nesbot/carbon/src/Carbon/Carbon.php&#10;model&#9;FILE&#9;file:///Users/isai/Code/js3/database/factories/ModelFactory.php&#10;carbo&#9;null&#9;null&#10;create&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/equipments/createEquipment.blade.php&#10;viewD&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/devices/viewDevices.blade.php&#10;viewDet&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/devices/viewDetailsDevice.blade.php&#10;createE&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/equipments/createEquipment.blade.php&#10;dataEqu&#9;FILE&#9;file:///Users/isai/Code/js3/database/migrations/2016_08_18_165254_create_dataEquipments_table.php&#10;dataeq&#9;null&#9;null&#10;Datade&#9;FILE&#9;file:///Users/isai/Code/js3/database/migrations/2016_08_18_165538_create_dataDevices_table.php&#10;equipmentco&#9;null&#9;null&#10;viewDetD&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/devices/viewDetailsDevice.blade.php&#10;ro&#9;FILE&#9;file:///Users/isai/Code/js3/app/Http/routes.php&#10;rout&#9;FILE&#9;file:///Users/isai/Code/js3/app/Http/routes.php&#10;rou&#9;FILE&#9;file:///Users/isai/Code/js3/app/Http/routes.php&#10;device&#9;null&#9;null&#10;route&#9;FILE&#9;file:///Users/isai/Code/js3/app/Http/routes.php&#10;Employee&#9;null&#9;null&#10;view&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/areas/viewAreas.blade.php&#10;employee t&#9;FILE&#9;file:///Users/isai/Code/js3/database/migrations/2016_08_18_135059_create_employees_table.php&#10;con&#9;FILE&#9;file:///Users/isai/Code/js3/app/Http/Controllers/EmployeeController.php&#10;empl&#9;FILE&#9;file:///Users/isai/Code/js3/database/migrations/2016_08_18_135059_create_employees_table.php&#10;employeeC&#9;null&#9;null&#10;are&#9;null&#9;null&#10;user ta&#9;null&#9;null&#10;router&#9;null&#9;null&#10;admin&#9;FILE&#9;file:///Users/isai/Code/js3/database/seeds/AdminTableSeeder.php&#10;admintable&#9;null&#9;null&#10;usertable&#9;FILE&#9;file:///Users/isai/Code/js3/database/seeds/UsersTableSeeder.php&#10;fa&#9;FILE&#9;file:///Users/isai/Code/js3/database/factories/ModelFactory.php&#10;tables&#9;FILE&#9;file:///Users/isai/Code/js3/database/seeds/DataDeviceTableSeeder.php&#10;low&#9;null&#9;null&#10;database&#9;FILE&#9;file:///Users/isai/Code/js3/database/seeds/DatabaseSeeder.php&#10;equipment ta&#9;FILE&#9;file:///Users/isai/Code/js3/database/migrations/2016_08_18_165254_create_dataEquipments_table.php&#10;emplo&#9;FILE&#9;file:///Users/isai/Code/js3/database/migrations/2016_08_18_135059_create_employees_table.php&#10;user&#9;FILE&#9;file:///Users/isai/Code/js3/database/migrations/2014_10_12_000000_create_users_table.php&#10;updateu&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/management/updateUser.blade.php&#10;employe&#9;FILE&#9;file:///Users/isai/Code/js3/app/Http/Controllers/EmployeeController.php&#10;usercon&#9;FILE&#9;file:///Users/isai/Code/js3/app/Http/Controllers/Admin/UsersController.php&#10;contro&#9;FILE&#9;file:///Users/isai/Code/js3/app/Http/Controllers/EmployeeController.php&#10;userta&#9;FILE&#9;file:///Users/isai/Code/js3/database/seeds/UsersTableSeeder.php&#10;up&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/management/updateUser.blade.php&#10;fac&#9;FILE&#9;file:///Users/isai/Code/js3/database/factories/ModelFactory.php&#10;equi&#9;FILE&#9;file:///Users/isai/Code/js3/database/migrations/2016_08_18_171320_create_equipmentReceptions_table.php&#10;control&#9;FILE&#9;file:///Users/isai/Code/js3/app/Http/Controllers/EmployeeController.php" />
+    <property name="SearchEverywhereHistoryKey" value="css&#9;FILE&#9;file:///Users/isai/Code/js3/public/css/css.css&#10;assi&#9;null&#9;null&#10;rou&#9;FILE&#9;file:///Users/isai/Code/js3/app/Http/routes.php&#10;app&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/layouts/app.blade.php&#10;bootstrap.m&#9;FILE&#9;file:///Users/isai/Code/js3/public/css/bootstrap.min.css&#10;boot&#9;FILE&#9;file:///Users/isai/Code/js3/public/css/bootstrap.css&#10;authser&#9;null&#9;null&#10;code&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/code.blade.php&#10;domp&#9;FILE&#9;file:///Users/isai/Code/js3/vendor/barryvdh/laravel-dompdf/config/dompdf.php&#10;carbon&#9;FILE&#9;file:///Users/isai/Code/js3/vendor/nesbot/carbon/src/Carbon/Carbon.php&#10;Carbo&#9;FILE&#9;file:///Users/isai/Code/js3/vendor/nesbot/carbon/src/Carbon/Carbon.php&#10;model&#9;FILE&#9;file:///Users/isai/Code/js3/database/factories/ModelFactory.php&#10;carbo&#9;null&#9;null&#10;create&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/equipments/createEquipment.blade.php&#10;viewD&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/devices/viewDevices.blade.php&#10;viewDet&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/devices/viewDetailsDevice.blade.php&#10;createE&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/equipments/createEquipment.blade.php&#10;dataEqu&#9;FILE&#9;file:///Users/isai/Code/js3/database/migrations/2016_08_18_165254_create_dataEquipments_table.php&#10;dataeq&#9;null&#9;null&#10;Datade&#9;FILE&#9;file:///Users/isai/Code/js3/database/migrations/2016_08_18_165538_create_dataDevices_table.php&#10;equipmentco&#9;null&#9;null&#10;viewDetD&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/devices/viewDetailsDevice.blade.php&#10;ro&#9;FILE&#9;file:///Users/isai/Code/js3/app/Http/routes.php&#10;rout&#9;FILE&#9;file:///Users/isai/Code/js3/app/Http/routes.php&#10;device&#9;null&#9;null&#10;route&#9;FILE&#9;file:///Users/isai/Code/js3/app/Http/routes.php&#10;Employee&#9;null&#9;null&#10;view&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/areas/viewAreas.blade.php&#10;employee t&#9;FILE&#9;file:///Users/isai/Code/js3/database/migrations/2016_08_18_135059_create_employees_table.php&#10;con&#9;FILE&#9;file:///Users/isai/Code/js3/app/Http/Controllers/EmployeeController.php&#10;empl&#9;FILE&#9;file:///Users/isai/Code/js3/database/migrations/2016_08_18_135059_create_employees_table.php&#10;employeeC&#9;null&#9;null&#10;are&#9;null&#9;null&#10;user ta&#9;null&#9;null&#10;router&#9;null&#9;null&#10;admin&#9;FILE&#9;file:///Users/isai/Code/js3/database/seeds/AdminTableSeeder.php&#10;admintable&#9;null&#9;null&#10;usertable&#9;FILE&#9;file:///Users/isai/Code/js3/database/seeds/UsersTableSeeder.php&#10;fa&#9;FILE&#9;file:///Users/isai/Code/js3/database/factories/ModelFactory.php&#10;tables&#9;FILE&#9;file:///Users/isai/Code/js3/database/seeds/DataDeviceTableSeeder.php&#10;low&#9;null&#9;null&#10;database&#9;FILE&#9;file:///Users/isai/Code/js3/database/seeds/DatabaseSeeder.php&#10;equipment ta&#9;FILE&#9;file:///Users/isai/Code/js3/database/migrations/2016_08_18_165254_create_dataEquipments_table.php&#10;emplo&#9;FILE&#9;file:///Users/isai/Code/js3/database/migrations/2016_08_18_135059_create_employees_table.php&#10;user&#9;FILE&#9;file:///Users/isai/Code/js3/database/migrations/2014_10_12_000000_create_users_table.php&#10;updateu&#9;FILE&#9;file:///Users/isai/Code/js3/resources/views/management/updateUser.blade.php&#10;employe&#9;FILE&#9;file:///Users/isai/Code/js3/app/Http/Controllers/EmployeeController.php&#10;usercon&#9;FILE&#9;file:///Users/isai/Code/js3/app/Http/Controllers/Admin/UsersController.php&#10;contro&#9;FILE&#9;file:///Users/isai/Code/js3/app/Http/Controllers/EmployeeController.php&#10;userta&#9;FILE&#9;file:///Users/isai/Code/js3/database/seeds/UsersTableSeeder.php" />
     <property name="FullScreen" value="true" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/lowInventory/equipments" />
-      <recent name="$PROJECT_DIR$/resources/views/layouts" />
-      <recent name="$PROJECT_DIR$/resources/views/equipmentReception" />
-      <recent name="$PROJECT_DIR$/resources/views/management" />
-      <recent name="$PROJECT_DIR$/resources/views/partials" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Entities" />
       <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/resources" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/public" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/assignequipment" />
+      <recent name="$PROJECT_DIR$/resources/views/serviceRequest" />
+      <recent name="$PROJECT_DIR$/public/images/images-oficial" />
+      <recent name="$PROJECT_DIR$/resources/views/lowInventory/equipments" />
+      <recent name="$PROJECT_DIR$/resources/views/layouts" />
     </key>
   </component>
   <component name="RunManager">
@@ -654,12 +487,13 @@
       <workItem from="1478794268704" duration="15625000" />
       <workItem from="1478844625433" duration="26000" />
       <workItem from="1478881006972" duration="8803000" />
-      <workItem from="1478914273872" duration="23273000" />
+      <workItem from="1478914273872" duration="23481000" />
+      <workItem from="1479216975754" duration="13448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228443000" />
+    <option name="totallyTimeSpent" value="242099000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -734,135 +568,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/serviceRequest/createSerquest.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/App.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/management/createUser.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1427">
-          <caret line="63" column="39" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/management/createAdmin.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="20" column="56" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/management/viewUsers.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1716">
-          <caret line="66" column="30" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/management/viewAdmin.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="60" column="74" selection-start-line="60" selection-start-column="74" selection-end-line="60" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="907">
-          <caret line="164" column="43" selection-start-line="164" selection-start-column="43" selection-end-line="164" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/management/updateAdmin.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/management/updateUser.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="64" column="92" selection-start-line="64" selection-start-column="92" selection-end-line="64" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/pagination.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-52">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/passwords.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-263">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/validation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_08_18_171320_create_equipmentReceptions_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="25" column="37" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/factories/ModelFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="99" column="37" selection-start-line="99" selection-start-column="37" selection-end-line="99" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/nesbot/carbon/src/Carbon/Carbon.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -875,7 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
           <caret line="107" column="22" selection-start-line="107" selection-start-column="22" selection-end-line="107" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -883,12 +587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="754">
           <caret line="29" column="77" selection-start-line="29" selection-start-column="77" selection-end-line="29" selection-end-column="77" />
-          <folding>
-            <marker date="1478916197000" expanded="true" signature="588:779" ph="..." />
-            <marker date="1478916197000" expanded="true" signature="601:777" ph="..." />
-            <marker date="1478916197000" expanded="true" signature="607:776" ph="..." />
-            <marker date="1478916197000" expanded="true" signature="620:775" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -912,23 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2418">
           <caret line="156" column="11" selection-start-line="156" selection-start-column="11" selection-end-line="156" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="6774" column="0" selection-start-line="6774" selection-start-column="0" selection-end-line="6774" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/equipmentReception/viewDetailsRec.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -936,15 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/equipmentReception/createRec.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="25" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -968,7 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -976,7 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
           <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -996,19 +666,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EquipmentReceptionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="42" column="71" selection-start-line="42" selection-start-column="71" selection-end-line="42" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/nav/user.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1036,14 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Entities/EquipmentReception.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -1052,19 +705,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Entities/Employee.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/nav/admin.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2678">
           <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1072,14 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="112" column="45" selection-start-line="112" selection-start-column="45" selection-end-line="112" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -1092,26 +728,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="246" column="23" selection-start-line="246" selection-start-column="23" selection-end-line="246" selection-end-column="23" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/public/images/logosalud.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/logoqroo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/code.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="232" column="0" selection-start-line="232" selection-start-column="0" selection-end-line="394" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1124,18 +754,215 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/factories/ModelFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="82" column="83" selection-start-line="82" selection-start-column="83" selection-end-line="82" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/serviceRequest/createSerquest.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="31" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/ServiceRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="12" column="83" selection-start-line="12" selection-start-column="83" selection-end-line="12" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_08_18_171521_create_serviceRequests_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EquipmentReceptionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ServiceRequestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="79" selection-start-line="4" selection-start-column="79" selection-end-line="4" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/EquipmentReception.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/Employee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/serviceRequest/viewAllSerquests.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="50" column="143" selection-start-line="50" selection-start-column="53" selection-end-line="50" selection-end-column="143" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/serviceRequest/updateSerquest.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="36" column="98" selection-start-line="36" selection-start-column="98" selection-end-line="36" selection-end-column="98" />
+          <folding>
+            <marker date="1479236895000" expanded="true" signature="676:859" ph="..." />
+            <marker date="1479236895000" expanded="true" signature="689:857" ph="..." />
+            <marker date="1479236895000" expanded="true" signature="695:856" ph="..." />
+            <marker date="1479236895000" expanded="true" signature="707:855" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/equipmentReception/createRec.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/code.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="613" column="0" selection-start-line="613" selection-start-column="0" selection-end-line="613" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/serviceRequest/printDetailsSerquest.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="73" column="38" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/equipmentReception/viewDetailsRec.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2">
+          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/equipmentReception/printDetailsRec.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="166" column="21" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="21" />
+        <state relative-caret-position="418">
+          <caret line="170" column="13" selection-start-line="163" selection-start-column="8" selection-end-line="170" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/assignequipment/viewEmployeesEq.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="46" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/assignequipment/viewDetailsAssignEq.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="52" column="126" selection-start-line="52" selection-start-column="126" selection-end-line="52" selection-end-column="126" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="304" column="68" selection-start-line="304" selection-start-column="68" selection-end-line="304" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AssignEquipmentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="28" column="82" selection-start-line="28" selection-start-column="82" selection-end-line="28" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_08_18_165254_create_dataEquipments_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="28" column="46" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/serviceRequest/viewDetailsSerquest.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="54" column="28" selection-start-line="35" selection-start-column="24" selection-end-line="54" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/css.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+        <state relative-caret-position="470">
+          <caret line="96" column="12" selection-start-line="96" selection-start-column="12" selection-end-line="96" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/assignequipment/viewDictumEq.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
           <folding />
         </state>
       </provider>

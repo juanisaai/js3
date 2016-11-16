@@ -80,6 +80,7 @@ $factory->define(\App\Entities\ServiceRequest::class, function (Faker\Generator 
         'ReasonRequests' => $faker->realText($maxNbChars = 40, $indexSize = 4),
         'receptionist' => $faker->name,
         'TechnicianAssigned' => 'ISC. Harvey J. León Uc',
+        'DescriptionService' => $faker->realText($maxNbChars = 40, $indexSize = 4),
         'employee_id' => rand(1,40),
 
     ];

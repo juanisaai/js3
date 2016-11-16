@@ -43,7 +43,7 @@
                                             </ul>
                                         </td>
                                         <td>
-                                            <a href="{{ route('seeDetailsAssignEq', ['id' => $employee->id]) }}"><button type="button" class="btn btn-info btn-sm">Detalle</button></a>
+                                            <a href="{{ route('seeDetailsAssignEq', ['id' => $employee->id]) }}"><button type="button" class="btn btn-info btn-sm">Ver más</button></a>
                                         </td>
                                     </tr>
                                 @endforeach

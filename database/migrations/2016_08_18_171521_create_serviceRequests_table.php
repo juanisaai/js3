@@ -16,29 +16,17 @@ class CreateServiceRequestsTable extends Migration
             $table->increments('id');
             $table->mediumText('ReasonRequests');
             $table->string('receptionist', 60);
+            $table->string('DescriptionService', 500);
             $table->string('TechnicianAssigned', 60);
             $table->timestamps();
 
-            /*relationship with Areas->id
-
-            $table->integer('area_id')->unsigned();
-
-            $table->foreign('area_id')
-                ->references('id')
-                ->on('areas')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-            */
-            //relationship with Employee->id
-
-            $table->integer('employee_id')->unsigned();
+            $table->integer('employee_id')->unsigned()->nullable();
 
             $table->foreign('employee_id')
                 ->references('id')
                 ->on('employees')
-                ->onDelete('cascade')
+                ->onDelete('set null')
                 ->onUpdate('cascade');
-
         });
     }
 

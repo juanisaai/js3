@@ -12,15 +12,15 @@
                 <div class="col-md-10 col-md-offset-1">
                     <div class="row">
                         <div class="col-xs-10 col-md-1 pull-left">
-                                {{ Html::image('images/logoqroo.png', "Imagen no encontrada", array('id' => 'logoqroo', 'title' => 'Logo Quintana Roo')) }}
+                            {{ Html::image('images/images-oficial/logosalud.png', "Imagen no encontrada", array('id' => 'logoqroo', 'title' => 'Logo Quintana Roo')) }}
                         </div>
                         <div class="col-xs-10 col-md-4 pull-right">
-                                {{ Html::image('images/logosalud.png', "Imagen no encontrada", array('id' => 'logosalud', 'title' => 'Logo Salud')) }}
+                            {{ Html::image('images/images-oficial/logoqroo.png', "Imagen no encontrada", array('id' => 'logosalud', 'title' => 'Logo Salud')) }}
                         </div>
                     </div>
 
-                    <p class="text-center">HOJA DE RECEPCIÓN DE EQUIPO DE CÓMPUTO</p>
-                    <p class="text-center">COORDINACIÓN DE INFORMÁTICA</p>
+                    <p class="text-center">HOJA DE RECEPCIÓN DE EQUIPO DE CÓMPUTO<br>
+                    COORDINACIÓN DE INFORMÁTICA</p>
                     <table class="table treceptiondate">
                         <tr>
                             <td><strong>Fecha de recepción:</strong>
@@ -170,7 +170,7 @@
             <div class="form-group pull-left">
                 <a class="btn btn-success btn-close" href="{{ route('seeReceptions') }}">Regresar</a>
             </div>
-            <div class="form-group pull-left">
+            <div class="form-group pull-right">
                 <a href="{{ route('printReception', ['idRec' => $reception->id, 'idEmp' => $reception->equipment->employee_id]) }}"><button type="button" class="btn btn-info btn-sm">Imprimir</button></a>
             </div>
         </div>
