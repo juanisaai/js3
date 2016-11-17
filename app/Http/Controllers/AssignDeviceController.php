@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Entities\DataDevice;
 use App\Entities\Employee;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class AssignDeviceController extends Controller
 {
@@ -54,6 +55,26 @@ class AssignDeviceController extends Controller
     {
         $employee = Employee::findOrFail($id);
         return View('assigndevices/viewDetailsAssignDev', compact('employee'));
+    }
+
+    // View details of device assigned
+    public function seeInvDev($id, $idEmp)
+    {
+        $device = DataDevice::findOrFail($id);
+        $employee = Employee::findOrFail($idEmp);
+        return View('assigndevices/viewInvDev', compact('employee', 'device'));
+    }
+
+    // View details of device assigned
+    public function printInvDev($id, $idEmp)
+    {
+        $device = DataDevice::findOrFail($id);
+        $employee = Employee::findOrFail($idEmp);
+
+        $pdf = PDF::loadView('assigndevices/printInvDev', ['employee' => $employee, 'device' => $device]);
+        return $pdf->download('reporte_inventario_dispositivo_'.$idEmp.'_'.$id.'.pdf');
+
+        return View('assigndevices/printInvDev', compact('employee', 'device'));
     }
 
     // Delete association

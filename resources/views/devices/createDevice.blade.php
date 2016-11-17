@@ -36,6 +36,11 @@
                     </div>
 
                     <div class="form-group">
+                        {!! Form::label('TypeDevice', 'Tipo de dispositivo') !!}
+                        {!! Form::text('TypeDevice', null, ['class' => 'form-control', 'placeholder' => 'Escribe el tipo de dispositivo']) !!}
+                    </div>
+
+                    <div class="form-group">
                         {!! Form::label('BrandDevice', 'Marca') !!}
                         {!! Form::text('BrandDevice', null, ['class' => 'form-control', 'placeholder' => 'Escribe la marca']) !!}
                     </div>

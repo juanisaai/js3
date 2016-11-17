@@ -48,6 +48,9 @@
                                             <td>
                                                 <a href="{{ route('deleteAssignDev', ['idDev' => $device->id]) }}"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
                                             </td>
+                                            <td>
+                                                <a href="{{ route('seeInvDev', ['id' => $device->id, 'idEmp' => $employee->id]) }}"><button type="button" class="btn btn-info btn-sm">Reporte</button></a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </table>

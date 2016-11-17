@@ -283,6 +283,16 @@ Route::group(['middleware' => 'auth'], function (){
             'as'   => 'seeDetailsAssignDev',
             'uses' => 'AssignDeviceController@seeDetailsAssign']);
 
+    // Read details of devices
+        Route::get('/asignaciones/dispostivos/lista-de-asignaciones/asig/{id}/emp/{idEmp}/detalles/rep-inv', [
+            'as'   => 'seeInvDev',
+            'uses' => 'AssignDeviceController@seeInvDev']);
+
+    // Read details of devices
+        Route::get('/asignaciones/dispostivos/lista-de-asignaciones/asig/{id}/emp/{idEmp}/detalles/rep-inv/imprimir', [
+            'as'   => 'printInvDev',
+            'uses' => 'AssignDeviceController@printInvDev']);
+
     // Delete association between employee and device
         Route::get('/asignaciones/dispostivos/eliminar-asignacion/disp/{idDev}', [
             'as' => 'deleteAssignDev',

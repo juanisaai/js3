@@ -25,6 +25,7 @@
                                     <th>Número de inventario</th>
                                     <th>Nomenclatura</th>
                                     <th>Descripción</th>
+                                    <th>Tipo</th>
                                     <th>Marca</th>
                                     <th>Modelo</th>
                                     <th>Número de serie</th>
@@ -39,6 +40,7 @@
                                         <td>{{ $device->InventoryNumberDevice }}</td>
                                         <td>{{ $device->NomenclatureDevice }}</td>
                                         <td>{{ $device->DescriptionDevice }}</td>
+                                        <td>{{ $device->TypeDevice }}</td>
                                         <td>{{ $device->BrandDevice }}</td>
                                         <td>{{ $device->ModelDevice }}</td>
                                         <td>{{ $device->SerialNumberDevice }}</td>

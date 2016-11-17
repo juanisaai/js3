@@ -67,6 +67,7 @@ $factory->define(\App\Entities\DataDevice::class, function (Faker\Generator $fak
         'InventoryNumberDevice' => $faker->ean8,
         'NomenclatureDevice' => 'JS3-DEV-'.$faker->randomDigit,
         'DescriptionDevice' => $faker->realText($maxNbChars = 20, $indexSize = 2),
+        'TypeDevice' => $faker->realText($maxNbChars = 40, $indexSize = 4),
         'BrandDevice' => $faker->company,
         'ModelDevice' => $faker->isbn10,
         'SerialNumberDevice' => $faker->isbn13,

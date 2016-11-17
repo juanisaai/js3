@@ -16,7 +16,8 @@ class CreateDataDevicesTable extends Migration
             $table->increments('id');
             $table->string('InventoryNumberDevice', 25)->nullable();
             $table->string('NomenclatureDevice', 20)->nullable();
-            $table->longText('DescriptionDevice');
+            $table->string('DescriptionDevice', 100);
+            $table->string('TypeDevice', 50);
             $table->string('BrandDevice', 50)->nullable();
             $table->string('ModelDevice', 50)->nullable();
             $table->string('SerialNumberDevice', 25)->nullable();

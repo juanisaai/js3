@@ -12,6 +12,7 @@ class DataDevice extends Model
         'InventoryNumberDevice',
         'NomenclatureDevice',
         'DescriptionDevice',
+        'TypeDevice',
         'BrandDevice',
         'ModelDevice',
         'SerialNumberDevice',

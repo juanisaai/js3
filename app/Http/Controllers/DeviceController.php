@@ -21,7 +21,8 @@ class DeviceController extends Controller
         $this->validate(request(), [
             'InventoryNumberDevice' => 'max:25',
             'NomenclatureDevice' => 'max:50',
-            'DescriptionDevice' => 'max:1000',
+            'DescriptionDevice' => 'max:100',
+            'TypeDevice' => 'max:50',
             'BrandDevice' => 'max:50',
             'ModelDevice' => 'max:50',
             'SerialNumberDevice' => 'max:25',
@@ -66,6 +67,7 @@ class DeviceController extends Controller
             'InventoryNumberDevice' => 'max:25',
             'NomenclatureDevice' => 'max:50',
             'DescriptionDevice' => 'max:1000',
+            'TypeDevice' => 'max:50',
             'BrandDevice' => 'max:50',
             'ModelDevice' => 'max:50',
             'SerialNumberDevice' => 'max:25',

@@ -37,10 +37,7 @@ class AssignEquipmentController extends Controller
         $equipment = DataEquipment::find($id);
 
         $pdf = PDF::loadView('assignequipment/printInvEq', ['employee' => $employee, 'equipment' => $equipment]);
-        return $pdf->download('reporte_inventario'.$idEmp.'_'.$id.'.pdf');
-
-
-        return View('assignequipment/printInvEq', compact('equipment', 'employee'));
+        return $pdf->download('reporte_inventario_equipo_'.$idEmp.'_'.$id.'.pdf');
     }
 
     // View employees without equipments assigned
