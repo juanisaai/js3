@@ -16,7 +16,9 @@
                             <h4 class="panel-title">Departamento: {{$employee->Area->NameArea}}</h4>
                         </div>
                             <div class="panel-body table-hover table-striped table-responsive">
-
+                                <div>
+                                    <a href="{{ route('newAssignDet', ['idEmp' => $employee->id]) }}"><button type="button" class="btn btn-success pull-right margintab">Crear</button></a>
+                                </div>
                                 @include('partials/errors')
                                 @include('partials/succeed')
 
@@ -30,10 +32,7 @@
                                         <th>Número de serie</th>
                                         <th>Color</th>
                                         <th>Descripción adicional</th>
-                                        <th>Acción</th>
-                                        <th>
-                                            <a href="{{ route('newAssignDet', ['idEmp' => $employee->id]) }}"><button type="button" class="btn btn-success pull-right">Crear</button></a>
-                                        </th>
+                                        <th colspan="2" class="text-center">Acción</th>
                                     </tr>
                                     @foreach($employee->devices as $device)
                                         <tr>

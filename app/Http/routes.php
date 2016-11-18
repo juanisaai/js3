@@ -182,7 +182,17 @@ Route::group(['middleware' => 'auth'], function (){
             'as'   => 'readDevice',
             'uses' => 'DeviceController@seeDevices']);
 
-    // Read details per device
+    // Print all devices
+        Route::get('/administracion-de-dispositivos/lista-de-dispositivos/inventario-dev-impresoras/{ver}', [
+            'as'   => 'printAllDev',
+            'uses' => 'DeviceController@printAllDev']);
+
+    // Print all devices
+        Route::get('/administracion-de-dispositivos/lista-de-dispositivos/inventario-dev-red/{ver}', [
+            'as'   => 'printAllDevR',
+            'uses' => 'DeviceController@printAllDevR']);
+
+        // Read details per device
         Route::get('/administracion-de-dispositivos/lista-de-dispositivos/{id}/detalles', [
             'as'   => 'readDetDevice',
             'uses' => 'DeviceController@seeDetail']);
@@ -220,6 +230,11 @@ Route::group(['middleware' => 'auth'], function (){
         Route::get('/administracion-de-equipos/detalles-equipo/{equipment}', [
             'as'   => 'readDetailsEquipment',
             'uses' => 'EquipmentsController@show']);
+
+    // Print all devices
+        Route::get('/administracion-de-equipos/lista-de-equipos/inventario-equipos-computo/{ver}', [
+            'as'   => 'printAllEq',
+            'uses' => 'EquipmentsController@printAllEq']);
 
     // Update
         Route::get('/administracion-de-equipos/{id}/actualizar-datos', [

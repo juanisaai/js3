@@ -74,7 +74,6 @@ class AssignDeviceController extends Controller
         $pdf = PDF::loadView('assigndevices/printInvDev', ['employee' => $employee, 'device' => $device]);
         return $pdf->download('reporte_inventario_dispositivo_'.$idEmp.'_'.$id.'.pdf');
 
-        return View('assigndevices/printInvDev', compact('employee', 'device'));
     }
 
     // Delete association

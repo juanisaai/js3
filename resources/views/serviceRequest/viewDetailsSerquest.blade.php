@@ -18,9 +18,6 @@
                             {{ Html::image('images/images-oficial/logoqroo.png', "Imagen no encontrada", array('id' => 'logosalud', 'title' => 'Logo Salud')) }}
                         </div>
                     </div>
-
-                    SERVICIOS ESTATALES DE SALUD JURISDICCION SANITARIA No. III
-
                     <p class="text-center"><strong>HOJA DE SERVICIO</strong><br>
                     Soporte Técnico</p>
                     <table class="table treceptiondate">

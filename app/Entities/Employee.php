@@ -18,6 +18,11 @@ class Employee extends Model
         return "$this->ProfileEmployee $this->FirstName $this->SecondName";
     }
 
+    public function getNameAreaAttribute()
+    {
+        return $this->area->NameArea;
+    }
+
     // Relationship with ServiceRequest
     public function servrequests()
     {

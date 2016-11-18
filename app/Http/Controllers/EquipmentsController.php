@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Entities\DataEquipment;
 use App\Entities\Supplier;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use Barryvdh\DomPDF\Facade as PDF;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
 
 class EquipmentsController extends Controller
@@ -73,6 +72,21 @@ class EquipmentsController extends Controller
         $equipment = DataEquipment::findOrFail($equipment);
 
         return view('equipments/viewDetailsEquipment', compact('equipment'));
+    }
+
+    //Print render inventory printer
+    public function printAllEq($ver)
+    {
+        $date = Carbon::now();
+        $equipments = DataEquipment::all();
+        $pdf = PDF::loadView('equipments/printAllEq', ['equipments' => $equipments])->setPaper('CARTA EE. UU.', 'landscape');
+
+        if (($ver) == 1){
+            return $pdf->stream('inventario_equipos_'.$date->toDateTimeString().'.pdf');
+        }
+        elseif (($ver) == 2){
+            return $pdf->download('inventario_equipos_'.$date->toDateTimeString().'.pdf');
+        }
     }
 
     //Update

@@ -16,6 +16,9 @@
                             <h1 class="panel-title">Lista de solicitudes de servicio</h1>
                         </div>
                         <div class="panel-body table-hover table-striped table-responsive">
+                            <div>
+                                <a href="{{ route('createSerquest') }}"><button type="button" class="btn btn-success pull-right margintab">Crear</button></a>
+                            </div>
 
                             @include('partials/errors')
                             @include('partials/succeed')
@@ -28,10 +31,7 @@
                                     <th>Recepciona</th>
                                     <th>Técnico asignado</th>
                                     <th>Solicitante</th>
-                                    <th>Acciones</th>
-                                    <th>
-                                        <a href="{{ route('createSerquest') }}"><button type="button" class="btn btn-success pull-right">Crear</button></a>
-                                    </th>
+                                    <th colspan="3" class="text-center">Acciones</th>
                                 </tr>
                                 @foreach($serquests as $serquest)
                                     <tr>

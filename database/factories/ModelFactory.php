@@ -66,13 +66,13 @@ $factory->define(\App\Entities\DataDevice::class, function (Faker\Generator $fak
     return [
         'InventoryNumberDevice' => $faker->ean8,
         'NomenclatureDevice' => 'JS3-DEV-'.$faker->randomDigit,
-        'DescriptionDevice' => $faker->realText($maxNbChars = 20, $indexSize = 2),
-        'TypeDevice' => $faker->realText($maxNbChars = 40, $indexSize = 4),
-        'BrandDevice' => $faker->company,
+        'DescriptionDevice' => 'Impresora',
+        'TypeDevice' => $faker->realText($maxNbChars = 10, $indexSize = 2),
+        'BrandDevice' => $faker->realText($maxNbChars = 10, $indexSize = 2),
         'ModelDevice' => $faker->isbn10,
         'SerialNumberDevice' => $faker->isbn13,
         'ColorDevice' => $faker->safeColorName,
-        'DescriptionAdDevice' => $faker->realText($maxNbChars = 40, $indexSize = 4),
+        'DescriptionAdDevice' => $faker->realText($maxNbChars = 20, $indexSize = 2),
         'active' => true,
         'employee_id' => rand(1,60),
 

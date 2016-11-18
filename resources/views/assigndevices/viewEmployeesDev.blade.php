@@ -16,7 +16,9 @@
                             <h1 class="panel-title">Resumen de dispositivos asignados</h1>
                         </div>
                         <div class="panel-body table-hover table-striped table-responsive">
-
+                            <div>
+                                <a href="{{ route('newAssign') }}"><button type="button" class="btn btn-success pull-right margintab">Crear</button></a>
+                            </div>
                             @include('partials/errors')
                             @include('partials/succeed')
 
@@ -26,9 +28,6 @@
                                     <th>Departamento</th>
                                     <th>Dispositivos</th>
                                     <th>Acciones</th>
-                                    <th>
-                                        <a href="{{ route('newAssign') }}"><button type="button" class="btn btn-success pull-right">Crear</button></a>
-                                    </th>
                                 </tr>
 
                                 @foreach($employees as $employee)

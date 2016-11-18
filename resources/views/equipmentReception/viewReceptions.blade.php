@@ -16,7 +16,9 @@
                             <h1 class="panel-title">Lista de recepción de equipos</h1>
                         </div>
                         <div class="panel-body table-hover table-striped table-responsive">
-
+                            <div>
+                                <a href="{{ route('createRec') }}"><button type="button" class="btn btn-success pull-right margintab">Crear</button></a>
+                            </div>
                             @include('partials/errors')
                             @include('partials/succeed')
 
@@ -28,10 +30,7 @@
                                     <th>Razón de recepción</th>
                                     <th>Empleado propietario</th>
                                     <th>Técnico asignado</th>
-                                    <th>Acciones</th>
-                                    <th>
-                                        <a href="{{ route('createRec') }}"><button type="button" class="btn btn-success pull-right">Crear</button></a>
-                                    </th>
+                                    <th colspan="3" class="text-center">Acciones</th>
                                 </tr>
 
                                 @foreach($receptions as $reception)

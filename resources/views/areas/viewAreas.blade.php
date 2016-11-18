@@ -15,7 +15,9 @@
                           <h1 class="panel-title">Áreas</h1>
                       </div>
                             <div class="panel-body table-hover table-striped table-responsive">
-
+                                <div>
+                                    <a href="{{ route('createArea') }}"><button type="button" class="btn btn-success pull-right margintab">Crear</button></a>
+                                </div>
                                 @include('partials/errors')
                                 @include('partials/succeed')
 
@@ -25,10 +27,7 @@
                                         <th>Unidad</th>
                                         <th>Extensión</th>
                                         <th>Dirección</th>
-                                        <th>Acciones</th>
-                                        <th>
-                                            <a href="{{ route('createArea') }}"><button type="button" class="btn btn-success pull-right">Crear</button></a>
-                                        </th>
+                                        <th colspan="2" class="text-center">Acciones</th>
                                     </tr>
                                     @foreach($areas as $area)
                                         <tr>

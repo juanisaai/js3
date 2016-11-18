@@ -9,6 +9,14 @@
 
     {!! Html::style('css/css.css') !!}
 
+    <style>
+        .header { position: fixed; left: 0px; top: -100px; right: 0px; height: 100px; text-align: center; }
+        .footer { position: fixed; left: 0px; bottom: -50px; right: 0px; height: 50px;text-align: center;}
+        .footer .pagenum:before { content: counter(page); }
+    </style>
+
+    </style>
+
 </head>
 <body>
 

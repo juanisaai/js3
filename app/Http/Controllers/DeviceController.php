@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Entities\DataDevice;
 use App\Entities\Supplier;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use Barryvdh\DomPDF\Facade as PDF;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
 
 class DeviceController extends Controller
@@ -49,6 +48,39 @@ class DeviceController extends Controller
     {
         $device = DataDevice::findOrFail($id);
         return view('devices/viewDetailsDevice', compact('device'));
+    }
+
+    //Print render inventory printer
+    public function printAllDev($ver)
+    {
+        $date = Carbon::now();
+
+        $devices = DataDevice::where('DescriptionDevice', 'like', '%impresora%')->get();
+        $pdf = PDF::loadView('devices/printAllDev', ['devices' => $devices])->setPaper('CARTA EE. UU.', 'landscape');
+
+        if (($ver) == 1){
+            return $pdf->stream('inventario_impresoras_'.$date->toDateTimeString().'.pdf');
+        }
+        elseif (($ver) == 2){
+            return $pdf->download('inventario_impresoras_'.$date->toDateTimeString().'.pdf');
+        }
+
+    }
+
+    //Print render inventory printer
+    public function printAllDevR($ver)
+    {
+        $date = Carbon::now();
+
+        $devices = DataDevice::where('DescriptionDevice', 'like', '%red%')->get();
+        $pdf = PDF::loadView('devices/printAllDevR', ['devices' => $devices])->setPaper('CARTA EE. UU.', 'landscape');
+
+        if (($ver) == 1){
+            return $pdf->stream('inventario_dispositivos_red_'.$date->toDateTimeString().'.pdf');
+        }
+        elseif (($ver) == 2){
+            return $pdf->download('inventario_dispositivos_red_'.$date->toDateTimeString().'.pdf');
+        }
     }
 
     //Update

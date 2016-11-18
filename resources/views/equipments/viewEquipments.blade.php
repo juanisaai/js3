@@ -17,6 +17,20 @@
                         </div>
                         <div class="panel-body table-responsive table-hover table-striped">
 
+                            <div>
+                                <a href="{{ route('createEquipment') }}"><button type="button" class="btn btn-success pull-left margintab">Crear</button></a>
+                            </div>
+
+                            <div class="btn-group pull-right margintab">
+                                <button type="button" class="btn btn-info dropdown-toggle margintab" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Inventario de Equipos <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ route('printAllEq', ['ver' => 1]) }}" target="_blank">Ver</a></li>
+                                    <li><a href="{{ route('printAllEq', ['ver' => 2]) }}">Descargar</a></li>
+                                </ul>
+                            </div>
+
                             @include('partials/errors')
                             @include('partials/succeed')
 
@@ -28,10 +42,7 @@
                                     <th>Marca</th>
                                     <th>Modelo</th>
                                     <th>Número de serie</th>
-                                    <th>Acciones</th>
-                                    <th>
-                                        <a href="{{ route('createEquipment') }}"><button type="button" class="btn btn-success pull-right">Crear</button></a>
-                                    </th>
+                                    <th colspan="3" class="text-center">Acciones</th>
                                 </tr>
 
                             @foreach($equipments as $equipment)
