@@ -231,12 +231,7 @@ Route::group(['middleware' => 'auth'], function (){
             'uses' => 'AssignDeviceController@seeDetailsAssign']);
 
     // Read details of devices
-        Route::get('/asignaciones/dispostivos/lista-de-asignaciones/asig/{id}/emp/{idEmp}/detalles/rep-inv', [
-            'as'   => 'seeInvDev',
-            'uses' => 'AssignDeviceController@seeInvDev']);
-
-    // Read details of devices
-        Route::get('/asignaciones/dispostivos/lista-de-asignaciones/asig/{id}/emp/{idEmp}/detalles/rep-inv/imprimir', [
+        Route::get('/asignaciones/dispostivos/lista-de-asignaciones/asig/{id}/emp/{idEmp}/detalles/rep-inv/imprimir/{ver}', [
             'as'   => 'printInvDev',
             'uses' => 'AssignDeviceController@printInvDev']);
 
@@ -259,13 +254,8 @@ Route::group(['middleware' => 'auth'], function (){
             'as'   => 'seeDetailsAssignEq',
             'uses' => 'AssignEquipmentController@seeDetailsAssignEq']);
 
-    // Read details of equipments for inventory
-        Route::get('/asignaciones/equipos/lista-de-asignaciones/asig/{id}/emp/{idEmp}/detalles/rep-inv', [
-            'as'   => 'seeInvEq',
-            'uses' => 'AssignEquipmentController@seeInvEq']);
-
     // print details of equipments for inventory
-        Route::get('/asignaciones/equipos/lista-de-asignaciones/asig/{id}/emp/{idEmp}/detalles/rep-inv/imprimir', [
+        Route::get('/asignaciones/equipos/lista-de-asignaciones/asig/{id}/emp/{idEmp}/detalles/rep-inv/imprimir/{ver}', [
             'as'   => 'printInvEq',
             'uses' => 'AssignEquipmentController@printInvEq']);
 
@@ -302,16 +292,10 @@ Route::group(['middleware' => 'auth'], function (){
             'as'   => 'seeAllRequests',
             'uses' => 'ServiceRequestController@read']);
 
-    // Read details per request
-        Route::get('/solicitudes/servicios/lista-hojas-de-servicio/serv/{id}/emp/{idEmp}/detalles', [
-            'as'   => 'seeDetailsSerq',
-            'uses' => 'ServiceRequestController@readDetails']);
-
-    // Read details per request
-        Route::get('/solicitudes/servicios/lista-hojas-de-servicio/serv/{id}/emp/{idEmp}/detalles/imprimir', [
+    // Read and print details per request
+        Route::get('/solicitudes/servicios/lista-hojas-de-servicio/serv/{id}/emp/{idEmp}/detalles/imprimir/{ver}', [
             'as'   => 'printDetailsSerq',
             'uses' => 'ServiceRequestController@printDetails']);
-
 
         // Create
         Route::get('/solicitudes/servicios/crear', [
@@ -343,13 +327,8 @@ Route::group(['middleware' => 'auth'], function (){
             'as'   => 'seeReceptions',
             'uses' => 'EquipmentReceptionController@read']);
 
-    // Read details per reception
-        Route::get('/solicitudes/recepciones/lista-recepcion-de-equipos/rec/{idRec}/emp/{idEmp}/detalles/', [
-            'as'   => 'seeDetails',
-            'uses' => 'EquipmentReceptionController@readDetails']);
-
-    // Read details per reception
-        Route::get('/solicitudes/recepciones/lista-recepcion-de-equipos/rec/{idRec}/emp/{idEmp}/detalles/imprimir', [
+    // Read and print details per reception
+        Route::get('/solicitudes/recepciones/lista-recepcion-de-equipos/rec/{idRec}/emp/{idEmp}/detalles/imprimir/{ver}', [
             'as'   => 'printReception',
             'uses' => 'EquipmentReceptionController@printReception']);
 

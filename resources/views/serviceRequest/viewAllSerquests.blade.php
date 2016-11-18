@@ -48,7 +48,15 @@
                                             <a href="{{ route('deleteSerquest', ['id' => $serquest->id]) }}"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
                                         </td>
                                         <td>
-                                            <a href="{{ route('seeDetailsSerq', ['id' => $serquest->id, 'idEmp' => $serquest->employee->id]) }}"><button type="button" class="btn btn-info btn-sm">Detalle</button></a>
+                                            <div class="btn-group dropup pull-right margintab">
+                                                <button type="button" class="btn btn-info btn-sm dropdown-toggle margintab" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Hoja de servicio <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="{{ route('printDetailsSerq', ['id' => $serquest->id, 'idEmp' => $serquest->employee->id, 'ver' => 1]) }}" target="_blank">Ver</a></li>
+                                                    <li><a href="{{ route('printDetailsSerq', ['id' => $serquest->id, 'idEmp' => $serquest->employee->id, 'ver' => 2]) }}">Descargar</a></li>
+                                                </ul>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach

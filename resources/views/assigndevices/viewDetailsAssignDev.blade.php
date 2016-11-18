@@ -19,6 +19,7 @@
                                 <div>
                                     <a href="{{ route('newAssignDet', ['idEmp' => $employee->id]) }}"><button type="button" class="btn btn-success pull-right margintab">Crear</button></a>
                                 </div>
+
                                 @include('partials/errors')
                                 @include('partials/succeed')
 
@@ -32,7 +33,7 @@
                                         <th>Número de serie</th>
                                         <th>Color</th>
                                         <th>Descripción adicional</th>
-                                        <th colspan="2" class="text-center">Acción</th>
+                                        <th colspan="2" class="text-center">Acciones</th>
                                     </tr>
                                     @foreach($employee->devices as $device)
                                         <tr>
@@ -48,7 +49,15 @@
                                                 <a href="{{ route('deleteAssignDev', ['idDev' => $device->id]) }}"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
                                             </td>
                                             <td>
-                                                <a href="{{ route('seeInvDev', ['id' => $device->id, 'idEmp' => $employee->id]) }}"><button type="button" class="btn btn-info btn-sm">Reporte</button></a>
+                                                <div class="btn-group dropup pull-right margintab">
+                                                    <button type="button" class="btn btn-info btn-sm dropdown-toggle margintab" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Reporte de Inventario <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="{{ route('printInvDev', ['id' => $device->id, 'idEmp' => $employee->id, 'ver' => 1]) }}" target="_blank">Ver</a></li>
+                                                        <li><a href="{{ route('printInvDev', ['id' => $device->id, 'idEmp' => $employee->id, 'ver' => 2]) }}">Descargar</a></li>
+                                                    </ul>
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach

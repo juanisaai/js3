@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Entities\DataDevice;
 use App\Entities\Employee;
 use Barryvdh\DomPDF\Facade as PDF;
+use Carbon\Carbon;
 
 class AssignDeviceController extends Controller
 {
@@ -58,21 +59,21 @@ class AssignDeviceController extends Controller
     }
 
     // View details of device assigned
-    public function seeInvDev($id, $idEmp)
+    public function printInvDev($id, $idEmp, $ver)
     {
-        $device = DataDevice::findOrFail($id);
-        $employee = Employee::findOrFail($idEmp);
-        return View('assigndevices/viewInvDev', compact('employee', 'device'));
-    }
+        $date = Carbon::now();
 
-    // View details of device assigned
-    public function printInvDev($id, $idEmp)
-    {
         $device = DataDevice::findOrFail($id);
         $employee = Employee::findOrFail($idEmp);
 
         $pdf = PDF::loadView('assigndevices/printInvDev', ['employee' => $employee, 'device' => $device]);
-        return $pdf->download('reporte_inventario_dispositivo_'.$idEmp.'_'.$id.'.pdf');
+
+        if (($ver) == 1){
+            return $pdf->stream('reporte_inventario_dispositivo_emp_'.$idEmp.'_folio_'.$id.'_'.$date->toDateTimeString().'.pdf');
+        }
+        elseif (($ver) == 2){
+            return $pdf->download('reporte_inventario_dispositivo_emp_'.$idEmp.'_folio_'.$id.'_'.$date->toDateTimeString().'.pdf');
+        }
 
     }
 

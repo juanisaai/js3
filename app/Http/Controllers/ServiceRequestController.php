@@ -6,9 +6,7 @@ use App\Entities\Employee;
 use App\Entities\ServiceRequest;
 use App\User;
 use Barryvdh\DomPDF\Facade as PDF;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use Carbon\Carbon;
 
 class ServiceRequestController extends Controller
 {
@@ -19,21 +17,21 @@ class ServiceRequestController extends Controller
     }
 
     // Read details per reception
-    public function readDetails($id, $idEmp)
+    public function printDetails($id, $idEmp, $ver)
     {
-        $employee = Employee::find($idEmp);
-        $serquest = ServiceRequest::find($id);
-        return view('serviceRequest/viewDetailsSerquest', compact('serquest', 'employee'));
-    }
+        $date = Carbon::now();
 
-    // Read details per reception
-    public function printDetails($id, $idEmp)
-    {
         $employee = Employee::find($idEmp);
         $serquest = ServiceRequest::find($id);
 
         $pdf = PDF::loadView('serviceRequest/printDetailsSerquest', ['serquest' => $serquest, 'employee' => $employee]);
-        return $pdf->download('hoja_servicio_'.$idEmp.'_'.$id.'.pdf');
+        if (($ver) == 1){
+            return $pdf->stream('hoja_servicio_emp_'.$idEmp.'_folio_'.$id.'_'.$date->toDateTimeString().'.pdf');
+        }
+        elseif (($ver) == 2){
+            return $pdf->download('hoja_servicio_emp_'.$idEmp.'_folio_'.$id.'_'.$date->toDateTimeString().'.pdf');
+        }
+
     }
 
     //CREATE

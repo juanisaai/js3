@@ -7,6 +7,7 @@ use App\Entities\Employee;
 use App\Entities\EquipmentReception;
 use App\User;
 use Barryvdh\DomPDF\Facade as PDF;
+use Carbon\Carbon;
 use Illuminate\Routing\Route;
 
 class EquipmentReceptionController extends Controller
@@ -25,23 +26,21 @@ class EquipmentReceptionController extends Controller
         return view('equipmentReception/viewReceptions', compact('receptions'));
     }
 
-    // Read details per reception
-    public function readDetails($idRec, $idEmp)
-    {
-        $employee = Employee::find($idEmp);
-        $reception = EquipmentReception::find($idRec);
-        return view('equipmentReception/viewDetailsRec', compact('reception', 'employee'));
-    }
-
     // Print reception
-    public function printReception($idRec, $idEmp)
+    public function printReception($idRec, $idEmp, $ver)
     {
+        $date = Carbon::now();
+
         $employee = Employee::find($idEmp);
         $reception = EquipmentReception::find($idRec);
 
         $pdf = PDF::loadView('equipmentReception/printDetailsRec', ['reception' => $reception, 'employee' => $employee]);
-        return $pdf->download('hoja_recepcion_'.$idEmp.'_'.$idRec.'.pdf');
-        //return $pdf->download('hoja_recepcion.pdf');
+        if (($ver) == 1){
+            return $pdf->stream('hoja_recepcion_emp_'.$idEmp.'_folio_'.$idRec.'_'.$date->toDateTimeString().'.pdf');
+        }
+        elseif (($ver) == 2){
+            return $pdf->download('hoja_recepcion_emp_'.$idEmp.'_folio_'.$idRec.'_'.$date->toDateTimeString().'.pdf');
+        }
 
     }
 
