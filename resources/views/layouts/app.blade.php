@@ -47,7 +47,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         <li><a href="{{ url('/') }}">Inicio</a></li>
-
+                    @can('Admin')
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuarios<span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -59,34 +59,22 @@
 
                             </ul>
                         </li>
+                    @endcan
 
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Agregar<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrar<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('readArea') }}">Áreas</a></li>
                                 <li><a href="{{ route('readEmployee') }}">Empleados</a></li>
                                 <li><a href="{{ route('readDevice') }}">Dispositivos</a></li>
                                 <li><a href="{{ route('readEquipments') }}">Equipos</a></li>
-                                <!--
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Superusuario</li>
-                                -->
-
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administración<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Asignaciones<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('seeEmployeesDev') }}">Asignar dispositivos</a></li>
                                 <li><a href="{{ route('seeEmployeesEq') }}">Asignar equipos</a></li>
-
-                            <!--<li><a href="{{ route('seeLowEq') }}">Baja de equipos</a></li>
-                                <li><a href="{{ route('seeLowDev') }}">Baja de dispositivos</a></li>
-
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Superusuario</li>
-                                -->
-
                             </ul>
                         </li>
 
@@ -95,11 +83,6 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('seeAllRequests') }}">Hojas de servicios</a></li>
                                 <li><a href="{{ route('seeReceptions') }}">Recepción de equipos</a></li>
-                                <!--
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Superusuario</li>
-                                -->
-
                             </ul>
                         </li>
 

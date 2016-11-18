@@ -16,7 +16,9 @@
                             <h1 class="panel-title">Lista de usuarios</h1>
                         </div>
                         <div class="panel-body table-hover table-striped table-responsive">
-
+                            <div>
+                                <a href="{{ route('createUser') }}"><button type="button" class="btn btn-success pull-right margintab">Crear</button></a>
+                            </div>
                             @include('partials/errors')
                             @include('partials/succeed')
 
@@ -28,10 +30,7 @@
                                     <th>Contacto</th>
                                     <th>Estado del usuario</th>
                                     <th>Tipo de usuario</th>
-                                    <th>Acciones</th>
-                                    <th>
-                                        <a href="{{ route('createUser') }}"><button type="button" class="btn btn-success pull-right">Crear</button></a>
-                                    </th>
+                                    <th colspan="2" class="text-center">Acciones</th>
                                 </tr>
 
                             @foreach($users as $user)
