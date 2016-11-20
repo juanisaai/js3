@@ -354,6 +354,71 @@ Route::group(['middleware' => 'auth'], function (){
 
     //-----------------------------------CLOSE CRUD EquipmentReception-------------------------------
 
+        // Create dictum device
+        Route::get('/dictamen/dispositivos/crear', [
+            'as' => 'createDictumDev',
+            'uses' => 'DictumController@createDev']);
+        Route::post('dictumdev', 'DictumController@storeDev');
+
+
+        // Read all dictums
+        Route::get('/dictamen/dispositivos/ver-todos', [
+            'as' => 'readDictums',
+            'uses' => 'DictumController@readDev']);
+
+        // print dictum Eq
+        Route::get('/dictamen/dispositivos/imprimir/dictamen/{idDictum}/eq/{idDev}/tech/{idUser}/{area}/{ver}', [
+            'as' => 'printDictumDev',
+            'uses' => 'DictumController@printDev']);
+
+        // update dictum Dev
+        Route::get('/dictamen/dispositivo/actualizar/dictamen/{idDictum}', [
+            'as' => 'editDev',
+            'uses' => 'DictumController@editDev']);
+
+        Route::post('/dictamen/dispositivo/actualizar/dictamen/{idDictum}', [
+            'as' => 'updateDev',
+            'uses' => 'DictumController@updateDev']);
+
+        // Delete Dev dictum
+        Route::get('/dictamen/dispositivo/eliminar/dictamen/{idDictum}', [
+            'as' => 'deleteDev',
+            'uses' => 'DictumController@destroyDev']);
+
+
+        //------------------------------dictumEq
+
+        // Read all dictums
+        Route::get('/dictamen/equipos/ver-todos', [
+            'as' => 'readDictumsEq',
+            'uses' => 'DictumController@readEq']);
+
+        // print dictum Eq
+        Route::get('/dictamen/equipos/imprimir/dictamen/{idDictumEq}/eq/{idEq}/tech/{idUser}/{area}/{ver}', [
+            'as' => 'printDictumEq',
+            'uses' => 'DictumController@printEq']);
+
+        // Create dictum device
+        Route::get('/dictamen/equipos/crear', [
+            'as' => 'createDictumEq',
+            'uses' => 'DictumController@createEq']);
+        Route::post('dictumeq', 'DictumController@storeEq');
+
+        // update dictum Dev
+        Route::get('/dictamen/equipo/actualizar/dictamen/{idDictum}', [
+            'as' => 'editEq',
+            'uses' => 'DictumController@editEq']);
+
+        Route::post('/dictamen/equipo/actualizar/dictamen/{idDictum}', [
+            'as' => 'updateEq',
+            'uses' => 'DictumController@updateEq']);
+
+        // Delete Dev dictum
+        Route::get('/dictamen/equipo/eliminar/dictamen/{idDictum}', [
+            'as' => 'deleteEq',
+            'uses' => 'DictumController@destroyEq']);
+
+
     });
 });
 

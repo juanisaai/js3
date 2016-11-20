@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Entities\DataDictum;
 use App\Entities\EquipmentReception;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -41,25 +42,16 @@ class User extends Authenticatable
         }
     }
 
-    public function getIsAdminAttribute()
-    {
-        $this->type = 'Admin';
-    }
-
-    public function getIsCollaborateAttribute()
-    {
-        $this->type = 'Collaborate';
-    }
-
-    public function getIsTechnicianAttribute()
-    {
-        $this->type = 'Technician';
-    }
 
 
     public function receptions()
     {
         return $this->hasMany(EquipmentReception::class);
+    }
+
+    public function dictums()
+    {
+        return $this->hasMany(DataDictum::class);
     }
 
 }

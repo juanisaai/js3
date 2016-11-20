@@ -110,29 +110,14 @@ $factory->define(\App\Entities\EquipmentReception::class, function (Faker\Genera
     ];
 });
 
-
-$factory->define(\App\Entities\LowInventoryEq::class, function (Faker\Generator $faker) {
+$factory->define(\App\Entities\DataDictum::class, function (Faker\Generator $faker) {
     return [
-
-        'CauseLow' => $faker->realText($maxNbChars = 60, $indexSize = 5),
-        'TechnicianDictum' => true,
-        'Picture' => true,
-        'UpInventory' => true,
-        'equipment_id' => rand(1,6),
-
+        'Problematic' => $faker->realText($maxNbChars = 40, $indexSize = 4),
+        'Dictum' => $faker->realText($maxNbChars = 40, $indexSize = 4),
+        'Recommendation' => $faker->realText($maxNbChars = 40, $indexSize = 4),
+        'observations' => $faker->realText($maxNbChars = 40, $indexSize = 4),
+        'device_id' => rand(1,4),
+        'equipment_id' => rand(1,4),
+        'user_id' => rand(1,4),
     ];
 });
-
-
-$factory->define(\App\Entities\LowInventoryDev::class, function (Faker\Generator $faker) {
-    return [
-
-        'CauseLow' => $faker->realText($maxNbChars = 60, $indexSize = 5),
-        'TechnicianDictum' => true,
-        'Picture' => true,
-        'UpInventory' => true,
-        'device_id' => rand(1,6),
-
-    ];
-});
-

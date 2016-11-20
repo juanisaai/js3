@@ -50,6 +50,11 @@ class DataEquipment extends Model
         return ucfirst($this->InventoryNumberEquipment) . ' | ' . ucfirst($this->NomenclatureEquipment) . ' | ' . ucfirst($this->DescriptionEquipment);
     }
 
+    public function getDictumEquipmentAttribute()
+    {
+        return ucfirst($this->TypeEquipment) . ' ' . ucfirst($this->TypeAssemblyEquipment) . ' - ' . ucfirst($this->EquipmentSO). ' - ' . ucfirst($this->BrandCPU). ' ' . ucfirst($this->ModelCPU). ' ' . ucfirst($this->FrequencyCPU). ' - RAM ' . ucfirst($this->CapabilityRam);
+    }
+
     //--------------------Relationship with employees
 
     public function employee()
@@ -73,12 +78,14 @@ class DataEquipment extends Model
 
     //-------------------------------------------------
 
-    //--------------------Relationship with LowInventoryEq
+    //--------------------Relationship with dictum
 
-    public function lowEquipments()
+    public function dictums()
     {
-        return $this->hasMany(LowInventoryEq::class);
+        return $this->hasMany(DataDictum::class);
     }
+
+
 
 
 

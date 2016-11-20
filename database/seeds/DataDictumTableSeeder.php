@@ -1,9 +1,8 @@
 <?php
 
-use App\Entities\LowInventoryEq;
 use Illuminate\Database\Seeder;
 
-class LowInventoryEqTableSeeder extends Seeder
+class DataDictumTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +11,6 @@ class LowInventoryEqTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(LowInventoryEq::class)->times(15)->create();
-
+        factory(\App\Entities\DataDictum::class)->times(30)->create();
     }
 }

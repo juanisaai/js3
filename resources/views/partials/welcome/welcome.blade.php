@@ -10,9 +10,9 @@
                     <a href="{{ route('newAssign') }}" class="list-group-item">Asignar dispositivo</a>
                     <a href="{{ route('createSerquest') }}" class="list-group-item">Crear nueva hoja de servicio</a>
                     <a href="{{ route('createRec') }}" class="list-group-item">Crear nueva recepción de equipo</a>
-                    @can('Admin')
-                        <a href="#" class="list-group-item">Crear nuevo dictamen de equipo</a>
-                        <a href="#" class="list-group-item">Crear nuevo dictamen de dispositivo</a>
+                    <a href="{{ route('createDictumEq') }}" class="list-group-item">Crear nuevo dictamen de equipo</a>
+                    <a href="{{ route('createDictumDev') }}" class="list-group-item">Crear nuevo dictamen de dispositivo</a>
+                @can('Admin')
                         <a href="{{ route('createUser') }}" class="list-group-item">Crear nuevo usuario</a>
                     @endcan
                 </div>

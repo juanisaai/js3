@@ -107,6 +107,18 @@
     white-space:nowrap;
 }
 
+.titulo2 {
+    text-align:right;
+    white-space:nowrap;
+}
+
+.table-right {
+    float: right !important;
+}
+.table-left {
+    float: left !important;
+}
+
 .dimtext {
     font-size: 12px;
     text-transform: uppercase;
@@ -183,6 +195,10 @@
     margin-top: 70px;
 }
 
+.sign2 {
+    margin-top: 30px;
+}
+
 .color {
     background-color:#BCBCBC;
     color: dark;
@@ -202,6 +218,27 @@
 
 .w30 {
     width:30%
+}
+
+.p10 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.p80 {
+    padding-left: 80px;
+}
+
+.p3 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.upper3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 

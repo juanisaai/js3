@@ -22,6 +22,16 @@ class DataDevice extends Model
         'employee_id'
     ];
 
+    public function getNameDeviceAttribute()
+    {
+        return ucfirst($this->InventoryNumberDevice) . ' | ' . ucfirst($this->NomenclatureDevice) . ' | ' . ucfirst($this->DescriptionDevice);
+    }
+
+    public function getDictumDeviceAttribute()
+    {
+        return ucfirst($this->DescriptionDevice) . ' - ' . ucfirst($this->TypeDevice) . ' - MARCA: ' . ucfirst($this->BrandDevice). ' - MODELO: ' . ucfirst($this->ModelDevice). ' - COLOR: ' . ucfirst($this->ColorDevice);
+    }
+
     //--------------------Relationship with employees
     public function employee()
     {
@@ -36,11 +46,12 @@ class DataDevice extends Model
     }
     //-----------------------------------------------
 
-    //--------------------Relationship with LowInventoryDev
+    //--------------------Relationship with dictum
 
-    public function lowDevices()
+    public function dictums()
     {
-        return $this->hasMany(LowInventoryDev::class);
+        return $this->hasMany(DataDictum::class);
     }
+
 
 }

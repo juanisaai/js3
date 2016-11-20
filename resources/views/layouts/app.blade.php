@@ -83,6 +83,8 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('seeAllRequests') }}">Hojas de servicios</a></li>
                                 <li><a href="{{ route('seeReceptions') }}">Recepción de equipos</a></li>
+                                <li><a href="{{ route('readDictums') }}">Dictamen dispositivos</a></li>
+                                <li><a href="{{ route('readDictumsEq') }}">Dictamen equipos</a></li>
                             </ul>
                         </li>
 

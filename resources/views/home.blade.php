@@ -1,17 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Panel General</div>
-
-                <div class="panel-body">
-                    Plataforma web en construcción
-                </div>
-            </div>
+    @if(Auth::guest())
+        <div class="container">
+            <h1 class="page-header">BIENVENIDO<small> Inicie sesión</small></h1>
         </div>
-    </div>
-</div>
+    @else
+        @include('partials.welcome.welcome')
+    @endif
 @endsection

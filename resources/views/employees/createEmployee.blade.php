@@ -41,7 +41,7 @@
                     </div>
 
                     <div class="form-group">
-                        {!! Form::label('area_id', 'Select area') !!}
+                        {!! Form::label('area_id', 'Seleccionar área') !!}
                         {{ Form::select('area_id', $areas, null, ['class' => 'selectpicker']) }}
                     </div>
 
