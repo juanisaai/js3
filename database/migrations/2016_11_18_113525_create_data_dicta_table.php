@@ -14,10 +14,10 @@ class CreateDataDictaTable extends Migration
     {
         Schema::create('data_dictum', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Problematic', 1000);
-            $table->string('Dictum', 1000);
-            $table->string('Recommendation', 1000);
-            $table->string('observations', 1000);
+            $table->string('Problematic', 500);
+            $table->string('Dictum', 500);
+            $table->string('Recommendation', 300);
+            $table->string('observations', 300);
 
             $table->integer('device_id')->unsigned()->nullable();
 

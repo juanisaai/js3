@@ -42,13 +42,13 @@
         <table class="font2 dimtable margintab bordertable2" style="position:relative;left:1%;width:93%;">
             <tr>
                 <td class="bordertable2" style="position:relative;width:20%;"><strong><p class="upper3 p10">EQUIPO</p></strong></td>
-                <td class="bordertable2"><strong><p class="upper3 p10">{{ $device->dictum_device }} - {{ $area->area->NameArea }}</p></strong></td>
+                <td class="bordertable2"><strong><p class="upper10 p10">{{ $device->dictum_device }} - {{ $area->area->NameArea }}</p></strong></td>
             </tr>
             <tr>
                 <td class="bordertable2" style="position:relative;width:20%;"><strong><p class="upper3 p10">INVENTARIO Y/O SERIE</p></strong></td>
                 <td class="bordertable2">
                     <strong>
-                        <p class="upper3 p10">
+                        <p class="upper10 p10">
 
                             @if(($device->InventoryNumberDevice) === null)
                                 INV: S/N
@@ -67,22 +67,22 @@
             </tr>
             <tr>
                 <td class="bordertable2" style="position:relative;width:20%;"><strong><p class="upper3 p10">PROBLEMÁTICA</p></strong></td>
-                <td class="bordertable2"><strong><p class="upper3 p10">{{ $dictum->Problematic }}</p></strong></td>
+                <td class="bordertable2"><strong><p class="upper10 p10">{{ $dictum->Problematic }}</p></strong></td>
             </tr>
         </table>
 
         <table class="font2 dimtable margintab bordertable2" style="position:relative;left:1%;width:93%;">
             <tr>
                 <td class="bordertable2" style="position:relative;width:20%;"><strong><p class="upper3 p10">DICTAMEN</p></strong></td>
-                <td class="bordertable2"><strong><p class="upper3 p10">{{ $dictum->Dictum }}</p></strong></td>
+                <td class="bordertable2"><strong><p class="upper10 p10">{{ $dictum->Dictum }}</p></strong></td>
             </tr>
             <tr>
                 <td class="bordertable2" style="position:relative;width:20%;"><strong><p class="upper3 p10">RECOMENDACIÓN</p></strong></td>
-                <td class="bordertable2"><strong><p class="upper3 p10">{{ $dictum->Recommendation }}</p></strong></td>
+                <td class="bordertable2"><strong><p class="upper10 p10">{{ $dictum->Recommendation }}</p></strong></td>
             </tr>
             <tr>
                 <td class="bordertable2" style="position:relative;width:20%;"><strong><p class="upper3 p10">OBSERVACIONES </p></strong></td>
-                <td class="bordertable2"><strong><p class="upper3 p10">{{ $dictum->observations }}</p></strong></td>
+                <td class="bordertable2"><strong><p class="upper10 p10">{{ $dictum->observations }}</p></strong></td>
             </tr>
         </table>
 
@@ -90,15 +90,15 @@
             <tr>
                 <td>
                     <p class="textp upper2 sign2">
-                        ATENTAMENTE
+                        <strong>ATENTAMENTE</strong>
                         <br>
                     </p>
                     <p class="textp upper2 sign">
                         ____________________________________________
                         <br>
-                        DEPARTAMENTO DE INFORMÁTICA Y SISTEMAS
+                        <strong>DEPARTAMENTO DE INFORMÁTICA Y SISTEMAS</strong>
                         <br>
-                        </br>{{ $user->name }}</p>
+                        </br><strong>{{ $user->name }}</strong></p>
                 </td>
             </tr>
         </table>

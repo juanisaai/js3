@@ -52,7 +52,7 @@ class DataEquipment extends Model
 
     public function getDictumEquipmentAttribute()
     {
-        return ucfirst($this->TypeEquipment) . ' ' . ucfirst($this->TypeAssemblyEquipment) . ' - ' . ucfirst($this->EquipmentSO). ' - ' . ucfirst($this->BrandCPU). ' ' . ucfirst($this->ModelCPU). ' ' . ucfirst($this->FrequencyCPU). ' - RAM ' . ucfirst($this->CapabilityRam);
+        return ucfirst($this->TypeEquipment) . ' ' . ucfirst($this->TypeAssemblyEquipment) . ' - ' . ucfirst($this->EquipmentOS). ' - ' . ucfirst($this->BrandCPU). ' ' . ucfirst($this->ModelCPU). ' ' . ucfirst($this->FrequencyCPU). ' - RAM ' . ucfirst($this->CapabilityRam);
     }
 
     //--------------------Relationship with employees

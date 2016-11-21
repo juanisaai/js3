@@ -29,7 +29,7 @@ class DataDevice extends Model
 
     public function getDictumDeviceAttribute()
     {
-        return ucfirst($this->DescriptionDevice) . ' - ' . ucfirst($this->TypeDevice) . ' - MARCA: ' . ucfirst($this->BrandDevice). ' - MODELO: ' . ucfirst($this->ModelDevice). ' - COLOR: ' . ucfirst($this->ColorDevice);
+        return ucfirst($this->DescriptionDevice) . ' - ' . ucfirst($this->TypeDevice) . ' - Marca: ' . ucfirst($this->BrandDevice). ' - Modelo: ' . ucfirst($this->ModelDevice). ' - Color: ' . ucfirst($this->ColorDevice);
     }
 
     //--------------------Relationship with employees

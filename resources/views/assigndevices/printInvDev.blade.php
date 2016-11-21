@@ -17,11 +17,11 @@
                         <p class="titulo">
                             <strong>SERVICIOS ESTATALES DE SALUD
                                 <br>
-                                JURISDICCION SANITARIA No. III</strong>
-                            <br>
-                            <strong>DEPARTAMENTO DE INFORMÁTICA Y SISTEMAS
+                                JURISDICCION SANITARIA No. III
                                 <br>
-                                Reporte de Inventarios de Equipos y Accesorios
+                                DEPARTAMENTO DE INFORMÁTICA Y SISTEMAS</strong>
+                            <br>
+                            <strong style="font-style: italic;">Reporte de Inventarios de Equipos y Accesorios
                             </strong></p>
                     </td>
                 </tr>
@@ -38,7 +38,7 @@
             <table class="font2 dimtable2 margintab">
                 <tr>
                     <th class="space9"><strong>Dirección: </strong> <ins class="upper2">{{ $employee->area->DirectorateArea }}</ins></th>
-                    <th class="space9"><strong>Área: </strong> <ins class="upper2">{{ $employee->area->NameArea }}</ins></th>
+                    <th class="space8 p8"><strong>Área: </strong> <ins class="upper2">{{ $employee->area->NameArea }}</ins></th>
                 </tr>
             </table>
 
@@ -51,14 +51,14 @@
                 <th class="color" style="width:20%">No. de inventario/No. de serie</th>
             </tr>
             <tr class="upper">
-                <td class="bordertable">{{ $device->DescriptionDevice }}</td>
-                <td class="bordertable">{{ $device->TypeDevice }}</td>
-                <td class="bordertable">{{ $device->BrandDevice }}</td>
-                <td class="bordertable">{{ $device->ModelDevice }}</td>
+                <td class="bordertable p10">{{ $device->DescriptionDevice }}</td>
+                <td class="bordertable p10">{{ $device->TypeDevice }}</td>
+                <td class="bordertable p10">{{ $device->BrandDevice }}</td>
+                <td class="bordertable p10">{{ $device->ModelDevice }}</td>
                 @if(($device->InventoryNumberDevice) === null)
-                    <td class="bordertable">{{ $device->SerialNumberDevice }}</td>
+                    <td class="bordertable p10">{{ $device->SerialNumberDevice }}</td>
                 @else
-                    <td class="bordertable">{{ $device->InventoryNumberDevice }}</td>
+                    <td class="bordertable p10">{{ $device->InventoryNumberDevice }}</td>
                 @endif
             </tr>
         </table>

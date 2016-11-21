@@ -11,9 +11,6 @@ use Carbon\Carbon;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Support\Facades\Session;
 
-
-use Illuminate\Http\Request;
-
 class DictumController extends Controller
 {
     public function createDev()
@@ -42,7 +39,7 @@ class DictumController extends Controller
 
     public function readDev()
     {
-        $dictums = DataDictum::orderBy('id', 'desc')->paginate(5);
+        $dictums = DataDictum::orderBy('id', 'desc')->has('device')->paginate(5);
         return view('dictums/viewDictums', compact('dictums'));
     }
 
@@ -106,7 +103,7 @@ class DictumController extends Controller
 
     public function readEq()
     {
-        $dictumEqs = DataDictum::orderBy('id', 'desc')->paginate(5);
+        $dictumEqs = DataDictum::orderBy('id', 'desc')->has('equipment')->paginate(5);
         return view('dictums/viewDictumsEq', compact('dictumEqs'));
     }
 
@@ -139,10 +136,10 @@ class DictumController extends Controller
     public function storeEq()
     {
         $this->validate(request(), [
-            'Problematic' => 'required|max:1000',
-            'Dictum' => 'required|max:1000',
-            'Recommendation' => 'max:1000',
-            'observations' => 'max:1000',
+            'Problematic' => 'required|max:500',
+            'Dictum' => 'required|max:500',
+            'Recommendation' => 'max:300',
+            'observations' => 'max:300',
             'equipment_id' => 'required',
             'user_id' => 'required',
         ]);
@@ -166,10 +163,10 @@ class DictumController extends Controller
         $dictum = DataDictum::findOrFail($idDictum);
 
         $this->validate(request(), [
-            'Problematic' => 'required|max:1000',
-            'Dictum' => 'required|max:1000',
-            'Recommendation' => 'max:1000',
-            'observations' => 'max:1000',
+            'Problematic' => 'required|max:500',
+            'Dictum' => 'required|max:500',
+            'Recommendation' => 'max:300',
+            'observations' => 'max:300',
             'equipment_id' => 'required',
             'user_id' => 'required',
         ]);

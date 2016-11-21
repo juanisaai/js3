@@ -11,6 +11,6 @@ class EquipmentReceptionTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Entities\EquipmentReception::class)->times(30)->create();
+        factory(\App\Entities\EquipmentReception::class)->times(10)->create();
     }
 }

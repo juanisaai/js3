@@ -26,7 +26,6 @@
                                         <th>Folio</th>
                                         <th>Fecha de creación</th>
                                         <th>Problemática</th>
-                                        <th>Dictamen</th>
                                         <th>Equipo</th>
                                         <th colspan="3" class="text-center">Acciones</th>
                                     </tr>
@@ -35,8 +34,7 @@
                                             <td>{{ $dictumEq->id }}</td>
                                             <td>{{ $dictumEq->created_at->toFormattedDateString() }}</td>
                                             <td>{{ $dictumEq->Problematic }}</td>
-                                            <td>{{ $dictumEq->Dictum }}</td>
-                                            <td>{{ $dictumEq->equipment->name_equipment }}</td>
+                                            <td>@include('dictums.partials.eqViewName')</td>
                                             <td>
                                                 <a href="{{ route('editEq', ['idDictum' => $dictumEq->id]) }}"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
                                             </td>

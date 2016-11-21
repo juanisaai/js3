@@ -11,6 +11,6 @@ class DataDictumTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Entities\DataDictum::class)->times(30)->create();
+        factory(\App\Entities\DataDictum::class)->times(10)->create();
     }
 }

@@ -14,7 +14,7 @@ class ServiceRequestController extends Controller
 {
     //READ
     public function read(){
-        $serquests = ServiceRequest::paginate(10);
+        $serquests = ServiceRequest::orderBy('id', 'desc')->paginate(10);
         return view('serviceRequest/viewAllSerquests', compact('serquests'));
     }
 

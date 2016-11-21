@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Depto. Sis. Crear área
+@endsection
+
 @section('content')
     @if (Auth::guest())
 

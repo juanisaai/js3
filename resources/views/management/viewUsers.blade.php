@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Depto. Sis. Usuarios
+@endsection
+
 @section('content')
 
     @if (Auth::guest())

@@ -26,7 +26,6 @@
                                         <th>Folio</th>
                                         <th>Fecha de creación</th>
                                         <th>Problemática</th>
-                                        <th>Dictamen</th>
                                         <th>Dispositivo</th>
                                         <th colspan="3" class="text-center">Acciones</th>
                                     </tr>
@@ -35,8 +34,7 @@
                                             <td>{{ $dictum->id }}</td>
                                             <td>{{ $dictum->created_at->toFormattedDateString() }}</td>
                                             <td>{{ $dictum->Problematic }}</td>
-                                            <td>{{ $dictum->Dictum }}</td>
-                                            <td>{{ $dictum->device->name_device }}</td>
+                                            <td>@include('dictums.partials.devViewName')</td>
                                             <td>
                                                 <a href="{{ route('editDev', ['idDictum' => $dictum->id]) }}"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
                                             </td>

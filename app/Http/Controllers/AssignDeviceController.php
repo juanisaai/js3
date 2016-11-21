@@ -48,7 +48,7 @@ class AssignDeviceController extends Controller
     // View employees with devices assigned
     public function seeAssigns()
     {
-        $employees = Employee::has('devices')->orderBy('id', 'asc')->paginate(10);
+        $employees = Employee::orderBy('id', 'asc')->has('devices')->paginate(10);
         return View('assigndevices/viewEmployeesDev', compact('employees'));
     }
 

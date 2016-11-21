@@ -13,7 +13,7 @@ class EmployeeTableSeeder extends Seeder
     public function run()
     {
 
-        factory(Employee::class)->times(60)->create();
+        factory(Employee::class)->times(10)->create();
 
         /*DB::table('employees')->insert([
             'ProfileEmployee' => 'Lic.',

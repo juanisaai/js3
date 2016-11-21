@@ -24,7 +24,7 @@ class EquipmentReceptionController extends Controller
     // Read receptions
     public function read()
     {
-        $receptions = EquipmentReception::paginate(10);
+        $receptions = EquipmentReception::orderBy('id', 'desc')->paginate(10);
         return view('equipmentReception/viewReceptions', compact('receptions'));
     }
 
