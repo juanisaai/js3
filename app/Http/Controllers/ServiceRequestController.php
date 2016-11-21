@@ -7,6 +7,8 @@ use App\Entities\ServiceRequest;
 use App\User;
 use Barryvdh\DomPDF\Facade as PDF;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Session;
+
 
 class ServiceRequestController extends Controller
 {
@@ -46,15 +48,16 @@ class ServiceRequestController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'ReasonRequests' => 'required',
-            'receptionist' => 'required|max:60',
-            'TechnicianAssigned' => 'required|max:60',
-            'DescriptionService' => 'max:500',
+            'ReasonRequests' => 'required|max:1000',
+            'receptionist' => 'required',
+            'TechnicianAssigned' => 'required',
+            'DescriptionService' => 'required|max:1000',
             'employee_id' => 'required',
         ]);
 
         $data = request()->all();
         ServiceRequest::create($data);
+        Session::flash('flash_message', '¡Hoja de servicio agregada exitosamente!');
         return redirect()->route('seeAllRequests');
     }
 
@@ -74,16 +77,17 @@ class ServiceRequestController extends Controller
         $serquest = ServiceRequest::findOrFail($id);
 
         $this->validate(request(), [
-            'ReasonRequests' => 'required',
-            'receptionist' => 'required|max:60',
-            'TechnicianAssigned' => 'required|max:60',
-            'DescriptionService' => 'max:500',
+            'ReasonRequests' => 'required|max:1000',
+            'receptionist' => 'required',
+            'TechnicianAssigned' => 'required',
+            'DescriptionService' => 'required|max:1000',
             'employee_id' => 'required',
 
         ]);
 
         $data = request()->all();
         $serquest->fill($data)->save();
+        Session::flash('flash_message', '¡Hoja de servicio actualizada exitosamente!');
         return redirect()->route('seeAllRequests');
 
     }
@@ -94,6 +98,7 @@ class ServiceRequestController extends Controller
     {
         $serquest = ServiceRequest::find($id);
         $serquest->delete();
+        Session::flash('flash_message', '¡Hoja de servicio eliminada exitosamente!');
         return redirect()->route('seeAllRequests');
     }
 }

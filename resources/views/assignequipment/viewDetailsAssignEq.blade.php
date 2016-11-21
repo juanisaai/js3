@@ -49,7 +49,7 @@
                                             <a href="{{ route('deleteAssignEq', ['idEq' => $equipment->id]) }}"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
                                         </td>
                                         <td>
-                                            <div class="btn-group dropup pull-right margintab">
+                                            <div class="btn-group dropup pull-right">
                                                 <button type="button" class="btn btn-info btn-sm dropdown-toggle margintab" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Reporte de Inventario <span class="caret"></span>
                                                 </button>

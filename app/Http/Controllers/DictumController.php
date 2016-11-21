@@ -9,6 +9,8 @@ use App\Entities\Employee;
 use App\User;
 use Carbon\Carbon;
 use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Support\Facades\Session;
+
 
 use Illuminate\Http\Request;
 
@@ -24,16 +26,17 @@ class DictumController extends Controller
     public function storeDev()
     {
         $this->validate(request(), [
-            'Problematic' => 'required|max:500',
-            'Dictum' => 'required|max:500',
-            'Recommendation' => 'max:500',
-            'observations' => 'max:500',
+            'Problematic' => 'required|max:1000',
+            'Dictum' => 'required|max:1000',
+            'Recommendation' => 'max:1000',
+            'observations' => 'max:1000',
             'device_id' => 'required',
             'user_id' => 'required',
         ]);
 
         $data = request()->all();
         DataDictum::create($data);
+        Session::flash('flash_message', '¡Dictamen de dispositivo creado exitosamente!');
         return redirect()->route('readDictums');
     }
 
@@ -75,16 +78,17 @@ class DictumController extends Controller
         $dictum = DataDictum::findOrFail($idDictum);
 
         $this->validate(request(), [
-            'Problematic' => 'required|max:500',
-            'Dictum' => 'required|max:500',
-            'Recommendation' => 'max:500',
-            'observations' => 'max:500',
+            'Problematic' => 'required|max:1000',
+            'Dictum' => 'required|max:1000',
+            'Recommendation' => 'max:1000',
+            'observations' => 'max:1000',
             'device_id' => 'required',
             'user_id' => 'required',
         ]);
 
         $data = request()->all();
         $dictum->fill($data)->save();
+        Session::flash('flash_message', '¡Dictamen de dispositivo actualizado exitosamente!');
         return redirect()->route('readDictums');
     }
 
@@ -92,6 +96,7 @@ class DictumController extends Controller
     {
         $dictum = DataDictum::find($idDictum);
         $dictum->delete();
+        Session::flash('flash_message', '¡Dictamen de dispositivo eliminado exitosamente!');
         return redirect()->route('readDictums');
     }
 
@@ -134,16 +139,17 @@ class DictumController extends Controller
     public function storeEq()
     {
         $this->validate(request(), [
-            'Problematic' => 'required|max:500',
-            'Dictum' => 'required|max:500',
-            'Recommendation' => 'max:500',
-            'observations' => 'max:500',
+            'Problematic' => 'required|max:1000',
+            'Dictum' => 'required|max:1000',
+            'Recommendation' => 'max:1000',
+            'observations' => 'max:1000',
             'equipment_id' => 'required',
             'user_id' => 'required',
         ]);
 
         $data = request()->all();
         DataDictum::create($data);
+        Session::flash('flash_message', '¡Dictamen de equipo creado exitosamente!');
         return redirect()->route('readDictumsEq');
     }
 
@@ -160,16 +166,17 @@ class DictumController extends Controller
         $dictum = DataDictum::findOrFail($idDictum);
 
         $this->validate(request(), [
-            'Problematic' => 'required|max:500',
-            'Dictum' => 'required|max:500',
-            'Recommendation' => 'max:500',
-            'observations' => 'max:500',
+            'Problematic' => 'required|max:1000',
+            'Dictum' => 'required|max:1000',
+            'Recommendation' => 'max:1000',
+            'observations' => 'max:1000',
             'equipment_id' => 'required',
             'user_id' => 'required',
         ]);
 
         $data = request()->all();
         $dictum->fill($data)->save();
+        Session::flash('flash_message', '¡Dictamen de equipo actualizado exitosamente!');
         return redirect()->route('readDictumsEq');
     }
 
@@ -177,6 +184,7 @@ class DictumController extends Controller
     {
         $dictum = DataDictum::find($idDictum);
         $dictum->delete();
+        Session::flash('flash_message', '¡Dictamen de equipo eliminado exitosamente!');
         return redirect()->route('readDictumsEq');
     }
 

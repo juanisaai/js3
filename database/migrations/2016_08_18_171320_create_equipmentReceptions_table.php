@@ -16,7 +16,7 @@ class CreateEquipmentReceptionsTable extends Migration
             $table->increments('id');
             $table->enum('TypeTrouble', ['Hardware', 'Software']);
             $table->string('ReasonReception', 500);
-            $table->string('ObservationReception', 500);
+            $table->string('ObservationReception', 500)->nullable();
             $table->string('AccessoryAdd', 500)->nullable();
             $table->string('Receptionist', 60);
             $table->string('Petitioner', 60);

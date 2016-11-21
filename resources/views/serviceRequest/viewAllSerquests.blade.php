@@ -15,15 +15,16 @@
                         <div class="panel-heading">
                             <h1 class="panel-title">Lista de solicitudes de servicio</h1>
                         </div>
-                        <div class="panel-body table-hover table-striped table-responsive">
+                        <div class="panel-body table-responsive">
+                            <div>
+                                @include('partials/errors')
+                                @include('partials/succeed')
+                            </div>
                             <div>
                                 <a href="{{ route('createSerquest') }}"><button type="button" class="btn btn-success pull-right margintab">Crear</button></a>
                             </div>
 
-                            @include('partials/errors')
-                            @include('partials/succeed')
-
-                            <table class="table">
+                            <table class="table table-hover table-striped">
                                 <tr>
                                     <th>Folio</th>
                                     <th>Fecha y hora</th>
@@ -48,7 +49,7 @@
                                             <a href="{{ route('deleteSerquest', ['id' => $serquest->id]) }}"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
                                         </td>
                                         <td>
-                                            <div class="btn-group dropup pull-right margintab">
+                                            <div class="btn-group dropup pull-right">
                                                 <button type="button" class="btn btn-info btn-sm dropdown-toggle margintab" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Hoja de servicio <span class="caret"></span>
                                                 </button>

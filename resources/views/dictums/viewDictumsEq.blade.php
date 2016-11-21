@@ -14,12 +14,14 @@
                       <div class="panel-heading">
                           <h1 class="panel-title">Lista de dictamen equipos</h1>
                       </div>
-                            <div class="panel-body table-hover table-striped table-responsive">
+                            <div class="panel-body table-responsive">
+                                <div>
+                                   @include('partials/errors')
+                                   @include('partials/succeed')
+                                </div>
                                 <a href="{{ route('createDictumEq') }}"><button type="button" class="btn btn-success btn-sm pull-right margintab">Crear</button></a>
-                                @include('partials/errors')
-                                @include('partials/succeed')
 
-                                <table class="table">
+                                <table class="table table-hover table-striped">
                                     <tr>
                                         <th>Folio</th>
                                         <th>Fecha de creación</th>

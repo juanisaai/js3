@@ -167,7 +167,6 @@ return [
 
         /*
          * DataDevices
-         *
          */
         'InventoryNumberDevice'     => 'Número de inventario',
         'NomenclatureDevice'        => 'Nomenclatura',
@@ -216,6 +215,38 @@ return [
         'BrandDiscReader'               => 'Marca del lector de CD',
         'TypeDiscReader'                => 'Tipo de lector',
         'active'                        => 'Equipo activo',
+
+        // ServiceRequest  'ReasonRequests', 'receptionist', 'TechnicianAssigned', 'DescriptionService','employee_id'
+        'ReasonRequests'                => 'Razón de solicitud',
+        'receptionist'                  => 'Recibe',
+        'TechnicianAssigned'            => 'Seleccionar técnico',
+        'DescriptionService'            => 'Descripción del servicio',
+        'employee_id'                   => 'Empleado solicitante',
+
+        /*EquipmentReception*/
+
+        'TypeTrouble'           => 'Tipo de problema',
+        'ReasonReception'       => 'Motivo de recepción',
+        'ObservationReception'  => 'Observaciones',
+        'AccessoryAdd'          => 'Accesorios adicionales',
+        'Receptionist'          => 'Recepciona',
+        'Petitioner'            => 'Nombre del solicitante',
+        'Receive'               => 'Recibe',
+        'StatusEquipment'       => 'Seleccione el estado del equipo',
+        'NumberDictum'          => 'Número del dictamen',
+        'NumberDoc'             => 'Número de oficio',
+        'equipment_id'          => 'Seleccionar equipo',
+        'device_id'             => 'Seleccionar dispositivo',
+        'user_id'               => 'Seleccionar técnico',
+
+        // Dictums
+        'Problematic'       => 'Problemática',
+        'Dictum'            => 'Dictamen',
+        'Recommendation'    => 'Recomendaciones',
+        'observations'      => 'Observaciones',
+        'device_id'         => 'Seleccionar dispositivo',
+        'equipment_id'      => 'Seleccionar equipo',
+        'user_id'           => 'Técnico',
 
     ],
 

@@ -9,6 +9,8 @@ use App\User;
 use Barryvdh\DomPDF\Facade as PDF;
 use Carbon\Carbon;
 use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Session;
+
 
 class EquipmentReceptionController extends Controller
 {
@@ -71,6 +73,7 @@ class EquipmentReceptionController extends Controller
 
         $data = request()->all();
         EquipmentReception::create($data);
+        Session::flash('flash_message', '¡Recepción de equipo creada exitosamente!');
         return redirect()->route('seeReceptions');
     }
 
@@ -111,6 +114,7 @@ class EquipmentReceptionController extends Controller
 
         $data = request()->all();
         $reception->fill($data)->save();
+        Session::flash('flash_message', '¡Recepción de equipo actualizada exitosamente!');
         return redirect()->route('seeReceptions');
     }
 
@@ -120,6 +124,7 @@ class EquipmentReceptionController extends Controller
     {
         $reception = EquipmentReception::find($idRec);
         $reception->delete();
+        Session::flash('flash_message', '¡Recepción de equipo eliminada exitosamente!');
         return redirect()->route('seeReceptions');
     }
 
