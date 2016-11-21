@@ -6,6 +6,8 @@ use App\Entities\DataEquipment;
 use App\Entities\Employee;
 use Barryvdh\DomPDF\Facade as PDF;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Session;
+
 
 class AssignEquipmentController extends Controller
 {
@@ -66,6 +68,7 @@ class AssignEquipmentController extends Controller
         $equipment->employee_id = $idEq;
         $employee->equipments()->save($equipment);
 
+        Session::flash('flash_message', '¡Equipo asignado exitosamente!');
         return redirect()->route('seeDetailsAssignEq', ['id' => $idEmp]);
     }
 
@@ -84,6 +87,7 @@ class AssignEquipmentController extends Controller
         $equipments = DataEquipment::find($idEq);
         $equipments->employee()->dissociate();
         $equipments->save();
+        Session::flash('flash_message', '¡Asignación eliminada exitosamente!');
         return redirect()->back();
     }
 

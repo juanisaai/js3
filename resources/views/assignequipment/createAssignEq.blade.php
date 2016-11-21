@@ -14,12 +14,14 @@
                     <div class="panel-heading">
                         <h1 class="panel-title">Empleados disponibles</h1>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body table-responsive">
 
-                        @include('partials/errors')
-                        @include('partials/succeed')
+                        <div>
+                            @include('partials/errors')
+                            @include('partials/succeed')
+                        </div>
 
-                        <table class="table">
+                        <table class="table table-hover table-striped">
                             <tr>
                                 <th>Empleado</th>
                                 <th>Departamento</th>

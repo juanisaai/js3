@@ -20,7 +20,7 @@ class DataEquipment extends Model
         //View details
         'TypeEquipment',
         'TypeAssemblyEquipment',
-        'EquipmentSO',
+        'EquipmentOS',
         'ArchitectureOS',
         'DistributionOS',
         'SerialNumberOS',

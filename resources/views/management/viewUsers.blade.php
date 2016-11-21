@@ -15,14 +15,16 @@
                         <div class="panel-heading">
                             <h1 class="panel-title">Lista de usuarios</h1>
                         </div>
-                        <div class="panel-body table-hover table-striped table-responsive">
+                        <div class="panel-body table-responsive">
+                            <div>
+                                @include('partials/errors')
+                                @include('partials/succeed')
+                            </div>
                             <div>
                                 <a href="{{ route('createUser') }}"><button type="button" class="btn btn-success pull-right margintab">Crear</button></a>
                             </div>
-                            @include('partials/errors')
-                            @include('partials/succeed')
 
-                            <table class="table">
+                            <table class="table table-hover table-striped">
                                 <tr>
                                     <th>Nombre</th>
                                     <th>Nombre de usuario</th>
@@ -57,6 +59,8 @@
                                         </td>
                                         <td>
                                             <a href="{{ route('editUser', ['id' => $user->id]) }}"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
+                                        </td>
+                                        <td>
                                             <a href="{{ route('deleteUser', ['id' => $user->id]) }}"><button type="button" class="btn btn-danger btn-sm">Eliminar</button></a>
                                         </td>
                                     </tr>
@@ -64,8 +68,9 @@
                             </table>
                             {{ $users->render() }}
                         </div>
-    @endif
                     </div>
+
+                    @endif
                 </div>
             </div>
         </div>

@@ -14,13 +14,14 @@
                     <div class="panel-heading">
                         <h1 class="panel-title">Dispositivos disponibles</h1>
                     </div>
-
-                    <div class="panel-body table-responsive table-hover table-striped">
-
+                    <div>
                         @include('partials/errors')
                         @include('partials/succeed')
+                    </div>
 
-                        <table class="table">
+                    <div class="panel-body table-responsive">
+
+                        <table class="table table-hover table-striped">
                             <tr>
                                 <th>Nomenclatura</th>
                                 <th>Dispositivo</th>

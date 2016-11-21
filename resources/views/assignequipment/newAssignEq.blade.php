@@ -15,12 +15,12 @@
                         <h1 class="panel-title">Equipos disponibles</h1>
                     </div>
 
-                    <div class="panel-body">
-
-                        @include('partials/errors')
-                        @include('partials/succeed')
-
-                        <table class="table">
+                    <div class="panel-body table-responsive">
+                        <div>
+                            @include('partials/errors')
+                            @include('partials/succeed')
+                        </div>
+                        <table class="table table-hover table-striped">
                             <tr>
                                 <th>Nomenclatura</th>
                                 <th>Dispositivo</th>

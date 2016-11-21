@@ -55,7 +55,7 @@
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('type', 'Selecciona el tipo de usuario') !!}
+                            {!! Form::label('type', 'Tipo de usuario') !!}
                             {!! Form::select('type',[ 'Technician' => 'Técnico', 'Collaborate' => 'Colaborador', 'Admin' => 'Administrador'], $user->type, ['class' => 'selectpicker'] ) !!}
                         </div>
 

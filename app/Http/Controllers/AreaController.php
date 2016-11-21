@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Entities\Area;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Session;
 
@@ -35,7 +32,7 @@ class AreaController extends Controller
 
         $data = request()->all();
         Area::create($data);
-        Session::flash('flash_message', 'Area successfully added!');
+        Session::flash('flash_message', '¡Área agregada exitosamente!');
         return redirect()->route('readArea');
 
     }
@@ -74,7 +71,7 @@ class AreaController extends Controller
 
         $data = request()->all();
         $area->fill($data)->save();
-        Session::flash('flash_message', 'Area successfully update!');
+        Session::flash('flash_message', '¡Área actualizada exitosamente!');
         return redirect()->route('readArea');
 
     }
@@ -84,7 +81,7 @@ class AreaController extends Controller
     {
         $area = Area::find($id);
         $area->delete();
-        Session::flash('flash_message', 'Area successfully deleted!');
+        Session::flash('flash_message', '¡Área eliminada exitosamente!');
         return redirect()->route('readArea');
 
 

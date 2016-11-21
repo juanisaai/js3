@@ -3,13 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Entities\DataEquipment;
-use App\Entities\Supplier;
 use Barryvdh\DomPDF\Facade as PDF;
 use Carbon\Carbon;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Session;
 
 class EquipmentsController extends Controller
 {
+    //Create
+    /** |unique:users,email,' . $this->route->getParameter('id'),
+     * @var \Illuminate\Routing\Route
+     */
+    private $route;
+
+    public function __construct(Route $route)
+    {
+        $this->route = $route;
+    }
+
     //Create
     public function create(){
         return view('equipments/createEquipment');
@@ -18,26 +29,26 @@ class EquipmentsController extends Controller
     public function store(){
 
         $this->validate(request(), array(
-            'InventoryNumberEquipment' => 'max:25',
-            'NomenclatureEquipment' => 'max:20',
-            'DescriptionEquipment' => 'max:1000',
-            'BrandEquipment' => 'max:15',
-            'ModelEquipment' => 'max:25',
-            'SerialNumberEquipment' => 'max:15',
+            'InventoryNumberEquipment' => 'max:50|unique:dataEquipments,InventoryNumberEquipment',
+            'NomenclatureEquipment' => 'required|max:50|unique:dataEquipments,NomenclatureEquipment',
+            'DescriptionEquipment' => 'required|max:100',
+            'BrandEquipment' => 'required|max:50',
+            'ModelEquipment' => 'required|max:50',
+            'SerialNumberEquipment' => 'max:25|unique:dataEquipments,SerialNumberEquipment',
             'ColorEquipment' => 'max:15',
             'DescriptionAdEquipment' => 'max:1000',
             //View Details
             'TypeEquipment' => 'required|max:15',
-            'TypeAssemblyEquipment' => 'max:15',
-            'EquipmentSO' => '40',
-            'ArchitectureOS' => '15',
-            'DistributionOS' => '40',
-            'SerialNumberOS' => '25',
-            'InventoryNumberOS' => '30',
-            'IPAddressEquipment' => 'max:25',
+            'TypeAssemblyEquipment' => 'required|max:15',
+            'EquipmentOS' => 'required|max:40',
+            'ArchitectureOS' => 'max:15',
+            'DistributionOS' => 'required|max:40',
+            'SerialNumberOS' => 'max:25',
+            'InventoryNumberOS' => 'max:30',
+            'IPAddressEquipment' => 'max:50|unique:dataEquipments,IPAddressEquipment',
             'BrandMotherB' => 'max:50',
             'ModelMotherB' => 'max:50',
-            'SerialNumberMotherB' => 'max:50',
+            'SerialNumberMotherB' => 'max:50|unique:dataEquipments,SerialNumberMotherB',
             'BrandCPU' => 'max:50',
             'ModelCPU' => 'max:50',
             'FrequencyCPU' => 'max:30',
@@ -48,14 +59,14 @@ class EquipmentsController extends Controller
             'BrandHHD' => 'max:50',
             'ModelHHD' => 'max:50',
             'CapabilityHHD' => 'max:25',
-            'SerialNumberHHD' => 'max:50',
+            'SerialNumberHHD' => 'max:50|unique:dataEquipments,SerialNumberHHD',
             'BrandDiscReader' => 'max:50',
             'TypeDiscReader' => 'max:25',
         ));
 
         $data = request()->all();
         DataEquipment::create($data);
-        Session::flash('flash_message', 'Equipment successfully added!');
+        Session::flash('flash_message', '¡Equipo agregado exitosamente!');
         return redirect()->route('readEquipments');
 
     }
@@ -102,26 +113,26 @@ class EquipmentsController extends Controller
         $equipment = DataEquipment::findOrFail($id);
 
         $this->validate(request(), [
-            'InventoryNumberEquipment' => 'max:25',
-            'NomenclatureEquipment' => 'max:20',
-            'DescriptionEquipment' => 'max:1000',
-            'BrandEquipment' => 'max:15',
-            'ModelEquipment' => 'max:25',
-            'SerialNumberEquipment' => 'max:15',
+            'InventoryNumberEquipment' => 'max:50|unique:dataEquipments,InventoryNumberEquipment,' . $this->route->getParameter('id'),
+            'NomenclatureEquipment' => 'required|max:50|unique:dataEquipments,NomenclatureEquipment,' . $this->route->getParameter('id'),
+            'DescriptionEquipment' => 'required|max:100',
+            'BrandEquipment' => 'required|max:50',
+            'ModelEquipment' => 'required|max:50',
+            'SerialNumberEquipment' => 'max:25|unique:dataEquipments,SerialNumberEquipment,' . $this->route->getParameter('id'),
             'ColorEquipment' => 'max:15',
             'DescriptionAdEquipment' => 'max:1000',
             //View Details
             'TypeEquipment' => 'required|max:15',
-            'TypeAssemblyEquipment' => 'max:15',
-            'EquipmentSO' => '40',
-            'ArchitectureOS' => '15',
-            'DistributionOS' => '40',
-            'SerialNumberOS' => '25',
-            'InventoryNumberOS' => '30',
-            'IPAddressEquipment' => 'max:25',
+            'TypeAssemblyEquipment' => 'required|max:15',
+            'EquipmentOS' => 'required|max:40',
+            'ArchitectureOS' => 'max:15',
+            'DistributionOS' => 'required|max:40',
+            'SerialNumberOS' => 'max:25',
+            'InventoryNumberOS' => 'max:30',
+            'IPAddressEquipment' => 'max:50|unique:dataEquipments,IPAddressEquipment,' . $this->route->getParameter('id'),
             'BrandMotherB' => 'max:50',
             'ModelMotherB' => 'max:50',
-            'SerialNumberMotherB' => 'max:50',
+            'SerialNumberMotherB' => 'max:50|unique:dataEquipments,SerialNumberMotherB,' . $this->route->getParameter('id'),
             'BrandCPU' => 'max:50',
             'ModelCPU' => 'max:50',
             'FrequencyCPU' => 'max:30',
@@ -132,14 +143,14 @@ class EquipmentsController extends Controller
             'BrandHHD' => 'max:50',
             'ModelHHD' => 'max:50',
             'CapabilityHHD' => 'max:25',
-            'SerialNumberHHD' => 'max:50',
+            'SerialNumberHHD' => 'max:50|unique:dataEquipments,SerialNumberHHD,' . $this->route->getParameter('id'),
             'BrandDiscReader' => 'max:50',
             'TypeDiscReader' => 'max:25',
         ]);
 
         $data = request()->all();
         $equipment->fill($data)->save();
-        Session::flash('flash_message', 'Equipment successfully update!');
+        Session::flash('flash_message', '¡Equipo actualizado exitosamente!');
         return redirect()->route('readEquipments');
 
     }
@@ -149,7 +160,7 @@ class EquipmentsController extends Controller
     {
         $equipment = DataEquipment::find($id);
         $equipment->delete();
-        Session::flash('flash_message', 'Equipment successfully deleted!');
+        Session::flash('flash_message', '¡Equipo eliminado exitosamente!');
         return redirect()->route('readEquipments');
     }
 }

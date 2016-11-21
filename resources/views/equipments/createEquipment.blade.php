@@ -73,7 +73,7 @@
                     <div class="form-group">
                         {!! Form::label('EquipmentOS', 'Sistema operativo') !!}
                         {!! Form::text('EquipmentOS', null, ['class' => 'form-control', 'placeholder' => 'Escribe el sistema operativo']) !!}
-                    </div>ArchitectureOS
+                    </div>
 
                     <div class="form-group">
                         {!! Form::label('ArchitectureOS', 'Arquitectura de sistema operativo') !!}

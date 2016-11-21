@@ -3,13 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Entities\DataDevice;
-use App\Entities\Supplier;
+use Illuminate\Routing\Route;
 use Barryvdh\DomPDF\Facade as PDF;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
 
 class DeviceController extends Controller
 {
+    //Create
+    /** |unique:users,email,' . $this->route->getParameter('id'),
+     * @var \Illuminate\Routing\Route
+     */
+    private $route;
+
+    public function __construct(Route $route)
+    {
+        $this->route = $route;
+    }
+
     //Create
     public function create(){
         return view('devices/createDevice');
@@ -18,14 +29,14 @@ class DeviceController extends Controller
     public function store(){
 
         $this->validate(request(), [
-            'InventoryNumberDevice' => 'max:25',
-            'NomenclatureDevice' => 'max:50',
-            'DescriptionDevice' => 'max:100',
-            'TypeDevice' => 'max:50',
-            'BrandDevice' => 'max:50',
-            'ModelDevice' => 'max:50',
-            'SerialNumberDevice' => 'max:25',
-            'ColorDevice' => 'max:50',
+            'InventoryNumberDevice' => 'max:50|unique:dataDevices,InventoryNumberDevice',
+            'NomenclatureDevice' => 'max:50|unique:dataDevices,NomenclatureDevice',
+            'DescriptionDevice' => 'required|max:100',
+            'TypeDevice' => 'required|max:50',
+            'BrandDevice' => 'required|max:50',
+            'ModelDevice' => 'required|max:50',
+            'SerialNumberDevice' => 'max:25|unique:dataDevices,SerialNumberDevice',
+            'ColorDevice' => 'required|max:50',
             'DescriptionAdDevice' => 'max:50',
             'active' => 'required',
 
@@ -33,7 +44,7 @@ class DeviceController extends Controller
 
         $data = request()->all();
         DataDevice::create($data);
-        Session::flash('flash_message', 'Device successfully added!');
+        Session::flash('flash_message', '¡Dispositivo agregado exitosamente!');
         return redirect()->route('readDevice');
     }
 
@@ -96,22 +107,23 @@ class DeviceController extends Controller
         $devices = DataDevice::findOrFail($id);
 
         $this->validate(request(), [
-            'InventoryNumberDevice' => 'max:25',
-            'NomenclatureDevice' => 'max:50',
-            'DescriptionDevice' => 'max:1000',
-            'TypeDevice' => 'max:50',
-            'BrandDevice' => 'max:50',
-            'ModelDevice' => 'max:50',
-            'SerialNumberDevice' => 'max:25',
-            'ColorDevice' => 'max:50',
+            'InventoryNumberDevice' => 'max:25|unique:dataDevices,InventoryNumberDevice,' . $this->route->getParameter('id'),
+            'NomenclatureDevice' => 'max:50|unique:dataDevices,NomenclatureDevice,' . $this->route->getParameter('id'),
+            'DescriptionDevice' => 'required|max:100',
+            'TypeDevice' => 'required|max:50',
+            'BrandDevice' => 'required|max:50',
+            'ModelDevice' => 'required|max:50',
+            'SerialNumberDevice' => 'max:25|unique:dataDevices,SerialNumberDevice,' . $this->route->getParameter('id'),
+            'ColorDevice' => 'required|max:50',
             'DescriptionAdDevice' => 'max:50',
             'active' => 'required',
+
 
         ]);
 
         $data = request()->all();
         $devices->fill($data)->save();
-        Session::flash('flash_message', 'Device successfully update!');
+        Session::flash('flash_message', '¡Dispositivo actualizado exitosamente!');
         return redirect()->route('readDevice');
 
     }
@@ -121,7 +133,7 @@ class DeviceController extends Controller
     {
         $devices = DataDevice::find($id);
         $devices->delete();
-        Session::flash('flash_message', 'Device successfully deleted!');
+        Session::flash('flash_message', '¡Dispositivo eliminado exitosamente!');
         return redirect()->route('readDevice');
     }
 

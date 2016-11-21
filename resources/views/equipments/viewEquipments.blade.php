@@ -15,8 +15,11 @@
                         <div class="panel-heading">
                             <h1 class="panel-title">Lista de equipos</h1>
                         </div>
-                        <div class="panel-body table-responsive table-hover table-striped">
-
+                        <div class="panel-body table-responsive">
+                            <div>
+                                @include('partials/errors')
+                                @include('partials/succeed')
+                            </div>
                             <div>
                                 <a href="{{ route('createEquipment') }}"><button type="button" class="btn btn-success pull-left margintab">Crear</button></a>
                             </div>
@@ -30,11 +33,7 @@
                                     <li><a href="{{ route('printAllEq', ['ver' => 2]) }}">Descargar</a></li>
                                 </ul>
                             </div>
-
-                            @include('partials/errors')
-                            @include('partials/succeed')
-
-                            <table class="table">
+                            <table class="table table-hover table-striped">
                                 <tr>
                                     <th>Número de inventario</th>
                                     <th>Nomenclatura</th>

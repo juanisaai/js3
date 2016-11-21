@@ -15,7 +15,11 @@
                         <div class="panel-heading">
                             <h1 class="panel-title">Lista de dispositivos</h1>
                         </div>
-                        <div class="panel-body table-hover table-striped table-responsive">
+                        <div class="panel-body table-responsive">
+                            <div>
+                                @include('partials/errors')
+                                @include('partials/succeed')
+                            </div>
                             <div>
                                 <a href="{{ route('createDevice') }}"><button type="button" class="btn btn-success pull-left margintab">Crear</button></a>
                             </div>
@@ -40,10 +44,7 @@
                                 </ul>
                             </div>
 
-                            @include('partials/errors')
-                            @include('partials/succeed')
-
-                            <table class="table">
+                            <table class="table table-hover table-striped">
                                 <tr>
                                     <th>Número de inventario</th>
                                     <th>Nomenclatura</th>
@@ -76,8 +77,9 @@
                             </table>
                             {!! $devices->render( ) !!}
                         </div>
-    @endif
                     </div>
+
+                    @endif
                 </div>
             </div>
         </div>

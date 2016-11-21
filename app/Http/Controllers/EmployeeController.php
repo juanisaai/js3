@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Entities\Area;
 use App\Entities\Employee;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use Illuminate\Support\Facades\Session;
 
 class EmployeeController extends Controller
@@ -21,16 +18,16 @@ class EmployeeController extends Controller
 
         $this->validate(request(), [
             'ProfileEmployee' => 'required|max:50',
-            'FirstName' => 'max:50',
-            'SecondName' => 'max:50',
-            'RoleEmployee' => 'max:150',
+            'FirstName' => 'required|max:50',
+            'SecondName' => 'required|max:50',
+            'RoleEmployee' => 'required|max:150',
             'area_id' => 'required'
 
         ]);
 
         $data = request()->all();
         Employee::create($data);
-        Session::flash('flash_message', 'Employee successfully added!');
+        Session::flash('flash_message', '¡Empleado creado exitosamente!');
         return redirect()->route('readEmployee');
 
 
@@ -59,16 +56,16 @@ class EmployeeController extends Controller
 
         $this->validate(request(), [
             'ProfileEmployee' => 'required|max:50',
-            'FirstName' => 'max:50',
-            'SecondName' => 'max:50',
-            'RoleEmployee' => 'max:150',
+            'FirstName' => 'required|max:50',
+            'SecondName' => 'required|max:50',
+            'RoleEmployee' => 'required|max:150',
             'area_id' => 'required'
 
         ]);
 
         $data = request()->all();
         $employee->fill($data)->save();
-        Session::flash('flash_message', 'Employee successfully update!');
+        Session::flash('flash_message', '¡Empleado actualizado exitosamente!');
         return redirect()->route('readEmployee');
 
     }
@@ -79,7 +76,7 @@ class EmployeeController extends Controller
     {
         $employee = Employee::find($id);
         $employee->delete();
-        Session::flash('flash_message', 'Employee successfully deleted!');
+        Session::flash('flash_message', '¡Empleado eliminado exitosamente!');
         return redirect()->route('readEmployee');
     }
 

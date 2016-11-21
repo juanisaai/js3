@@ -33,9 +33,9 @@ $factory->define(\App\Entities\DataEquipment::class, function (Faker\Generator $
         'SerialNumberEquipment' => $faker->isbn13,
         'ColorEquipment' => $faker->safeColorName,
         'DescriptionAdEquipment' => $faker->realText($maxNbChars = 40, $indexSize = 4),
-        'TypeEquipment' => $faker->word,
-        'TypeAssemblyEquipment' => $faker->word,
-        'EquipmentSO' => $faker->word,
+        'TypeEquipment' => $faker->randomElement($array = array ('Laptop','Desktop')),
+        'TypeAssemblyEquipment' => $faker->randomElement($array = array ('Ensamblada','Fábrica')),
+        'EquipmentOS' => $faker->word,
         'ArchitectureOS' => 'x'.$faker->randomDigit,
         'DistributionOS' => $faker->word,
         'SerialNumberOS' => $faker->ean8,
@@ -66,7 +66,7 @@ $factory->define(\App\Entities\DataDevice::class, function (Faker\Generator $fak
     return [
         'InventoryNumberDevice' => $faker->ean8,
         'NomenclatureDevice' => 'JS3-DEV-'.$faker->randomDigit,
-        'DescriptionDevice' => 'Impresora',
+        'DescriptionDevice' => $faker->randomElement($array = array ('Impresora','Red')),
         'TypeDevice' => $faker->realText($maxNbChars = 10, $indexSize = 2),
         'BrandDevice' => $faker->realText($maxNbChars = 10, $indexSize = 2),
         'ModelDevice' => $faker->isbn10,
@@ -94,14 +94,14 @@ $factory->define(\App\Entities\ServiceRequest::class, function (Faker\Generator 
 $factory->define(\App\Entities\EquipmentReception::class, function (Faker\Generator $faker) {
     return [
 
-        'TypeTrouble' => 'Hardware',
+        'TypeTrouble' => $faker->randomElement($array = array ('Hardware','Software')),
         'ReasonReception' => $faker->realText($maxNbChars = 40, $indexSize = 4),
         'ObservationReception' => $faker->realText($maxNbChars = 20, $indexSize = 2),
         'AccessoryAdd' => $faker->realText($maxNbChars = 40, $indexSize = 4),
         'Receptionist' => 'ISC. Harvey J. León Uc',
         'Petitioner' => 'Alguien',
         'Receive' => 'Alguien',
-        'StatusEquipment' => 'Ready',
+        'StatusEquipment' => $faker->randomElement($array = array ('Ready','GenerateDictum')),
         'NumberDictum' => $faker->ean8,
         'NumberDoc' => $faker->ean13,
         'equipment_id' => rand(1,4),

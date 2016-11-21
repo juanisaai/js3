@@ -10,20 +10,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    <h2>Empleado <span class="label label-default">{{ $employee->full_name }}</span></h2>
+                    <h3>Departamento <span class="label label-default">{{$employee->Area->NameArea}}</span></h3>
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Empleado: {{ $employee->full_name }}</h3>
-                            <h4 class="panel-title">Departamento: {{$employee->Area->NameArea}}</h4>
-                        </div>
-                            <div class="panel-body table-hover table-striped table-responsive">
+                            <div class="panel-body table-responsive">
+                                <div>
+                                    @include('partials/errors')
+                                    @include('partials/succeed')
+                                </div>
                                 <div>
                                     <a href="{{ route('newAssignDet', ['idEmp' => $employee->id]) }}"><button type="button" class="btn btn-success pull-right margintab">Crear</button></a>
                                 </div>
-
-                                @include('partials/errors')
-                                @include('partials/succeed')
-
-                                <table class="table">
+                                <table class="table table-hover table-striped">
                                     <tr>
                                         <th>Número de inventario</th>
                                         <th>Nomenclatura</th>

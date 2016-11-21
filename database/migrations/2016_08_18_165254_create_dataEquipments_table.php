@@ -25,7 +25,7 @@ class CreateDataEquipmentsTable extends Migration
             //For view details
             $table->string('TypeEquipment', 15);
             $table->string('TypeAssemblyEquipment', 15);
-            $table->string('EquipmentSO', 40);
+            $table->string('EquipmentOS', 40);
             $table->string('ArchitectureOS', 15);
             $table->string('DistributionOS', 40);
             $table->string('SerialNumberOS', 25)->nullable();

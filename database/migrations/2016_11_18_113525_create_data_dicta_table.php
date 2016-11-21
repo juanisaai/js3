@@ -24,7 +24,7 @@ class CreateDataDictaTable extends Migration
             $table->foreign('device_id')
                 ->references('id')
                 ->on('dataDevices')
-                ->onDelete('no action')
+                ->onDelete('set null')
                 ->onUpdate('cascade');
 
             $table->integer('equipment_id')->unsigned()->nullable();
@@ -32,7 +32,7 @@ class CreateDataDictaTable extends Migration
             $table->foreign('equipment_id')
                 ->references('id')
                 ->on('dataEquipments')
-                ->onDelete('no action')
+                ->onDelete('set null')
                 ->onUpdate('cascade');
 
             $table->integer('user_id')->unsigned()->nullable();
@@ -40,7 +40,7 @@ class CreateDataDictaTable extends Migration
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
-                ->onDelete('no action')
+                ->onDelete('set null')
                 ->onUpdate('cascade');
 
             $table->timestamps();

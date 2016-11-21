@@ -6,6 +6,7 @@ use App\Entities\DataDevice;
 use App\Entities\Employee;
 use Barryvdh\DomPDF\Facade as PDF;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Session;
 
 class AssignDeviceController extends Controller
 {
@@ -13,14 +14,14 @@ class AssignDeviceController extends Controller
     public function newAssign()
     {
         //here stay all devices without employee
-        $devices = DataDevice::where('employee_id', '=', null)->paginate(6);
+        $devices = DataDevice::where('employee_id', '=', null)->orderBy('id', 'asc')->paginate(6);
         return View('assigndevices/newAssignDevice', compact('devices'));
     }
 
     public function newAssignDet($idEmp)
     {
         $employee = Employee::find($idEmp);
-        $devices = DataDevice::where('employee_id', '=', null)->paginate(6);
+        $devices = DataDevice::where('employee_id', '=', null)->orderBy('id', 'asc')->paginate(6);
         return View('assigndevices/newAssignDeviceDet', compact('devices', 'employee'));
     }
 
@@ -28,7 +29,7 @@ class AssignDeviceController extends Controller
     public function createAssignDev($idDev)
     {
         $device = DataDevice::find($idDev);
-        $employees = Employee::has('devices', '=', 0)->paginate(6);
+        $employees = Employee::has('devices', '=', 0)->orderBy('id', 'asc')->paginate(6);
         return View('assigndevices/createAssignDev', compact('employees', 'device'));
     }
 
@@ -40,14 +41,14 @@ class AssignDeviceController extends Controller
 
         $device->employee_id = $idDev;
         $employee->devices()->save($device);
-
+        Session::flash('flash_message', '¡Dispositivo asignado exitosamente!');
         return redirect()->route('seeDetailsAssignDev', ['id' => $idEmp]);
     }
 
     // View employees with devices assigned
     public function seeAssigns()
     {
-        $employees = Employee::has('devices')->paginate(10);
+        $employees = Employee::has('devices')->orderBy('id', 'asc')->paginate(10);
         return View('assigndevices/viewEmployeesDev', compact('employees'));
     }
 
@@ -83,6 +84,7 @@ class AssignDeviceController extends Controller
         $devices = DataDevice::find($idDev);
         $devices->employee()->dissociate();
         $devices->save();
+        Session::flash('flash_message', '¡Asignación eliminada exitosamente!');
         return redirect()->back();
     }
 

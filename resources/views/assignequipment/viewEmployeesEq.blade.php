@@ -15,14 +15,16 @@
                         <div class="panel-heading">
                             <h1 class="panel-title">Resumen de equipos asignados</h1>
                         </div>
-                        <div class="panel-body table-hover table-striped table-responsive">
+                        <div class="panel-body table-responsive">
+                            <div>
+                                @include('partials/errors')
+                                @include('partials/succeed')
+                            </div>
                             <div>
                                 <a href="{{ route('newAssignEq') }}"><button type="button" class="btn btn-success pull-right margintab">Crear</button></a>
                             </div>
-                            @include('partials/errors')
-                            @include('partials/succeed')
 
-                            <table class="table">
+                            <table class="table table-hover table-striped">
                                 <tr>
                                     <th>Empleado</th>
                                     <th>Departamento</th>

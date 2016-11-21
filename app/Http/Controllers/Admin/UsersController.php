@@ -3,9 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\User;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\DB;
@@ -62,7 +59,6 @@ class UsersController extends Controller
         Session::flash('flash_message', '¡Administrador agregado exitosamente!');
         return redirect()->route('readAdmin');
     }
-
 
     //Read
     public function seeUsers()
