@@ -366,7 +366,12 @@ Route::group(['middlewareGroups' => 'auth'], function (){
             'as' => 'readDictums',
             'uses' => 'DictumController@readDev']);
 
-        // print dictum Eq
+        // print dictum dev
+        Route::get('/dictamen/dispositivos/detalles/dictamen/{idDictum}/eq/{idDev}/tech/{idUser}/{area}', [
+            'as' => 'detailDictumDev',
+            'uses' => 'DictumController@showDev']);
+
+        // print dictum dev
         Route::get('/dictamen/dispositivos/imprimir/dictamen/{idDictum}/eq/{idDev}/tech/{idUser}/{area}/{ver}', [
             'as' => 'printDictumDev',
             'uses' => 'DictumController@printDev']);
@@ -398,13 +403,18 @@ Route::group(['middlewareGroups' => 'auth'], function (){
             'as' => 'printDictumEq',
             'uses' => 'DictumController@printEq']);
 
-        // Create dictum device
+        // view detail dictum Eq
+        Route::get('/dictamen/equipos/detalles/dictamen/{idDictumEq}/eq/{idEq}/tech/{idUser}/{area}', [
+            'as' => 'detailDictumEq',
+            'uses' => 'DictumController@showEq']);
+
+        // Create dictum eq
         Route::get('/dictamen/equipos/crear', [
             'as' => 'createDictumEq',
             'uses' => 'DictumController@createEq']);
         Route::post('dictumeq', 'DictumController@storeEq');
 
-        // update dictum Dev
+        // update dictum eq
         Route::get('/dictamen/equipo/actualizar/dictamen/{idDictum}', [
             'as' => 'editEq',
             'uses' => 'DictumController@editEq']);

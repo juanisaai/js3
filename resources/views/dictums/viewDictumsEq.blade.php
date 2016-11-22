@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Dictamen de equipos | Sistema de inventario
+@endsection
+
 @section('content')
 
     @if (Auth::guest())
@@ -47,7 +51,7 @@
                                                         Ver <span class="caret"></span>
                                                     </button>
                                                     <ul class="dropdown-menu">
-                                                        <li><a href="#">Detalles</a></li>
+                                                        <li><a href="{{ route('detailDictumEq', ['idDictumEq' => $dictumEq->id, 'idEq' => $dictumEq->equipment->id, 'idUser' => $dictumEq->user->id, 'area' => $dictumEq->equipment->employee_id]) }}">Detalles</a></li>
                                                         <li role="separator" class="divider"></li>
                                                         <li><a href="{{ route('printDictumEq', ['idDictumEq' => $dictumEq->id, 'idEq' => $dictumEq->equipment->id, 'idUser' => $dictumEq->user->id, 'area' => $dictumEq->equipment->employee_id, 'ver' => 1]) }}" target="_blank">Dictamen</a></li>
                                                         <li><a href="{{ route('printDictumEq', ['idDictumEq' => $dictumEq->id, 'idEq' => $dictumEq->equipment->id, 'idUser' => $dictumEq->user->id, 'area' => $dictumEq->equipment->employee_id,'ver' => 2]) }}">Descargar dictamen</a></li>

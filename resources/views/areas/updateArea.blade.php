@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Depto. Sis. Actualizar area
+    Áreas - Actualizar | Sistema de inventario
 @endsection
 
 @section('content')

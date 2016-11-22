@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Empleados - Actualizar | Sistema de inventario
+@endsection
+
 @section('content')
 
     @if (Auth::guest())

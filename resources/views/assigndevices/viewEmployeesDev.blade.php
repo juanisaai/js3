@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Depto. Sis. Asignación dispostivos
+    Asignaciones - Dispositivos | Sistema de inventario
 @endsection
 
 @section('content')

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Depto. Sis. Nueva asignación
+    Asignaciones - Crear | Sistema de inventario
 @endsection
 
 @section('content')

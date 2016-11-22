@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Hojas de servicio - Actualizar | Sistema de inventario
+@endsection
+
 @section('content')
 
     @if (Auth::guest())

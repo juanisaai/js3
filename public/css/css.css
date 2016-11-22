@@ -235,6 +235,11 @@
     padding-left: 80px;
 }
 
+.p11 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .p3 {
     padding-top: 0px;
     padding-bottom: 0px;
@@ -261,6 +266,10 @@
 
 .p8 {
     padding-left: -11px;
+}
+
+.oupper {
+    text-transform: uppercase;
 }
 
 

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    Dictamen de equipos - Crear | Sistema de inventario
+@endsection
+
 @section('content')
     @if (Auth::guest())
 

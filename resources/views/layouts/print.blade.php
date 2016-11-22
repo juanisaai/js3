@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Sistema de impresiones</title>
+    <title>Sistema de impresiones | Sistema de inventarios</title>
 
     {!! Html::style('css/css.css') !!}
 

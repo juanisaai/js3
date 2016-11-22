@@ -43,6 +43,16 @@ class DictumController extends Controller
         return view('dictums/viewDictums', compact('dictums'));
     }
 
+    public function showDev($idDictum, $idDev, $idUser, $area)
+    {
+        $area = Employee::findOrFail($area);
+        $user = User::findOrFail($idUser);
+        $device = DataDevice::findOrFail($idDev);
+        $dictum = DataDictum::findOrFail($idDictum);
+        return view('dictums/viewDetailsDev', compact('area', 'user', 'device', 'dictum'));
+
+    }
+
     public function printDev($idDictum, $idDev, $idUser, $area, $ver)
     {
         $date = Carbon::now();
@@ -124,6 +134,16 @@ class DictumController extends Controller
         elseif (($ver) == 2){
             return $pdf->download('dictamen_equipo_'.$idEq.'_folio_'.$idDictumEq.'_'.$date->toDateTimeString().'.pdf');
         }
+    }
+
+    public function showEq($idDictumEq, $idEq, $idUser, $area)
+    {
+        $area = Employee::findOrFail($area);
+        $user = User::findOrFail($idUser);
+        $equipment = DataEquipment::findOrFail($idEq);
+        $dictum = DataDictum::findOrFail($idDictumEq);
+
+        return view('dictums/viewDetailsEq', compact('area', 'user', 'equipment', 'dictum'));
     }
 
     public function createEq()
