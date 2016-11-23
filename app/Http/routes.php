@@ -11,7 +11,8 @@
 |
 */
 
-Route::group(['middlewareGroups' => ['web']], function(){
+
+Route::group(['middleware' => ['web']], function(){
 
     Route::get('/', [
         'as' => 'welcome',
@@ -50,11 +51,11 @@ Route::group(['middlewareGroups' => ['web']], function(){
 
 });
 
-Route::group(['middlewareGroups' => ['Admin']], function() {
+Route::group(['middleware' => ['Admin']], function() {
     require __DIR__ . '/routes/admin.routes.php';
 });
 
-Route::group(['middlewareGroups' => 'auth'], function (){
+Route::group(['middleware' => 'auth'], function (){
 
     Route::group(['middlewareGroups' => 'role:Technician, Collaborate'], function (){
 

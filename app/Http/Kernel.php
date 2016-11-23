@@ -33,6 +33,7 @@ class Kernel extends HttpKernel
         ],
 
         'Admin' => [
+            \Illuminate\Session\Middleware\StartSession::class,
             'web',
             'auth',
             Authorize::class.':Admin'

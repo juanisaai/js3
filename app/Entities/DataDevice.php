@@ -24,7 +24,7 @@ class DataDevice extends Model
 
     public function getNameDeviceAttribute()
     {
-        return ucfirst($this->InventoryNumberDevice) . ' | ' . ucfirst($this->NomenclatureDevice) . ' | ' . ucfirst($this->DescriptionDevice);
+        return ucfirst($this->DescriptionDevice) . ' - ' . ucfirst($this->SerialNumberDevice). ' - ' . ucfirst($this->TypeDevice) . ' - ' . ucfirst($this->BrandDevice);
     }
 
     public function getDictumDeviceAttribute()

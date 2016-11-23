@@ -47,7 +47,7 @@ class DataEquipment extends Model
 
     public function getNameEquipmentAttribute()
     {
-        return ucfirst($this->InventoryNumberEquipment) . ' | ' . ucfirst($this->NomenclatureEquipment) . ' | ' . ucfirst($this->DescriptionEquipment);
+        return ucfirst($this->NomenclatureEquipment) . ' | ' . ucfirst($this->DescriptionEquipment). ' | ' . ucfirst($this->TypeEquipment);
     }
 
     public function getDictumEquipmentAttribute()

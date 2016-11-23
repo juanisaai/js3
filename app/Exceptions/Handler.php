@@ -39,7 +39,7 @@ class Handler extends ExceptionHandler
     }
 
     /**
-     * Render an exception into an HTTP response.
+     * Render an exception into a response.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Exception  $e
@@ -47,6 +47,10 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+        if($e instanceof NotFoundHttpException)
+        {
+            return response()->view('errors.404', [], 404);
+        }
         return parent::render($request, $e);
     }
 }
