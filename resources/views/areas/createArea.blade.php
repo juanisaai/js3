@@ -24,9 +24,10 @@
 
                     {!! Form::open(array('url' => 'areas', 'method' => 'POST', 'class' => 'form')) !!}
 
-                    <div class="form-group">
-                        {!! Form::label('namearea', 'Nombre de área') !!}
-                        {!! Form::text('NameArea', null, ['class' => 'form-control', 'placeholder' => 'Escribe el nombre de área']) !!}
+                    <div class="form-group has-warning">
+                        {!! Form::label('namearea', 'Nombre de área', ['class' => 'form-control-label']) !!}
+                        {!! Form::text('NameArea', null, ['class' => 'form-control form-control-warning', 'placeholder' => 'Escribe el nombre de área']) !!}
+                        <small class="form-text text-muted">*Campo requerido</small>
                     </div>
 
                     <div class="form-group">

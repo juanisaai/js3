@@ -20,7 +20,7 @@ class EmployeeController extends Controller
             'ProfileEmployee' => 'required|max:50',
             'FirstName' => 'required|max:50',
             'SecondName' => 'required|max:50',
-            'RoleEmployee' => 'required|max:150',
+            'RoleEmployee' => 'max:150',
             'area_id' => 'required'
 
         ]);
@@ -58,7 +58,7 @@ class EmployeeController extends Controller
             'ProfileEmployee' => 'required|max:50',
             'FirstName' => 'required|max:50',
             'SecondName' => 'required|max:50',
-            'RoleEmployee' => 'required|max:150',
+            'RoleEmployee' => 'max:150',
             'area_id' => 'required'
 
         ]);

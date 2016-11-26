@@ -12,10 +12,10 @@ class AdminTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'Br. Juan Isai Chuc Tuz',
-            'username' => 'juanisai',
-            'email' => 'juanisaai@hotmail.com',
-            'contact' => '9876543210',
+            'name' => 'Admin',
+            'username' => 'admin',
+            'email' => 'admin@foobar-lav.com',
+            'contact' => null,
             'type' => 'Admin',
             'password' => bcrypt('secret'),
             'active' => '1'

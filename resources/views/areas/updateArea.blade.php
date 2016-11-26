@@ -30,9 +30,10 @@
                             'route'  => ['updateArea', $area->id]
                         ])) !!}
 
-                        <div class="form-group">
-                            {!! Form::label('namearea', 'Nombre de área') !!}
-                            {!! Form::text('NameArea', $area->NameArea, ['class' => 'form-control', 'placeholder' => 'Escribe el nombre de área']) !!}
+                        <div class="form-group has-warning">
+                            {!! Form::label('namearea', 'Nombre de área', ['class' => 'form-control-label']) !!}
+                            {!! Form::text('NameArea', $area->NameArea, ['class' => 'form-control form-control-warning', 'placeholder' => 'Escribe el nombre de área']) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
                         </div>
 
                         <div class="form-group">

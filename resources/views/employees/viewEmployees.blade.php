@@ -37,7 +37,12 @@
                                 @foreach($employees as $employee)
                                     <tr>
                                         <td>{{ $employee->full_name }}</td>
-                                        <td>{{ $employee->RoleEmployee }}</td>
+
+                                        @if(empty($employee->RoleEmployee) or (($employee->RoleEmployee) === null))
+                                            <td>Sin rol específicado</td>
+                                        @else
+                                            <td>{{ $employee->RoleEmployee }}</td>
+                                        @endif
 
                                         <td>
                                             @if(($employee->area->NameArea) === null)

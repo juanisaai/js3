@@ -17,7 +17,7 @@ class CreateEmployeesTable extends Migration
             $table->string('ProfileEmployee', 10);
             $table->string('FirstName', 50);
             $table->string('SecondName', 50);
-            $table->string('RoleEmployee', 20);
+            $table->string('RoleEmployee', 20)->nullable();
             $table->timestamps();
 
             //relationship with Areas->id

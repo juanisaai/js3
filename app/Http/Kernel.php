@@ -33,10 +33,13 @@ class Kernel extends HttpKernel
         ],
 
         'Admin' => [
+            \App\Http\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
-            'web',
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
             'auth',
-            Authorize::class.':Admin'
+            Authorize::class.':Admin',
         ],
 
         'api' => [
@@ -57,6 +60,9 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'role' => \App\Http\Middleware\Role::class,
+        'role' => [
+            \Illuminate\Session\Middleware\StartSession::class,
+            \App\Http\Middleware\Role::class,
+            ],
     ];
 }

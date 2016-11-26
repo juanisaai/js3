@@ -25,7 +25,7 @@ class UsersController extends Controller
         $this->validate(request(), [
             'name' => 'required',
             'username' => 'required|unique:users|max:255',
-            'email' => 'required|unique:users|max:255',
+            'email' => 'unique:users,email|max:255',
             'contact' => 'unique:users,contact|max:10',
             'active' => 'required',
             'type' => 'required|in:Technician,Collaborate,Admin',

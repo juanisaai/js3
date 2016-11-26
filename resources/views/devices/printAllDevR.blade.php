@@ -53,8 +53,17 @@
                 <td class="bordertable">{{ $device->ModelDevice }}</td>
                 <td class="bordertable">{{ $device->SerialNumberDevice }}</td>
                 <td class="bordertable">{{ $device->DescriptionAdDevice }}</td>
-                <td class="bordertable">{{ $device->employee->full_name }}</td>
-                <td class="bordertable">{{ $device->employee->name_area }}</td>
+                @if(empty($device->employee->full_name))
+                    <td class="bordertable">Aún sin asignar</td>
+                @else
+                    <td class="bordertable">{{ $device->employee->full_name }}</td>
+                @endif
+
+                @if(empty($device->employee->name_area))
+                    <td class="bordertable">Aún sin asignar</td>
+                @else
+                    <td class="bordertable">{{ $device->employee->name_area }}</td>
+                @endif
             </tr>
                     @endforeach
                 </tbody>

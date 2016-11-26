@@ -24,32 +24,36 @@
 
                     {!! Form::open(array('url' => 'employees', 'method' => 'POST', 'class' => 'form')) !!}
 
-                    <div class="form-group">
-                        {!! Form::label('ProfileEmployee', 'Perfil del empleado') !!}
-                        {!! Form::text('ProfileEmployee', null, ['class' => 'form-control', 'placeholder' => 'Por ejemplo: Dr. Dra. Ing. Lic.']) !!}
+                    <div class="form-group has-warning">
+                        {!! Form::label('ProfileEmployee', 'Perfil del empleado', ['class' => 'form-control-label']) !!}
+                        {!! Form::text('ProfileEmployee', null, ['class' => 'form-control form-control-warning', 'placeholder' => 'Por ejemplo: Dr. Dra. Ing. Lic.']) !!}
+                        <small class="form-text text-muted">*Campo requerido</small>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group has-warning">
                         {!! Form::label('FirstName', 'Nombres') !!}
                         {!! Form::text('FirstName', null, ['class' => 'form-control', 'placeholder' => 'Escribe lo(s) nombre(s)']) !!}
+                        <small class="form-text text-muted">*Campo requerido</small>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group has-warning">
                         {!! Form::label('SecondName', 'Apellidos') !!}
                         {!! Form::text('SecondName', null, ['class' => 'form-control', 'placeholder' => 'Escribe los apellidos']) !!}
+                        <small class="form-text text-muted">*Campo requerido</small>
                     </div>
 
                     <div class="form-group">
                         {!! Form::label('RoleEmployee', 'Rol del empleado') !!}
-                        {!! Form::text('RoleEmployee', null, ['class' => 'form-control', 'placeholder' => 'Por ejemplo: Jefe, Jefa, Encargado']) !!}
+                        {!! Form::text('RoleEmployee', null, ['class' => 'form-control', 'placeholder' => 'Por ejemplo: Jefe, Encargado, Responsable']) !!}
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group has-warning">
                         {!! Form::label('area_id', 'Seleccionar área') !!}
                         {{ Form::select('area_id', $areas, null, ['class' => 'selectpicker']) }}
+                        <small class="form-text text-muted">*Campo requerido</small>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group has-warning">
                         {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
                         <div class="form-group pull-right">
                             <a class="btn btn-danger btn-close" href="{{ route('readEmployee') }}">Cancelar</a>
