@@ -25,7 +25,7 @@
                                 @include('partials/succeed')
                             </div>
                             <div>
-                                <a href="{{ route('createRec') }}"><button type="button" class="btn btn-success pull-right margintab">Crear</button></a>
+                                <a href="{{ route('createRec') }}"><button type="button" class="btn btn-success pull-right margintab">Nueva recepción</button></a>
                             </div>
 
                             <table class="table table-hover table-striped">
@@ -55,7 +55,7 @@
                                         </td>
                                         <td>
                                             <div class="btn-group dropup pull-right">
-                                                <button type="button" class="btn btn-info btn-sm dropdown-toggle margintab" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Hoja de recepción <span class="caret"></span>
                                                 </button>
                                                 <ul class="dropdown-menu">

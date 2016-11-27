@@ -15,7 +15,7 @@ class DictumController extends Controller
 {
     public function createDev()
     {
-        $users = User::lists('name', 'id');
+        $users = User::where('type', '=', 'Technician')->lists('name', 'id');
         $devices = DataDevice::where('active', '=', true)->orderBy('id', 'asc')->get()->lists('name_device', 'id');
         return view('dictums/createDev', compact('devices', 'users'));
     }
@@ -75,7 +75,7 @@ class DictumController extends Controller
     public function editDev($idDictum)
     {
         $dictum = DataDictum::findOrFail($idDictum);
-        $users = User::lists('name', 'id');
+        $users = User::where('type', '=', 'Technician')->lists('name', 'id');
         $devices = DataDevice::where('active', '=', true)->orderBy('id', 'asc')->get()->lists('name_device', 'id');
         return view('dictums/editDev', compact('dictum', 'devices', 'users'));
     }
@@ -148,7 +148,7 @@ class DictumController extends Controller
 
     public function createEq()
     {
-        $users = User::lists('name', 'id');
+        $users = User::where('type', '=', 'Technician')->lists('name', 'id');
         $equipments = DataEquipment::where('active', '=', true)->orderBy('id', 'asc')->get()->lists('name_equipment', 'id');
         return view('dictums/createEq', compact('equipments', 'users'));
     }
@@ -173,7 +173,7 @@ class DictumController extends Controller
     public function editEq($idDictum)
     {
         $dictum = DataDictum::findOrFail($idDictum);
-        $users = User::lists('name', 'id');
+        $users = User::where('type', '=', 'Technician')->lists('name', 'id');
         $equipments = DataEquipment::where('active', '=', true)->orderBy('id', 'asc')->get()->lists('name_equipment', 'id');
         return view('dictums/editEq', compact('dictum', 'equipments', 'users'));
     }

@@ -15,7 +15,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Detalles de equipo <span class="label label-default">{{ $equipment->NomenclatureEquipment }}</span></h2>
+                    <h2>Detalles de equipo
+                        <span class="label label-default">
+                            @if(empty($equipment->InventoryNumberEquipment) or (($equipment->InventoryNumberEquipment) === null))
+                                S/N
+                            @else
+                                {{ $equipment->InventoryNumberEquipment }}
+                            @endif
+                        </span>
+                    </h2>
 
                     @if( ($equipment->active) === 1)
                         <h4><span class="label label-success">Equipo activo</span></h4>
@@ -42,21 +50,19 @@
                                     <th>Número de serie</th>
                                     <th>Color</th>
                                     <th>Descripción adicional</th>
-                                    <th>Tipo de equipo</th>
                                     <th>Tipo de ensamble</th>
                                 </tr>
 
                                 <tr>
-                                        <td>{{ $equipment->InventoryNumberEquipment }}</td>
-                                        <td>{{ $equipment->NomenclatureEquipment }}</td>
-                                        <td>{{ $equipment->DescriptionEquipment }}</td>
-                                        <td>{{ $equipment->BrandEquipment }}</td>
-                                        <td>{{ $equipment->ModelEquipment }}</td>
-                                        <td>{{ $equipment->SerialNumberEquipment }}</td>
-                                        <td>{{ $equipment->ColorEquipment }}</td>
-                                        <td>{{ $equipment->DescriptionAdEquipment }}</td>
-                                        <td>{{ $equipment->TypeEquipment }}</td>
-                                        <td>{{ $equipment->TypeAssemblyEquipment }}</td>
+                                    <td>{{ $equipment->InventoryNumberEquipment }}</td>
+                                    <td>{{ $equipment->NomenclatureEquipment }}</td>
+                                    <td>{{ trans('equipment.DescriptionEquipment.' . $equipment->DescriptionEquipment) }}</td>
+                                    <td>{{ $equipment->BrandEquipment }}</td>
+                                    <td>{{ $equipment->ModelEquipment }}</td>
+                                    <td>{{ $equipment->SerialNumberEquipment }}</td>
+                                    <td>{{ $equipment->ColorEquipment }}</td>
+                                    <td>{{ $equipment->DescriptionAdEquipment }}</td>
+                                    <td>{{ trans('equipment.TypeAssemblyEquipment.' . $equipment->TypeAssemblyEquipment) }}</td>
                                 </tr>
                             </table>
                         </div>

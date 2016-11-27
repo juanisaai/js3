@@ -29,14 +29,16 @@
                         {{ Form::select('device_id', $devices, null, ['class' => 'selectpicker']) }}
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group has-warning">
                         {!! Form::label('Problematic', 'Problemática') !!}
                         {!! Form::textarea('Problematic', null, ['class' => 'form-control', 'placeholder' => 'Escribe la problemática', 'rows' => 3, 'cols' => 40]) !!}
+                        <small class="form-text text-muted">*Campo requerido</small>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group has-warning">
                         {!! Form::label('Dictum', 'Dictamen') !!}
                         {!! Form::textarea('Dictum', null, ['class' => 'form-control', 'placeholder' => 'Escribe el dictamen', 'rows' => 3, 'cols' => 40]) !!}
+                        <small class="form-text text-muted">*Campo requerido</small>
                     </div>
 
                     <div class="form-group">

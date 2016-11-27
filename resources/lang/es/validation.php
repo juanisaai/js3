@@ -184,7 +184,7 @@ return [
          * */
         'InventoryNumberEquipment'      => 'Número de inventario',
         'NomenclatureEquipment'         => 'Nomenclatura',
-        'DescriptionEquipment'          => 'Descripción',
+        'DescriptionEquipment'          => 'Tipo de equipo',
         'BrandEquipment'                => 'Marca',
         'ModelEquipment'                => 'Modelo',
         'SerialNumberEquipment'         => 'Número de serie',

@@ -58,7 +58,7 @@
 <p class="font tittles"><strong>DATOS DEL EQUIPO</strong></p>
 <table class="font dimtable bordertable margintab">
     <tr>
-        <td class="upper"><strong>EQUIPO:</strong> {{ $reception->equipment->DescriptionEquipment }}</td>
+        <td class="upper"><strong>EQUIPO:</strong> {{ trans('equipment.DescriptionEquipment.' . $reception->equipment->DescriptionEquipment)}}</td>
         <td class="upper"><strong>NOMENCLATURA:</strong> {{ $reception->equipment->NomenclatureEquipment }}</td>
     </tr>
     <tr>

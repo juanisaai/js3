@@ -23,7 +23,7 @@
                                     @include('partials/succeed')
                                 </div>
                                 <div>
-                                    <a href="{{ route('newAssignDet', ['idEmp' => $employee->id]) }}"><button type="button" class="btn btn-success pull-right margintab">Crear</button></a>
+                                    <a href="{{ route('newAssignDet', ['idEmp' => $employee->id]) }}"><button type="button" class="btn btn-success pull-right margintab">Nueva asignación</button></a>
                                 </div>
                                 <table class="table table-hover table-striped">
                                     <tr>

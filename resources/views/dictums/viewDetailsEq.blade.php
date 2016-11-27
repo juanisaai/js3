@@ -37,7 +37,7 @@
                                 </tr>
 
                                 <tr>
-                                    <td>{{ $equipment->DescriptionEquipment }}</td>
+                                    <td>{{ trans('equipment.DescriptionEquipment.' . $equipment->DescriptionEquipment) }}</td>
                                     <td>{{ $equipment->TypeEquipment }}</td>
                                     <td>{{ $equipment->BrandEquipment }}</td>
                                     <td>{{ $equipment->ModelEquipment }}</td>

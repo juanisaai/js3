@@ -613,3 +613,10 @@ $devices->fill($data)->save();
 @endsection
 
 
+
+
+@if( ($user->active) === 1)
+    Activo
+@elseif(($user->active) === 0)
+    Desactivado
+@endif

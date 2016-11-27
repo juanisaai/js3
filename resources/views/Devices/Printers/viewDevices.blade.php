@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('title')
-    Dispositivos | Sistema de inventario
+    Impresoras | Sistema de inventario
 @endsection
 
 @section('content')
 
     @if (Auth::guest())
 
-        @include('partials/login')
+        @include('partials.login')
 
     @else
 
@@ -17,12 +17,12 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h1 class="panel-title">Lista de dispositivos</h1>
+                            <h1 class="panel-title">Lista de Impresoras</h1>
                         </div>
                         <div class="panel-body table-responsive">
                             <div>
-                                @include('partials/errors')
-                                @include('partials/succeed')
+                                @include('partials.errors')
+                                @include('partials.succeed')
                             </div>
                             <div>
                                 <a href="{{ route('createDevice') }}"><button type="button" class="btn btn-success pull-left margintab">Crear</button></a>
@@ -35,16 +35,6 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="{{ route('printAllDev', ['ver' => 1]) }}" target="_blank">Ver</a></li>
                                     <li><a href="{{ route('printAllDev', ['ver' => 2]) }}">Descargar</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="btn-group pull-right margintab">
-                                <button type="button" class="btn btn-info dropdown-toggle margintab" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Inventario Disp. de Red <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{ route('printAllDevR', ['ver' => 1]) }}" target="_blank">Ver</a></li>
-                                    <li><a href="{{ route('printAllDevR', ['ver' => 2]) }}">Descargar</a></li>
                                 </ul>
                             </div>
 

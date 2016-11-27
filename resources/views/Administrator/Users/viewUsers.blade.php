@@ -8,7 +8,7 @@
 
     @if (Auth::guest())
 
-        @include('partials/login')
+        @include('partials.login')
 
     @else
 
@@ -21,8 +21,8 @@
                         </div>
                         <div class="panel-body table-responsive">
                             <div>
-                                @include('partials/errors')
-                                @include('partials/succeed')
+                                @include('partials.errors')
+                                @include('partials.succeed')
                             </div>
                             <div>
                                 <a href="{{ route('createUser') }}"><button type="button" class="btn btn-success pull-right margintab">Crear</button></a>
@@ -45,22 +45,8 @@
                                         <td>{{ $user->username }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->contact }}</td>
-                                        <td>
-                                            @if( ($user->active) === 1)
-                                                Activo
-                                            @elseif(($user->active) === 0)
-                                                Desactivado
-                                            @endif
-                                        </td>
-                                        <td>
-                                            @if( ($user->type) === 'Technician')
-                                                Técnico
-                                            @elseif(($user->type) === 'Collaborate')
-                                                Colaborador
-                                            @else
-                                                Administrador
-                                            @endif
-                                        </td>
+                                        <td>{{ trans('user.active.' . $user->active) }}</td>
+                                        <td>{{ trans('user.type.' . $user->type) }}</td>
                                         <td>
                                             <a href="{{ route('editUser', ['id' => $user->id]) }}"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
                                         </td>

@@ -8,7 +8,7 @@
 
     @if (Auth::guest())
 
-        @include('partials/login')
+        @include('partials.login')
 
     @else
 
@@ -16,17 +16,22 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1 class="panel-title">Actualizar datos del dispositivo: <strong>{{ $devices->InventoryNumberDevice }}</strong></h1>
+                        <h1 class="panel-title">Actualizar datos del dispositivo:
+                            @if(empty($devices->InventoryNumberDevice) or (($devices->InventoryNumberDevice) === null))
+                                <strong>S/N</strong>
+                            @else
+                                <strong>{{ $devices->InventoryNumberDevice }}</strong>
+                            @endif                        </h1>
                     </div>
 
                     <div class="panel-body">
 
-                        @include('partials/errors')
-                        @include('partials/succeed')
+                        @include('partials.errors')
+                        @include('partials.succeed')
 
                         {!! Form::model(array($devices, [
                             'method' => 'PATCH',
-                            'route'  => ['updateDevice', $devices->id]
+                            'route'  => ['updateDeviceN', $devices->id]
                         ])) !!}
 
                         <div class="form-group">
@@ -37,11 +42,6 @@
                         <div class="form-group">
                             {!! Form::label('NomenclatureDevice', 'Nomenclatura') !!}
                             {!! Form::text('NomenclatureDevice', $devices->NomenclatureDevice, ['class' => 'form-control', 'placeholder' => 'Escribe la nomenclatura']) !!}
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('DescriptionDevice', 'Descripción') !!}
-                            {!! Form::text('DescriptionDevice', $devices->DescriptionDevice, ['class' => 'form-control', 'placeholder' => 'Escribe la descripción']) !!}
                         </div>
 
                         <div class="form-group">
@@ -72,6 +72,11 @@
                         <div class="form-group">
                             {!! Form::label('DescriptionAdDevice', 'Descripción adicional') !!}
                             {!! Form::text('DescriptionAdDevice', $devices->DescriptionAdDevice, ['class' => 'form-control', 'placeholder' => 'Escribe una descripción adicional']) !!}
+                        </div>
+
+                        <div class="form-group">
+                            {!! Form::label('DescriptionDevice', 'Tipo de equipo') !!}
+                            {!! Form::select('DescriptionDevice',[ 'Red' => 'Dispositivo Red'], 'Red', ['class' => 'selectpicker'] ) !!}
                         </div>
 
                         <div class="form-group">

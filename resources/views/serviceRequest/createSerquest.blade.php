@@ -25,14 +25,16 @@
 
                     {!! Form::open(array('url' => 'createSerquest', 'method' => 'POST', 'class' => 'form')) !!}
 
-                    <div class="form-group">
+                    <div class="form-group has-warning">
                         {!! Form::label('ReasonRequests', 'Razón de solicitud') !!}
                         {!! Form::textarea('ReasonRequests', null, ['class' => 'form-control', 'placeholder' => 'Escribe la razón de la solicitud', 'rows' => 3, 'cols' => 40]) !!}
+                        <small class="form-text text-muted">*Campo requerido</small>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group has-warning">
                         {!! Form::label('DescriptionService', 'Descripción del servicio') !!}
                         {!! Form::textarea('DescriptionService', null, ['class' => 'form-control', 'placeholder' => 'Escribe una descripción del servicio', 'rows' => 3, 'cols' => 40]) !!}
+                        <small class="form-text text-muted">*Campo requerido</small>
                     </div>
 
                     <div class="form-group">
@@ -53,7 +55,7 @@
                     <div class="form-group">
                         {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
                         <div class="form-group pull-right">
-                            <a class="btn btn-danger btn-close" href="{{ route('seeReceptions') }}">Cancelar</a>
+                            <a class="btn btn-danger btn-close" href="{{ route('seeAllRequests') }}">Cancelar</a>
                         </div>
                     </div>
 

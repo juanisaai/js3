@@ -29,6 +29,18 @@
                             'route'  => ['updateEquipment', $equipment->id]
                         ])) !!}
 
+                        <div class="form-group has-warning">
+                            {!! Form::label('DescriptionEquipment', 'Tipo de equipo') !!}
+                            {!! Form::select('DescriptionEquipment', ['CPU' => 'Unidad Central de Procesamiento', 'Laptop' => 'Laptop', 'Monitor' => 'Monitor', 'NoBreak' => 'No Break', 'CurrentRegulator' => 'Regulador de corriente'], $equipment->DescriptionEquipment, ['class' => 'selectpicker'] ) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
+                        </div>
+
+                        <div class="form-group has-warning">
+                            {!! Form::label('TypeAssemblyEquipment', 'Tipo de ensamble') !!}
+                            {!! Form::select('TypeAssemblyEquipment', ['Assembly' => 'Ensamblada', 'Manufacture' => 'Fábrica'], $equipment->TypeAssemblyEquipment, ['class' => 'selectpicker'] ) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
+                        </div>
+
                         <div class="form-group">
                             {!! Form::label('InventoryNumberEquipment', 'Número de inventario') !!}
                             {!! Form::text('InventoryNumberEquipment', $equipment->InventoryNumberEquipment, ['class' => 'form-control', 'placeholder' => 'Escribe el número de inventario']) !!}
@@ -39,29 +51,28 @@
                             {!! Form::text('NomenclatureEquipment', $equipment->NomenclatureEquipment, ['class' => 'form-control', 'placeholder' => 'Escribe la nomenclatura']) !!}
                         </div>
 
-                        <div class="form-group">
-                            {!! Form::label('DescriptionEquipment', 'Descripción') !!}
-                            {!! Form::text('DescriptionEquipment', $equipment->DescriptionEquipment, ['class' => 'form-control', 'placeholder' => 'Escribe la descripción del equipo']) !!}
-                        </div>
-
-                        <div class="form-group">
+                        <div class="form-group has-warning">
                             {!! Form::label('BrandEquipment', 'Marca') !!}
                             {!! Form::text('BrandEquipment', $equipment->BrandEquipment, ['class' => 'form-control', 'placeholder' => 'Escribe la marca del equipo']) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group has-warning">
                             {!! Form::label('ModelEquipment', 'Modelo') !!}
                             {!! Form::text('ModelEquipment', $equipment->ModelEquipment, ['class' => 'form-control', 'placeholder' => 'Escribe el modelo del equipo']) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
                         </div>
+
 
                         <div class="form-group">
                             {!! Form::label('SerialNumberEquipment', 'Número de serie') !!}
                             {!! Form::text('SerialNumberEquipment', $equipment->SerialNumberEquipment, ['class' => 'form-control', 'placeholder' => 'Escribe el número de serie del equipo']) !!}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group has-warning">
                             {!! Form::label('ColorEquipment', 'Color') !!}
                             {!! Form::text('ColorEquipment', $equipment->ColorEquipment, ['class' => 'form-control', 'placeholder' => 'Escribe el color del equipo']) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
                         </div>
 
                         <div class="form-group">
@@ -69,19 +80,10 @@
                             {!! Form::textarea('DescriptionAdEquipment', $equipment->DescriptionAdEquipment, ['class' => 'form-control', 'placeholder' => 'Escribe una descripción adicional', 'rows' => 3, 'cols' => 40]) !!}
                         </div>
 
-                        <div class="form-group">
-                            {!! Form::label('TypeEquipment', 'Tipo de equipo') !!}
-                            {!! Form::text('TypeEquipment', $equipment->TypeEquipment, ['class' => 'form-control', 'placeholder' => 'Escribe el tipo de equipo']) !!}
-                        </div>
-
-                        <div class="form-group">
-                            {!! Form::label('TypeAssemblyEquipment', 'Tipo de ensamble') !!}
-                            {!! Form::text('TypeAssemblyEquipment', $equipment->TypeAssemblyEquipment, ['class' => 'form-control', 'placeholder' => 'Escribe el tipo de ensamble']) !!}
-                        </div>
-
-                        <div class="form-group">
+                        <div class="form-group has-warning">
                             {!! Form::label('EquipmentOS', 'Sistema operativo') !!}
                             {!! Form::text('EquipmentOS', $equipment->EquipmentOS, ['class' => 'form-control', 'placeholder' => 'Escribe el sistema operativo']) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
                         </div>
 
                         <div class="form-group">
@@ -89,9 +91,10 @@
                             {!! Form::text('ArchitectureOS', $equipment->ArchitectureOS, ['class' => 'form-control', 'placeholder' => 'Escribe la arquitectura del sistema operativo']) !!}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group has-warning">
                             {!! Form::label('DistributionOS', 'Distribución de sistema operativo') !!}
                             {!! Form::text('DistributionOS', $equipment->DistributionOS, ['class' => 'form-control', 'placeholder' => 'Escribe la distribución del sistema operativo']) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
                         </div>
 
                         <div class="form-group">
@@ -124,19 +127,22 @@
                             {!! Form::text('SerialNumberMotherB', $equipment->SerialNumberMotherB, ['class' => 'form-control', 'placeholder' => 'Escribe el número de serie de la tarjeta madre']) !!}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group has-warning">
                             {!! Form::label('BrandCPU', 'Marca de CPU') !!}
                             {!! Form::text('BrandCPU', $equipment->BrandCPU, ['class' => 'form-control', 'placeholder' => 'Escribe la marca del CPU']) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group has-warning">
                             {!! Form::label('ModelCPU', 'Modelo de CPU') !!}
                             {!! Form::text('ModelCPU', $equipment->ModelCPU, ['class' => 'form-control', 'placeholder' => 'Escribe el modelo del CPU']) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group has-warning">
                             {!! Form::label('FrequencyCPU', 'Frecuencia de CPU') !!}
                             {!! Form::text('FrequencyCPU', $equipment->FrequencyCPU, ['class' => 'form-control', 'placeholder' => 'Escribe la frecuencia del CPU']) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
                         </div>
 
                         <div class="form-group">
@@ -149,9 +155,10 @@
                             {!! Form::text('TypeRam', $equipment->TypeRam, ['class' => 'form-control', 'placeholder' => 'Escribe el tipo de RAM']) !!}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group has-warning">
                             {!! Form::label('CapabilityRam', 'Capacidad de RAM') !!}
                             {!! Form::text('CapabilityRam', $equipment->CapabilityRam, ['class' => 'form-control', 'placeholder' => 'Escribe la capacidad de RAM']) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
                         </div>
 
                         <div class="form-group">
@@ -169,9 +176,10 @@
                             {!! Form::text('TypeHHD', $equipment->TypeHHD, ['class' => 'form-control', 'placeholder' => 'Escribe el tipo de HDD']) !!}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group has-warning">
                             {!! Form::label('CapabilityHHD', 'Capacidad de HHD') !!}
                             {!! Form::text('CapabilityHHD', $equipment->CapabilityHHD, ['class' => 'form-control', 'placeholder' => 'Escribe la capacidad de HHD']) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
                         </div>
 
                         <div class="form-group">

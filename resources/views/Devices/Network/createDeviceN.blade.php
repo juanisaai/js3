@@ -1,28 +1,28 @@
 @extends('layouts.app')
 
 @section('title')
-    Dispositivos - Crear | Sistema de inventario
+    Dispositivos de Red - Registrar | Sistema de inventario
 @endsection
 
 @section('content')
     @if (Auth::guest())
 
-        @include('partials/login')
+        @include('partials.login')
 
     @else
     <div class="container">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1 class="panel-title">Crear nuevo dispositivo</h1>
+                    <h1 class="panel-title">Registrar nuevo dispositivo de Red</h1>
                 </div>
 
                 <div class="panel-body">
 
-                    @include('partials/errors')
-                    @include('partials/succeed')
+                    @include('partials.errors')
+                    @include('partials.succeed')
 
-                    {!! Form::open(array('url' => 'devices', 'method' => 'POST', 'class' => 'form')) !!}
+                    {!! Form::open(array('url' => 'devicesN', 'method' => 'POST', 'class' => 'form')) !!}
 
                     <div class="form-group">
                         {!! Form::label('InventoryNumberDevice', 'Número de inventario') !!}
@@ -34,39 +34,44 @@
                         {!! Form::text('NomenclatureDevice', null, ['class' => 'form-control', 'placeholder' => 'Escribe la nomenclatura']) !!}
                     </div>
 
-                    <div class="form-group">
-                        {!! Form::label('DescriptionDevice', 'Descripción') !!}
-                        {!! Form::text('DescriptionDevice', null, ['class' => 'form-control', 'placeholder' => 'Escribe la descripción']) !!}
-                    </div>
-
-                    <div class="form-group">
+                    <div class="form-group has-warning">
                         {!! Form::label('TypeDevice', 'Tipo de dispositivo') !!}
                         {!! Form::text('TypeDevice', null, ['class' => 'form-control', 'placeholder' => 'Escribe el tipo de dispositivo']) !!}
+                        <small class="form-text text-muted">*Campo requerido</small>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group has-warning">
                         {!! Form::label('BrandDevice', 'Marca') !!}
                         {!! Form::text('BrandDevice', null, ['class' => 'form-control', 'placeholder' => 'Escribe la marca']) !!}
+                        <small class="form-text text-muted">*Campo requerido</small>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group has-warning">
                         {!! Form::label('ModelDevice', 'Modelo') !!}
                         {!! Form::text('ModelDevice', null, ['class' => 'form-control', 'placeholder' => 'Escribe el modelo']) !!}
+                        <small class="form-text text-muted">*Campo requerido</small>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group has-warning">
                         {!! Form::label('SerialNumberDevice', 'Número de serie') !!}
                         {!! Form::text('SerialNumberDevice', null, ['class' => 'form-control', 'placeholder' => 'Escribe número de serie']) !!}
+                        <small class="form-text text-muted">*Campo requerido</small>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group has-warning">
                         {!! Form::label('ColorDevice', 'Color') !!}
                         {!! Form::text('ColorDevice', null, ['class' => 'form-control', 'placeholder' => 'Escribe el color']) !!}
+                        <small class="form-text text-muted">*Campo requerido</small>
                     </div>
 
                     <div class="form-group">
                         {!! Form::label('DescriptionAdDevice', 'Descripción adicional') !!}
                         {!! Form::text('DescriptionAdDevice', null, ['class' => 'form-control', 'placeholder' => 'Escribe una descripción adicional']) !!}
+                    </div>
+
+                    <div class="form-group">
+                        {!! Form::label('DescriptionDevice', 'Tipo de equipo') !!}
+                        {!! Form::select('DescriptionDevice', ['Red' => 'Dispositivo red'], 'Red', ['class' => 'selectpicker'] ) !!}
                     </div>
 
                     <div class="form-group">
@@ -77,7 +82,7 @@
                     <div class="form-group">
                         {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
                         <div class="form-group pull-right">
-                            <a class="btn btn-danger btn-close" href="{{ route('readDevice') }}">Cancelar</a>
+                            <a class="btn btn-danger btn-close" href="{{ route('readDeviceN') }}">Cancelar</a>
                         </div>
                     </div>
 

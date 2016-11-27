@@ -29,9 +29,10 @@
                             'route'  => ['updateRec', 'idRec' => $reception->id]
                         ])) !!}
 
-                        <div class="form-group">
+                        <div class="form-group has-warning">
                             {!! Form::label('NumberDoc', 'Número de oficio') !!}
                             {!! Form::text('NumberDoc', $reception->NumberDoc, ['class' => 'form-control', 'placeholder' => 'Escribe el número de oficio']) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
                         </div>
 
                         <div class="form-group">
@@ -56,9 +57,10 @@
                             {{Form::select('TypeTrouble', ['Hardware' => 'Hardware', 'Software' => 'Software'], $reception->TypeTrouble, ['class' => 'selectpicker'])}}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group has-warning">
                             {!! Form::label('ReasonReception', 'Motivo de recepción') !!}
                             {!! Form::textarea('ReasonReception', $reception->ReasonReception, ['class' => 'form-control', 'placeholder' => 'Escribe el motivo de la recepción', 'rows' => 3, 'cols' => 40]) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
                         </div>
 
                         <div class="form-group">

@@ -8,7 +8,7 @@ use Barryvdh\DomPDF\Facade as PDF;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
 
-class DeviceController extends Controller
+class DeviceNController extends Controller
 {
     //Create
     /** |unique:users,email,' . $this->route->getParameter('id'),
@@ -21,19 +21,17 @@ class DeviceController extends Controller
         $this->route = $route;
     }
 
-    // ---------------------------- Controllers for printers
-
     //Create
-    public function create(){
-        return view('Devices/Printers/createDevice');
+    public function createN(){
+        return view('Devices/Network/createDeviceN');
     }
 
-    public function store(){
+    public function storeN(){
 
         $this->validate(request(), [
             'InventoryNumberDevice' => 'max:50|unique:dataDevices,InventoryNumberDevice',
             'NomenclatureDevice' => 'max:50|unique:dataDevices,NomenclatureDevice',
-            'DescriptionDevice' => 'max:9|in:Impresora',
+            'DescriptionDevice' => 'max:3|in:Red',
             'TypeDevice' => 'required|max:50',
             'BrandDevice' => 'required|max:50',
             'ModelDevice' => 'required|max:50',
@@ -46,57 +44,56 @@ class DeviceController extends Controller
 
         $data = request()->all();
         DataDevice::create($data);
-        Session::flash('flash_message', '¡Impresora agregada exitosamente!');
-        return redirect()->route('readDevice');
+        Session::flash('flash_message', '¡Dispositivo de red agregado exitosamente!');
+        return redirect()->route('readDeviceN');
     }
 
     //Read
-    public function seeDevices()
+    public function seeDevicesN()
     {
-        $devices = DataDevice::where('DescriptionDevice', '=', 'Impresora')->paginate(10);
-        return view('Devices/Printers/viewDevices', compact('devices'));
+        $devices = DataDevice::where('DescriptionDevice', '=', 'Red')->paginate(10);
+        return view('Devices/Network/viewDevicesN', compact('devices'));
     }
 
-    public function seeDetail($id)
+    public function seeDetailN($id)
     {
         $device = DataDevice::findOrFail($id);
-        return view('Devices/Printers/viewDetailsDevice', compact('device'));
+        return view('Devices/Network/viewDetailsDeviceN', compact('device'));
     }
 
-    //Print render inventory printer
-    public function printAllDev($ver)
+
+    //Print render inventory networks
+    public function printAllDevN($ver)
     {
         $date = Carbon::now();
 
-        $devices = DataDevice::where('DescriptionDevice', 'like', '%impresora%')->get();
-        $pdf = PDF::loadView('Devices/Printers/printAllDev', ['devices' => $devices])->setPaper('CARTA EE. UU.', 'landscape');
+        $devices = DataDevice::where('DescriptionDevice', '=', 'Red')->get();
+        $pdf = PDF::loadView('Devices/Network/printAllDevN', ['devices' => $devices])->setPaper('CARTA EE. UU.', 'landscape');
 
         if (($ver) == 1){
-            return $pdf->stream('inventario_impresoras_'.$date->toDateTimeString().'.pdf');
+            return $pdf->stream('inventario_dispositivos_red_'.$date->toDateTimeString().'.pdf');
         }
         elseif (($ver) == 2){
-            return $pdf->download('inventario_impresoras_'.$date->toDateTimeString().'.pdf');
+            return $pdf->download('inventario_dispositivos_red_'.$date->toDateTimeString().'.pdf');
         }
-
     }
-
 
     //Update
 
-    public function editDevice($id)
+    public function editDeviceN($id)
     {
         $devices = DataDevice::findOrFail($id);
-        return view('Devices/Printers/updateDevice')->withDevices($devices);
+        return view('Devices/Network/updateDeviceN')->withDevices($devices);
     }
 
-    public function updateDevice($id)
+    public function updateDeviceN($id)
     {
         $devices = DataDevice::findOrFail($id);
 
         $this->validate(request(), [
             'InventoryNumberDevice' => 'max:25|unique:dataDevices,InventoryNumberDevice,' . $this->route->getParameter('id'),
             'NomenclatureDevice' => 'max:50|unique:dataDevices,NomenclatureDevice,' . $this->route->getParameter('id'),
-            'DescriptionDevice' => 'max:9|in:Impresora',
+            'DescriptionDevice' => 'max:3|in:Red',
             'TypeDevice' => 'required|max:50',
             'BrandDevice' => 'required|max:50',
             'ModelDevice' => 'required|max:50',
@@ -110,22 +107,19 @@ class DeviceController extends Controller
 
         $data = request()->all();
         $devices->fill($data)->save();
-        Session::flash('flash_message', '¡Impresora actualizada exitosamente!');
-        return redirect()->route('readDevice');
+        Session::flash('flash_message', '¡Dispositivo de red actualizado exitosamente!');
+        return redirect()->route('readDeviceN');
 
     }
 
     //Delete
-    public function deleteDevice($id)
+    public function deleteDeviceN($id)
     {
         $devices = DataDevice::find($id);
         $devices->delete();
-        Session::flash('flash_message', '¡Impresora eliminada exitosamente!');
-        return redirect()->route('readDevice');
+        Session::flash('flash_message', '¡Dispositivo de red eliminado exitosamente!');
+        return redirect()->route('readDeviceN');
     }
-
-
-    // ---------------------------- Controllers for networks
 
 
 

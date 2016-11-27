@@ -25,7 +25,7 @@
                                 @include('partials/succeed')
                             </div>
                             <div>
-                                <a href="{{ route('newAssign') }}"><button type="button" class="btn btn-success pull-right margintab">Crear</button></a>
+                                <a href="{{ route('newAssign') }}"><button type="button" class="btn btn-success pull-right margintab">Nueva asignación</button></a>
                             </div>
                             <table class="table table-hover table-striped">
                                 <tr>
@@ -42,12 +42,12 @@
                                         <td>
                                             <ul>
                                                 @foreach($employee->devices as $device)
-                                                    <li>{{ $device->InventoryNumberDevice }}</li>
+                                                    <li>{{ $device->DescriptionDevice }}</li>
                                                 @endforeach
                                             </ul>
                                         </td>
                                         <td>
-                                            <a href="{{ route('seeDetailsAssignDev', ['id' => $employee->id]) }}"><button type="button" class="btn btn-info btn-sm">Ver más</button></a>
+                                            <a href="{{ route('seeDetailsAssignDev', ['id' => $employee->id]) }}"><button type="button" class="btn btn-info btn-sm">Ver detalles</button></a>
                                         </td>
                                     </tr>
                                 @endforeach

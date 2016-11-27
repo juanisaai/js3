@@ -16,15 +16,14 @@ class CreateDataEquipmentsTable extends Migration
             $table->increments('id');
             $table->string('InventoryNumberEquipment', 25)->nullable();
             $table->string('NomenclatureEquipment', 30)->nullable();
-            $table->longText('DescriptionEquipment');
+            $table->enum('DescriptionEquipment', ['CPU', 'Laptop', 'Monitor', 'NoBreak', 'CurrentRegulator']);
             $table->string('BrandEquipment', 15)->nullable();
             $table->string('ModelEquipment', 25)->nullable();
             $table->string('SerialNumberEquipment', 25)->nullable();
             $table->string('ColorEquipment', 15);
             $table->longText('DescriptionAdEquipment')->nullable();
             //For view details
-            $table->string('TypeEquipment', 15);
-            $table->string('TypeAssemblyEquipment', 15);
+            $table->enum('TypeAssemblyEquipment', ['Assembly', 'Manufacture']);
             $table->string('EquipmentOS', 40);
             $table->string('ArchitectureOS', 15);
             $table->string('DistributionOS', 40);

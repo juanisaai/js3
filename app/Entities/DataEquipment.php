@@ -18,7 +18,6 @@ class DataEquipment extends Model
         'ColorEquipment',
         'DescriptionAdEquipment',
         //View details
-        'TypeEquipment',
         'TypeAssemblyEquipment',
         'EquipmentOS',
         'ArchitectureOS',
@@ -47,12 +46,12 @@ class DataEquipment extends Model
 
     public function getNameEquipmentAttribute()
     {
-        return ucfirst($this->NomenclatureEquipment) . ' | ' . ucfirst($this->DescriptionEquipment). ' | ' . ucfirst($this->TypeEquipment);
+        return ucfirst($this->InventoryNumberEquipment) . ' | ' . ucfirst($this->NomenclatureEquipment) . ' | ' . ucfirst(trans('equipment.DescriptionEquipment.' . $this->DescriptionEquipment)). ' | ' . ucfirst($this->BrandEquipment);
     }
 
     public function getDictumEquipmentAttribute()
     {
-        return ucfirst($this->TypeEquipment) . ' ' . ucfirst($this->TypeAssemblyEquipment) . ' - ' . ucfirst($this->EquipmentOS). ' - ' . ucfirst($this->BrandCPU). ' ' . ucfirst($this->ModelCPU). ' ' . ucfirst($this->FrequencyCPU). ' - RAM ' . ucfirst($this->CapabilityRam);
+        return ucfirst(trans('equipment.DescriptionEquipment.' . $this->DescriptionEquipment)) . ' ' . ucfirst(trans('equipment.TypeAssemblyEquipment.' . $this->TypeAssemblyEquipment)) . ' - ' . ucfirst($this->EquipmentOS). ' - ' . ucfirst($this->BrandCPU). ' ' . ucfirst($this->ModelCPU). ' ' . ucfirst($this->FrequencyCPU). ' - RAM ' . ucfirst($this->CapabilityRam);
     }
 
     //--------------------Relationship with employees

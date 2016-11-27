@@ -24,9 +24,10 @@
 
                     {!! Form::open(array('url' => 'storeRec', 'method' => 'POST', 'class' => 'form')) !!}
 
-                    <div class="form-group">
+                    <div class="form-group has-warning">
                         {!! Form::label('NumberDoc', 'Número de oficio') !!}
                         {!! Form::text('NumberDoc', null, ['class' => 'form-control', 'placeholder' => 'Escribe el número de oficio']) !!}
+                        <small class="form-text text-muted">*Campo requerido</small>
                     </div>
 
                     <div class="form-group">
@@ -39,9 +40,10 @@
                         {{Form::select('TypeTrouble', ['Hardware' => 'Hardware', 'Software' => 'Software'], null, ['class' => 'selectpicker'])}}
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group has-warning">
                         {!! Form::label('ReasonReception', 'Motivo de recepción') !!}
                         {!! Form::textarea('ReasonReception', null, ['class' => 'form-control', 'placeholder' => 'Escribe el motivo de la recepción', 'rows' => 3, 'cols' => 40]) !!}
+                        <small class="form-text text-muted">*Campo requerido</small>
                     </div>
 
                     <div class="form-group">

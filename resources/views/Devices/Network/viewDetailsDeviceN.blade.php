@@ -8,7 +8,7 @@
 
     @if (Auth::guest())
 
-        @include('partials/login')
+        @include('partials.login')
 
     @else
 
@@ -16,7 +16,15 @@
             <div class="row">
                 <div class="col-md-12">
 
-                    <h2>Detalles de dispositivo <span class="label label-default">{{ $device->NomenclatureDevice }}</span></h2>
+                    <h2>Detalles de dispositivo
+                        <span class="label label-default">
+                            @if(empty($device->InventoryNumberDevice) or (($device->InventoryNumberDevice) === null))
+                                S/N
+                            @else
+                                {{ $device->InventoryNumberDevice }}
+                            @endif
+                        </span>
+                    </h2>
 
                     @if( ($device->active) === 1)
                         <h4><span class="label label-success">Dispositivo activo</span></h4>
@@ -25,7 +33,7 @@
                     @endif
 
                     <div class="det-Title">
-                        <a href="{{ route('editDevice', ['id' => $device->id]) }}" class="det-Title"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
+                        <a href="{{ route('editDeviceN', ['id' => $device->id]) }}" class="det-Title"><button type="button" class="btn btn-warning btn-sm">Editar</button></a>
                     </div>
 
                     <div class="panel panel-default">
@@ -34,8 +42,8 @@
                         </div>
                         <div class="panel-body table-responsive">
 
-                            @include('partials/errors')
-                            @include('partials/succeed')
+                            @include('partials.errors')
+                            @include('partials.succeed')
 
                             <table class="table table-hover table-striped">
                                 <tr>
@@ -66,7 +74,7 @@
                     </div>
 
                     <div class="form-group pull-left">
-                        <a class="btn btn-success btn-close" href="{{ route('readDevice') }}">Regresar</a>
+                        <a class="btn btn-success btn-close" href="{{ route('readDeviceN') }}">Regresar</a>
                     </div>
 
                 </div>

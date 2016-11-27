@@ -23,7 +23,7 @@
                                     @include('partials/errors')
                                     @include('partials/succeed')
                                 </div>
-                                <a href="{{ route('createDictumDev') }}"><button type="button" class="btn btn-success btn-sm pull-right margintab">Crear</button></a>
+                                <a href="{{ route('createDictumDev') }}"><button type="button" class="btn btn-success btn-sm pull-right margintab">Nuevo dictamen de dispositivo</button></a>
 
                                 <table class="table table-hover table-striped">
                                     <tr>
@@ -47,7 +47,7 @@
                                             </td>
                                             <td>
                                                 <div class="btn-group dropup pull-right">
-                                                    <button type="button" class="btn btn-info btn-sm dropdown-toggle margintab" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                         Ver <span class="caret"></span>
                                                     </button>
                                                     <ul class="dropdown-menu">

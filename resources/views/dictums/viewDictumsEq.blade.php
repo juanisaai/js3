@@ -23,7 +23,7 @@
                                    @include('partials/errors')
                                    @include('partials/succeed')
                                 </div>
-                                <a href="{{ route('createDictumEq') }}"><button type="button" class="btn btn-success btn-sm pull-right margintab">Crear</button></a>
+                                <a href="{{ route('createDictumEq') }}"><button type="button" class="btn btn-success btn-sm pull-right margintab">Nuevo dictamen de equipo</button></a>
 
                                 <table class="table table-hover table-striped">
                                     <tr>

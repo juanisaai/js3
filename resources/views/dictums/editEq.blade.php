@@ -35,14 +35,16 @@
                             {{ Form::select('equipment_id', $equipments, $dictum->equipment_id, ['class' => 'selectpicker']) }}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group has-warning">
                             {!! Form::label('Problematic', 'Problemática') !!}
                             {!! Form::textarea('Problematic', $dictum->Problematic, ['class' => 'form-control', 'placeholder' => 'Escribe la problemática', 'rows' => 3, 'cols' => 40]) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group has-warning">
                             {!! Form::label('Dictum', 'Dictamen') !!}
                             {!! Form::textarea('Dictum', $dictum->Dictum, ['class' => 'form-control', 'placeholder' => 'Escribe el dictamen', 'rows' => 3, 'cols' => 40]) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
                         </div>
 
                         <div class="form-group">

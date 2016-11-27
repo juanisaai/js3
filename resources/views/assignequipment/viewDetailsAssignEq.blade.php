@@ -25,7 +25,7 @@
                                 @include('partials/succeed')
                             </div>
                             <div>
-                                <a href="{{ route('newAssignDetEq', ['idEmp' => $employee->id]) }}"><button type="button" class="btn btn-success pull-right margintab">Crear</button></a>
+                                <a href="{{ route('newAssignDetEq', ['idEmp' => $employee->id]) }}"><button type="button" class="btn btn-success pull-right margintab">Nueva asignación</button></a>
                             </div>
                             <table class="table table-hover table-striped">
                                 <tr>
@@ -43,7 +43,7 @@
                                     <tr>
                                         <td>{{ $equipment->InventoryNumberEquipment }}</td>
                                         <td>{{ $equipment->NomenclatureEquipment }}</td>
-                                        <td>{{ $equipment->DescriptionEquipment }}</td>
+                                        <td>{{ trans('equipment.DescriptionEquipment.' . $equipment->DescriptionEquipment) }}</td>
                                         <td>{{ $equipment->BrandEquipment }}</td>
                                         <td>{{ $equipment->ModelEquipment }}</td>
                                         <td>{{ $equipment->SerialNumberEquipment }}</td>

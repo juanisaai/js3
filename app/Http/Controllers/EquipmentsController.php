@@ -23,23 +23,22 @@ class EquipmentsController extends Controller
 
     //Create
     public function create(){
-        return view('equipments/createEquipment');
+        return view('Equipments/createEquipment');
     }
 
     public function store(){
 
         $this->validate(request(), array(
             'InventoryNumberEquipment' => 'max:50|unique:dataEquipments,InventoryNumberEquipment',
-            'NomenclatureEquipment' => 'required|max:50|unique:dataEquipments,NomenclatureEquipment',
-            'DescriptionEquipment' => 'required|max:100',
+            'NomenclatureEquipment' => 'max:50|unique:dataEquipments,NomenclatureEquipment',
+            'DescriptionEquipment' => 'required|in:CPU,Laptop,Monitor,NoBreak,CurrentRegulator',
             'BrandEquipment' => 'required|max:50',
             'ModelEquipment' => 'required|max:50',
             'SerialNumberEquipment' => 'max:25|unique:dataEquipments,SerialNumberEquipment',
-            'ColorEquipment' => 'max:15',
+            'ColorEquipment' => 'required|max:15',
             'DescriptionAdEquipment' => 'max:1000',
             //View Details
-            'TypeEquipment' => 'required|max:15',
-            'TypeAssemblyEquipment' => 'required|max:15',
+            'TypeAssemblyEquipment' => 'required|in:Assembly,Manufacture',
             'EquipmentOS' => 'required|max:40',
             'ArchitectureOS' => 'max:15',
             'DistributionOS' => 'required|max:40',
@@ -75,14 +74,14 @@ class EquipmentsController extends Controller
     public function seeEquipments()
     {
         $equipments = DataEquipment::paginate(10);
-        return view('equipments/viewEquipments', compact('equipments'));
+        return view('Equipments/viewEquipments', compact('equipments'));
     }
 
     public function show($equipment){
 
         $equipment = DataEquipment::findOrFail($equipment);
 
-        return view('equipments/viewDetailsEquipment', compact('equipment'));
+        return view('Equipments/viewDetailsEquipment', compact('equipment'));
     }
 
     //Print render inventory printer
@@ -90,7 +89,7 @@ class EquipmentsController extends Controller
     {
         $date = Carbon::now();
         $equipments = DataEquipment::all();
-        $pdf = PDF::loadView('equipments/printAllEq', ['equipments' => $equipments])->setPaper('CARTA EE. UU.', 'landscape');
+        $pdf = PDF::loadView('Equipments/printAllEq', ['equipments' => $equipments])->setPaper('CARTA EE. UU.', 'landscape');
 
         if (($ver) == 1){
             return $pdf->stream('inventario_equipos_'.$date->toDateTimeString().'.pdf');
@@ -105,7 +104,7 @@ class EquipmentsController extends Controller
     public function editEquipment($id)
     {
         $equipment = DataEquipment::findOrFail($id);
-        return view('equipments/updateEquipment')->withEquipment($equipment);
+        return view('Equipments/updateEquipment')->withEquipment($equipment);
     }
 
     public function updateEquipment($id)
@@ -114,16 +113,15 @@ class EquipmentsController extends Controller
 
         $this->validate(request(), [
             'InventoryNumberEquipment' => 'max:50|unique:dataEquipments,InventoryNumberEquipment,' . $this->route->getParameter('id'),
-            'NomenclatureEquipment' => 'required|max:50|unique:dataEquipments,NomenclatureEquipment,' . $this->route->getParameter('id'),
-            'DescriptionEquipment' => 'required|max:100',
+            'NomenclatureEquipment' => 'max:50|unique:dataEquipments,NomenclatureEquipment,' . $this->route->getParameter('id'),
+            'DescriptionEquipment' => 'required|in:CPU,Laptop,Monitor,NoBreak,CurrentRegulator',
             'BrandEquipment' => 'required|max:50',
             'ModelEquipment' => 'required|max:50',
             'SerialNumberEquipment' => 'max:25|unique:dataEquipments,SerialNumberEquipment,' . $this->route->getParameter('id'),
             'ColorEquipment' => 'max:15',
             'DescriptionAdEquipment' => 'max:1000',
             //View Details
-            'TypeEquipment' => 'required|max:15',
-            'TypeAssemblyEquipment' => 'required|max:15',
+            'TypeAssemblyEquipment' => 'required|in:Assembly,Manufacture',
             'EquipmentOS' => 'required|max:40',
             'ArchitectureOS' => 'max:15',
             'DistributionOS' => 'required|max:40',

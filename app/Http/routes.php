@@ -117,51 +117,87 @@ Route::group(['middleware' => 'auth'], function (){
 
     //-----------------------------------close CRUD Employees-------------------------------
 
-    //-----------------------------------open CRUD Devices-------------------------------
+    //-----------------------------------open CRUD Devices Printers-------------------------------
 
     // Create
-        Route::get('/administracion-de-dispositivos/crear', [
+        Route::get('/administracion-de-impresoras/registrar/impresora', [
             'as'   => 'createDevice',
             'uses' => 'DeviceController@create']);
-        Route::post('devices', 'DeviceController@store');
+        Route::post('printers', 'DeviceController@store');
 
     // Read
-        Route::get('/administracion-de-dispositivos/lista-de-dispositivos', [
+        Route::get('/administracion-de-impresoras/lista-de-impresoras', [
             'as'   => 'readDevice',
             'uses' => 'DeviceController@seeDevices']);
 
     // Print all devices
-        Route::get('/administracion-de-dispositivos/lista-de-dispositivos/inventario-dev-impresoras/{ver}', [
+        Route::get('/administracion-de-impresoras/lista-de-impresoras/inventario-dev-impresoras/{ver}', [
             'as'   => 'printAllDev',
             'uses' => 'DeviceController@printAllDev']);
 
-    // Print all devices
-        Route::get('/administracion-de-dispositivos/lista-de-dispositivos/inventario-dev-red/{ver}', [
-            'as'   => 'printAllDevR',
-            'uses' => 'DeviceController@printAllDevR']);
-
         // Read details per device
-        Route::get('/administracion-de-dispositivos/lista-de-dispositivos/{id}/detalles', [
+        Route::get('/administracion-de-impresoras/lista-de-impresoras/{id}/detalles', [
             'as'   => 'readDetDevice',
             'uses' => 'DeviceController@seeDetail']);
 
     // Update
-        Route::get('/administracion-de-dispositivos/{id}/actualizar-datos', [
+        Route::get('/administracion-de-impresoras/{id}/actualizar-datos', [
             'as'   => 'editDevice',
             'uses' => 'DeviceController@editDevice']);
 
-        Route::post('/administracion-de-dispositivos/{id}/actualizar-datos', [
+        Route::post('/administracion-de-impresoras/{id}/actualizar-datos', [
             'as'   => 'updateDevice',
             'uses' => 'DeviceController@updateDevice']);
 
     // Delete
-        Route::get('/administracion-de-dispositivos/{id}/eliminar', [
+        Route::get('/administracion-de-impresoras/{id}/eliminar', [
             'as' => 'deleteDevice',
             'uses' => 'DeviceController@deleteDevice']);
 
-    //-----------------------------------close CRUD Devices-------------------------------
+    //-----------------------------------close CRUD Devices Printers-------------------------------
 
-    //-----------------------------------open CRUD Equipments-------------------------------
+        //-----------------------------------open CRUD Devices Networks-------------------------------
+
+        // Create
+        Route::get('/administracion-de-dispositivos-red/registrar/dispositivo', [
+            'as'   => 'createDeviceN',
+            'uses' => 'DeviceNController@createN']);
+        Route::post('devicesN', 'DeviceNController@storeN');
+
+        // Read
+        Route::get('/administracion-de-dispositivos-red/lista-de-dispositivos', [
+            'as'   => 'readDeviceN',
+            'uses' => 'DeviceNController@seeDevicesN']);
+
+        // Print all devices
+        Route::get('/administracion-de-dispositivos-red/lista-de-dispositivos/reporte-inventario-dev-red/{ver}', [
+            'as'   => 'printAllDevN',
+            'uses' => 'DeviceNController@printAllDevN']);
+
+        // Read details per device
+        Route::get('/administracion-de-dispositivos-red/lista-de-dispositivos/{id}/detalles', [
+            'as'   => 'readDetDeviceN',
+            'uses' => 'DeviceNController@seeDetailN']);
+
+        // Update
+        Route::get('/administracion-de-dispositivos-red/{id}/actualizar-datos', [
+            'as'   => 'editDeviceN',
+            'uses' => 'DeviceNController@editDeviceN']);
+
+        Route::post('/administracion-de-dispositivos-red/{id}/actualizar-datos', [
+            'as'   => 'updateDeviceN',
+            'uses' => 'DeviceNController@updateDeviceN']);
+
+        // Delete
+        Route::get('/administracion-de-dispositivos-red/{id}/eliminar', [
+            'as' => 'deleteDeviceN',
+            'uses' => 'DeviceNController@deleteDeviceN']);
+
+
+        //-----------------------------------close CRUD Devices-------------------------------
+
+
+        //-----------------------------------open CRUD Equipments-------------------------------
 
     // Create
         Route::get('/administracion-de-equipos/crear', [

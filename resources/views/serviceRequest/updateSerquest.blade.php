@@ -31,14 +31,16 @@
                             'route'  => ['updateSerquest', $serquest->id]
                         ])) !!}
 
-                        <div class="form-group">
+                        <div class="form-group has-warning">
                             {!! Form::label('ReasonRequests', 'Razón de solicitud') !!}
-                            {!! Form::textarea('ReasonRequests', $serquest->ReasonRequests, ['class' => 'form-control', 'placeholder' => 'Escribe la razón de la solicitud']) !!}
+                            {!! Form::textarea('ReasonRequests', $serquest->ReasonRequests, ['class' => 'form-control', 'placeholder' => 'Escribe la razón de la solicitud', 'rows' => 3, 'cols' => 40]) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group has-warning">
                             {!! Form::label('DescriptionService', 'Descripción del servicio') !!}
                             {!! Form::textarea('DescriptionService', $serquest->DescriptionService, ['class' => 'form-control', 'placeholder' => 'Escribe una descripción del servicio', 'rows' => 3, 'cols' => 40]) !!}
+                            <small class="form-text text-muted">*Campo requerido</small>
                         </div>
 
                         <div class="form-group">

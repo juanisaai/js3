@@ -52,7 +52,7 @@
                                     <tr>
                                         <td>{{ $equipment->InventoryNumberEquipment }}</td>
                                         <td>{{ $equipment->NomenclatureEquipment }}</td>
-                                        <td>{{ $equipment->DescriptionEquipment }}</td>
+                                        <td>{{ trans('equipment.DescriptionEquipment.' . $equipment->DescriptionEquipment) }}</td>
                                         <td>{{ $equipment->BrandEquipment }}</td>
                                         <td>{{ $equipment->ModelEquipment }}</td>
                                         <td>{{ $equipment->SerialNumberEquipment }}</td>
