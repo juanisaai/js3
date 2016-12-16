@@ -12,7 +12,9 @@
 
     @else
 
-        <div class="container">
+        @can('Admin')
+
+            <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-default">
@@ -59,10 +61,12 @@
                             {{ $admins->render() }}
                         </div>
                     </div>
+                </div>
+            </div>
+            </div>
 
                     @endif
 
-                </div>
-            </div>
-        </div>
+
+    @endcan
 @endsection

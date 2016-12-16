@@ -10,6 +10,7 @@
         @include('partials.login')
 
     @else
+        @can('Admin')
     <div class="container">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
@@ -73,10 +74,12 @@
                     </div>
                     {{ Form::close() }}
                 </div>
-    @endif
             </div>
         </div>
     </div>
+    @endif
+
+    @endcan
 @endsection
 
 

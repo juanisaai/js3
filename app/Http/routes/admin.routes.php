@@ -1,56 +1,57 @@
 <?php
 
-//-----------------------------------open CRUD Users-------------------------------
+Route::group(['middlewareGroups' => 'role:Admin'], function () {
+    //-----------------------------------open CRUD Users-------------------------------
 
-// Create
-Route::get('/administracion/usuarios/crear', [
-'as'   => 'createUser',
-'uses' => 'Admin\UsersController@create']);
-Route::post('users', 'Admin\UsersController@store');
+    // Create
+    Route::get('/administracion/usuarios/crear', [
+        'as' => 'createUser',
+        'uses' => 'Admin\UsersController@create']);
+    Route::post('users', 'Admin\UsersController@store');
 
-// Create Admin
-Route::get('/administracion/administrador/crear', [
-'as'   => 'createAdmin',
-'uses' => 'Admin\UsersController@createAd']);
-Route::post('admin', 'Admin\UsersController@storeAd');
+    // Create Admin
+    Route::get('/administracion/administrador/crear', [
+        'as' => 'createAdmin',
+        'uses' => 'Admin\UsersController@createAd']);
+    Route::post('admin', 'Admin\UsersController@storeAd');
 
-// Read User
-Route::get('/administracion/lista-de-usuarios', [
-'as'   => 'readUser',
-'uses' => 'Admin\UsersController@seeUsers']);
+    // Read User
+    Route::get('/administracion/lista-de-usuarios', [
+        'as' => 'readUser',
+        'uses' => 'Admin\UsersController@seeUsers']);
 
-// Read Admin
-Route::get('/administracion/administrador/config', [
-'as'   => 'readAdmin',
-'uses' => 'Admin\UsersController@seeAdmin']);
+    // Read Admin
+    Route::get('/administracion/administrador/config', [
+        'as' => 'readAdmin',
+        'uses' => 'Admin\UsersController@seeAdmin']);
 
-// Update
-Route::get('/administracion/usuario/{id}/actualizar-datos', [
-'as'   => 'editUser',
-'uses' => 'Admin\UsersController@editUser']);
+    // Update
+    Route::get('/administracion/usuario/{id}/actualizar-datos', [
+        'as' => 'editUser',
+        'uses' => 'Admin\UsersController@editUser']);
 
-Route::post('/administracion/usuario/{id}/actualizar-datos', [
-'as'   => 'updateUser',
-'uses' => 'Admin\UsersController@updateUser']);
+    Route::post('/administracion/usuario/{id}/actualizar-datos', [
+        'as' => 'updateUser',
+        'uses' => 'Admin\UsersController@updateUser']);
 
 
-// Update Admin
-Route::get('/administracion/administrador/{id}/actualizar-datos', [
-'as'   => 'editAdmin',
-'uses' => 'Admin\UsersController@editAdmin']);
+    // Update Admin
+    Route::get('/administracion/administrador/{id}/actualizar-datos', [
+        'as' => 'editAdmin',
+        'uses' => 'Admin\UsersController@editAdmin']);
 
-Route::post('/administracion/administrador/{id}/actualizar-datos', [
-'as'   => 'updateAdmin',
-'uses' => 'Admin\UsersController@updateAdmin']);
+    Route::post('/administracion/administrador/{id}/actualizar-datos', [
+        'as' => 'updateAdmin',
+        'uses' => 'Admin\UsersController@updateAdmin']);
 
-// Delete
-Route::get('/administracion/lista-de-usuarios/{id}/eliminar', [
-'as' => 'deleteUser',
-'uses' => 'Admin\UsersController@deleteUser']);
-// Delete Admin
-Route::get('/administracion/administrador/{id}/eliminar', [
-'as' => 'deleteAdmin',
-'uses' => 'Admin\UsersController@deleteAdmin']);
+    // Delete
+    Route::get('/administracion/lista-de-usuarios/{id}/eliminar', [
+        'as' => 'deleteUser',
+        'uses' => 'Admin\UsersController@deleteUser']);
+    // Delete Admin
+    Route::get('/administracion/administrador/{id}/eliminar', [
+        'as' => 'deleteAdmin',
+        'uses' => 'Admin\UsersController@deleteAdmin']);
 
-//-----------------------------------Close CRUD Users-------------------------------
-
+    //-----------------------------------Close CRUD Users-------------------------------
+});

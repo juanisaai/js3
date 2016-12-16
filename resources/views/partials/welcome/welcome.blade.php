@@ -3,6 +3,12 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="jumbotron">
                 <h1>Bienvenido <small>{{ Auth::user()->name }}</small></h1>
+
+                @if((Auth::user()->name) === 'Admin')
+                    <div class="alert alert-warning" role="alert"><p>Por favor considera cambiar tus datos de administrador</p></div>
+                @elseif((Auth::user()->username) === 'admin')
+                    <div class="alert alert-warning" role="alert"><p>Al parecer no has cambiado todos tus datos, por favor considera cambiar tus datos de administrador</p></div>
+                @endif
                 <p>Aquí tienes una lista de acciones de acceso rápido</p>
                 <div class="list-group">
 

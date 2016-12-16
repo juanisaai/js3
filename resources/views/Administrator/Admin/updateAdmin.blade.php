@@ -12,6 +12,8 @@
 
     @else
 
+        @can('Admin')
+
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-default">
@@ -40,7 +42,7 @@
                                 <small class="form-text text-muted">*Campo requerido</small>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group has-warning">
                                 {!! Form::label('email', 'Email') !!}
                                 {!! Form::text('email', $user->email, ['class' => 'form-control', 'placeholder' => 'Escribe un email']) !!}
                                 <small class="form-text text-muted">*Campo requerido</small>
@@ -53,7 +55,7 @@
 
                             <div class="form-group has-warning">
                                 {!! Form::label('password', 'Contraseña') !!}
-                                {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Escribe tu nueva password']) !!}
+                                {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Escribe tu nueva contraseña']) !!}
                                 <small class="form-text text-muted">*Campo requerido</small>
                             </div>
 
@@ -77,10 +79,12 @@
                             </div>
                         {{ Form::close() }}
                     </div>
-    @endif
                 </div>
             </div>
         </div>
+    @endif
+
+    @endcan
 @endsection
 
 
